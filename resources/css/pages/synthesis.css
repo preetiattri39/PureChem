@@ -1,0 +1,17 @@
+.subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+.image-upload {
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-xl);
+    text-align: center;
+    color: var(--color-muted);
+    cursor: pointer;
+}
+.image-upload:hover {
+    background-color: var(--color-light-alt);
+}

@@ -8,7 +8,7 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="inner-hero bg-light align-items-center">
+<section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container">
         <h1 class="display-6 fw-bold">Cart</h1>
     </div>
@@ -23,7 +23,7 @@
             <div class="col-md-3">
                 <div class="sidebar">
                     <h5>Category</h5>
-                    <ul class="list-unstyled">
+                    <ul class="d-flex flex-column gap-3 list-unstyled">
                         <li><a href="#">Advanced Intermediates</a></li>
                         <li><a href="#">Fine Chemicals</a></li>
                         <li><a href="#">Isotope Labeled</a></li>
@@ -40,7 +40,7 @@
             <!-- Product List -->
             <div class="col-md-9">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3 class="fw-bold color-dark">RFQ Items</h3>
+                    <h3 class="fw-bold sh-custom-text-accent">RFQ Items</h3>
                 </div>
                 <div class="row g-3">
                     <div class="table-wrap">
@@ -80,9 +80,9 @@
                         </table>
                     </div>
                     <!-- Show More -->
-                    <div class="btn-wrap">
+                    <div class="d-flex flex-row gap-3 sh-custom-mt-xxl">
                         <button class="btn btn-outline-yellow">Add More Producrs</button>
-                        <button class="btn btn-yellow">Next</button>
+                        <button class="btn-yellow">Next</button>
                     </div>
                 </div>
             </div>

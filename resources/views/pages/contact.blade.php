@@ -8,7 +8,7 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="inner-hero bg-light align-items-center">
+<section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container">
         <h1 class="display-5 fw-bold">Contact Us</h1>
     </div>
@@ -40,8 +40,8 @@
                                 <label>Special Instructions</label>
                                 <textarea class="form-control" placeholder="Special Instructions" rows="5"></textarea>
                             </div>
-                            <div class="mt-4 btn-wrap">
-                                    <button class="btn btn-yellow">Submit</button>
+                            <div class="mt-4 d-flex flex-row gap-3 sh-custom-mt-xxl">
+                                    <button class="btn-yellow">Submit</button>
                             </div>
                         </form>
                     </div>

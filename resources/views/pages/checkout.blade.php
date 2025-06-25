@@ -8,7 +8,7 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="inner-hero bg-light align-items-center">
+<section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container">
         <h1 class="display-5 fw-bold">Checkout</h1>
     </div>
@@ -22,7 +22,7 @@
             <div class="col-md-3">
                 <div class="sidebar">
                     <h5>Category</h5>
-                    <ul class="list-unstyled">
+                    <ul class="d-flex flex-column gap-3 list-unstyled">
                         <li><a href="#">Advanced Intermediates</a></li>
                         <li><a href="#">Fine Chemicals</a></li>
                         <li><a href="#">Isotope Labeled</a></li>
@@ -39,7 +39,7 @@
             <!-- Product List -->
             <div class="col-md-9">
                 <div class="mb-3">
-                    <h3 class="fw-bold color-dark">RFQ Form</h3>
+                    <h3 class="fw-bold sh-custom-text-accent">RFQ Form</h3>
                     <p>To continue please fill out the following form.</p>
                 </div>
                 <div class="row g-4">
@@ -109,8 +109,8 @@
                                     <label class="form-check-label" for="createAccount">Create Account</label>
                                 </div>
                             </div>
-                            <div class="mt-4 btn-wrap">
-                                <button class="btn btn-yellow">Submit</button>
+                            <div class="mt-4 d-flex flex-row gap-3 sh-custom-mt-xxl">
+                                <button class="btn-yellow">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                                         <label>Password</label>
                                         <input type="password" class="form-control" placeholder="Password">
                                     </div>
-                                    <button class="btn btn-yellow">Login</button>
+                                    <button class="btn-yellow">Login</button>
                                 </form>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                         <label>Email</label>
                                         <input type="email" class="form-control" placeholder="Email">
                                     </div>
-                                    <button class="btn btn-yellow">Get Password</button>
+                                    <button class="btn-yellow">Get Password</button>
                                 </form>
                             </div>
                         </div>

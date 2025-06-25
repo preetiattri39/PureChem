@@ -8,7 +8,7 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="inner-hero bg-light align-items-center">
+<section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container">
         <h1 class="display-5 fw-bold">Company</h1>
     </div>
@@ -30,7 +30,7 @@
 </section>
 
 <!-- Privacy Section -->
-<section class="py-5 bg-light">
+<section class="py-5 sh-custom-bg-light">
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-md-6">
@@ -51,7 +51,7 @@
             <div class="col-md-6">
                 <h2 class="section-title">Confidentiality</h2>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                <a href="#" class="btn btn-yellow mt-5">View confidentiality contract</a>
+                <a href="#" class="btn-yellow mt-5">View confidentiality contract</a>
             </div>
             <div class="col-md-6">
                 <img src="{{ asset('images/web/confidentially.jpg') }}" alt="Chemist" class="img-fluid rounded">

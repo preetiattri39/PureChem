@@ -1,0 +1,6 @@
+.hero {
+    color: var(--color-white);
+    padding: 6.25rem 0;
+    background-size: cover !important;
+    background-position: center !important;
+}

@@ -8,11 +8,11 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="inner-hero bg-light align-items-center">
+<section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container">
         <h1 class="display-6 fw-bold">Custom Chemistry, Precisely Delivered</h1>
         <p class="w-5 mt-3 col-md-6 offset-md-3 text-center">Tailored synthesis of small molecules, from milligram to gram scale — designed to meet your research, development, and quality needs.</p>
-        <button class="btn btn-yellow mt-4">Request A Quote</button>
+        <button class="btn-yellow mt-4">Request A Quote</button>
     </div>
 </section>
 <section class="py-5">
@@ -55,35 +55,35 @@
         </div>
     </div>
 </section>
-<section class="py-5 bg-light">
+<section class="py-5 sh-custom-bg-light">
     <div class="container">
         <div class="row g-3 text-center">
             <h6 class="subtitle mb-0">Our Process</h6>
             <h2 class="section-title mb-5">How It Works</h2>
         </div>
         <div class="row g-3">
-            <div class="col-6 col-md-2">
+            <div class="col-6 col-md-3">
                 <div class="icon-box">
                     <img src="{{ asset('images/icons/submit-request.svg') }}"" class="mb-2">
                     <p class="fw-bold mb-1">Submit your request</p>
                     <small class="mb-3">CAS number(if any), upload the structure, share the specs or project details</small>
                 </div>
             </div>
-            <div class="col-6 col-md-2">
+            <div class="col-6 col-md-3">
                 <div class="icon-box">
                     <img src="{{ asset('images/icons/feasibility-check.svg') }}"" class="mb-2">
                     <p class="fw-bold mb-1">Feasibility check</p>
                     <small class="mb-3">We'll evaluate and provide a quote</small>
                 </div>
             </div>
-            <div class="col-6 col-md-2">
+            <div class="col-6 col-md-3">
                 <div class="icon-box">
                     <img src="{{ asset('images/icons/synthesis.svg') }}"" class="mb-2">
                     <p class="fw-bold mb-1">Synthesis & QC</p>
                     <small class="mb-3">Handled by our expert chemists</small>
                 </div>
             </div>
-            <div class="col-6 col-md-2">
+            <div class="col-6 col-md-3">
                 <div class="icon-box">
                     <img src="{{ asset('images/icons/delivery.svg') }}"" class="mb-2">
                     <p class="fw-bold mb-1">Delivery</p>
@@ -182,7 +182,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-4 d-flex justify-content-end">
-                                    <button type="button" class="btn btn-yellow" onclick="nextStep()">Next</button>
+                                    <button type="button" class="btn-yellow" onclick="nextStep()">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -279,7 +279,7 @@
                                 </div>
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-primary" onclick="prevStep()">Back</button>
-                                    <button type="submit" class="btn btn btn-yellow">Submit Order</button>
+                                    <button type="submit" class="btn btn-yellow">Submit Order</button>
                                 </div>
                             </div>
                         </div>

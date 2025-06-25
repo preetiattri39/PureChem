@@ -9,7 +9,7 @@
         'resources/scss/app.scss',
         'resources/css/style.css',
         'resources/js/app.js',
-        'resources/js/global/footer.js',
+        'resources/js/script.js',
         ])
 
     <!-- Page-specific assets -->
