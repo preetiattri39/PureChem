@@ -140,6 +140,21 @@ header{
     padding: var(--spacing-lg) 0;
 }
 
+.nav-cart-items-counter{
+    position: absolute;
+    top: -8px;
+    left: 12px;
+    font-size: 0.5em;
+    border: 1px solid var(--color-white);
+    background: #d1a744;
+    color: var(--color-white);
+    padding: 1px;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+}
+
 /* ==================================================
    Footer Classes
 ================================================== */

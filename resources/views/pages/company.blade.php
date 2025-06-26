@@ -10,69 +10,58 @@
 <!-- Hero Section -->
 <section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container">
-        <h1 class="display-5 fw-bold">Company</h1>
+        <h1 class="display-5 fw-bold">{!! $companyData['heroTitle'] !!}</h1>
     </div>
 </section>
 
-<!-- Mission statement Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-md-6">
-                <h2 class="section-title">Mission statement</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-            </div>
-            <div class="col-md-6">
-                <img src="{{ asset('images/web/mission-statement.jpg') }}" alt="Chemist" class="img-fluid rounded">
+<!-- Dynamic Sections -->
+@foreach ($companyData['sections'] as $index => $section)
+    <section class="py-5 {{ $index % 2 === 1 ? 'sh-custom-bg-light' : '' }}">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                @if ($index % 2 === 0)
+                    <div class="col-md-6">
+                        <h2 class="section-title">{{ $section['title'] }}</h2>
+                        <p>{{ $section['description'] }}</p>
+                        @if (!empty($section['buttonText']))
+                            <a href="#" class="btn-yellow mt-5">{{ $section['buttonText'] }}</a>
+                        @endif
+                    </div>
+                    <div class="col-md-6">
+                        <img
+                            src="{{ asset($section['image']['1x']) }}"
+                            srcset="
+                                {{ asset($section['image']['1x']) }} 1x,
+                                {{ asset($section['image']['2x']) }} 2x,
+                                {{ asset($section['image']['3x']) }} 3x
+                            "
+                            alt="{{ $section['title'] }}"
+                            class="img-fluid rounded"
+                        >
+                    </div>
+                @else
+                    <div class="col-md-6">
+                        <img
+                            src="{{ asset($section['image']['1x']) }}"
+                            srcset="
+                                {{ asset($section['image']['1x']) }} 1x,
+                                {{ asset($section['image']['2x']) }} 2x,
+                                {{ asset($section['image']['3x']) }} 3x
+                            "
+                            alt="{{ $section['title'] }}"
+                            class="img-fluid rounded"
+                        >
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="section-title">{{ $section['title'] }}</h2>
+                        <p>{{ $section['description'] }}</p>
+                        @if (!empty($section['buttonText']))
+                            <a href="#" class="btn-yellow mt-5">{{ $section['buttonText'] }}</a>
+                        @endif
+                    </div>
+                @endif
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Privacy Section -->
-<section class="py-5 sh-custom-bg-light">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-md-6">
-                <img src="{{ asset('images/web/privacy.jpg') }}" alt="Synthesis" class="img-fluid rounded">
-            </div>
-            <div class="col-md-6">
-                <h2 class="section-title">Privacy</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Confidentiality Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-md-6">
-                <h2 class="section-title">Confidentiality</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                <a href="#" class="btn-yellow mt-5">View confidentiality contract</a>
-            </div>
-            <div class="col-md-6">
-                <img src="{{ asset('images/web/confidentially.jpg') }}" alt="Chemist" class="img-fluid rounded">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Business Strategy Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-md-6">
-                <img src="{{ asset('images/web/business-strategy.jpg') }}" alt="Synthesis" class="img-fluid rounded">
-            </div>
-            <div class="col-md-6">
-                <h2 class="section-title">Business Strategy</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
+    </section>
+@endforeach
 @endsection

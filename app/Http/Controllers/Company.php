@@ -9,6 +9,9 @@ class Company extends Controller
 {
      public function index()
     {
-        return view('pages.company');
+        $companyContentFilePath = storage_path('app/private/content/company.php');
+        $content = file_exists($companyContentFilePath) ? include $companyContentFilePath : [];
+
+        return view('pages.company', compact('content'));
     }
 }

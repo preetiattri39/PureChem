@@ -9,6 +9,9 @@ class Contact extends Controller
 {
      public function index()
     {
-        return view('pages.contact');
+        $contactContentFilePath = storage_path('app/private/content/contact.php');
+        $content = file_exists($contactContentFilePath) ? include $contactContentFilePath : [];
+
+        return view('pages.contact', compact('content'));
     }
 }

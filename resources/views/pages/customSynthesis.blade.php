@@ -1,5 +1,5 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Welcome')
+@section('title', 'Custom Synthesis - Custom Chemistry, Precisely Delivered')
 
 @section('vite')
     @vite(['resources/js/pages/synthesis.js', 'resources/css/pages/synthesis.css'])
@@ -9,87 +9,86 @@
 
 <!-- Hero Section -->
 <section class="inner-hero sh-custom-bg-light align-items-center">
-    <div class="container">
-        <h1 class="display-6 fw-bold">Custom Chemistry, Precisely Delivered</h1>
-        <p class="w-5 mt-3 col-md-6 offset-md-3 text-center">Tailored synthesis of small molecules, from milligram to gram scale — designed to meet your research, development, and quality needs.</p>
-        <button class="btn-yellow mt-4">Request A Quote</button>
+    <div class="container text-center">
+        <h1 class="display-6 fw-bold">{{ $hero['title'] }}</h1>
+        <p class="w-5 mt-3 col-md-6 offset-md-3 text-center">{{ $hero['description'] }}</p>
+        <button class="btn-yellow mt-4">{{ $hero['buttonText'] }}</button>
     </div>
 </section>
+
+<!-- Content Sections -->
+@foreach ($sections as $index => $section)
 <section class="py-5">
     <div class="container">
         <div class="row align-items-center g-5">
-            <div class="col-md-6">
-                <img src="{{ asset('images/web/what-we-offer.jpg') }}" alt="Chemist" class="img-fluid rounded">
-            </div>
-            <div class="col-md-6">
-                <h6 class="subtitle">What We Offer</h6>
-                <h2 class="section-title">Custom Molecules.<br> Designed for Discovery.</h2>
-                <p>Swizchem offers high-quality custom synthesis services for small molecules across pharmaceutical, academic, and industrial sectors. Whether you need reference compounds, intermediates, or complex structures, we deliver with:</p>
-                <ul>
-                    <li>Milligram to gram scale synthesis</li>
-                    <li>Confidential, made-to-order projects</li>
-                    <li>Support for proprietary and non-commercial structures</li>
-                    <li>Analytical data (NMR, HPLC, MS, COA) included</li>
-                    <li>Timely delivery and full documentation</li>
-                </ul>
-            </div>
+            @if ($index % 2 === 0)
+                <!-- Image Left, Text Right -->
+                <div class="col-md-6">
+                    <img
+                        src="{{ asset($section['image']['1x']) }}"
+                        srcset="{{ asset($section['image']['2x']) }} 2x, {{ asset($section['image']['3x']) }} 3x"
+                        alt="{{ strip_tags($section['title']) }}"
+                        class="img-fluid rounded"
+                    />
+                </div>
+                <div class="col-md-6">
+                    <h6 class="subtitle">{{ $section['subtitle'] }}</h6>
+                    <h2 class="section-title">{!! $section['title'] !!}</h2>
+                    <p>{{ $section['paragraph'] }}</p>
+                    @if (!empty($section['sublistTitle']))
+                        <h6 class="subtitle">{{ $section['sublistTitle'] }}</h6>
+                    @endif
+                    <ul>
+                        @foreach ($section['list'] as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @else
+                <!-- Text Left, Image Right -->
+                <div class="col-md-6">
+                    <h6 class="subtitle">{{ $section['subtitle'] }}</h6>
+                    <h2 class="section-title">{!! $section['title'] !!}</h2>
+                    <p>{{ $section['paragraph'] }}</p>
+                    @if (!empty($section['sublistTitle']))
+                        <h6 class="subtitle">{{ $section['sublistTitle'] }}</h6>
+                    @endif
+                    <ul>
+                        @foreach ($section['list'] as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img
+                        src="{{ asset($section['image']['1x']) }}"
+                        srcset="{{ asset($section['image']['2x']) }} 2x, {{ asset($section['image']['3x']) }} 3x"
+                        alt="{{ strip_tags($section['title']) }}"
+                        class="img-fluid rounded"
+                    />
+                </div>
+            @endif
         </div>
     </div>
 </section>
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-md-6">
-                <h2 class="section-title">Who We Work With</h2>
-                <p>Serving Scientists, Researchers, and Innovators</p>
-                <p>Whether you're advancing drug discovery, scaling a lead compound, or exploring a novel scaffold — we’re your synthesis partner.</p>
-                <h6 class="subtitle">Our clients include</h6>
-                <p class="fw-bold">Academic institutions & postdoctoral researchers</p>
-                <p class="fw-bold">Biotech and pharmaceutical R&D labs</p>
-                <p class="fw-bold">CROs and startups</p>
-                <p class="fw-bold">Chemical sourcing managers</p>
-            </div>
-            <div class="col-md-6">
-                <img src="{{ asset('images/web/what-we-offer.jpg') }}" alt="Chemist" class="img-fluid rounded">
-            </div>
-        </div>
-    </div>
-</section>
+@endforeach
+<!-- Our Process Section -->
 <section class="py-5 sh-custom-bg-light">
     <div class="container">
         <div class="row g-3 text-center">
-            <h6 class="subtitle mb-0">Our Process</h6>
-            <h2 class="section-title mb-5">How It Works</h2>
+            <h6 class="subtitle mb-0">{{ $our_process['subtitle'] }}</h6>
+            <h2 class="section-title mb-5">{{ $our_process['title'] }}</h2>
         </div>
         <div class="row g-3">
-            <div class="col-6 col-md-3">
-                <div class="icon-box">
-                    <img src="{{ asset('images/icons/submit-request.svg') }}"" class="mb-2">
-                    <p class="fw-bold mb-1">Submit your request</p>
-                    <small class="mb-3">CAS number(if any), upload the structure, share the specs or project details</small>
+            @foreach ($our_process['steps'] as $step)
+                <div class="col-6 col-md-3">
+                    <div class="icon-box">
+                        <img src="{{ asset($step['icon']) }}" class="mb-2" alt="{{ $step['title'] }}">
+                        <p class="fw-bold mb-1">{{ $step['title'] }}</p>
+                        <small class="mb-3 d-block">{{ $step['desc'] }}</small>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="icon-box">
-                    <img src="{{ asset('images/icons/feasibility-check.svg') }}"" class="mb-2">
-                    <p class="fw-bold mb-1">Feasibility check</p>
-                    <small class="mb-3">We'll evaluate and provide a quote</small>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="icon-box">
-                    <img src="{{ asset('images/icons/synthesis.svg') }}"" class="mb-2">
-                    <p class="fw-bold mb-1">Synthesis & QC</p>
-                    <small class="mb-3">Handled by our expert chemists</small>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="icon-box">
-                    <img src="{{ asset('images/icons/delivery.svg') }}"" class="mb-2">
-                    <p class="fw-bold mb-1">Delivery</p>
-                    <small class="mb-3">Product shipped with full analytical data</small>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -97,16 +96,21 @@
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-md-6">
-                <img src="{{ asset('images/web/precision.jpg') }}" alt="Chemist" class="img-fluid rounded">
+                <img
+                    src="{{ asset($quality['image']['1x']) }}"
+                    srcset="{{ asset($quality['image']['2x']) }} 2x, {{ asset($quality['image']['3x']) }} 3x"
+                    alt="{{ strip_tags($quality['title']) }}"
+                    class="img-fluid rounded"
+                />
             </div>
             <div class="col-md-6">
-                <h6 class="subtitle mb-0">Quality Assurance</h6>
-                <h2 class="section-title">Precision You Can Trust</h2>
-                <p>Every custom synthesis project is carried out under strict quality controls, with:</p>
+                <h6 class="subtitle mb-0">{{ $quality['subtitle'] }}</h6>
+                <h2 class="section-title">{!! $quality['title'] !!}</h2>
+                <p>{{ $quality['paragraph'] }}</p>
                 <ul>
-                    <li>Full analytical characterization</li>
-                    <li>COA and data transparency</li>
-                    <li>Batch tracking and documentation</li>
+                    @foreach ($quality['list'] as $item)
+                        <li>{{ $item }}</li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -177,7 +181,7 @@
                                             <p class="mb-0">Image upload</p>
                                         </div>
                                     </div>
-                                    <div class="canvas-container d-none">
+                                    <div class="canvas-container">
                                         <canvas width="300" height="80" style="border:1px solid #E1E1E1;background: #E1E1E1;border-radius:20px" class="w-100"></canvas>
                                     </div>
                                 </div>
@@ -215,7 +219,7 @@
                                     </div>
                                 </div>
                                 <!-- Shown when "No" is selected -->
-                                <div id="newCustomerFields" class="d-none">
+                                <div id="newCustomerFields" class="">
                                     <div class="mb-4">
                                         <label for="fullName">Name</label>
                                         <input type="text" class="form-control" placeholder="Name">

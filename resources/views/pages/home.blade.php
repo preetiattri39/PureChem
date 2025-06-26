@@ -1,5 +1,5 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Welcome')
+@section('title', 'Swizchem - Where Research Meets Reliable Chemistry')
 
 @section('vite')
     @vite(['resources/js/pages/home.js', 'resources/css/pages/home.css'])
@@ -11,90 +11,69 @@
 <section class="hero" style="background: url('images/web/swizchem-banner.jpg');">
     <div class="container">
         <div class="col-12 text-center mb-5">
-            <button class="btn-yellow">Custom Proposal – Start Here</button>
+            <button class="btn-yellow">{!! $content['heroBannerButtonText'] !!}</button>
         </div>
         <div class="col-12 d-flex flex-column justify-content-center align-items-center gap-4">
-            <h1 class="display-4 fw-bold col-6 text-center">Where Research Meets<br>Reliable Chemistry</h1>
+            <h1 class="display-4 fw-bold col-6 text-center">{!! $content['heroBannerTitle'] !!}</h1>
             <form class="d-flex justify-content-center col-6 position-relative search-form">
-                <input type="text" class="form-control" placeholder="Search by chemical name or CAS" />
-                <button class="btn-yellow form-btn">Search</button>
+                <input type="text" class="form-control" placeholder="{!! $content['heroBannerSearchPlaceholder'] !!}" />
+                <button class="btn-yellow form-btn">{!! $content['heroBannerSearchButtonText'] !!}</button>
             </form>
         </div>
     </div>
 </section>
 
-<!-- Product Categories -->
+<!-- Service Cards -->
 <section class="py-5">
     <div class="container">
         <div class="row g-3">
+            @foreach($content['serviceCards'] as $card)
             <div class="col-6 custom-col-20">
                 <div class="icon-box sh-custom-bg-light">
-                    <img src="{{ asset('images/icons/amino-acids.svg') }}" class="mb-2">
-                    <p class="fw-bold mb-1">Amino Acids<br>for Peptide Synthesis</p>
-                    <small class="mb-3">Lorem Ipsum is dummy text.</small>
+                    <img src="{!! asset($card['icon']) !!}" class="mb-2">
+                    <p class="fw-bold mb-1">{!! $card['title'] !!}</p>
+                    <small class="mb-3">{!! $card['description'] !!}</small>
                 </div>
             </div>
-            <div class="col-6 custom-col-20">
-                <div class="icon-box sh-custom-bg-light">
-                    <img src="{{ asset('images/icons/oligopeptides.svg') }}" class="mb-2">
-                    <p class="fw-bold mb-1">Oligopeptides</p>
-                    <small class="mb-3">Lorem Ipsum is dummy text.</small>
-                </div>
-            </div>
-            <div class="col-6 custom-col-20">
-                <div class="icon-box sh-custom-bg-light">
-                    <img src="{{ asset('images/icons/advanced.svg') }}" class="mb-2">
-                    <p class="fw-bold mb-1">Advanced Intermediates</p>
-                    <small class="mb-3">Lorem Ipsum is dummy text.</small>
-                </div>
-            </div>
-            <div class="col-6 custom-col-20">
-                <div class="icon-box sh-custom-bg-light">
-                    <img src="{{ asset('images/icons/metabolites.svg') }}" class="mb-2">
-                    <p class="fw-bold mb-1">Metabolites And Impurities</p>
-                    <small class="mb-3">Lorem Ipsum is dummy text.</small>
-                </div>
-            </div>
-            <div class="col-6 custom-col-20">
-                <div class="icon-box sh-custom-bg-light">
-                    <img src="{{ asset('images/icons/reagents.svg') }}" class="mb-2">
-                    <p class="fw-bold mb-1">Reagents And Ligands</p>
-                    <small class="mb-3">Lorem Ipsum is dummy text.</small>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
 
-<!-- Company Section -->
+<!-- Detail Sections -->
 <section class="py-5">
     <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-md-6">
-                <img src="{{ asset('images/web/Rectangle 26.jpg') }}" alt="Chemist" class="img-fluid rounded">
+        @foreach ($content['contentSections'] as $section)
+            <div class="row align-items-center g-5 mb-5">
+                @if ($loop->iteration % 2 !== 0)
+                    <div class="col-md-6">
+                        <picture>
+                            <source srcset="{{ asset($section['images']['3x']) }}" media="(min-width: 1200px)">
+                            <source srcset="{{ asset($section['images']['2x']) }}" media="(min-width: 768px)">
+                            <img src="{{ asset($section['images']['1x']) }}" alt="{{ $section['title'] }}" class="img-fluid rounded">
+                        </picture>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="section-title">{!! $section['title'] !!}</h2>
+                        <p>{!! $section['description'] !!}</p>
+                        <a href="#" class="btn-yellow mt-3">{!! $section['learnMoreButtonText'] !!}</a>
+                    </div>
+                @else
+                    <div class="col-md-6">
+                        <h2 class="section-title">{!! $section['title'] !!}</h2>
+                        <p>{!! $section['description'] !!}</p>
+                        <a href="#" class="btn-yellow mt-3">{!! $section['learnMoreButtonText'] !!}</a>
+                    </div>
+                    <div class="col-md-6">
+                        <picture>
+                            <source srcset="{{ asset($section['images']['3x']) }}" media="(min-width: 1200px)">
+                            <source srcset="{{ asset($section['images']['2x']) }}" media="(min-width: 768px)">
+                            <img src="{{ asset($section['images']['1x']) }}" alt="{{ $section['title'] }}" class="img-fluid rounded">
+                        </picture>
+                    </div>
+                @endif
             </div>
-            <div class="col-md-6">
-                <h2 class="section-title">Company</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-                <a href="#" class="btn-yellow mt-3">Learn More</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Custom Synthesis Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-md-6">
-                <h2 class="section-title">Custom Synthesis</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-                <a href="#" class="btn-yellow mt-3">Learn More</a>
-            </div>
-            <div class="col-md-6">
-                <img src="{{ asset('images/web/Rectangle 26 (1).jpg') }}" alt="Synthesis" class="img-fluid rounded">
-            </div>
-        </div>
+        @endforeach
     </div>
 </section>
 @endsection

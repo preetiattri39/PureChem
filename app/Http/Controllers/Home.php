@@ -9,6 +9,8 @@ class Home extends Controller
 {
      public function index()
     {
-        return view('pages.home');
+        $homeContentFilePath = storage_path('app/private/content/home.php');
+        $content = file_exists($homeContentFilePath) ? include $homeContentFilePath : [];
+        return view('pages.home',compact('content'));
     }
 }
