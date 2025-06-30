@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('product_code')->unique();
             $table->string('compound_family')->nullable();
             $table->string('name');
+            $table->foreignId('category_id')->nullable()->default(null)->constrained('categories')->onDelete('set null');           
             $table->text('synonym')->nullable();
             $table->string('structure')->nullable();
             $table->string('molecular_formula')->nullable();
