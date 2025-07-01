@@ -10,12 +10,12 @@
 <!-- Hero Section -->
 <section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container">
-        <h1 class="display-5 fw-bold">{!! $companyData['heroTitle'] !!}</h1>
+        <h1 class="display-5 fw-bold">{!! $content['heroTitle'] !!}</h1>
     </div>
 </section>
 
 <!-- Dynamic Sections -->
-@foreach ($companyData['sections'] as $index => $section)
+@foreach ($content['sections'] as $index => $section)
     <section class="py-5 {{ $index % 2 === 1 ? 'sh-custom-bg-light' : '' }}">
         <div class="container">
             <div class="row align-items-center g-5">
