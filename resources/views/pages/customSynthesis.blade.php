@@ -1,5 +1,17 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Custom Synthesis - Custom Chemistry, Precisely Delivered')
+
+@section('title', 'Custom Synthesis Services | Small Molecule Chemistry by Swizchem')
+@section('meta_description', 'Swizchem provides precision custom synthesis for small molecules, tailored for pharma, biotech, and academic research — with full analytical support.')
+@section('meta_keywords', 'custom synthesis, small molecule synthesis, Swizchem synthesis, pharmaceutical intermediates, research chemicals, NMR HPLC MS COA, synthesis quote, CRO chemistry services')
+
+{{-- Open Graph for Facebook/LinkedIn --}}
+@section('og_title', View::getSection('title'))
+@section('og_description', View::getSection('meta_description'))
+
+{{-- Twitter Card --}}
+@section('twitter_title', View::getSection('title'))
+@section('twitter_description', View::getSection('meta_description'))
+
 
 @section('vite')
     @vite(['resources/js/pages/synthesis.js', 'resources/css/pages/synthesis.css'])
@@ -24,12 +36,11 @@
             @if ($index % 2 === 0)
                 <!-- Image Left, Text Right -->
                 <div class="col-md-6">
-                    <img
-                        src="{{ asset($section['image']['1x']) }}"
-                        srcset="{{ asset($section['image']['2x']) }} 2x, {{ asset($section['image']['3x']) }} 3x"
-                        alt="{{ strip_tags($section['title']) }}"
-                        class="img-fluid rounded"
-                    />
+                    <picture>
+                        <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
+                        <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
+                        <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded">
+                    </picture>
                 </div>
                 <div class="col-md-6">
                     <h6 class="subtitle">{{ $section['subtitle'] }}</h6>
@@ -60,12 +71,11 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <img
-                        src="{{ asset($section['image']['1x']) }}"
-                        srcset="{{ asset($section['image']['2x']) }} 2x, {{ asset($section['image']['3x']) }} 3x"
-                        alt="{{ strip_tags($section['title']) }}"
-                        class="img-fluid rounded"
-                    />
+                    <picture>
+                        <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
+                        <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
+                        <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded">
+                    </picture>
                 </div>
             @endif
         </div>
@@ -96,12 +106,11 @@
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-md-6">
-                <img
-                    src="{{ asset($quality['image']['1x']) }}"
-                    srcset="{{ asset($quality['image']['2x']) }} 2x, {{ asset($quality['image']['3x']) }} 3x"
-                    alt="{{ strip_tags($quality['title']) }}"
-                    class="img-fluid rounded"
-                />
+                <picture>
+                    <source srcset="{{ asset($quality['image']['3x']) }}" media="(min-width: 992px)">
+                    <source srcset="{{ asset($quality['image']['2x']) }}" media="(min-width: 768px)">
+                    <img src="{{ asset($quality['image']['1x']) }}" alt="{!! $quality['title'] !!}" class="img-fluid rounded">
+                </picture>
             </div>
             <div class="col-md-6">
                 <h6 class="subtitle mb-0">{{ $quality['subtitle'] }}</h6>
@@ -191,7 +200,7 @@
                             </div>
                         </div>
                         <!-- Step 2 -->
-                        <div class="step step-2 d-none">
+                        <div class="step step-2">
                             <div class="row g-3 text-center mb-3">
                                 <h6 class="subtitle mb-0">Login or Register</h6>
                                 <h2 class="section-title">Enter credentials to request for order</h2>

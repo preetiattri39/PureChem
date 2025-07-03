@@ -1,5 +1,7 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Welcome')
+
+@section('title', 'Chat | Swizchem')
+@section('robots', 'noindex, nofollow')
 
 @section('vite')
     @vite(['resources/js/pages/chat.js', 'resources/css/pages/chat.css'])

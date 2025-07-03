@@ -1,5 +1,17 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Welcome')
+
+@section('title', 'Chemical Catalog | Research Chemicals, Natural Products & Oligopeptides')
+@section('meta_description', 'Explore Swizchem’s complete catalog of high-purity research chemicals including natural products, APIs, peptides, ligands, and more.')
+@section('meta_keywords', 'Swizchem chemical catalog, research chemicals, natural products, peptides, oligopeptides, reagents, amino acids, APIs, isotopic compounds')
+
+{{-- Open Graph for Facebook/LinkedIn --}}
+@section('og_title', View::getSection('title'))
+@section('og_description', View::getSection('meta_description'))
+
+{{-- Twitter Card --}}
+@section('twitter_title', View::getSection('title'))
+@section('twitter_description', View::getSection('meta_description'))
+
 
 @section('vite')
     @vite(['resources/js/pages/products.js', 'resources/css/pages/products.css'])
@@ -11,11 +23,11 @@
 <section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex flex-column justify-content-center align-items-center gap-4">
-                <h1 class="display-6 fw-bold">Chemical Catalog - Complete Products List</h1>
-                <form class="d-flex justify-content-center col-6 position-relative search-form">
+           <div class="col-12 d-flex flex-column justify-content-center align-items-center gap-4">
+                <h1 class="display-6 fw-bold col-12 col-lg-6 text-center">Chemical Catalog - Complete Products List</h1>
+                <form class="d-flex justify-content-center col-12 col-lg-6 position-relative search-form">
                     <input type="text" class="form-control" placeholder="Search by chemical name or CAS" />
-                    <button class="btn-yellow form-btn">Search</button>
+                    <button class="btn-yellow search-form-button">Search</button>
                 </form>
             </div>
         </div>
@@ -39,8 +51,8 @@
             </div>
             <!-- Product List -->
             <div class="col-md-9">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3 class="fw-bold sh-custom-text-accent">All Products</h3>
+                <div class="d-flex flex-row justify-content-center justify-content-sm-between align-items-center mb-3 flex-wrap">
+                    <h2 class="section-title">All Products</h2>
                     <select class="form-select sort-by w-auto">
                         <option selected>Sort By</option>
                         <option>Name</option>
@@ -52,7 +64,7 @@
                 <div class="row g-3">
                     <!-- Product Card Example -->
                     @foreach($products as $product)
-                    <div class="col-md-4">
+                    <div class="col-12 col-md-6 col-xl-4">
                         <div class="product-card">
                             <a href="{{ route('products.single') }}">
                                 <div class="product-image">

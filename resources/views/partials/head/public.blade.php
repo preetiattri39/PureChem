@@ -5,8 +5,8 @@
 
     <meta name="description" content="@yield('meta_description', 'Default SEO description')">
     <meta name="keywords" content="@yield('meta_keywords', 'keyword1, keyword2')">
-    <meta name="author" content="Your Name">
-    <meta name="robots" content="index, follow">
+    <meta name="author" content="Swizchem">
+    <meta name="robots" content="@yield('meta_description', 'index, follow')">
 
     <!-- Open Graph (Facebook/LinkedIn) -->
     <meta property="og:title" content="@yield('og_title', 'My Website')">

@@ -17,7 +17,7 @@
   --color-primary: #28435D;
   --color-primary-light: #25425c;
   --color-secondary: #D1A744;
-  --color-secondary-light: #D1A744E1;
+  --color-secondary-light: #ffb609;
   --color-accent: #2A2D34;
   --color-white: #FFFFFF;
   --color-light: #E1E1E1;
@@ -61,6 +61,12 @@ p, body {
 a {
     text-decoration: none;
 }
+
+h4 {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
 
 /* ==================================================
    Utility Classes for Variables
@@ -131,7 +137,6 @@ a {
 .sh-custom-pb-lg { padding-bottom: var(--spacing-lg); }
 .sh-custom-pb-xl { padding-bottom: var(--spacing-xl); }
 .sh-custom-pb-xxl { padding-bottom: var(--spacing-xxl); }
-
 
 /* ==================================================
    Header Classes
@@ -208,7 +213,7 @@ footer h6 {
     font-size: var(--font-size-md);
 }
 
-.form-btn {  
+.search-form-button {  
     position: absolute;
     right: 5px;
     top: 5px;
@@ -367,6 +372,7 @@ textarea.form-control {
 .section-title {
     font-weight: bold;
     font-size: var(--font-size-heading);
+    word-break: break-all;
 }
 
 .btn-yellow {
@@ -377,6 +383,7 @@ textarea.form-control {
     border-radius: var(--radius-xxl);
     font-size: var(--font-size-md);
     display: inline-block;
+    text-align: center;
 }
 
 .btn-yellow:hover {
@@ -399,9 +406,35 @@ textarea.form-control {
     color: #d4a72c;
 }
 
+section picture img{
+    object-fit: contain;
+    width: 100%;
+}
+
+.form-submission-status ul {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form-submission-status ul li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
 /* ==================================================
    Media Queries
 ================================================== */
+@media (max-width:464px){
+    .search-form-button {  
+        right: unset;
+        top: 4rem;
+    }
+    .search-form input::placeholder{
+        text-align: center;
+    }
+}
 
 @media (min-width: 992px) {
     .navbar-expand-lg .navbar-collapse {
@@ -411,7 +444,7 @@ textarea.form-control {
     }
     .navbar-expand-lg .navbar-nav {
         flex-direction: row;
-        gap: 1.5rem;
+        gap: 1rem;
     }
     .navbar-nav li a {
         position: relative;
@@ -463,8 +496,7 @@ textarea.form-control {
             border-radius: 0;
         }
     }
-}
-@media (min-width: 768px) {
+    
     .custom-col-20 {
         width: 20%;
     }

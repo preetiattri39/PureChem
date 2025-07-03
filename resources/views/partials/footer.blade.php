@@ -27,7 +27,7 @@
                 <ul class="d-flex flex-column gap-3 list-unstyled">
                     @foreach ($globalFooterData['quickLinks'] as $link)
                         <li>
-                            <a href="{{ route($link['url']) }}">{{ $link['label'] }}</a>
+                            <a href="{{ route($link['url']) }}">{!! $link['label'] !!}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -36,14 +36,14 @@
             <div class="col-md-3">
                 <h6>Contact</h6>
                 @foreach ($globalFooterData['contact'] as $contact)
-                    <p><i class="{{ $contact['icon'] }}"></i> {{ $contact['label'] }}</p>
+                    <p><i class="{{ $contact['icon'] }}"></i> {!! replace_shortcodes($contact['label']) !!}</p>
                 @endforeach
             </div>
 
-            <div class="col d-flex justify-content-end">
+            <div class="col d-flex justify-content-center justify-content-lg-end">
                 <div class="fs-2 fw-normal">
                     @foreach ($globalFooterData['social'] as $social)
-                        <a href="{{ route($social['url']) }}" class="text-light me-3" title="{{ ucfirst($social['title']) }}">
+                        <a href="{{ route($social['url']) }}" class="text-light me-3" title="{!! ucfirst($social['title']) !!}">
                             <i class="{{ $social['icon'] }}"></i>
                         </a>
                     @endforeach
@@ -52,7 +52,7 @@
         </div>
 
         <div class="text-center mt-5 small">
-            {{ $globalFooterData['rights'] }}
+            {!! $globalFooterData['rights'] !!}
         </div>
     </div>
 </footer>

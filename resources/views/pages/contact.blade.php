@@ -1,5 +1,16 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Welcome')
+
+@section('title', 'Contact Swizchem | Get in Touch with Our Team')
+@section('meta_description', 'Reach out to Swizchem via phone, email, or our online form. We respond to product requests and inquiries within 24 hours.')
+@section('meta_keywords', 'Contact Swizchem, Swizchem email, customer support, chemical inquiry, request quote, Swizchem phone number, compound request form')
+
+{{-- Open Graph for Facebook/LinkedIn --}}
+@section('og_title', View::getSection('title'))
+@section('og_description', View::getSection('meta_description'))
+
+{{-- Twitter Card --}}
+@section('twitter_title', View::getSection('title'))
+@section('twitter_description', View::getSection('meta_description'))
 
 @section('vite')
     @vite(['resources/js/pages/conatact.js', 'resources/css/pages/contact.css'])
@@ -18,7 +29,7 @@
         <div class="row g-5">
             <div class="col-md-6">
                 <div class="mb-4">
-                    <h2 class="contact-title fw-bold">{{ $content['formTitle']  }}</h2>
+                    <h2 class="section-title">{{ $content['formTitle']  }}</h2>
                 </div>
                 <div class="form-wrap">
                     <div class="form-section">
@@ -49,12 +60,16 @@
             </div>
             <div class="col-md-6">
                 <div class="mb-4">
-                    <h2 class="contact-title fw-bold">{{ $content['sectionTitle'] }}</h2>
+                    <h2 class="section-title">{{ $content['sectionTitle'] }}</h2>
                 </div>
                 <div class="contact-content">
                     @foreach ($content['contactMethods'] as $method)
-                        <h4>{{ $method['title'] }}</h4>
-                        <p class="mb-4">{!! $method['description'] !!}</p>
+                        <div class="my-4">
+                            <h4>{{ $method['title'] }}</h4>
+                            @foreach($method['description'] as $detail)
+                            <p>{!! replace_shortcodes($detail) !!}</p>
+                            @endforeach
+                        </div>
                     @endforeach
                 </div>
             </div>

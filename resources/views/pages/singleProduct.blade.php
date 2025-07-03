@@ -1,5 +1,6 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Welcome')
+
+@section('title', 'Single Product | Research Chemical | Swizchem')
 
 @section('vite')
     @vite(['resources/js/pages/single-product.js', 'resources/css/pages/single-product.css'])
@@ -28,7 +29,7 @@
                 </div>
             </div>
             <div class="col-md-6 product-info">
-                <h4 class="display-6 mb-2">Candesartan Methylester</h4>
+                <h2 class="section-title">Candesartan Methylester</h2>
                 <p><strong>Cas:</strong> 13481-44-0</p>
                 <p><strong>Catalogue Number:</strong> AISO0031I</p>
                 <p><strong>Purity:</strong> &gt;95%</p>

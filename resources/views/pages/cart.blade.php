@@ -1,5 +1,7 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Welcome')
+
+@section('title', 'Your Cart | Swizchem')
+@section('robots', 'noindex, nofollow')
 
 @section('vite')
     @vite(['resources/js/pages/cart.js', 'resources/css/pages/cart.css'])

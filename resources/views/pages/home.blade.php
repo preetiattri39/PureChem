@@ -1,5 +1,17 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Swizchem - Where Research Meets Reliable Chemistry')
+
+@section('title', 'Swizchem | Custom Synthesis, Peptides, Intermediates & Research Chemicals')
+@section('meta_description', 'Swizchem is a trusted partner for high-purity chemicals, custom synthesis, peptides, advanced intermediates, and research-grade reagents.')
+@section('meta_keywords', 'Swizchem, custom synthesis, peptide synthesis, oligopeptides, reagents, research chemicals, advanced intermediates, CAS search, pharmaceutical impurities')
+
+{{-- Open Graph for Facebook/LinkedIn --}}
+@section('og_title', View::getSection('title'))
+@section('og_description', View::getSection('meta_description'))
+
+{{-- Twitter Card --}}
+@section('twitter_title', View::getSection('title'))
+@section('twitter_description', View::getSection('meta_description'))
+
 
 @section('vite')
     @vite(['resources/js/pages/home.js', 'resources/css/pages/home.css'])
@@ -8,16 +20,17 @@
 @section('content')
 
 <!-- Hero Section -->
-<section class="hero" style="background: url('images/web/swizchem-banner.jpg');">
+<section class="hero">
     <div class="container">
         <div class="col-12 text-center mb-5">
             <button class="btn-yellow">{!! $content['heroBannerButtonText'] !!}</button>
         </div>
         <div class="col-12 d-flex flex-column justify-content-center align-items-center gap-4">
-            <h1 class="display-4 fw-bold col-6 text-center">{!! $content['heroBannerTitle'] !!}</h1>
-            <form class="d-flex justify-content-center col-6 position-relative search-form">
+            <h1 class="display-4 fw-bold col-12 col-lg-6 text-center">{!! $content['heroBannerTitle'] !!}</h1>
+            <form class="d-flex justify-content-center col-12 col-lg-6 position-relative search-form" method="POST" action="{{ route('logout') }}">
+                 @csrf
                 <input type="text" class="form-control" placeholder="{!! $content['heroBannerSearchPlaceholder'] !!}" />
-                <button class="btn-yellow form-btn">{!! $content['heroBannerSearchButtonText'] !!}</button>
+                <button class="btn-yellow search-form-button">{!! $content['heroBannerSearchButtonText'] !!}</button>
             </form>
         </div>
     </div>
@@ -28,7 +41,7 @@
     <div class="container">
         <div class="row g-3">
             @foreach($content['serviceCards'] as $card)
-            <div class="col-6 custom-col-20">
+            <div class="service-card col-6 custom-col-20">
                 <div class="icon-box sh-custom-bg-light">
                     <img src="{!! asset($card['icon']) !!}" class="mb-2">
                     <p class="fw-bold mb-1">{!! $card['title'] !!}</p>
@@ -48,7 +61,7 @@
                 @if ($loop->iteration % 2 !== 0)
                     <div class="col-md-6">
                         <picture>
-                            <source srcset="{{ asset($section['images']['3x']) }}" media="(min-width: 1200px)">
+                            <source srcset="{{ asset($section['images']['3x']) }}" media="(min-width: 992px)">
                             <source srcset="{{ asset($section['images']['2x']) }}" media="(min-width: 768px)">
                             <img src="{{ asset($section['images']['1x']) }}" alt="{{ $section['title'] }}" class="img-fluid rounded">
                         </picture>
@@ -66,7 +79,7 @@
                     </div>
                     <div class="col-md-6">
                         <picture>
-                            <source srcset="{{ asset($section['images']['3x']) }}" media="(min-width: 1200px)">
+                            <source srcset="{{ asset($section['images']['3x']) }}" media="(min-width: 992px)">
                             <source srcset="{{ asset($section['images']['2x']) }}" media="(min-width: 768px)">
                             <img src="{{ asset($section['images']['1x']) }}" alt="{{ $section['title'] }}" class="img-fluid rounded">
                         </picture>

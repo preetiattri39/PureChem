@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Auth Swizchem')</title>
+    <title>@yield('title', 'Authentication - Swizchem')</title>
 
     <!-- No SEO indexing -->
     <meta name="robots" content="noindex, nofollow">

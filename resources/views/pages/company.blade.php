@@ -1,5 +1,16 @@
 @extends('layouts.main.mainLayout')
-@section('title', 'Welcome')
+
+@section('title', 'About Swizchem | Mission, Privacy & Business Strategy')
+@section('meta_description', 'Explore Swizchem’s mission, commitment to privacy, confidentiality standards, and strategic vision in ethical chemical solutions.')
+@section('meta_keywords', 'Swizchem, chemical company, mission statement, privacy policy, confidentiality agreement, sustainable strategy, custom synthesis, research chemicals')
+
+{{-- Open Graph for Facebook/LinkedIn --}}
+@section('og_title', View::getSection('title'))
+@section('og_description', View::getSection('meta_description'))
+
+{{-- Twitter Card --}}
+@section('twitter_title', View::getSection('title'))
+@section('twitter_description', View::getSection('meta_description'))
 
 @section('vite')
     @vite(['resources/js/pages/company.js', 'resources/css/pages/company.css'])
@@ -21,42 +32,32 @@
             <div class="row align-items-center g-5">
                 @if ($index % 2 === 0)
                     <div class="col-md-6">
-                        <h2 class="section-title">{{ $section['title'] }}</h2>
-                        <p>{{ $section['description'] }}</p>
-                        @if (!empty($section['buttonText']))
-                            <a href="#" class="btn-yellow mt-5">{{ $section['buttonText'] }}</a>
+                        <h2 class="section-title">{!! $section['title'] !!}</h2>
+                        <p>{!! $section['description'] !!}</p>
+                        @if (!empty($section['linkText']))
+                            <a href="{!! route($section['link']) !!}" class="btn-yellow mt-5">{!! $section['linkText'] !!}</a>
                         @endif
                     </div>
                     <div class="col-md-6">
-                        <img
-                            src="{{ asset($section['image']['1x']) }}"
-                            srcset="
-                                {{ asset($section['image']['1x']) }} 1x,
-                                {{ asset($section['image']['2x']) }} 2x,
-                                {{ asset($section['image']['3x']) }} 3x
-                            "
-                            alt="{{ $section['title'] }}"
-                            class="img-fluid rounded"
-                        >
+                        <picture>
+                            <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
+                            <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
+                            <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded">
+                        </picture>
                     </div>
                 @else
                     <div class="col-md-6">
-                        <img
-                            src="{{ asset($section['image']['1x']) }}"
-                            srcset="
-                                {{ asset($section['image']['1x']) }} 1x,
-                                {{ asset($section['image']['2x']) }} 2x,
-                                {{ asset($section['image']['3x']) }} 3x
-                            "
-                            alt="{{ $section['title'] }}"
-                            class="img-fluid rounded"
-                        >
+                        <picture>
+                            <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
+                            <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
+                            <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded">
+                        </picture>
                     </div>
                     <div class="col-md-6">
-                        <h2 class="section-title">{{ $section['title'] }}</h2>
-                        <p>{{ $section['description'] }}</p>
-                        @if (!empty($section['buttonText']))
-                            <a href="#" class="btn-yellow mt-5">{{ $section['buttonText'] }}</a>
+                        <h2 class="section-title">{!! $section['title'] !!}</h2>
+                        <p>{!! $section['description'] !!}</p>
+                        @if (!empty($section['linkText']))
+                            <a href="{!! route($section['link']) !!}" class="btn-yellow mt-5">{!! $section['linkText'] !!}</a>
                         @endif
                     </div>
                 @endif

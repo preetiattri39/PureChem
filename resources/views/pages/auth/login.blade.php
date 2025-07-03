@@ -1,48 +1,56 @@
-@extends('layouts.authLayout')
-@section('title', 'Login')
+@extends('layouts.main.mainLayout')
+
+@section('title', 'Login | Swizchem')
+@section('robots', 'noindex, nofollow')
+
+@section('vite')
+    @vite(['resources/js/pages/synthesis.js', 'resources/css/pages/synthesis.css'])
+@endsection
+
 @section('content')
-<div class="flex justify-center items-top gap-12 h-full shadow-red-500">
-    <div class="w-full md:w-1/2 lg:w-2/5 px-4 shadow-red-500">
-        <div class="bg-gray-200 rounded-lg p-8">
-            <div class="mb-6">
-                <h2 class="text-center text-[2.5rem] font-bold text-black my-4 wrap-break-word">{{__('messages.members_login')}}</h2>
-                <p class="mb-6 text-sm text-gray-600 text-center">
-                <strong>{{__('messages.note')}}:</strong> {{__('messages.login_note_1')}} <strong>{{__('messages.active_dir')}}.</strong>. {{__('messages.login_note_2')}} <strong>{{__('messages.admin')}}</strong> {{__('messages.login_note_3')}}
-                </p>
-            </div>
 
-            @if(session('ldap-auth-error'))
-                <div id="error_message" class="mb-4 p-4 rounded text-red-600 text-sm">
-                    {{ session('ldap-auth-error') }}
+<!-- Login Form Sections -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center justify-content-center g-5">
+            <div class="col-12 col-md-6 d-flex flex-column align-items-center"> 
+                <div class="form-section w-100">
+
+                    {{-- Validation Errors --}}
+                    @if ($errors->any())
+                        <div class="alert alert-danger form-submission-status">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Password</label>
+                            <input id="password" type="password" name="password" required class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+                        </div>
+
+                        <button type="submit" class="btn-yellow my-0 mx-auto d-block">Login</button>
+                        <div class="d-flex flex-column align-items-center mt-4">
+                            <p>Forgot <a href="{{ route('register') }}" target="_self">Username / Password?</a></p>
+                            <p>Don't have an account? <a href="{{ route('register') }}" target="_self">Sign up</a> </p>
+                        </div>
+                    </form>
+
                 </div>
-            @endif
-            
-            <form id="login" method="post" action="{{ url('/login') }}" method="POST">
-                @csrf
-            <div class="mb-4 relative">
-                <label for="username" class="sr-only">{{__('messages.username')}}</label>
-                <input type="text" name="username" id="username"
-                    class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black-500"
-                    placeholder="{{__('messages.username')}}" autocomplete="username" required>
-                <span class="absolute right-3 top-3 text-gray-400">
-                    <i class="fa fa-user"></i>
-                </span>
             </div>
-
-            <div class="mb-6 relative">
-                <input type="password" name="password" id="password"
-                    class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black-500"
-                    placeholder="**********" autocomplete="password" required>
-                <span class="absolute right-3 top-3 text-gray-400 cursor-pointer" onclick="handleChangeEyeIcon()">
-                    <i class="fa fa-eye"></i>
-                </span>
-            </div>
-
-            <div>
-                <input type="submit" value="{{ __('messages.sign_in') }}" id="signin" class="w-full bg-black hover:bg-red-600 text-white font-semibold py-3 rounded cursor-pointer">
-            </div>
-            </form>
         </div>
     </div>
-</div>
+</section>
+
 @endsection
