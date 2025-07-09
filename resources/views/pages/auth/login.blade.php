@@ -13,7 +13,7 @@
 <section class="py-5">
     <div class="container">
         <div class="row align-items-center justify-content-center g-5">
-            <div class="col-12 col-md-6 d-flex flex-column align-items-center"> 
+            <div class="col-12 col-lg-6 d-flex flex-column align-items-center"> 
                 <div class="form-section w-100">
 
                     {{-- Validation Errors --}}

@@ -13,7 +13,11 @@ use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Synthesis;
 
 Route::get('/', [Home::class, 'index'])->name('home');
+
 Route::get('/products', [Products::class, 'index'])->name('products.main');
+Route::get('/products/category/{id}', [Products::class, 'index'])->name('products.category');
+Route::get('/products/load-more', [Products::class, 'loadMore']);
+
 Route::get('/single-product', [Products::class, 'single'])->name('products.single');
 Route::get('/company', [Company::class, 'index'])->name('company');
 Route::get('/contact-us', [Contact::class, 'index'])->name('contact');

@@ -26,6 +26,7 @@
   --color-muted: #666666;
   --color-border: #cccCCC;
   --color-black-light-1: #333333;
+  --color-loader-bg : rgba(225, 225, 225, 0.5);
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -369,6 +370,16 @@ textarea.form-control {
 /* ==================================================
    Pages Common Classes
 ================================================== */
+#sh-loader{
+    background-color: var(--color-loader-bg);
+    z-index: 9999;
+}
+
+#sh-loader i{
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
 .section-title {
     font-weight: bold;
     font-size: var(--font-size-heading);

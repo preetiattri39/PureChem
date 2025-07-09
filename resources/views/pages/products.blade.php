@@ -23,13 +23,14 @@
 <section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container">
         <div class="row">
-           <div class="col-12 d-flex flex-column justify-content-center align-items-center gap-4">
-                <h1 class="display-6 fw-bold col-12 col-lg-6 text-center">Chemical Catalog - Complete Products List</h1>
-                <form class="d-flex justify-content-center col-12 col-lg-6 position-relative search-form">
-                    <input type="text" class="form-control" placeholder="Search by chemical name or CAS" />
-                    <button class="btn-yellow search-form-button">Search</button>
-                </form>
-            </div>
+            <x-chemical-search
+                title="Chemical Catalog - Complete Products List"
+                placeholder="Search by chemical name or CAS"
+                :action="route('products.main')"
+                method="GET"
+                button-text="Search"
+                form-value="{{ $_GET['search'] ?? '' }}"
+            />
         </div>
     </div>
 </section>
@@ -43,52 +44,40 @@
                 <div class="sidebar">
                     <h5>Category</h5>
                     <ul class="d-flex flex-column gap-3 list-unstyled">
+                        <li><a href="{{ route('products.main') }}">All Products</a></li>
                         @foreach($allCategories as $category)
-                        <li><a href="#">{{ $category['name'] ?? 'N\A' }}</a></li>
+                        <li><a href="{{ route('products.category',['id' => $category['id']]) }}">{{ $category['name'] ?? 'N\A' }}</a></li>
                         @endforeach
                     </ul>
                 </div>
             </div>
             <!-- Product List -->
             <div class="col-md-9">
+                @if(count($products))
                 <div class="d-flex flex-row justify-content-center justify-content-sm-between align-items-center mb-3 flex-wrap">
                     <h2 class="section-title">All Products</h2>
-                    <select class="form-select sort-by w-auto">
-                        <option selected>Sort By</option>
-                        <option>Name</option>
-                        <option>Availability</option>
-                        <option>Popular products</option>
-                        <option>Newly added chemicals</option>
+                    <select id="sort-select" class="form-select sort-by w-auto">
+                        <option selected disabled>Sort By</option>
+                        <option value="name_asc">Name A-Z</option>
+                        <option value="name_desc">Name Z-A</option>
+                        <option value="date_asc">Date ASC</option>
+                        <option value="date_desc">Date DESC</option>
+                        <option value="availability">Availability</option>
                     </select>
                 </div>
-                <div class="row g-3">
-                    <!-- Product Card Example -->
-                    @foreach($products as $product)
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <div class="product-card">
-                            <a href="{{ route('products.single') }}">
-                                <div class="product-image">
-                                    <img src="{{ asset('images/compounds/image 10.png') }}"" alt="Chemical">
-                                </div>
-                            </a>
-                            <div class="product-content">
-                                <a href="{{ route('products.single') }}">
-                                    <h6>{{ $product['name'] ?? 'N\A' }}</h6>
-                                </a>
-                                <p class="mb-1"><strong>Cas:</strong> {{ $product['cas_number'] ?? 'N\A' }}</p>
-                                <p class="mb-1"><strong>Formula:</strong> {{ $product['molecular_formula'] ?? 'N\A' }}</p>
-                                <p class="mb-3"><strong>MW:</strong> 411.453</p>
-                                <button href="{{route('cart')}}" class="btn-yellow mx-auto d-block">Request For Quote</button>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                    
-                    <!-- Show More -->
-                    <div class="text-center mt-4">
-                        <button class="btn btn-outline-primary">Show More Products</button>
-                    </div>
+                <div id="product-container" data-page="2" data-category="{{ request()->route('category_id') ?? '' }}" data-search="{{ request('search') ?? '' }}" data-sort="" class="row g-3">
+                    @include('partials.product-cards', ['products' => $products])
                 </div>
+                
+                @if($hasMore)
+                    <div class="text-center mt-4">
+                        <button id="load-more" class="btn btn-outline-primary">Show More Products</button>
+                    </div>
+                @endif
+                
+                @else
+                    <div class="text-center py-3 no-products" > No products found!</div>
+                @endif
             </div>
         </div>
     </div>

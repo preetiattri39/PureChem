@@ -23,16 +23,17 @@
 <section class="hero">
     <div class="container">
         <div class="col-12 text-center mb-5">
-            <button class="btn-yellow">{!! $content['heroBannerButtonText'] !!}</button>
+            <a href="{{ route('custom-synthesis') }}" class="btn-yellow">{!! $content['heroBannerButtonText'] !!}</a>
         </div>
-        <div class="col-12 d-flex flex-column justify-content-center align-items-center gap-4">
-            <h1 class="display-4 fw-bold col-12 col-lg-6 text-center">{!! $content['heroBannerTitle'] !!}</h1>
-            <form class="d-flex justify-content-center col-12 col-lg-6 position-relative search-form" method="POST" action="{{ route('logout') }}">
-                 @csrf
-                <input type="text" class="form-control" placeholder="{!! $content['heroBannerSearchPlaceholder'] !!}" />
-                <button class="btn-yellow search-form-button">{!! $content['heroBannerSearchButtonText'] !!}</button>
-            </form>
-        </div>
+        <x-chemical-search
+            title="Chemical Catalog - Complete Products List"
+            placeholder="Search by chemical name or CAS"
+            :action="route('products.main')"
+            method="GET"
+            button-text="Search"
+            :form-value="request('search')"
+            required=true
+        />
     </div>
 </section>
 

@@ -16,17 +16,15 @@
     @yield('vite')
 
 </head>
-<body class="">
-
-    <div id="page-loader" class="">
-        <i class=""></i>
-    </div>
+<body>
+    <!-- Loader for ajax calls-->
+    <x-loader />
 
     <!-- Header -->
     @include('partials.header')
 
     <!-- Main Content -->
-        @yield('content')
+    @yield('content')
 
     <!-- Footer -->
     @include('partials.footer')
