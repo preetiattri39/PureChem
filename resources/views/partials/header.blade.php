@@ -31,7 +31,7 @@
             </div>
             <div class="d-flex justify-content-between gap-4 order-2 order-lg-3">
                 @foreach($globalHeaderData['other'] as $item)
-                <a class="profile-icon fs-6 sh-custom-text-accent position-relative {{ Auth::check() ? 'user-logged-in' : '' }}" href="{{ Auth::check() ? '#' : route($item['url']) }}">
+                <a class="profile-icon fs-6 sh-custom-text-accent position-relative {{ Auth::check() ? 'user-logged-in' : '' }}" href="{{ Auth::check() && $item['title'] === 'Login'? '#' : route($item['url']) }}">
                     
                     <i class="{{ $item['icon'] }}" aria-hidden="true" style="color: rgb(40, 67, 93);"></i>
                     <span class="small" >

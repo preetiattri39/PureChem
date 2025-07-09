@@ -15,6 +15,7 @@ use Illuminate\Support\Str;
 use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\RegisterResponse;
+use Laravel\Fortify\Contracts\LoginResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,13 @@ class FortifyServiceProvider extends ServiceProvider
                 Auth::logout();
                 session()->flash('success', 'Registration successful. Welcome to Swizchem! <a href="' . route('login') . '" target="_self">Click here to Login!</a>');
                 return redirect('/register');
+            }
+        });
+
+        $this->app->instance(LoginResponse::class, new class implements LoginResponse {
+            public function toResponse($request)
+            {
+                return redirect('/');
             }
         });
     }
