@@ -13,7 +13,7 @@
 @section('twitter_description', View::getSection('meta_description'))
 
 @section('vite')
-    @vite(['resources/js/pages/conatact.js', 'resources/css/pages/contact.css'])
+    @vite(['resources/css/pages/contact.css'])
 @endsection
 
 @section('content')

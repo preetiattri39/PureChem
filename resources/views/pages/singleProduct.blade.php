@@ -3,7 +3,7 @@
 @section('title', 'Single Product | Research Chemical | Swizchem')
 
 @section('vite')
-    @vite(['resources/js/pages/single-product.js', 'resources/css/pages/single-product.css'])
+    @vite(['resources/css/pages/single-product.css'])
 @endsection
 
 @section('content')

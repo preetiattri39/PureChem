@@ -14,7 +14,7 @@
 
 
 @section('vite')
-    @vite(['resources/js/pages/home.js', 'resources/css/pages/home.css'])
+    @vite(['resources/css/pages/home.css'])
 @endsection
 
 @section('content')

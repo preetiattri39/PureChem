@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
 export default defineConfig({
     plugins: [
@@ -18,9 +19,15 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/script.js',
                 'resources/js/pages/synthesis.js',
+                'resources/js/pages/products.js',
             ],
             refresh: true,
         }),
         tailwindcss(),
     ],
+    resolve: {
+        alias: {
+            '/images': path.resolve(__dirname, 'public/images'),
+        },
+    },
 });

@@ -4,7 +4,7 @@
 @section('robots', 'noindex, nofollow')
 
 @section('vite')
-    @vite(['resources/js/pages/chat.js', 'resources/css/pages/chat.css'])
+    @vite(['resources/css/pages/chat.css'])
 @endsection
 
 
