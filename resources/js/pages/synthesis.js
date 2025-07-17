@@ -1,11 +1,11 @@
 $(function(){
 
-    function nextStep() {
+    window.nextStep = () => {
         $('.step-1').addClass('d-none');
         $('.step-2').removeClass('d-none');
     }
 
-    function prevStep() {
+    window.prevStep = ()=>{
         $('.step-2').addClass('d-none');
         $('.step-1').removeClass('d-none');
     }

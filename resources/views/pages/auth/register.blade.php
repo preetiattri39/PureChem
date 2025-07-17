@@ -111,9 +111,9 @@
                                 <input type="text" id="postal_code" name="postal_code" class="form-control" placeholder="Postal Code" value="{{ old('postal_code') }}">
                             </div>
                         </div>
-                        <button type="submit" class="btn-yellow my-0 mx-auto d-block">Register</button>
+                        <button type="submit" class="btn-yellow my-0 mx-auto d-block" onclick="$('#sh-loader').removeClass('d-none')">Register</button>
                         <div class="d-flex flex-column align-items-center mt-4">
-                            <p>Forgot <a href="{{ route('register') }}" target="_self">Username / Password?</a></p>
+                            <p>Forgot <a href="{{ route('password.request') }}" target="_self">Username / Password?</a></p>
                             <p>Already have an account? <a href="{{ route('login') }}" target="_self">Login</a> </p>
                         </div>
                     </form>

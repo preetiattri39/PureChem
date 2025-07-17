@@ -127,8 +127,8 @@
 </section>
 <section class="py-5">
     <div class="container">
-        <div class="row g-3">
-            <div class="col-md-6 offset-md-3">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
                 <div class="form-wrap">
                     <form id="multiStepForm">
                         <!-- Step 1 -->
@@ -138,20 +138,20 @@
                                 <h2 class="section-title">Ready to Synthesize Your Next Compound?</h2>
                                 <p class="text-center">Form with below details - Upload your structure, share your specs, and our chemists will follow up with a quote and lead time.</p>
                             </div>
-                            <div class="form-section">
-                                <div class="mb-4">
+                            <div class="row form-section">
+                                <div class="col-md-6 mb-4">
                                     <label for="molecule-name">Molecule name</label>
                                     <input type="text" class="form-control" placeholder="Molecule name">
                                 </div>
-                                <div class="mb-4">
+                                <div class="col-md-6 mb-4">
                                     <label for="purity">Purity</label>
                                     <input type="text" class="form-control" placeholder="Purity">
                                 </div>
-                                <div class="mb-4">
+                                <div class="col-md-6 mb-4">
                                     <label for="molecular-weight">Molecular weight</label>
                                     <input type="text" class="form-control" placeholder="Molecular weight">
                                 </div>
-                                <div class="mb-4">
+                                <div class="col-md-6 mb-4">
                                     <label for="quantity">Quantity</label>
                                     <select class="form-select">
                                         <option>Quantity</option>
@@ -200,7 +200,7 @@
                             </div>
                         </div>
                         <!-- Step 2 -->
-                        <div class="step step-2">
+                        <div class="step step-2 d-none">
                             <div class="row g-3 text-center mb-3">
                                 <h6 class="subtitle mb-0">Login or Register</h6>
                                 <h2 class="section-title">Enter credentials to request for order</h2>

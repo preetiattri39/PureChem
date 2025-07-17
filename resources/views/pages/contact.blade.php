@@ -34,25 +34,42 @@
                 <div class="form-wrap">
                     <div class="form-section">
                         <div class="section-title">{{ $content['formHeading']  }}</div>
-                        <form>
+                        
+                        <form method="POST" action="{{ route('contact.form.submission') }}">
+                            @csrf
+                            
+                            @if(session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            
                             <div class="mb-4">
                                 <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" placeholder="Name">
+                                @error('name') <p class="text-danger mt-1">{{ $message }}</p> @enderror
                             </div>
+
                             <div class="mb-4">
                                 <label>Email</label>
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+                                @error('email') <p class="text-danger mt-1">{{ $message }}</p> @enderror
                             </div>
+
                             <div class="mb-4">
                                 <label>Phone Number</label>
-                                <input type="text" class="form-control" placeholder="Phone number">
+                                <input type="text" name="phone" value="{{ old('phone') }}" class="form-control @error('phone') is-invalid @enderror" placeholder="Phone number">
+                                @error('phone') <p class="text-danger mt-1">{{ $message }}</p> @enderror
                             </div>
+
                             <div class="mb-4">
                                 <label>Special Instructions</label>
-                                <textarea class="form-control" placeholder="Special Instructions" rows="5"></textarea>
+                                <textarea name="instructions" class="form-control @error('instructions') is-invalid @enderror" placeholder="Special Instructions" rows="5">{{ old('instructions') }}</textarea>
+                                @error('instructions') <p class="text-danger mt-1">{{ $message }}</p> @enderror
                             </div>
+
+                            <input type="text" name="website" style="display:none">
+
                             <div class="mt-4 d-flex flex-row gap-3 sh-custom-mt-xxl">
-                                    <button class="btn-yellow">Submit</button>
+                                <button type="submit" class="btn-yellow" onclick="$('#sh-loader').removeClass('d-none')">Submit</button>
                             </div>
                         </form>
                     </div>

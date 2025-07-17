@@ -370,6 +370,11 @@ textarea.form-control {
 /* ==================================================
    Pages Common Classes
 ================================================== */
+
+.sh-break-all {
+  word-break: break-all;
+}
+
 #sh-loader{
     background-color: var(--color-loader-bg);
     z-index: 9999;

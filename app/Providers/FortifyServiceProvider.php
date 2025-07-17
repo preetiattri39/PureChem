@@ -16,6 +16,8 @@ use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\LoginResponse;
+use Laravel\Fortify\Contracts\SuccessfulPasswordResetLinkRequestResponse;
+use Laravel\Fortify\Contracts\FailedPasswordResetLinkRequestResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -52,6 +54,14 @@ class FortifyServiceProvider extends ServiceProvider
 
         Fortify::registerView(function () {
             return view('pages.auth.register');
+        });
+
+        Fortify::requestPasswordResetLinkView(function () {
+            return view('pages.auth.forgotPassword');
+        });
+
+        Fortify::resetPasswordView(function () {
+            return view('pages.auth.resetPassword');
         });
 
         Fortify::createUsersUsing(CreateNewUser::class);

@@ -98,8 +98,9 @@ class Products extends Controller
 
 
 
-    public function single()
+    public function single($id)
     {
-        return view('pages.singleProduct');
+        $product = Product::findOrFail($id);
+        return view('pages.singleProduct', compact('product'));
     }
 }

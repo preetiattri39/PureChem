@@ -28,14 +28,13 @@
                     <img src="{{ asset('images/compounds/product-image.jpg') }}" alt="Product Structure" class="image">
                 </div>
             </div>
-            <div class="col-md-6 product-info">
-                <h2 class="section-title">Candesartan Methylester</h2>
-                <p><strong>Cas:</strong> 13481-44-0</p>
-                <p><strong>Catalogue Number:</strong> AISO0031I</p>
-                <p><strong>Purity:</strong> &gt;95%</p>
-                <p><strong>Molecular Formula:</strong> C25H21N3O3</p>
-                <p><strong>Molecular Weight:</strong> 411.453</p>
-                <p><strong>Synonym:</strong> 1H-Benzimidazole-7-carboxylicacid,1-[(2′cyano[1,1′-biphenyl]-4-yl)methyl]-2-ethoxy-Methyl ester</p>
+            <div class="col-md-6 product-info sh-break-all">
+                <h2 class="section-title">{{ $product['name'] }}</h2>
+                <p><strong>Cas:</strong>{{ $product['cas_number'] }}</p>
+                <p><strong>Purity:</strong> {{ $product['purity'] }}</p>
+                <p><strong>Molecular Formula:</strong> {{ $product['molecular_formula'] }}</p>
+                <p><strong>Molecular Weight:</strong> {{ $product['molecular_weight'] }}</p>
+                <p><strong>Synonym:</strong> {{ $product['synonym'] }}</p>
 
                 <div class="select-wrap">
                     <select class="form-select w-75">

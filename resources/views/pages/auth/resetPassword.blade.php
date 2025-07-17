@@ -1,6 +1,6 @@
 @extends('layouts.main.mainLayout')
 
-@section('title', 'Login | Swizchem')
+@section('title', 'Reset Password | Swizchem')
 @section('robots', 'noindex, nofollow')
 
 @section('vite')
@@ -16,6 +16,13 @@
             <div class="col-12 col-lg-6 d-flex flex-column align-items-center"> 
                 <div class="form-section w-100">
 
+                    {{-- Session Status --}}
+                    @if (session('status'))
+                        <div class="alert alert-success form-submission-status">
+                            {!! session('status') !!}
+                        </div>
+                    @endif
+
                     {{-- Validation Errors --}}
                     @if ($errors->any())
                         <div class="alert alert-danger form-submission-status">
@@ -27,26 +34,24 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('password.update') }}">
                         @csrf
 
-                        <div class="mb-4">
-                            <label for="email" class="form-label">Email</label>
-                            <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus class="form-control @error('email') is-invalid @enderror" placeholder="Email">
-                        </div>
+                        <input type="hidden" name="token" value="{{ request()->route('token') }}">
+                        <input type="hidden" name="email" value="{{ request()->email }}">
 
                         <div class="mb-4">
                             <label for="password" class="form-label">Password</label>
                             <input id="password" type="password" name="password" required class="form-control @error('password') is-invalid @enderror" placeholder="Password">
                         </div>
 
-                        <button type="submit" class="btn-yellow my-0 mx-auto d-block" onclick="$('#sh-loader').removeClass('d-none')">Login</button>
-                        <div class="d-flex flex-column align-items-center mt-4">
-                            <p>Forgot <a href="{{ route('password.request') }}" target="_self">Username / Password?</a></p>
-                            <p>Don't have an account? <a href="{{ route('register') }}" target="_self">Sign up</a> </p>
+                        <div class="mb-4">
+                            <label for="password_confirmation" class="form-label">Confirm Password</label>
+                            <input id="password_confirmation" type="password" name="password_confirmation" required class="form-control" placeholder="Password">
                         </div>
-                    </form>
 
+                        <button type="submit" class="btn-yellow my-0 mx-auto d-block" onclick="$('#sh-loader').removeClass('d-none')">Reset Password</button>
+                    </form>
                 </div>
             </div>
         </div>
