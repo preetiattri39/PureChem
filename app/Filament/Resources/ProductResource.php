@@ -55,13 +55,13 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('product_code')->label('Code')->sortable()->searchable(),
-                TextColumn::make('name')->sortable()->searchable(),
-                TextColumn::make('compound_family')->label('Family')->limit(20),
-                TextColumn::make('category.name')->label('Category')->sortable()->searchable(),
-                IconColumn::make('out_of_stock')->boolean(fn ($state) => $state == 0)->label('Out of Stock'),
-                TextColumn::make('cas_number')->label('CAS #'),
-                TextColumn::make('molecular_formula')->label('Formula'),
-                TextColumn::make('molecular_weight')->label('Weight'),
+                TextColumn::make('name')->label('Name')->sortable()->searchable(),
+                TextColumn::make('category.name')->label('Category'),
+                IconColumn::make('out_of_stock')
+                    ->label('Out of Stock')
+                    ->boolean(fn ($state) => $state == 0)
+                    ->trueColor('success')
+                    ->falseColor('danger'),
             ])
             ->filters([
                 //
