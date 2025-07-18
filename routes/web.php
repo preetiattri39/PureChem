@@ -13,12 +13,8 @@ use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Synthesis;
 use Livewire\Livewire;
 
-Livewire::setScriptRoute(function ($handle) {
-    return Route::get('/demo/swizchem-dev/public/livewire/livewire.js', $handle);
-});
-
-Livewire::setUpdateRoute(function($handle) {
-    return Route::get('/demo/swizchem-dev/public/livewire/update', $handle);
+Livewire::setUpdateRoute(function ($handle) {
+    return Route::post('/demo/swizchem-dev/public/livewire/update', $handle)->name('livewire.update');
 });
 
 Route::get('/', [Home::class, 'index'])->name('home');
