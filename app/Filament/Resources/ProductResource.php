@@ -15,6 +15,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
 
 class ProductResource extends Resource
 {
@@ -55,7 +58,7 @@ class ProductResource extends Resource
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('compound_family')->label('Family')->limit(20),
                 TextColumn::make('category.name')->label('Category')->sortable()->searchable(),
-                IconColumn::make('out_of_stock')->boolean()->label('Out of Stock'),
+                IconColumn::make('out_of_stock')->boolean(fn ($state) => $state == 0)->label('Out of Stock'),
                 TextColumn::make('cas_number')->label('CAS #'),
                 TextColumn::make('molecular_formula')->label('Formula'),
                 TextColumn::make('molecular_weight')->label('Weight'),
@@ -65,6 +68,7 @@ class ProductResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
