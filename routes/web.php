@@ -11,6 +11,11 @@ use App\Http\Controllers\Strategy;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Synthesis;
+use Livewire\Livewire;
+
+Livewire::setScriptRoute(function ($handle) {
+    return Route::get('/demo/swizchem-dev/public/livewire/livewire.js', $handle);
+});
 
 Route::get('/', [Home::class, 'index'])->name('home');
 
