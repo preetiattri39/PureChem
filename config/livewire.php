@@ -170,4 +170,5 @@ return [
     */
 
     'asset_url' => env('LIVEWIRE_ASSET_URL', null),
+    'url' => env('APP_URL', null),
 ];
