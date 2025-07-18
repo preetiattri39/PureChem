@@ -17,6 +17,10 @@ Livewire::setScriptRoute(function ($handle) {
     return Route::get('/demo/swizchem-dev/public/livewire/livewire.js', $handle);
 });
 
+Livewire::setUpdateRoute(function($handle) {
+    return Route::get('/demo/swizchem-dev/public/livewire/update', $handle);
+});
+
 Route::get('/', [Home::class, 'index'])->name('home');
 
 Route::get('/products', [Products::class, 'index'])->name('products.main');
