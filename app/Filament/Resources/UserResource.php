@@ -64,12 +64,6 @@ class UserResource extends Resource
                 TextColumn::make('name')->searchable(),
                 TextColumn::make('email')->searchable(),
                 TextColumn::make('phone')->label('Phone')->searchable(),
-                TextColumn::make('city')->label('City'),
-                TextColumn::make('country')->label('Country'),
-                TextColumn::make('company')->label('Company'),
-                TextColumn::make('purpose')->label('Purpose'),
-                TextColumn::make('province')->label('Province'),
-                TextColumn::make('postal_code')->label('Postal Code'),
                 BadgeColumn::make('role')
                     ->label('Role')
                     ->formatStateUsing(fn (string $state): string => match ($state) {
@@ -82,6 +76,8 @@ class UserResource extends Resource
                         'secondary' => fn (string $state): bool => $state === 'user',
                     ])
             ])
+            ->paginated([5, 10, 20])
+            ->defaultPaginationPageOption(5)
             ->filters([
                 //
             ])
