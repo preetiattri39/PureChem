@@ -32,6 +32,11 @@ class ProductResource extends Resource
                 TextInput::make('product_code')->label('Product Code')->maxLength(255),
                 TextInput::make('compound_family')->label('Compound Family')->maxLength(255),
                 TextInput::make('name')->required()->maxLength(255),
+                Select::make('category_id')
+                    ->label('Category')
+                    ->relationship('category', 'name')
+                    ->searchable()
+                    ->required(),
                 Textarea::make('synonym')->maxLength(65535),
                 TextInput::make('molecular_formula')->maxLength(255),
                 TextInput::make('molecular_weight')->numeric()->step(0.001),
