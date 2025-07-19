@@ -21,6 +21,8 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\BadgeColumn;
+use Illuminate\Database\Eloquent\Model;
+
 
 class UserResource extends Resource
 {
@@ -106,5 +108,20 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/create'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
+    }
+
+    public static function canEdit(Model $record): bool
+    {
+        return true;
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return true;
+    }
+
+    public static function canCreate(): bool
+    {
+        return true;
     }
 }
