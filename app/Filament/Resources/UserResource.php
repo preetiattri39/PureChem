@@ -28,58 +28,47 @@ class UserResource extends Resource
             ->schema([
                 TextInput::make('name')
                     ->required()
-                    ->maxLength(255)
-                    ->live(onBlur: true), // ✅ optimize reactivity
+                    ->maxLength(255),
 
                 TextInput::make('email')
                     ->email()
                     ->required()
-                    ->maxLength(255)
-                    ->live(onBlur: true), // ✅ only re-render on blur
+                    ->maxLength(255),
 
                 TextInput::make('password')
                     ->password()
-                    // ✅ only required when creating
                     ->required(fn (string $operation): bool => $operation === 'create')
-                    // ✅ only dehydrate (save) when not empty
                     ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
                     ->dehydrated(fn (?string $state): bool => filled($state))
                     ->label('Password'),
 
                 TextInput::make('phone')
                     ->label('Phone')
-                    ->maxLength(20)
-                    ->live(onBlur: true),
+                    ->maxLength(20),
 
                 TextInput::make('city')
                     ->label('City')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 TextInput::make('country')
                     ->label('Country')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 TextInput::make('company')
                     ->label('Company')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 TextInput::make('purpose')
                     ->label('Purpose')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 TextInput::make('province')
                     ->label('Province')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 TextInput::make('postal_code')
                     ->label('Postal Code')
-                    ->maxLength(20)
-                    ->live(onBlur: true),
+                    ->maxLength(20),
 
                 Select::make('role')
                     ->label('Role')

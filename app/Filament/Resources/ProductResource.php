@@ -29,18 +29,15 @@ class ProductResource extends Resource
             ->schema([
                 TextInput::make('product_code')
                     ->label('Product Code')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 TextInput::make('compound_family')
                     ->label('Compound Family')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 TextInput::make('name')
                     ->required()
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 Select::make('category_id')
                     ->label('Category')
@@ -49,38 +46,29 @@ class ProductResource extends Resource
                     ->required(),
 
                 Textarea::make('synonym')
-                    ->maxLength(65535)
-                    ->live(onBlur: true),
+                    ->maxLength(65535),
 
                 TextInput::make('molecular_formula')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 TextInput::make('molecular_weight')
                     ->numeric()
-                    ->step(0.001)
-                    ->live(onBlur: true),
+                    ->step(0.001),
 
                 TextInput::make('cas_number')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
                 TextInput::make('purity')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
-                Textarea::make('storage')
-                    ->live(onBlur: true),
+                Textarea::make('storage'),
 
                 TextInput::make('aspect')
-                    ->maxLength(255)
-                    ->live(onBlur: true),
+                    ->maxLength(255),
 
-                Textarea::make('patents')
-                    ->live(onBlur: true),
+                Textarea::make('patents'),
 
-                Textarea::make('uses')
-                    ->live(onBlur: true),
+                Textarea::make('uses'),
 
                 Toggle::make('out_of_stock')
                     ->label('Out of Stock'),
