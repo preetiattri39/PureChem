@@ -13,9 +13,9 @@ use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Synthesis;
 use Livewire\Livewire;
 
-Livewire::setUpdateRoute(function ($handle) {
-    return Route::post('/demo/swizchem-dev/public/livewire/update', $handle)->name('livewire.update');
-});
+// Livewire::setUpdateRoute(function ($handle) {
+//     return Route::post('/demo/swizchem-dev/public/livewire/update', $handle)->name('livewire.update');
+// });
 
 Route::get('/', [Home::class, 'index'])->name('home');
 

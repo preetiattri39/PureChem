@@ -18,7 +18,6 @@
 @endsection
 
 @section('content')
-
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">

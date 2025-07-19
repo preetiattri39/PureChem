@@ -169,7 +169,7 @@ return [
     |
     */
 
-    'asset_url' => env('LIVEWIRE_ASSET_URL', null),
-    'app_url' => env('APP_URL', null),
+    // 'asset_url' => env('LIVEWIRE_ASSET_URL', null),
+    // 'app_url' => env('APP_URL', null),
 
 ];
