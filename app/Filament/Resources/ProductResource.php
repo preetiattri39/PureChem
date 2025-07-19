@@ -63,6 +63,8 @@ class ProductResource extends Resource
                     ->trueColor('success')
                     ->falseColor('danger'),
             ])
+            ->paginated([5, 10, 20])
+            ->defaultPaginationPageOption(5)
             ->filters([
                 //
             ])
