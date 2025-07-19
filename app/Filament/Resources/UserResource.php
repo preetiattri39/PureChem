@@ -2,27 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Resources\Pages\Page;
-use App\Filament\Resources\UserResource\Pages\CreateUser;
-
 use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Hash;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\BadgeColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
-use Filament\Tables\Columns\BadgeColumn;
 use Illuminate\Database\Eloquent\Model;
-
 
 class UserResource extends Resource
 {
@@ -33,35 +25,76 @@ class UserResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-        ->schema([
-            TextInput::make('name')->required()->maxLength(255),
-            TextInput::make('email')->email()->required()->maxLength(255),
-            TextInput::make('password')
-                ->password()
-                ->required(fn (Page $livewire) => $livewire instanceof CreateUser)
-                ->dehydrateStateUsing(fn ($state) => filled($state) ? Hash::make($state) : null)
-                ->label('Password'),
-            TextInput::make('phone')->label('Phone')->maxLength(20),
-            TextInput::make('city')->label('City')->maxLength(255),
-            TextInput::make('country')->label('Country')->maxLength(255),
-            TextInput::make('company')->label('Company')->maxLength(255),
-            TextInput::make('purpose')->label('Purpose')->maxLength(255),
-            TextInput::make('province')->label('Province')->maxLength(255),
-            TextInput::make('postal_code')->label('Postal Code')->maxLength(20),
-            Select::make('role')
-                ->label('Role')
-                ->options([
-                    'admin' => 'Admin',
-                    'user' => 'User',
-                ])
-                ->required(),
-        ]);
+            ->schema([
+                TextInput::make('name')
+                    ->required()
+                    ->maxLength(255)
+                    ->live(onBlur: true), // ✅ optimize reactivity
+
+                TextInput::make('email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255)
+                    ->live(onBlur: true), // ✅ only re-render on blur
+
+                TextInput::make('password')
+                    ->password()
+                    // ✅ only required when creating
+                    ->required(fn (string $operation): bool => $operation === 'create')
+                    // ✅ only dehydrate (save) when not empty
+                    ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
+                    ->dehydrated(fn (?string $state): bool => filled($state))
+                    ->label('Password'),
+
+                TextInput::make('phone')
+                    ->label('Phone')
+                    ->maxLength(20)
+                    ->live(onBlur: true),
+
+                TextInput::make('city')
+                    ->label('City')
+                    ->maxLength(255)
+                    ->live(onBlur: true),
+
+                TextInput::make('country')
+                    ->label('Country')
+                    ->maxLength(255)
+                    ->live(onBlur: true),
+
+                TextInput::make('company')
+                    ->label('Company')
+                    ->maxLength(255)
+                    ->live(onBlur: true),
+
+                TextInput::make('purpose')
+                    ->label('Purpose')
+                    ->maxLength(255)
+                    ->live(onBlur: true),
+
+                TextInput::make('province')
+                    ->label('Province')
+                    ->maxLength(255)
+                    ->live(onBlur: true),
+
+                TextInput::make('postal_code')
+                    ->label('Postal Code')
+                    ->maxLength(20)
+                    ->live(onBlur: true),
+
+                Select::make('role')
+                    ->label('Role')
+                    ->options([
+                        'admin' => 'Admin',
+                        'user' => 'User',
+                    ])
+                    ->required(),
+            ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
-           ->columns([
+            ->columns([
                 TextColumn::make('id')->sortable(),
                 TextColumn::make('name')->searchable(),
                 TextColumn::make('email')->searchable(),
@@ -76,7 +109,7 @@ class UserResource extends Resource
                     ->colors([
                         'success' => fn (string $state): bool => $state === 'admin',
                         'secondary' => fn (string $state): bool => $state === 'user',
-                    ])
+                    ]),
             ])
             ->paginated([5, 10, 20])
             ->defaultPaginationPageOption(5)

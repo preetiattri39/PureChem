@@ -9,8 +9,22 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
-    protected $fillable = ['name', 'description'];
-
+    protected $fillable = [
+        'product_code',
+        'compound_family',
+        'name',
+        'category_id',
+        'synonym',
+        'molecular_formula',
+        'molecular_weight',
+        'cas_number',
+        'purity',
+        'storage',
+        'aspect',
+        'patents',
+        'uses',
+        'out_of_stock', 
+    ];
     public function variants(): HasMany
     {
         return $this->hasMany(ProductVariant::class);
