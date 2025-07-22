@@ -13,6 +13,7 @@ class Product extends Model
         'product_code',
         'compound_family',
         'name',
+        'structure',
         'category_id',
         'synonym',
         'molecular_formula',
@@ -23,7 +24,7 @@ class Product extends Model
         'aspect',
         'patents',
         'uses',
-        'out_of_stock', 
+        'out_of_stock',
     ];
     public function variants(): HasMany
     {
@@ -34,6 +35,4 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
-
 }
-

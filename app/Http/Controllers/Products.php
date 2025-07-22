@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 use App\Http\Controllers\Controller;
@@ -12,28 +12,37 @@ use App\Models\Category;
 
 class Products extends Controller
 {
-     public function index(Request $request, $categoryId = null)
+    public function index(Request $request, $categoryId = null)
     {
         try {
             $search = $request->query('search');
-            if($search !== null){
-               $products = Product::where('name', 'LIKE', "%{$search}%")->orWhere('cas_number', 'LIKE', "%{$search}%")->latest()->take(10)->get();
-            }elseif ($categoryId !== null) {
-                $categoryExist = Category::where('id', $categoryId)->exists();
+            if ($search !== null) {
+
+                $products = Product::where(function ($q) use ($search) {
+                    $q->where('name', 'LIKE', "%{$search}%")
+                        ->orWhere('cas_number', 'LIKE', "%{$search}%");
+                })->whereHas('category', function ($q) {
+                    $q->where('status', 1);
+                })->latest()->take(10)->get();
+            } elseif ($categoryId !== null) {
+
+                $categoryExist = Category::where('id', $categoryId)->where('status', 1)->exists();
                 if (!is_numeric($categoryId) || !$categoryExist) {
                     return abort(404, 'Invalid category ID.');
                 }
                 $products = Product::where('category_id', $categoryId)->latest()->take(10)->get();
             } else {
-                $products = Product::latest()->take(10)->get();
+
+                $products = Product::whereHas('category', function ($q) {
+                    $q->where('status', 1);
+                })->latest()->take(10)->get();
             }
 
             $hasMore = $products->count() > 9;
-            if($hasMore) $products = $products->take(9);
-            $allCategories = Category::all();
+            if ($hasMore) $products = $products->take(9);
+            $allCategories = Category::where('status', 1)->get();
 
-            return view('pages.products', compact('products', 'allCategories','hasMore'));
-
+            return view('pages.products', compact('products', 'allCategories', 'hasMore'));
         } catch (\Throwable $e) {
             Log::error('Error fetching products: ' . $e->getMessage(), [
                 'file' => $e->getFile(),

@@ -42,7 +42,7 @@
                         <picture>
                             <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
                             <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
-                            <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded">
+                            <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded" loading="lazy">
                         </picture>
                     </div>
                 @else
@@ -50,7 +50,7 @@
                         <picture>
                             <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
                             <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
-                            <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded">
+                            <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded" loading="lazy">
                         </picture>
                     </div>
                     <div class="col-md-6">

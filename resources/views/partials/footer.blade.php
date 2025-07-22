@@ -18,6 +18,7 @@
                     alt="Swizchem Logo"
                     class="logo"
                     style="height: 55px;"
+                    loading="lazy"
                 />
                 <p class="mt-3 footer-quote">{!! $globalFooterData['footer-quote'] !!}</p>
             </div>

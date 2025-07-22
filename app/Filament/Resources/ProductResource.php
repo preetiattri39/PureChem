@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductResource\Pages;
+use Illuminate\Database\Eloquent\Model;
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -11,22 +12,30 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
-use Illuminate\Database\Eloquent\Model;
+use Filament\Forms\Components\FileUpload;
+
 
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
+
+    protected static ?string $navigationGroup = 'Shop';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                FileUpload::make('structure')
+                    ->image()
+                    ->nullable(),
+
                 TextInput::make('product_code')
                     ->label('Product Code')
                     ->maxLength(255),
@@ -79,6 +88,8 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('structure')->square(),
+
                 TextColumn::make('product_code')
                     ->label('Code')
                     ->sortable()
@@ -94,7 +105,7 @@ class ProductResource extends Resource
 
                 IconColumn::make('out_of_stock')
                     ->label('Out of Stock')
-                    ->boolean(fn ($state) => $state == 0)
+                    ->boolean(fn($state) => $state == 0)
                     ->trueColor('success')
                     ->falseColor('danger'),
             ])

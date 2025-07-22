@@ -1,7 +1,7 @@
 <div class="col-12 col-md-6 col-xl-4">
     <div class="product-card">
         <div class="product-image">
-            <img src="{{ asset('images/compounds/image 10.png') }}" alt="Chemical">
+            <img src="{{ asset('images/compounds/image 10.png') }}" alt="Chemical" loading="lazy">
         </div>
         <div class="product-content">
             <h6>{{ $product['name'] ?? 'N\A' }}</h6>

@@ -20,7 +20,7 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
 
     public static function form(Form $form): Form
     {
@@ -37,9 +37,9 @@ class UserResource extends Resource
 
                 TextInput::make('password')
                     ->password()
-                    ->required(fn (string $operation): bool => $operation === 'create')
-                    ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
-                    ->dehydrated(fn (?string $state): bool => filled($state))
+                    ->required(fn(string $operation): bool => $operation === 'create')
+                    ->dehydrateStateUsing(fn(string $state): string => Hash::make($state))
+                    ->dehydrated(fn(?string $state): bool => filled($state))
                     ->label('Password'),
 
                 TextInput::make('phone')
@@ -90,14 +90,14 @@ class UserResource extends Resource
                 TextColumn::make('phone')->label('Phone')->searchable(),
                 BadgeColumn::make('role')
                     ->label('Role')
-                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                    ->formatStateUsing(fn(string $state): string => match ($state) {
                         'admin' => 'Admin',
                         'user' => 'User',
                         default => ucfirst($state),
                     })
                     ->colors([
-                        'success' => fn (string $state): bool => $state === 'admin',
-                        'secondary' => fn (string $state): bool => $state === 'user',
+                        'success' => fn(string $state): bool => $state === 'admin',
+                        'secondary' => fn(string $state): bool => $state === 'user',
                     ]),
             ])
             ->paginated([5, 10, 20])

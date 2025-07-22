@@ -70,6 +70,21 @@
                         </div>
 
                         <div class="row">
+                            {{-- <div class="col-md-12 mb-4">
+                                <label for="autocomplete">Address</label>
+                                <input 
+                                    type="text" 
+                                    id="autocomplete" 
+                                    name="address" 
+                                    class="form-control" 
+                                    placeholder="Start typing your address..." 
+                                    value="{{ old('address') }}"
+                                >
+                            </div>
+
+                            <input type="hidden" id="latitude" name="latitude">
+                            <input type="hidden" id="longitude" name="longitude"> --}}
+
                             <div class="col-md-6 mb-4">
                                 <label for="city">City</label>
                                 <input type="text" id="city" name="city" class="form-control" placeholder="City name" value="{{ old('city') }}">
@@ -122,5 +137,79 @@
         </div>
     </div>
 </section>
+<script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYfF79-FDb0HDZWonGwzCNYelnjADS2WY&libraries=places"
+    async defer>
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const input = document.getElementById('autocomplete');
+    if (!input) return;
+
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+        types: ['geocode'], 
+    });
+
+    autocomplete.addListener('place_changed', function() {
+        const place = autocomplete.getPlace();
+        if (!place.geometry) {
+            console.log("No details available for input: '" + place.name + "'");
+            return;
+        }
+
+        // Fill hidden lat/lng
+        document.getElementById('latitude').value = place.geometry.location.lat();
+        document.getElementById('longitude').value = place.geometry.location.lng();
+
+        // Clear previous values
+        document.getElementById('city').value = '';
+        document.getElementById('province').value = '';
+        document.getElementById('postal_code').value = '';
+        document.getElementById('country').value = '';
+
+        // Loop through address components
+        place.address_components.forEach(function(component) {
+            const types = component.types;
+
+            if (types.includes("locality")) {
+                // City
+                document.getElementById('city').value = component.long_name;
+            }
+
+            if (types.includes("administrative_area_level_1")) {
+                // Province / State
+                // if your <select> has options, you can set value directly if matches
+                let provinceSelect = document.getElementById('province');
+                let provinceName = component.long_name;
+                // Try to match option by text
+                for (let option of provinceSelect.options) {
+                    if (option.text.toLowerCase() === provinceName.toLowerCase()) {
+                        provinceSelect.value = option.value;
+                        break;
+                    }
+                }
+            }
+
+            if (types.includes("postal_code")) {
+                // Postal code
+                document.getElementById('postal_code').value = component.long_name;
+            }
+
+            if (types.includes("country")) {
+                // Country
+                let countrySelect = document.getElementById('country');
+                let countryName = component.long_name;
+                for (let option of countrySelect.options) {
+                    if (option.text.toLowerCase() === countryName.toLowerCase()) {
+                        countrySelect.value = option.value;
+                        break;
+                    }
+                }
+            }
+        });
+    });
+});
+</script>
 
 @endsection

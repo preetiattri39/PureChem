@@ -39,7 +39,7 @@
                     <picture>
                         <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
                         <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
-                        <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded">
+                        <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded" loading="lazy">
                     </picture>
                 </div>
                 <div class="col-md-6">
@@ -74,7 +74,7 @@
                     <picture>
                         <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
                         <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
-                        <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded">
+                        <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded" loading="lazy">
                     </picture>
                 </div>
             @endif
@@ -93,7 +93,7 @@
             @foreach ($our_process['steps'] as $step)
                 <div class="col-6 col-md-3">
                     <div class="icon-box">
-                        <img src="{{ asset($step['icon']) }}" class="mb-2" alt="{{ $step['title'] }}">
+                        <img src="{{ asset($step['icon']) }}" class="mb-2" alt="{{ $step['title'] }}" loading="lazy">
                         <p class="fw-bold mb-1">{{ $step['title'] }}</p>
                         <small class="mb-3 d-block">{{ $step['desc'] }}</small>
                     </div>
@@ -109,7 +109,7 @@
                 <picture>
                     <source srcset="{{ asset($quality['image']['3x']) }}" media="(min-width: 992px)">
                     <source srcset="{{ asset($quality['image']['2x']) }}" media="(min-width: 768px)">
-                    <img src="{{ asset($quality['image']['1x']) }}" alt="{!! $quality['title'] !!}" class="img-fluid rounded">
+                    <img src="{{ asset($quality['image']['1x']) }}" alt="{!! $quality['title'] !!}" class="img-fluid rounded" loading="lazy">
                 </picture>
             </div>
             <div class="col-md-6">
@@ -186,7 +186,7 @@
                                     <div class="mb-3 image-upload" onclick="document.getElementById('structureFile').click();">
                                         <input type="file" id="structureFile" hidden>
                                         <div>
-                                            <img src="https://img.icons8.com/ios/50/image.png" alt="upload icon"/>
+                                            <img src="https://img.icons8.com/ios/50/image.png" alt="upload icon" loading="lazy"/>
                                             <p class="mb-0">Image upload</p>
                                         </div>
                                     </div>
