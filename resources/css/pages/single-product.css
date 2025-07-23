@@ -26,8 +26,7 @@
 .select-wrap {
     display: flex;
     gap: var(--spacing-md-1); 
-    margin-top: var(--spacing-md-1);
-    margin-bottom: 0.9375rem;
+    margin: var(--spacing-md-1) 0 var(--spacing-xl) 0;
 }
 
 .select-wrap select {

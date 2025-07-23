@@ -7,7 +7,10 @@
 @endsection
 
 @section('content')
-
+@php 
+echo "<pre>";
+    print_r($variantsGrouped);
+ @endphp
 <section>
     <div class="container mt-4">
         <nav aria-label="breadcrumb">
@@ -37,18 +40,15 @@
                 <p><strong>Synonym:</strong> {{ $product['synonym'] }}</p>
 
                 <div class="select-wrap">
-                    <select class="form-select w-75">
-                        <option>Choose quantity</option>
-                        <option>1</option>
-                        <option>5</option>
-                        <option>10</option>
-                    </select>
                     <select class="form-select w-25">
                         <option>MG</option>
                         <option>G</option>
                     </select>
+                    <select class="form-select w-75">
+                        <option>Choose quantity</option>
+                    </select>
                 </div>
-                <button class="btn btn-request btn-yellow" href="cart.html">Request For Quote</button>
+                <button class="btn-request btn-yellow" href="cart.html">Request For Quote</button>
             </div>
         </div>
     </div>

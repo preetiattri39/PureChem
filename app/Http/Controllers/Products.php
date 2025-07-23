@@ -110,6 +110,7 @@ class Products extends Controller
     public function single($id)
     {
         $product = Product::findOrFail($id);
-        return view('pages.singleProduct', compact('product'));
+        $variantsGrouped = $product->variants->groupBy('unit');
+        return view('pages.singleProduct', compact('product','variantsGrouped'));
     }
 }
