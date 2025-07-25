@@ -27,7 +27,10 @@
         <div class="row align-items-start g-5">
             <div class="col-md-6">
                 <div class="featured-image">
-                    <img src="{{ asset('images/compounds/product-image.jpg') }}" alt="Product Structure" class="image">
+                    <img 
+                        src="{{ $product['structure'] ? asset('storage/' . $product['structure']) : asset('images/placeholder-image.webp') }}" 
+                        alt="Compound molecular structure" 
+                        loading="lazy" />
                 </div>
             </div>
             <div class="col-md-6 product-info sh-break-all">

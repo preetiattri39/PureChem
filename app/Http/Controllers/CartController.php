@@ -97,7 +97,7 @@ class CartController extends Controller
 
             if (!$cartItem) {
                 CartItem::create([
-                    'id'           => $cart->id,
+                    'cart_id'           => $cart->id,
                     'product_id'        => $productId,
                     'product_name'      => $productName,
                     'cas_number'        => $productCas,
@@ -108,12 +108,12 @@ class CartController extends Controller
 
             DB::commit();
 
-            $cartCounter = CartItem::where('cart_id', $cartItem->cart_id)->count() ?? 0;
+            $cartCounter = CartItem::where('cart_id', $cart->id)->count() ?? 0;
 
             return response()->json([
                 'status'  => 'success',
                 'message' => 'Product added to your cart!',
-                'cart-counter' => $cartCounter
+                'cart_counter' => $cartCounter
             ]);
 
         } catch (ValidationException $e) {
