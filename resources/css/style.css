@@ -39,6 +39,7 @@
   --spacing-xxl: 3.75rem;
 
   /* Border Radius */
+  --radius-xs: 0.2rem;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1.25rem;
@@ -159,6 +160,43 @@ header{
     width: 1rem;
     height: 1rem;
     text-align: center;
+}
+
+.user-menu{
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    background: var(--color-light-alt);
+    padding: 0.4rem 1.3rem;
+    font-size: 0.8rem !important;
+    border-radius: var(--radius-xs);
+    box-shadow: 0px 0px 5px 2px var(--color-light);
+}
+
+.user-menu::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent var(--color-light-alt) transparent;
+}
+
+.user-menu ul li:hover{
+    border-bottom: 2px solid var(--color-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#logout-form button{
+    font-size: 0.8rem;
+}
+
+#logout-form button:hover{
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 /* ==================================================
@@ -381,7 +419,7 @@ textarea.form-control {
 }
 
 #sh-loader i{
-    font-size: 2rem;
+    font-size: 4rem;
     color: var(--color-primary);
 }
 
@@ -439,6 +477,22 @@ section picture img{
   text-align: -webkit-match-parent;
 }
 
+.btn-outline-yellow {
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    border-radius: var(--radius-pill);
+    padding: var(--spacing-sm) var(--spacing-lg-1);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    align-content: center;
+    border: 1px solid var(--color-secondary);
+}
+.btn-outline-yellow:hover {
+    background: var(--color-secondary-light);
+    border-color: var(--color-secondary-light);
+    color: var(--color-white);
+} 
+
 /* ==================================================
    Media Queries
 ================================================== */
@@ -483,10 +537,10 @@ section picture img{
         background: transparent;
     }
     .navbar-nav li a:hover:after {
-        -webkit-animation: navbar 1.5s ease-in forwards;
+        animation: navbar 1.5s ease-in forwards;
     }
 
-    @-webkit-keyframes navbar {
+    @keyframes navbar {
         0% {
             width: 1px;
             top: 0;

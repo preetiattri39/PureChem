@@ -3,14 +3,13 @@
 @section('title', 'Single Product | Research Chemical | Swizchem')
 
 @section('vite')
-    @vite(['resources/css/pages/single-product.css'])
+    @vite(['resources/css/pages/single-product.css','resources/js/pages/single-product.js'])
 @endsection
 
 @section('content')
-@php 
-echo "<pre>";
-    print_r($variantsGrouped);
- @endphp
+<script>
+    window.productVariants = @json($variantsGrouped);
+</script>
 <section>
     <div class="container mt-4">
         <nav aria-label="breadcrumb">
@@ -39,16 +38,18 @@ echo "<pre>";
                 <p><strong>Molecular Weight:</strong> {{ $product['molecular_weight'] }}</p>
                 <p><strong>Synonym:</strong> {{ $product['synonym'] }}</p>
 
-                <div class="select-wrap">
-                    <select class="form-select w-25">
-                        <option>MG</option>
-                        <option>G</option>
-                    </select>
-                    <select class="form-select w-75">
-                        <option>Choose quantity</option>
-                    </select>
+                <div id="unit-quantity-selector" class="select-wrap">
+                    <select id="unitSelect" class="form-select w-25"></select>
+                    <select id="quantitySelect" class="form-select w-75"></select>
                 </div>
-                <button class="btn-request btn-yellow" href="cart.html">Request For Quote</button>
+                <form id="addToCartForm">
+                    @csrf
+                    <input  id="productInput" type="hidden" name="product_id" value="{{ $product['id'] }}">
+                    <input id="variantInput" type="hidden" name="product_variant_id" value="">
+                    <x-alert-success class="shadow-lg rounded-lg my-4 p-2" />
+                    <x-alert-error class="shadow-lg rounded-lg my-4 p-2" />
+                    <button type="submit" class="btn-request btn-yellow">Request For Quote</button>
+                </form>
             </div>
         </div>
     </div>

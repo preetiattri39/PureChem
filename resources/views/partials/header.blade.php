@@ -31,10 +31,10 @@
             </div>
             <div class="d-flex justify-content-between gap-4 order-2 order-lg-3">
                 @foreach($globalHeaderData['other'] as $item)
-                <a class="profile-icon fs-6 sh-custom-text-accent position-relative {{ Auth::check() ? 'user-logged-in' : '' }}" href="{{ Auth::check() && $item['title'] === 'Login'? '#' : route($item['url']) }}">
-                    
-                    <i class="{{ $item['icon'] }}" aria-hidden="true" style="color: rgb(40, 67, 93);"></i>
-                    <span class="small" >
+                <a class="profile-icon fs-6 sh-custom-text-accent position-relative" href="{{ (Auth::check() && $item['title'] === 'Login') ? '#' : route($item['url']) }}">
+
+                    <i class="{{ $item['icon'] }} {{ (Auth::check() && $item['title'] === 'Login') ? 'user-logged-in' : '' }}" aria-hidden="true" style="color: rgb(40, 67, 93);"></i>
+                    <span class="small {{ (Auth::check() && $item['title'] === 'Login') ? 'user-logged-in' : '' }}" >
                         @if($item['title'] === 'Login')
                             @guest 
                                 {{ $item['title'] }}
@@ -47,9 +47,27 @@
                             {{ $item['title'] }}
                         @endif
                     </span>
-                    
-                    @if($item['url'] === 'cart')
-                    <div class="nav-cart-items-counter">3</div>
+                    @if($item['url'] === 'cart.index')
+                        <div id="cart-count-display" class="nav-cart-items-counter">{{ cart_counter() }}</div>
+                    @endif
+
+                   @if($item['title'] === 'Login' && Auth::check())
+                        <div id="user-menu-block" class="user-menu d-none">
+
+                            <ul class="list-unstyled m-0 p-0">
+                                <li class="d-flex justify-content-center align-items-center gap-3 my-1">
+                                    <form method="POST" action="{{ route('logout') }}" id="logout-form">
+                                        @csrf
+                                        <button type="submit" class="btn btn-link p-0 m-0 d-flex align-items-center gap-2 text-decoration-none text-dark">
+                                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                            Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+
+                        </div>
+
                     @endif
                 </a>
                 @endforeach
@@ -57,4 +75,3 @@
         </div>
     </nav>
 </header>
-

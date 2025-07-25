@@ -4,7 +4,7 @@
 @section('robots', 'noindex, nofollow')
 
 @section('vite')
-    @vite(['resources/css/pages/cart.css'])
+    @vite(['resources/css/pages/cart.css','resources/js/pages/cart.js'])
 @endsection
 
 @section('content')
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <!-- Product List -->
-            <div class="col-md-9">
+            <div class="cart-product-listing col-md-9">
                 @if(!empty($cartItems))
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h3 class="fw-bold sh-custom-text-accent">RFQ Items</h3>
@@ -47,24 +47,26 @@
                                     <th>Product</th>
                                     <th>CAS</th>
                                     <th>Quantity</th>
-                                    <th>Price (USD)</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="product-title">Candesartan Methylester</td>
-                                    <td>13481-44-0</td>
-                                    <td>10MG</td>
-                                    <td>RFQ</td>
-                                    <td><button class="btn btn-sm btn-primary mt-0">Delete</button></td>
-                                </tr>
+                                @foreach ( $cartItems as $item )
+                                    <tr>
+                                        <td class="product-title">{{ $item['product_name'] }}</td>
+                                        <td>{{ $item['cas_number'] }}</td>
+                                        <td>{{ $item['quantity'] ? $item['quantity'] : 'N/A' }}</td>
+                                        <td><button class="delete-cart-item btn btn-sm btn-primary mt-0" data-id="{{ $item['id'] }}">Delete</button></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
+                    <x-alert-success class="shadow-lg rounded-lg p-2" />
+                    <x-alert-error class="shadow-lg rounded-lg p-2" />
                     <!-- Show More -->
                     <div class="d-flex flex-row gap-3 sh-custom-mt-xxl">
-                        <button class="btn btn-outline-yellow">Add More Producrs</button>
+                        <a href="{{ route('products.main') }}" class="btn btn-outline-yellow">Add More Products</a>
                         <button class="btn-yellow">Next</button>
                     </div>
                 </div>

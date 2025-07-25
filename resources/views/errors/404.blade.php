@@ -2,18 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>404 Not Found</title>
+    <title>404 Not Found - Swizchem</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite([])
+       @vite([
+        'resources/scss/app.scss',
+        'resources/css/style.css',
+        'resources/css/pages/404.css',
+        ])
+
+    <!-- No SEO indexing -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Security -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Basic icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon/favicon-32x32.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ asset('images/favicon/site.webmanifest') }}">
+
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-6">
-    <div class="text-center">
-        <h1 class="text-6xl font-bold text-red-600">{{ $exception->getStatusCode() ?? '403' }}</h1>
-        <h2 class="text-3xl font-semibold text-black mt-4">{{__('messages.page_not_found')}}</h2>
-        <p class="text-gray-600 mt-2">{{ $exception->getMessage() ?? __('messages.page_not_found_description')}}</p>
-        <a href="{{ url('/') }}" class="inline-block mt-6 px-6 py-3 bg-black text-white hover:bg-red-600 transition rounded">
-            {{__('messages.go_to_dashboard')}}
-        </a>
-    </div>
+<body class="">
+    <section class="py-5 sec-err">
+        <div class="container">
+            <div class="row g-5 text-center">
+                <h1 class="text-center m-0">Oops!</h1>
+                <h4>Something Went Wrong</h4>
+                <p class="text-center mt-0">The page you are looking for might have been removed <br>had its name changed or is temporarily unavailable.</p>
+                <div class="home-link">
+                    <a href="{{ url('/') }}" class="btn-yellow">Go to Homepage</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

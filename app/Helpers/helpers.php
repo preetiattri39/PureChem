@@ -1,4 +1,6 @@
 <?php
+use App\Models\CartItem;
+use Illuminate\Support\Facades\Auth;
 
 if (!function_exists('replace_shortcodes')) {
     function replace_shortcodes($content) 
@@ -27,5 +29,20 @@ if (!function_exists('replace_shortcodes')) {
         ];
 
         return str_replace(array_keys($shortcodes), array_values($shortcodes), $content);
+    }
+}
+
+if (!function_exists('cart_counter')) {
+    function cart_counter(): int
+    {
+        if (Auth::check()) {
+            $userId = Auth::id();
+
+            return CartItem::whereHas('cart', function ($q) use ($userId) {
+                $q->where('user_id', $userId);
+            })->count();
+        }
+
+        return count(session('cart', []));
     }
 }

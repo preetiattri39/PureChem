@@ -47,3 +47,9 @@
     font-size: var(--font-size-base);
     color: var(--color-accent) !important;
 }
+
+#unit-quantity-selector p{
+    background-color: var(--color-light);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+}

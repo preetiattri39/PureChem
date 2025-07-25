@@ -1,0 +1,1 @@
+<div id="{{ $id }}" {{ $attributes->merge(['class' => 'd-none request-response-block alert alert-danger form-submission-status']) }}></div>

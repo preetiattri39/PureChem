@@ -8,6 +8,9 @@
     <meta name="author" content="Swizchem">
     <meta name="robots" content="@yield('meta_description', 'index, follow')">
 
+    <!-- CSRF token for ajax calls -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Open Graph (Facebook/LinkedIn) -->
     <meta property="og:title" content="@yield('og_title', 'My Website')">
     <meta property="og:description" content="@yield('og_description', 'Description for social media')">

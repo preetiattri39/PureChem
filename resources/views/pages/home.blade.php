@@ -69,13 +69,13 @@
                     <div class="col-md-6">
                         <h2 class="section-title">{!! $section['title'] !!}</h2>
                         <p>{!! $section['description'] !!}</p>
-                        <a href="#" class="btn-yellow mt-3">{!! $section['learnMoreButtonText'] !!}</a>
+                        <a href="{{ route($section['link']) }}" class="btn-yellow mt-3">{!! $section['learnMoreButtonText'] !!}</a>
                     </div>
                 @else
                     <div class="col-md-6">
                         <h2 class="section-title">{!! $section['title'] !!}</h2>
                         <p>{!! $section['description'] !!}</p>
-                        <a href="#" class="btn-yellow mt-3">{!! $section['learnMoreButtonText'] !!}</a>
+                        <a href="{{ route($section['link']) }}" class="btn-yellow mt-3">{!! $section['learnMoreButtonText'] !!}</a>
                     </div>
                     <div class="col-md-6">
                         <picture>

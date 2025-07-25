@@ -20,7 +20,8 @@ class Products extends Controller
 
                 $products = Product::where(function ($q) use ($search) {
                     $q->where('name', 'LIKE', "%{$search}%")
-                        ->orWhere('cas_number', 'LIKE', "%{$search}%");
+                        ->orWhere('cas_number', 'LIKE', "%{$search}%")
+                        ->orWhere('molecular_formula', 'LIKE', "%{$search}%");
                 })->whereHas('category', function ($q) {
                     $q->where('status', 1);
                 })->latest()->take(10)->get();
