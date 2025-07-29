@@ -46,8 +46,8 @@ class ContactFormMail extends Mailable
         with: [
             'name'    => $this->formData['name'],
             'email'   => $this->formData['email'],
-            'phone'   => $this->formData['phone'] ?? '',
-            'bodyMessage' => $this->formData['message'] ?? '',
+            'phone'   => $this->formData['phone'] ?? '', 
+            'bodyMessage' => $this->formData['instructions'] ?? '',
         ],
     );
     }
