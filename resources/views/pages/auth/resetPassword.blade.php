@@ -42,12 +42,12 @@
 
                         <div class="mb-4">
                             <label for="password" class="form-label">Password</label>
-                            <input id="password" type="password" name="password" required class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+                            <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
                         </div>
 
                         <div class="mb-4">
                             <label for="password_confirmation" class="form-label">Confirm Password</label>
-                            <input id="password_confirmation" type="password" name="password_confirmation" required class="form-control" placeholder="Password">
+                            <input id="password_confirmation" type="password" name="password_confirmation" class="form-control" placeholder="Password">
                         </div>
 
                         <button type="submit" class="btn-yellow my-0 mx-auto d-block" onclick="$('#sh-loader').removeClass('d-none')">Reset Password</button>

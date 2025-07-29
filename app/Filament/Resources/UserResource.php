@@ -54,14 +54,6 @@ class UserResource extends Resource
                     ->label('Country')
                     ->maxLength(255),
 
-                TextInput::make('company')
-                    ->label('Company')
-                    ->maxLength(255),
-
-                TextInput::make('purpose')
-                    ->label('Purpose')
-                    ->maxLength(255),
-
                 TextInput::make('province')
                     ->label('Province')
                     ->maxLength(255),
@@ -70,13 +62,13 @@ class UserResource extends Resource
                     ->label('Postal Code')
                     ->maxLength(20),
 
-                Select::make('role')
-                    ->label('Role')
-                    ->options([
-                        'admin' => 'Admin',
-                        'user' => 'User',
-                    ])
-                    ->required(),
+                // Select::make('role')
+                //     ->label('Role')
+                //     ->options([
+                //         'admin' => 'Admin',
+                //         'user' => 'User',
+                //     ])
+                //     ->required(),
             ]);
     }
 

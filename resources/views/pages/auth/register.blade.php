@@ -39,12 +39,12 @@
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full Name" value="{{ old('name') }}" required>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Full Name" value="{{ old('name') }}">
                             </div>
 
                             <div class="col-md-6 mb-4">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
                             </div>
 
                             <div class="col-md-6 mb-4">
@@ -54,37 +54,16 @@
 
                             <div class="col-md-6 mb-4">
                                 <label for="password">Create Password</label>
-                                <input type="password" id="password" name="password" class="form-control" placeholder="Create Password" required>
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Create Password" autocomplete>
                             </div>
 
                             <div class="col-md-6 mb-4">
                                 <label for="password_confirmation">Confirm Password</label>
-                                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
+                                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Confirm Password" autocomplete>
                             </div>
-                        </div>
-
-                        <div class="d-flex align-items-center my-4">
-                            <hr class="flex-grow-1 border-dotted border-secondary">
-                            <span class="px-3 text-muted small">Address Information</span>
-                            <hr class="flex-grow-1 border-dotted border-secondary">
                         </div>
 
                         <div class="row">
-                            {{-- <div class="col-md-12 mb-4">
-                                <label for="autocomplete">Address</label>
-                                <input 
-                                    type="text" 
-                                    id="autocomplete" 
-                                    name="address" 
-                                    class="form-control" 
-                                    placeholder="Start typing your address..." 
-                                    value="{{ old('address') }}"
-                                >
-                            </div>
-
-                            <input type="hidden" id="latitude" name="latitude">
-                            <input type="hidden" id="longitude" name="longitude"> --}}
-
                             <div class="col-md-6 mb-4">
                                 <label for="city">City</label>
                                 <input type="text" id="city" name="city" class="form-control" placeholder="City name" value="{{ old('city') }}">
@@ -92,23 +71,12 @@
                             <div class="col-md-6 mb-4">
                                 <label for="country">Country</label>
                                 <select id="country" name="country" class="form-select">
-                                    <option value="">Select Country</option>
-                                    <option value="USA" {{ old('country') == 'USA' ? 'selected' : '' }}>USA</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <label for="company">Company / Organization</label>
-                                <input type="text" id="company" name="company" class="form-control" placeholder="Company/Organization name" value="{{ old('company') }}">
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <label for="purpose">Purpose</label>
-                                <select id="purpose" name="purpose" class="form-select">
-                                    <option value="">Select Purpose</option>
-                                    <option value="Research" {{ old('purpose') == 'Research' ? 'selected' : '' }}>Research</option>
-                                    <option value="Academic" {{ old('purpose') == 'Academic' ? 'selected' : '' }}>Academic</option>
+                                    <option value="" selected disabled>Select Country</option>
+                                    @foreach (get_all_countries() as $country)
+                                        <option value="{{ $country }}" {{ old('country') == $country ? 'selected' : '' }}>
+                                            {{ $country }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -116,10 +84,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <label for="province">Province</label>
-                                <select id="province" name="province" class="form-select">
-                                    <option value="">Select Province</option>
-                                    <option value="Alabama" {{ old('province') == 'Alabama' ? 'selected' : '' }}>Alabama</option>
-                                </select>
+                                <input type="province" id="province" name="province" class="form-control" placeholder="Province" value="{{ old('province') }}">
                             </div>
                             <div class="col-md-6 mb-4">
                                 <label for="postal_code">Postal Code</label>
@@ -137,79 +102,4 @@
         </div>
     </div>
 </section>
-<script 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYfF79-FDb0HDZWonGwzCNYelnjADS2WY&libraries=places"
-    async defer>
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const input = document.getElementById('autocomplete');
-    if (!input) return;
-
-    const autocomplete = new google.maps.places.Autocomplete(input, {
-        types: ['geocode'], 
-    });
-
-    autocomplete.addListener('place_changed', function() {
-        const place = autocomplete.getPlace();
-        if (!place.geometry) {
-            console.log("No details available for input: '" + place.name + "'");
-            return;
-        }
-
-        // Fill hidden lat/lng
-        document.getElementById('latitude').value = place.geometry.location.lat();
-        document.getElementById('longitude').value = place.geometry.location.lng();
-
-        // Clear previous values
-        document.getElementById('city').value = '';
-        document.getElementById('province').value = '';
-        document.getElementById('postal_code').value = '';
-        document.getElementById('country').value = '';
-
-        // Loop through address components
-        place.address_components.forEach(function(component) {
-            const types = component.types;
-
-            if (types.includes("locality")) {
-                // City
-                document.getElementById('city').value = component.long_name;
-            }
-
-            if (types.includes("administrative_area_level_1")) {
-                // Province / State
-                // if your <select> has options, you can set value directly if matches
-                let provinceSelect = document.getElementById('province');
-                let provinceName = component.long_name;
-                // Try to match option by text
-                for (let option of provinceSelect.options) {
-                    if (option.text.toLowerCase() === provinceName.toLowerCase()) {
-                        provinceSelect.value = option.value;
-                        break;
-                    }
-                }
-            }
-
-            if (types.includes("postal_code")) {
-                // Postal code
-                document.getElementById('postal_code').value = component.long_name;
-            }
-
-            if (types.includes("country")) {
-                // Country
-                let countrySelect = document.getElementById('country');
-                let countryName = component.long_name;
-                for (let option of countrySelect.options) {
-                    if (option.text.toLowerCase() === countryName.toLowerCase()) {
-                        countrySelect.value = option.value;
-                        break;
-                    }
-                }
-            }
-        });
-    });
-});
-</script>
-
 @endsection

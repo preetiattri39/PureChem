@@ -12,7 +12,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Synthesis;
 
-Route::get('/', [Home::class, 'index'])->name('home');
+Route::get('/', [Home::class, 'index'])->name('home'); 
 
 //fixed later group routing of products
 Route::get('/products', [Products::class, 'index'])->name('products.main');
@@ -30,7 +30,11 @@ Route::prefix('cart')->name('cart.')->group(function () {
     Route::delete('/delete/{cart_item_id}', [CartController::class, 'deleteFromCart'])->name('delete');
 });
 
-Route::get('/checkout', [Checkout::class, 'index'])->name('checkout');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/checkout', [Checkout::class, 'index'])->name('checkout');
+    Route::post('/checkout', [Checkout::class, 'checkout'])->name('checkout.submit');
+});
+
 Route::get('/chat', [Chat::class, 'index'])->name('chat');
 Route::get('/privacy', [Privacy::class, 'index'])->name('privacy');
 Route::get('/business-strategy', [Strategy::class, 'index'])->name('business.strategy');

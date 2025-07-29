@@ -39,7 +39,7 @@
 
                         <div class="mb-4">
                             <label for="email" class="form-label">Email</label>
-                            <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+                            <input id="email" type="email" name="email" value="{{ old('email') }}" autofocus class="form-control @error('email') is-invalid @enderror" placeholder="Email">
                         </div>
 
                         <button type="submit" class="btn-yellow my-0 mx-auto d-block" onclick="$('#sh-loader').removeClass('d-none')">Send Password Reset Link</button>

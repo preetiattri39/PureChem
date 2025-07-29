@@ -56,4 +56,28 @@
             {!! $globalFooterData['rights'] !!}
         </div>
     </div>
+
+    <!-- Footer Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            const input = document.getElementById('autocomplete');
+            if (!input) return;
+
+            const autocomplete = new google.maps.places.Autocomplete(input, {
+                types: ['geocode'], 
+            });
+
+            autocomplete.addListener('place_changed', function() {
+
+                const place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    console.log("No details available for input: '" + place.name + "'");
+                    return;
+                }
+
+                console.log(place.address_components);
+            });
+        });
+    </script>
 </footer>

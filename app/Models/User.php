@@ -27,8 +27,6 @@ class User extends Authenticatable implements FilamentUser
         'phone',
         'city',
         'country',
-        'company',
-        'purpose',
         'province',
         'postal_code',
         'role',
@@ -74,6 +72,14 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return $this->role === 'admin';
+        if ($panel->getId() === 'admin') {
+            return $this->role === 'admin';
+        }
+
+        if ($panel->getId() === 'user') {
+            return $this->role === 'user';
+        }
+
+        return false;
     }
 }

@@ -31,45 +31,59 @@
             </div>
             <div class="d-flex justify-content-between gap-4 order-2 order-lg-3">
                 @foreach($globalHeaderData['other'] as $item)
-                <a class="profile-icon fs-6 sh-custom-text-accent position-relative" href="{{ (Auth::check() && $item['title'] === 'Login') ? '#' : route($item['url']) }}">
+                    @php
+                        $isLogin = $item['title'] === 'Login';
+                        $isLoggedIn = Auth::check();
+                        $userName = $isLoggedIn ? Auth::user()->name : null;
+                        $routeUrl = $isLogin && $isLoggedIn ? '#' : route($item['url']);
+                    @endphp
 
-                    <i class="{{ $item['icon'] }} {{ (Auth::check() && $item['title'] === 'Login') ? 'user-logged-in' : '' }}" aria-hidden="true" style="color: rgb(40, 67, 93);"></i>
-                    <span class="small {{ (Auth::check() && $item['title'] === 'Login') ? 'user-logged-in' : '' }}" >
-                        @if($item['title'] === 'Login')
-                            @guest 
-                                {{ $item['title'] }}
-                            @endguest
+                    <div class="position-relative">
+                        <a class="profile-icon fs-6 sh-custom-text-accent d-flex align-items-center gap-1"
+                        href="{{ $routeUrl }}">
+                            <i class="{{ $item['icon'] }} {{ $isLogin && $isLoggedIn ? 'user-logged-in' : '' }}"
+                            style="color: rgb(40, 67, 93);" aria-hidden="true"></i>
 
-                            @auth
-                                {{ Auth::user()->name }}
-                            @endauth
-                        @else
-                            {{ $item['title'] }}
+                            <span class="small {{ $isLogin && $isLoggedIn ? 'user-logged-in' : '' }}">
+                                @if($isLogin)
+                                    @guest
+                                        {{ $item['title'] }}
+                                    @endguest
+
+                                    @auth
+                                        {{ $userName }}
+                                    @endauth
+                                @else
+                                    {{ $item['title'] }}
+                                @endif
+                            </span>
+
+                            @if($item['url'] === 'cart.index')
+                                <div id="cart-count-display" class="nav-cart-items-counter">{{ cart_counter() }}</div>
+                            @endif
+                        </a>
+
+                        {{-- Dropdown menu for logged-in user --}}
+                        @if($isLogin && $isLoggedIn)
+                            <div id="user-menu-block" class="user-menu d-none">
+                                <ul class="list-unstyled m-0 p-0">
+                                    <li class="d-flex justify-content-between align-items-center gap-3 px-2 my-2">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        <form method="POST" action="{{ route('logout') }}" id="logout-form">
+                                            @csrf
+                                            <button type="submit" class="btn btn-link p-0 m-0 d-flex align-items-center gap-2 text-decoration-none text-dark">
+                                                Logout
+                                            </button>
+                                        </form>
+                                    </li>
+                                    <li class="d-flex justify-content-between align-items-center gap-3 px-2 my-2">
+                                        <i class="fa fa-columns" aria-hidden="true"></i>
+                                        <a class="sh-inherit-color" href="{{ route('filament.user.pages.dashboard') }}">Dashboard</a>
+                                    </li>
+                                </ul>
+                            </div>
                         @endif
-                    </span>
-                    @if($item['url'] === 'cart.index')
-                        <div id="cart-count-display" class="nav-cart-items-counter">{{ cart_counter() }}</div>
-                    @endif
-
-                   @if($item['title'] === 'Login' && Auth::check())
-                        <div id="user-menu-block" class="user-menu d-none">
-
-                            <ul class="list-unstyled m-0 p-0">
-                                <li class="d-flex justify-content-center align-items-center gap-3 my-1">
-                                    <form method="POST" action="{{ route('logout') }}" id="logout-form">
-                                        @csrf
-                                        <button type="submit" class="btn btn-link p-0 m-0 d-flex align-items-center gap-2 text-decoration-none text-dark">
-                                            <i class="fa fa-sign-out" aria-hidden="true"></i>
-                                            Logout
-                                        </button>
-                                    </form>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                    @endif
-                </a>
+                    </div>
                 @endforeach
             </div>
         </div>

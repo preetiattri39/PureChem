@@ -26,11 +26,8 @@
     <section class="py-5 sec-err">
         <div class="container">
             <div class="row g-5 text-center">
-                <h1 class="text-center m-0 mb-4">404</h1>
-                <p class="text-center mt-0"> {!! $exception->getMessage() ?: '<strong>Page Not Found</strong> : The page you are looking for does not exist.' !!}</p>
-                <div class="home-link">
-                    <a href="{{ url('/') }}" class="btn-yellow">Go to Homepage</a>
-                </div>
+                <h1 class="text-center m-0 mb-4">503</h1>
+                <p class="text-center mt-0"> {!! $exception->getMessage() ?: '<strong>Service Unavailable</strong> : We\'re currently undergoing maintenance. Please check back soon.' !!}</p>
             </div>
         </div>
     </section>

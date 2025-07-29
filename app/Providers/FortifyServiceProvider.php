@@ -18,6 +18,8 @@ use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\SuccessfulPasswordResetLinkRequestResponse;
 use Laravel\Fortify\Contracts\FailedPasswordResetLinkRequestResponse;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -51,6 +53,16 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('pages.auth.login');
         });
+
+        // Fortify::authenticateUsing(function (Request $request) {
+        //     $user = User::where('email', $request->email)->first();
+        //     if ($user && Hash::check($request->password, $user->password)) {
+        //         if ($user->role === 'user') {
+        //             return $user;
+        //         }
+        //     }
+        //     return null;
+        // });
 
         Fortify::registerView(function () {
             return view('pages.auth.register');

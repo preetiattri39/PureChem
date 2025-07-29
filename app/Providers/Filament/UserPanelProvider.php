@@ -19,34 +19,31 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\FontProviders\GoogleFontProvider;
 
-class AdminPanelProvider extends PanelProvider
+class UserPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
-            ->id('admin')
-            ->path('admin')
-            ->login()
-            ->homeUrl("/")
+            ->id('user')
+            ->path('user')
             ->colors(['primary' => '#D1A744'])
+            ->profile()
+            ->homeUrl("/")
             ->font('Plus Jakarta Sans', provider: GoogleFontProvider::class)
             ->darkMode(false)
             ->brandName('Swizchem')
             ->brandLogo(asset('images/logo/swizchem-logo-3x.png'))
             ->favicon(asset('images/favicon/favicon.jpg'))
             ->brandLogoHeight('40px')
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(in: app_path('Filament/User/Resources'), for: 'App\\Filament\\User\\Resources')
+            ->discoverPages(in: app_path('Filament/User/Pages'), for: 'App\\Filament\\User\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/User/Widgets'), for: 'App\\Filament\\User\\Widgets')
             ->widgets([
-                \App\Filament\Widgets\ProductsStats::class,
-                \App\Filament\Widgets\UserStats::class,
-                \App\Filament\Widgets\OrdersChart::class,
-                \App\Filament\Widgets\UserChart::class,
+                // Widgets\AccountWidget::class,
+                // Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

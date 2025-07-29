@@ -25,7 +25,7 @@
             <a href="{{ route('custom-synthesis') }}" class="btn-yellow">{!! $content['heroBannerButtonText'] !!}</a>
         </div>
         <x-chemical-search
-            title="Chemical Catalog - Complete Products List"
+            title="{!! $content['heroBannerTitle'] !!}"
             placeholder="Search by chemical name or CAS"
             :action="route('products.main')"
             method="GET"

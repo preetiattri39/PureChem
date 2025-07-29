@@ -67,7 +67,7 @@
                     <!-- Show More -->
                     <div class="d-flex flex-row gap-3 sh-custom-mt-xxl">
                         <a href="{{ route('products.main') }}" class="btn btn-outline-yellow">Add More Products</a>
-                        <button class="btn-yellow">Next</button>
+                        <a href="{{ route('checkout') }}" class="btn-yellow">Next</a>
                     </div>
                 </div>
                 @else

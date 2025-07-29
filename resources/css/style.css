@@ -167,7 +167,7 @@ header{
     top: 2rem;
     left: 0;
     background: var(--color-light-alt);
-    padding: 0.4rem 1.3rem;
+    padding: 0.4rem;
     font-size: 0.8rem !important;
     border-radius: var(--radius-xs);
     box-shadow: 0px 0px 5px 2px var(--color-light);
@@ -186,18 +186,16 @@ header{
 
 .user-menu ul li:hover{
     border-bottom: 2px solid var(--color-secondary);
-    font-size: 0.9rem;
-    font-weight: 600;
+    background-color: var(--color-light);
 }
 
 #logout-form button{
     font-size: 0.8rem;
 }
 
-#logout-form button:hover{
-    font-size: 0.9rem;
-    font-weight: 600;
-}
+/* #logout-form button:hover{
+    background
+} */
 
 /* ==================================================
    Footer Classes
@@ -411,6 +409,10 @@ textarea.form-control {
 
 .sh-break-all {
   word-break: break-all;
+}
+
+.sh-inherit-color {
+    color: inherit !important;
 }
 
 #sh-loader{

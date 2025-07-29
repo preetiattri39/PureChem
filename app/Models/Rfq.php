@@ -9,7 +9,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Rfq extends Model
 {
-    protected $fillable = ['user_id', 'status'];
+    protected $fillable = [
+        'user_id',
+        'status',
+    ];
 
     public function user(): BelongsTo
     {
@@ -29,11 +32,6 @@ class Rfq extends Model
     public function shippingAddress(): HasOne
     {
         return $this->hasOne(ShippingAddress::class);
-    }
-
-    public function invoice(): HasOne
-    {
-        return $this->hasOne(Invoice::class);
     }
 }
 

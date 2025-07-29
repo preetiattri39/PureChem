@@ -16,7 +16,7 @@ export default defineConfig({
                 'resources/css/pages/products.css',
                 'resources/css/pages/single-product.css',
                 'resources/css/pages/synthesis.css',
-                'resources/css/pages/404.css',
+                'resources/css/pages/error.css',
                 'resources/js/app.js',
                 'resources/js/script.js',
                 'resources/js/pages/synthesis.js',

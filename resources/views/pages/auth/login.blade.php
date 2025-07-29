@@ -27,17 +27,24 @@
                         </div>
                     @endif
 
+                    {{-- Flash Errors --}}
+                    @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="mb-4">
                             <label for="email" class="form-label">Email</label>
-                            <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+                            <input id="email" type="email" name="email" value="{{ old('email') }}" autofocus class="form-control @error('email') is-invalid @enderror" placeholder="Email">
                         </div>
 
                         <div class="mb-4">
                             <label for="password" class="form-label">Password</label>
-                            <input id="password" type="password" name="password" required class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+                            <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
                         </div>
 
                         <button type="submit" class="btn-yellow my-0 mx-auto d-block" onclick="$('#sh-loader').removeClass('d-none')">Login</button>

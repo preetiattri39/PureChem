@@ -1,6 +1,6 @@
 <div class="col-12 d-flex flex-column justify-content-center align-items-center gap-4">
     <h1 class="display-6 fw-bold col-12 col-lg-6 text-center">
-        {{ $title }}
+        {!! $title !!}
     </h1>
 
     <form method="{{ $method }}" action="{{ $action }}" class="d-flex justify-content-center col-12 col-lg-6 position-relative search-form">
