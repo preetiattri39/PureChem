@@ -27,9 +27,7 @@
                     @if ($errors->any())
                         <div class="alert alert-danger form-submission-status">
                             <ul class="mb-0">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                                 {{ $errors->first() }}
                             </ul>
                         </div>
                     @endif
@@ -39,27 +37,27 @@
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Full Name" value="{{ old('name') }}">
+                                <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Full Name" value="{{ old('name') }}">
                             </div>
 
                             <div class="col-md-6 mb-4">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
-                            </div>
-
-                            <div class="col-md-6 mb-4">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone Number" value="{{ old('phone') }}">
+                                <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}">
                             </div>
 
                             <div class="col-md-6 mb-4">
                                 <label for="password">Create Password</label>
-                                <input type="password" id="password" name="password" class="form-control" placeholder="Create Password" autocomplete>
+                                <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Create Password" autocomplete>
                             </div>
 
                             <div class="col-md-6 mb-4">
                                 <label for="password_confirmation">Confirm Password</label>
                                 <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Confirm Password" autocomplete>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone Number" value="{{ old('phone') }}">
                             </div>
                         </div>
 
@@ -93,7 +91,7 @@
                         </div>
                         <button type="submit" class="btn-yellow my-0 mx-auto d-block" onclick="$('#sh-loader').removeClass('d-none')">Register</button>
                         <div class="d-flex flex-column align-items-center mt-4">
-                            <p>Forgot <a href="{{ route('password.request') }}" target="_self">Username / Password?</a></p>
+                            <p>Forgot <a href="{{ route('password.request') }}" target="_self">Password?</a></p>
                             <p>Already have an account? <a href="{{ route('login') }}" target="_self">Login</a> </p>
                         </div>
                     </form>

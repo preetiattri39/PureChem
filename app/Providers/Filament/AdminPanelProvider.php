@@ -18,6 +18,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\FontProviders\GoogleFontProvider;
+use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
+
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -29,6 +31,9 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->homeUrl("/")
+            ->plugins([
+                    FilamentEditProfilePlugin::make()
+                ])
             ->colors(['primary' => '#D1A744'])
             ->font('Plus Jakarta Sans', provider: GoogleFontProvider::class)
             ->darkMode(false)
@@ -61,6 +66,12 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                FilamentEditProfilePlugin::make()
+                ->setIcon('heroicon-o-user')
+                ->shouldShowDeleteAccountForm(false)
+                ->shouldShowBrowserSessionsForm(false)
             ]);
     }
 }

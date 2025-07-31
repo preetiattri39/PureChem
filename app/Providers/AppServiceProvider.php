@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Filament\Support\Assets\Css;
+use Filament\Support\Facades\FilamentAsset;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +30,9 @@ class AppServiceProvider extends ServiceProvider
 
         View::share('globalHeaderData', $headerData);
         View::share('globalFooterData', $footerData);
+
+        FilamentAsset::register([
+            Css::make('chat-stylesheet', __DIR__ . '/../../resources/css/pages/chat.css'),
+        ]);
     }
 }

@@ -6,6 +6,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -18,6 +19,9 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\FontProviders\GoogleFontProvider;
+use App\Livewire\AddressUserProfile;
+use Filament\Support\Assets\Css;
+use Filament\Support\Facades\FilamentAsset;
 
 class UserPanelProvider extends PanelProvider
 {
@@ -27,7 +31,6 @@ class UserPanelProvider extends PanelProvider
             ->id('user')
             ->path('user')
             ->colors(['primary' => '#D1A744'])
-            ->profile()
             ->homeUrl("/")
             ->font('Plus Jakarta Sans', provider: GoogleFontProvider::class)
             ->darkMode(false)
@@ -58,6 +61,15 @@ class UserPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                FilamentEditProfilePlugin::make()
+                ->setIcon('heroicon-o-user')
+                ->shouldShowDeleteAccountForm(false)
+                ->shouldShowBrowserSessionsForm(false)
+                ->customProfileComponents([
+                    AddressUserProfile::class,
+                ])
             ]);
     }
 }

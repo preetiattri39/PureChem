@@ -49,7 +49,7 @@
 
                         <button type="submit" class="btn-yellow my-0 mx-auto d-block" onclick="$('#sh-loader').removeClass('d-none')">Login</button>
                         <div class="d-flex flex-column align-items-center mt-4">
-                            <p>Forgot <a href="{{ route('password.request') }}" target="_self">Username / Password?</a></p>
+                            <p>Forgot <a href="{{ route('password.request') }}" target="_self">Password?</a></p>
                             <p>Don't have an account? <a href="{{ route('register') }}" target="_self">Sign up</a> </p>
                         </div>
                     </form>

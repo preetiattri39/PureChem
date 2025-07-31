@@ -13,7 +13,7 @@ class UserStats extends BaseWidget
     protected function getStats(): array
     {
         return [
-            Stat::make('Total Users', User::count())
+            Stat::make('Total Users', User::query()->where('role', '!=', 'admin')->count())
                 ->descriptionIcon('heroicon-o-user-group')
                 ->description('All registered users')
                 ->color('primary'),
@@ -34,7 +34,7 @@ class UserStats extends BaseWidget
 
     private function getNewCustomersCount(): int
     {
-        return User::whereMonth('created_at', now()->month)->count();
+        return User::query()->where('role', '!=', 'admin')->whereMonth('created_at', now()->month)->count();
     }
 
     private function getCustomerGrowth(): int

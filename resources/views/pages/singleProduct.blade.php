@@ -35,11 +35,16 @@
             </div>
             <div class="col-md-6 product-info sh-break-all">
                 <h2 class="section-title">{{ $product['name'] }}</h2>
-                <p><strong>Cas:</strong>{{ $product['cas_number'] }}</p>
-                <p><strong>Purity:</strong> {{ $product['purity'] }}</p>
-                <p><strong>Molecular Formula:</strong> {{ $product['molecular_formula'] }}</p>
-                <p><strong>Molecular Weight:</strong> {{ $product['molecular_weight'] }}</p>
-                <p><strong>Synonym:</strong> {{ $product['synonym'] }}</p>
+                <p><strong>Product Code :</strong> {{ $product['product_code'] ?? 'N/A' }}</p>
+                <p><strong>Cas :</strong> {{ $product['cas_number'] ?? 'N/A' }}</p>
+                <p><strong>Purity :</strong> {{ $product['purity'] ?? 'N/A' }}</p>
+                <p><strong>Molecular Formula :</strong> {{ $product['molecular_formula'] ?? 'N/A' }}</p>
+                <p><strong>Molecular Weight :</strong> {{ $product['molecular_weight'] ?? 'N/A' }}</p>
+                <p><strong>Synonym :</strong> {{ $product['synonym'] ?? 'N/A' }}</p>
+                <p><strong>Storage :</strong> {{ $product['storage'] ?? 'N/A' }}</p>
+                <p><strong>Aspect :</strong> {{ $product['aspect'] ?? 'N/A' }}</p>
+                <p><strong>Uses :</strong> {{ $product['uses'] ?? 'N/A' }}</p>
+
 
                 <div id="unit-quantity-selector" class="select-wrap">
                     <select id="unitSelect" class="form-select w-25"></select>
