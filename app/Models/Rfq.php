@@ -14,6 +14,34 @@ class Rfq extends Model
         'status',
     ];
 
+    public function getProductDetailsAttribute()
+    {
+        $structure = '<ul>';
+        $structure .=  $this->items->map(function ($item) {
+            $productName = $item->product->name ?? 'N/A';
+            $variantName = $item->quantity ?? 'N/A';
+            return "<li>{$productName} : <strong>{$variantName}</strong></li>";
+        })->implode('');
+        $structure .= '</ul>';
+
+        return $structure;
+    }
+
+    public function getRfqUserNameAttribute()
+    {
+        return $this->user->name;
+    }
+
+    public function getRfqUserEmailAttribute()
+    {
+        return $this->user->email;
+    }
+
+    public function getProductCountAttribute()
+    {
+        return $this->items->count();
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -32,6 +60,11 @@ class Rfq extends Model
     public function shippingAddress(): HasOne
     {
         return $this->hasOne(ShippingAddress::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'product_id');
     }
 }
 

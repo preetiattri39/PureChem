@@ -101,7 +101,8 @@ class ProductResource extends Resource
                     ->searchable(),
 
                 TextColumn::make('category.name')
-                    ->label('Category'),
+                    ->label('Category')
+                    ->searchable(),
 
                 IconColumn::make('out_of_stock')
                     ->label('Out of Stock')
@@ -110,6 +111,9 @@ class ProductResource extends Resource
                     ->falseColor('danger'),
             ])
             ->paginated([5, 10, 20])
+            ->emptyStateHeading('No records found')
+            ->emptyStateDescription('Please add product to show here!')
+            ->emptyStateIcon('heroicon-o-document-text')
             ->defaultPaginationPageOption(5)
             ->filters([
                 //

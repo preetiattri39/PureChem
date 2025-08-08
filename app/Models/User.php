@@ -65,11 +65,6 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasMany(Rfq::class);
     }
 
-    public function messages(): HasMany
-    {
-        return $this->hasMany(Message::class, 'sender_id');
-    }
-
     public function canAccessPanel(Panel $panel): bool
     {
         if ($panel->getId() === 'admin') {
@@ -81,5 +76,30 @@ class User extends Authenticatable implements FilamentUser
         }
 
         return false;
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'sender_id');
+    }
+
+    public function conversationsOne()
+    {
+        return $this->hasMany(Conversation::class, 'user_one_id');
+    }
+
+    public function conversationsTwo()
+    {
+        return $this->hasMany(Conversation::class, 'user_two_id');
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }

@@ -34,9 +34,9 @@ class MergeCartAfterLogin
                 $cart = Cart::firstOrCreate(['user_id' => $user->id]);
 
                 $existingItems = CartItem::where('cart_id', $cart->id)
-                    ->get(['product_id', 'product_variant_id'])
+                    ->get(['product_id', 'quantity'])
                     ->map(function ($item) {
-                        return $item['product_variant_id'] ? $item['product_id'].'-'.$item['product_variant_id'] : $item['product_id'];
+                        return $item['quantity'] ? $item['product_id'].'-'.$item['quantity'] : $item['product_id'];
                     })
                     ->toArray();
 
@@ -48,7 +48,6 @@ class MergeCartAfterLogin
                         $newItems[] = [
                             'cart_id'            => $cart->id,
                             'product_id'         => $item['product_id'],
-                            'product_variant_id' => $item['product_variant_id'],
                             'product_name'       => $item['product_name'],
                             'cas_number'         => $item['cas_number'],
                             'quantity'           => $item['quantity'],

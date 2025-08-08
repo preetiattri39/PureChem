@@ -13,6 +13,7 @@ class UserChart extends ChartWidget
     protected function getData(): array
     {
         $monthlyUsers = User::selectRaw('DATE_FORMAT(created_at, "%Y-%m") as month, COUNT(*) as count')
+            ->where('role', '!=', 'admin')
             ->groupBy('month')
             ->orderBy('month')
             ->pluck('count', 'month')

@@ -35,4 +35,14 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function invoiceItems()
+    {
+        return $this->hasMany(InvoiceItem::class);
+    }
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }

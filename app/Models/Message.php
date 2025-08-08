@@ -7,16 +7,28 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Message extends Model
 {
-    protected $fillable = ['rfq_id', 'sender_id', 'message', 'is_admin'];
+
+    protected $fillable = [
+        'sender_id',
+        'rfq_id',
+        'conversation_id',
+        'message',
+        'has_attachment',
+    ];
 
     public function rfq(): BelongsTo
     {
-        return $this->belongsTo(Rfq::class);
+        return $this->belongsTo(Rfq::class, 'rfq_id');
     }
 
-    public function sender(): BelongsTo
+    public function messageAttachments()
     {
-        return $this->belongsTo(User::class, 'sender_id');
+        return $this->hasMany(MessageAttachment::class, 'message_id');
+    }
+    
+    public function conversation()
+    {
+        return $this->belongsTo(Conversation::class, 'conversation_id');
     }
 }
 

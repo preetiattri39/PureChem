@@ -9,6 +9,7 @@
 @section('content')
 <script>
     window.productVariants = @json($variantsGrouped);
+    // console.log(window.productVariants)
 </script>
 <section>
     <div class="container mt-4">
@@ -53,10 +54,10 @@
                 <form id="addToCartForm">
                     @csrf
                     <input  id="productInput" type="hidden" name="product_id" value="{{ $product['id'] }}">
-                    <input id="variantInput" type="hidden" name="product_variant_id" value="">
+                    <input id="variantInput" type="hidden" name="product_variant" value="">
                     <x-alert-success class="shadow-lg rounded-lg my-4 p-2" />
                     <x-alert-error class="shadow-lg rounded-lg my-4 p-2" />
-                    <button type="submit" class="btn-request btn-yellow">Request For Quote</button>
+                    <button type="submit" class="btn-request btn-yellow">Add to cart</button>
                 </form>
             </div>
         </div>

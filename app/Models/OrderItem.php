@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class OrderItem extends Model
 {
@@ -12,11 +12,29 @@ class OrderItem extends Model
     protected $fillable = [
         'order_id',
         'product_id',
-        'product_variant_id',
+        'purity',
         'quantity',
-        'cas_number',
-        'product_name',
+        'units',
+        'price',
+        'total'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($item) {
+            $item->total = $item->quantity * $item->price;
+        });
+
+        static::saved(function ($item) {
+            $item->order->calculateTotals();
+        });
+
+        static::deleted(function ($item) {
+            $item->order->calculateTotals();
+        });
+    }
 
     public function order()
     {
@@ -26,10 +44,5 @@ class OrderItem extends Model
     public function product()
     {
         return $this->belongsTo(Product::class);
-    }
-
-    public function variant()
-    {
-        return $this->belongsTo(ProductVariant::class, 'product_variant_id');
     }
 }

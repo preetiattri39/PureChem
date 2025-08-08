@@ -23,6 +23,8 @@ class UserResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
+    protected static ?int $navigationSort = 99; 
+
     public static function form(Form $form): Form
     {
         return $form
@@ -94,6 +96,9 @@ class UserResource extends Resource
                     ]),
             ])
             ->paginated([5, 10, 20])
+            ->emptyStateHeading('No records found')
+            ->emptyStateDescription('No User has been registered yet!')
+            ->emptyStateIcon('heroicon-o-document-text')
             ->defaultPaginationPageOption(5)
             ->filters([
                 //

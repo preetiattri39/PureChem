@@ -36,38 +36,28 @@ class CartController extends Controller
     {
         try {
             $request->validate([
-                'product_id'         => 'required|exists:products,id',
-                'product_variant_id' => 'nullable|exists:product_variants,id',
+                'product_id' => 'required|exists:products,id',
+                'product_variant'   => 'nullable|in:5mg,10mg,20mg,50mg,100mg,200mg,250mg,5g,10g,20g,50g,100g,200g,250g',
             ]);
 
             $productId = $request->input('product_id');
-            $variantId = $request->input('product_variant_id') ?? null;
-
-            $quantityValue = '';
-            $unit = '';
-            if ($variantId) {
-                $variant = ProductVariant::find($variantId);
-                $quantityValue = $variant->quantity ?? '';
-                $unit = $variant->unit ?? '';
-            }
+            $quantity = $request->input('product_variant') ?? null;
 
             $product = Product::findOrFail($productId);
 
             $productName   = $product->name ?? '';
             $productCas    = $product->cas_number ?? '';
-            $productQtyStr = $quantityValue . $unit;
 
             if (!auth()->check()) {
                 $cart = session()->get('cart', []);
-                $key = $variantId ? $productId . '-' . $variantId : $productId;
+                $key = $quantity ? $productId . '-' . $quantity : $productId;
 
                 $cart[$key] = [
                     'id'                 => $key,
                     'product_id'         => $productId,
                     'product_name'       => $productName,
                     'cas_number'         => $productCas,
-                    'quantity'           => $productQtyStr,
-                    'product_variant_id' => $variantId,
+                    'quantity'           => $quantity,
                 ];
 
                 $cartCounter = count($cart) ?? 0;
@@ -89,8 +79,8 @@ class CartController extends Controller
             $query = CartItem::where('cart_id', $cart->id)
                 ->where('product_id', $productId);
 
-            if (!is_null($variantId) || $variantId !== '') {
-                $query->where('product_variant_id', $variantId);
+            if (!is_null($quantity) || $quantity !== '') {
+                $query->where('quantity', $quantity);
             }
 
             $cartItem = $query->first();
@@ -101,8 +91,7 @@ class CartController extends Controller
                     'product_id'        => $productId,
                     'product_name'      => $productName,
                     'cas_number'        => $productCas,
-                    'quantity'          => $productQtyStr,
-                    'product_variant_id'=> $variantId,
+                    'quantity'          => $quantity,
                 ]);
             }
 
@@ -120,7 +109,7 @@ class CartController extends Controller
             return response()->json([
                 'status'  => 'error',
                 'message' => 'Validation failed',
-                'errors'  => $e->errors()
+                // 'errors'  => $e->errors()
             ], 422);
 
         } catch (Throwable $e) {
@@ -134,7 +123,8 @@ class CartController extends Controller
 
             return response()->json([
                 'status'  => 'error',
-                'message' => 'Something went wrong while adding to cart. Please try again.'
+                'message' => 'Something went wrong while adding to cart. Please try again.',
+                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -187,7 +177,7 @@ class CartController extends Controller
             return response()->json([
                 'status'  => 'error',
                 'message' => 'Validation failed',
-                'errors'  => $e->errors()
+                // 'errors'  => $e->errors()
             ], 422);
 
         } catch (Throwable $e) {

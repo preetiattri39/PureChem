@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class RfqItem extends Model
 {
-    protected $fillable = ['rfq_id', 'product_id', 'product_variant_id', 'quantity'];
+    protected $fillable = ['rfq_id', 'product_id', 'quantity'];
 
     public function rfq(): BelongsTo
     {
         return $this->belongsTo(Rfq::class);
     }
 
-    public function productVariant(): BelongsTo
+    public function product(): BelongsTo
     {
-        return $this->belongsTo(ProductVariant::class);
+        return $this->belongsTo(Product::class);
     }
 }

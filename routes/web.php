@@ -39,3 +39,5 @@ Route::get('/chat', [Chat::class, 'index'])->name('chat');
 Route::get('/privacy', [Privacy::class, 'index'])->name('privacy');
 Route::get('/business-strategy', [Strategy::class, 'index'])->name('business.strategy');
 Route::get('/custom-synthesis', [Synthesis::class, 'index'])->name('custom-synthesis');
+
+Route::post('/webhook/update-order-status', [OrderController::class, 'updateOrderStatusFromWebhook']);

@@ -46,6 +46,10 @@ class CategoryResource extends Resource
                 TextColumn::make('description')->limit(50),
                 IconColumn::make('status')->boolean()->label('Active'),
             ])
+            ->paginated([5, 10, 20])
+            ->emptyStateHeading('No records found')
+            ->emptyStateDescription('Please add category variant to show here!')
+            ->emptyStateIcon('heroicon-o-document-text')
             ->filters([
                 //
             ])

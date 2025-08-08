@@ -12,6 +12,8 @@ $(function () {
         };
     }
 
+    console.log(getContext())
+
     function fetchProducts({ page, category_id, search, sort }, append = true) {
         $('#sh-loader').removeClass('d-none');
         axios.get('/products/load-more', {

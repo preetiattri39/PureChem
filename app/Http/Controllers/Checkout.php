@@ -24,7 +24,7 @@ class Checkout extends Controller
             $cartItems = $cart ? $cart->items->toArray() : [];
         } else {
             $cartItems = session('cart', []);
-        }
+        } 
 
         if (empty($cartItems)) {
             return redirect()->route('home');
@@ -82,13 +82,12 @@ class Checkout extends Controller
             ]);
 
             $rfqItems = $cartItems->map(function ($item) use ($rfq) {
-                return [
+                return [ 
                     'rfq_id' => $rfq->id,
                     'product_id' => $item->product_id,
-                    'product_variant_id' => $item->product_variant_id,
                     'quantity' => $item->quantity,
                     'created_at' => now(),
-                    'updated_at' => now(),
+                    'updated_at' => now(), 
                 ];
             })->toArray();
 
@@ -99,14 +98,14 @@ class Checkout extends Controller
 
             DB::commit();
 
-            return redirect()->route('chat')->with('success', 'Checkout completed successfully.');
+            return redirect()->route('filament.user.pages.thread',['rfqId'=> $rfq->id])->with('checkout_success', 'Checkout completed successfully. You can chat here with the admin, if you have any query.');
 
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Checkout Error : '.$e->getMessage(), [
                 'trace' => $e->getTraceAsString()
             ]);
-            return redirect()->back()->withInput()->withErrors(['error' => $e->getMessage()]);
+            return redirect()->back()->withInput()->withErrors(['error' => $e->getMessage()]); 
         }
     }
 

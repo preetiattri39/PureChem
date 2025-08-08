@@ -159,7 +159,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label for="special-instructions">Special Instructions</label>
-                                    <textarea class="form-control" placeholder="Special Instructions" rows="3"></textarea>
+                                    <textarea class="form-control" placeholder="Lead time, synthesis model and any other details" rows="3"></textarea>
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label d-block">Structure Image Requirement?</label>

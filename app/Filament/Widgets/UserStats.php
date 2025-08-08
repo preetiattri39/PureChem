@@ -6,63 +6,72 @@ use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use App\Models\User;
 use App\Models\Order;
+use Carbon\Carbon;
 
 class UserStats extends BaseWidget
 {
     protected static ?int $sort = 1;
+
     protected function getStats(): array
     {
+        [$userChartData, $userGrowth] = $this->getMonthlyData(User::class, 'created_at', 'role', '!=', 'admin');
+        [$orderChartData, $orderGrowth] = $this->getMonthlyData(Order::class, 'created_at');
+
+        $userChartArray = $userChartData->toArray();
+        $orderChartArray = $orderChartData->toArray();
+
         return [
-            Stat::make('Total Users', User::query()->where('role', '!=', 'admin')->count())
+            Stat::make('Total Users', User::where('role', '!=', 'admin')->count())
                 ->descriptionIcon('heroicon-o-user-group')
                 ->description('All registered users')
                 ->color('primary'),
 
-            Stat::make('New Users (This Month)', $this->getNewCustomersCount())
-                ->description($this->getCustomerGrowth() . ' % ' . ($this->isCustomerGrowthPositive() ? 'increase' : 'decrease'))
-                ->descriptionIcon($this->isCustomerGrowthPositive() ? 'heroicon-o-arrow-trending-up' : 'heroicon-o-arrow-trending-down')
-                ->color($this->isCustomerGrowthPositive() ? 'success' : 'danger')
-                ->chart([7, 2, 10, 3, 15, 4, 17]),
+            Stat::make('New Users (This Month)', end($userChartArray))
+                ->description($userGrowth . ' % ' . ($userGrowth >= 0 ? 'increase' : 'decrease'))
+                ->descriptionIcon($userGrowth >= 0 ? 'heroicon-o-arrow-trending-up' : 'heroicon-o-arrow-trending-down')
+                ->color($userGrowth >= 0 ? 'success' : 'danger')
+                ->chart(array_values($userChartArray)),
 
-            Stat::make('New Orders', $this->getNewOrdersCount())
-                ->description($this->getOrderGrowth() . ' % ' . ($this->isOrderGrowthPositive() ? 'increase' : 'decrease'))
-                ->descriptionIcon($this->isOrderGrowthPositive() ? 'heroicon-o-arrow-trending-up' : 'heroicon-o-arrow-trending-down')
-                ->color($this->isOrderGrowthPositive() ? 'success' : 'danger')
-                ->chart([7, 2, 10, 3, 15, 4, 17]),
+            Stat::make('New Orders (This Month)', end($orderChartArray))
+                ->description($orderGrowth . ' % ' . ($orderGrowth >= 0 ? 'increase' : 'decrease'))
+                ->descriptionIcon($orderGrowth >= 0 ? 'heroicon-o-arrow-trending-up' : 'heroicon-o-arrow-trending-down')
+                ->color($orderGrowth >= 0 ? 'success' : 'danger')
+                ->chart(array_values($orderChartArray)),
         ];
     }
 
-    private function getNewCustomersCount(): int
+    /**
+     * Get chart data and growth % for last 7 months.
+     */
+    private function getMonthlyData(string $modelClass, string $dateField, string $filterColumn = null, string $operator = null, $value = null): array
     {
-        return User::query()->where('role', '!=', 'admin')->whereMonth('created_at', now()->month)->count();
-    }
+        $months = collect(range(6, 0))->map(function ($i) {
+            return now()->copy()->subMonths($i);
+        });
 
-    private function getCustomerGrowth(): int
-    {
-        $current = User::whereMonth('created_at', now()->month)->count();
-        $last = User::whereMonth('created_at', now()->subMonth()->month)->count();
-        return $last > 0 ? round((($current - $last) / $last) * 100) : 0;
-    }
+        $monthlyCounts = $months->mapWithKeys(function ($date) use ($modelClass, $dateField, $filterColumn, $operator, $value) {
+            $query = $modelClass::query()
+                ->whereYear($dateField, $date->year)
+                ->whereMonth($dateField, $date->month);
 
-    private function isCustomerGrowthPositive(): bool
-    {
-        return $this->getCustomerGrowth() >= 0;
-    }
+            if ($filterColumn) {
+                $query->where($filterColumn, $operator, $value);
+            }
 
-    private function getNewOrdersCount(): int
-    {
-        return Order::whereMonth('created_at', now()->month)->count();
-    }
+            $count = $query->count();
+            $key = $date->format('M Y');
+            return [$key => $count];
+        });
 
-    private function getOrderGrowth(): int
-    {
-        $current = Order::whereMonth('created_at', now()->month)->count();
-        $last = Order::whereMonth('created_at', now()->subMonth()->month)->count();
-        return $last > 0 ? round((($current - $last) / $last) * 100) : 0;
-    }
+        $counts = array_values($monthlyCounts->toArray());
 
-    private function isOrderGrowthPositive(): bool
-    {
-        return $this->getOrderGrowth() >= 0;
+        // Calculate growth %
+        $lastMonth = $counts[5] ?? 0;
+        $currentMonth = $counts[6] ?? 0;
+        $growth = $lastMonth > 0
+            ? round((($currentMonth - $lastMonth) / $lastMonth) * 100)
+            : ($currentMonth > 0 ? 100 : 0);
+
+        return [$monthlyCounts, $growth];
     }
 }

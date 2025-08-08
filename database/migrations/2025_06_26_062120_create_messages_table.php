@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('rfq_id')->constrained()->onDelete('cascade');
-            $table->foreignId('sender_id')->nullable()->constrained('users')->onDelete('cascade');
+            $table->unsignedBigInteger('sender_id')->after('id');
+            $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
             $table->text('message');
             $table->boolean('is_admin')->default(false);
             $table->timestamps();

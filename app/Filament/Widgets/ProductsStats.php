@@ -14,13 +14,13 @@ class ProductsStats extends BaseWidget
     {
         return [
             Stat::make('Total Products', Product::count())
-                ->descriptionIcon('heroicon-o-cube')
+                ->descriptionIcon('heroicon-o-squares-2x2')
                 ->description('All products in database')
-                ->color('primary'),
+                ->color('primary'), 
 
             Stat::make('Total Variants', ProductVariant::count())
                 ->description('All product variants')
-                ->descriptionIcon('heroicon-o-square-3-stack-3d')
+                ->descriptionIcon('heroicon-o-cube')
                 ->color('primary')
         ];
     }

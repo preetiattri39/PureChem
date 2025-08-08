@@ -1,6 +1,6 @@
 $(function () {
     const units = Object.keys(window.productVariants);
-    console.log(productVariants)
+    // console.log(productVariants)
     if(units.length){
         const $unitSelect = $('#unitSelect');
         const $quantitySelect = $('#quantitySelect');
@@ -18,11 +18,11 @@ $(function () {
             const variants = window.productVariants[unit] || [];
             $.each(variants, function (i, v) {
                 $quantitySelect.append($('<option>', {
-                    value: v.id,
+                    value: v.quantity+v.unit,
                     text: v.quantity
                 }));
             });
-            if(variants.length) variantInputValue(variants[0].id)
+            if(variants.length) variantInputValue(variants[0].quantity+variants[0].unit)
         }
 
         function variantInputValue(value){

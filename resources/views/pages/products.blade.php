@@ -44,9 +44,9 @@
                 <div class="sidebar">
                     <h5>Category</h5>
                     <ul class="d-flex flex-column gap-3 list-unstyled">
-                        <li><a href="{{ route('products.main') }}">All Products</a></li>
+                        <li class="{{ !Request::route('id') ? 'sidebar-active-category' : '' }}"><a href="{{ route('products.main') }}">All Products</a></li>
                         @foreach($allCategories as $category)
-                        <li><a href="{{ route('products.category',['id' => $category['id']]) }}">{{ $category['name'] ?? 'N\A' }}</a></li>
+                        <li class="{{ Request::route('id') == $category['id'] ? 'sidebar-active-category' : '' }}"><a href="{{ route('products.category',['id' => $category['id']]) }}">{{ $category['name'] ?? 'N\A' }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -65,7 +65,7 @@
                         <option value="availability">Availability</option>
                     </select>
                 </div>
-                <div id="product-container" data-page="2" data-category="{{ request()->route('category_id') ?? '' }}" data-search="{{ request('search') ?? '' }}" data-sort="" class="row g-3">
+                <div id="product-container" data-page="2" data-category="{{ request()->route('id') ?? '' }}" data-search="{{ request('search') ?? '' }}" data-sort="" class="row g-3">
                     @include('partials.product-cards', ['products' => $products])
                 </div>
                 

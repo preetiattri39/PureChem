@@ -111,7 +111,28 @@ class Products extends Controller
     public function single($id)
     {
         $product = Product::findOrFail($id);
-        $variantsGrouped = $product->variants->groupBy('unit');
+        // $variantsGrouped = $product->variants->groupBy('unit');
+
+        $variantsGrouped = [
+            'mg' => [
+                ['quantity' => '5', 'unit' => 'mg'],
+                ['quantity' => '10', 'unit' => 'mg'],
+                ['quantity' => '20', 'unit' => 'mg'],
+                ['quantity' => '50', 'unit' => 'mg'],
+                ['quantity' => '100', 'unit' => 'mg'],
+                ['quantity' => '200', 'unit' => 'mg'],
+                ['quantity' => '250', 'unit' => 'mg'],
+            ],
+            'g' => [
+                ['quantity' => '5', 'unit' => 'g'],
+                ['quantity' => '10', 'unit' => 'g'],
+                ['quantity' => '20', 'unit' => 'g'],
+                ['quantity' => '50', 'unit' => 'g'],
+                ['quantity' => '100', 'unit' => 'g'],
+                ['quantity' => '200', 'unit' => 'g'],
+                ['quantity' => '250', 'unit' => 'g'],
+            ],
+        ];
         return view('pages.singleProduct', compact('product','variantsGrouped'));
     }
 }
