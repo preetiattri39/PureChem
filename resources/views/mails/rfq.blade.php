@@ -74,15 +74,15 @@
             
             <div class="contact-info">
                 <div class="contact-item">
-                    <span class="contact-icon"><img src="{{ asset('images/icons/mail-phone.png') }}" /></span>
+                    <span class="contact-icon"><img src="{{ asset('images/icons/mail-phone.png') }}"  width='15' height='15' /></span>
                     +358 46 5534360
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon"><img src="{{ asset('images/icons/mail-email.png') }}" /></span>
+                    <span class="contact-icon"><img src="{{ asset('images/icons/mail-email.png') }}"  width='15' height='15' /></span>
                     manvatt@swizchem.com
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon"><img src="{{ asset('images/icons/mail-globe.png') }}" /></span>
+                    <span class="contact-icon"><img src="{{ asset('images/icons/mail-globe.png') }}"  width='15' height='15' /></span>
                     www.swizchem.com
                 </div>
             </div>
