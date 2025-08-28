@@ -124,21 +124,10 @@ body {
 
 .social-icon {
     display: inline-block;
-    width: 40px;
-    height: 40px;
     margin: 0 8px;
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 16px;
 }
 
 .social-icon:hover {
-    background-color: rgba(255,255,255,0.3);
     transform: translateY(-2px);
 }
 

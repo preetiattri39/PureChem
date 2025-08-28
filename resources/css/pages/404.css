@@ -1,0 +1,17 @@
+.sec-err {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec-err h1 {
+    font-size: 150px;
+    font-weight: 800;
+    font-family: var(--font-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url('/images/web/swizchem-banner-3x.webp');
+    color: transparent;
+    background-position: center;
+    background-size: cover;
+}
