@@ -17,16 +17,16 @@ class CreateInvoice extends CreateRecord
         return $this->getResource()::getUrl('index');
     }
 
-    protected function afterCreate(): void
-    {
-        $invoice = $this->record;
+    // protected function afterCreate(): void
+    // {
+    //     $invoice = $this->record;
         
-        $order = Order::createFromInvoice($invoice);
+    //     $order = Order::createFromInvoice($invoice);
         
-        Notification::make()
-            ->title('Invoice and Order Created Successfully')
-            ->body("Invoice {$invoice->invoice_number} and Order {$order->order_id} have been created.")
-            ->success()
-            ->send();
-    }
+    //     Notification::make()
+    //         ->title('Invoice and Order Created Successfully')
+    //         ->body("Invoice {$invoice->invoice_number} and Order {$order->order_id} have been created.")
+    //         ->success()
+    //         ->send();
+    // }
 }

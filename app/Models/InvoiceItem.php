@@ -23,7 +23,8 @@ class InvoiceItem extends Model
         parent::boot();
 
         static::saving(function ($item) {
-            $item->total = $item->quantity * $item->price;
+            // $item->total = $item->quantity * $item->price;
+            $item->total = $item->price;
         });
 
         static::saved(function ($item) {

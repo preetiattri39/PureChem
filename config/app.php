@@ -123,4 +123,16 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Webhook Token
+    |--------------------------------------------------------------------------
+    |
+    | This token is used by the laravel to authenticate the request comes from zapier
+    | to update the order status in the database.
+    |
+    */
+
+    'webhook_token' => env('WEBHOOK_TOKEN'),
+
 ];

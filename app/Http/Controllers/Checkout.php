@@ -14,6 +14,8 @@ use App\Models\RfqItem;
 use App\Models\Product;
 use App\Models\ProductVariant;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\FormSubmissionMail;
 
 class Checkout extends Controller
 {
@@ -71,30 +73,42 @@ class Checkout extends Controller
                 'status' => 'open',
             ]);
 
-            $rfq->shippingAddress()->create([
-                'name' => $validated['name'],
-                'address' => $validated['address'],
-                'city' => $validated['city'],
-                'state' => $validated['province'],
-                'country' => $validated['country'],
-                'postal_code' => $validated['postal_code'],
-                'phone' => $validated['phone'],
-            ]);
-
             $rfqItems = $cartItems->map(function ($item) use ($rfq) {
-                return [ 
+                return [
                     'rfq_id' => $rfq->id,
                     'product_id' => $item->product_id,
                     'quantity' => $item->quantity,
+                    'product_name' => $item->product->name,
+                    'cas_number' => $item->product->cas_number,
                     'created_at' => now(),
-                    'updated_at' => now(), 
+                    'updated_at' => now(),
+                ];
+            });
+
+            $rfqItemsForDb = $rfqItems->map(function ($item) {
+                return [
+                    'rfq_id' => $item['rfq_id'],
+                    'product_id' => $item['product_id'],
+                    'quantity' => $item['quantity'],
+                    'created_at' => now(),
+                    'updated_at' => now(),
                 ];
             })->toArray();
 
-            RfqItem::insert($rfqItems);
+            $mailData = [
+                'info' => $validated,
+                'orderDetail' => $rfqItems->toArray(),
+            ];
 
             $cart->items()->delete();
             $cart->delete();
+
+            $mailData = [
+                'info' => $validated,
+                'orderDetail' => $rfqItems
+            ];
+
+            Mail::to(replace_shortcodes('[email-form-submission]'))->send(new FormSubmissionMail($mailData, 'mails.rfq'));
 
             DB::commit();
 

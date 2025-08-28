@@ -12,9 +12,15 @@
 @section('twitter_title', View::getSection('title'))
 @section('twitter_description', View::getSection('meta_description'))
 
-
 @section('vite')
     @vite(['resources/js/pages/synthesis.js', 'resources/css/pages/synthesis.css'])
+@endsection
+
+@section('head')
+    {{-- Chemdoodle tool CSS and Script files --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/chemdoodle/chemdoodle-web.css') }}">
+    <script src="{{ asset('js/chemdoodle/chemdoodle-web.js') }}"></script>
+    <script src="{{ asset('js/chemdoodle/chemdoodle-web-uis.js') }}" ></script>
 @endsection
 
 @section('content')
@@ -82,6 +88,7 @@
     </div>
 </section>
 @endforeach
+
 <!-- Our Process Section -->
 <section class="py-5 sh-custom-bg-light">
     <div class="container">
@@ -102,6 +109,7 @@
         </div>
     </div>
 </section>
+
 <section class="py-5">
     <div class="container">
         <div class="row align-items-center g-5">
@@ -125,13 +133,17 @@
         </div>
     </div>
 </section>
+
 <section class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <div class="form-wrap">
-                    <form id="multiStepForm">
-                        <!-- Step 1 -->
+                    <!-- Alert Messages -->
+                    <div id="alert-message" style="display: none;"></div>
+                    
+                    <form id="custom-synthesis" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="step step-1">
                             <div class="row g-3 text-center mb-3">
                                 <h6 class="subtitle mb-0">Get In Touch</h6>
@@ -140,159 +152,94 @@
                             </div>
                             <div class="row form-section">
                                 <div class="col-md-6 mb-4">
-                                    <label for="molecule-name">Molecule name</label>
-                                    <input type="text" class="form-control" placeholder="Molecule name">
+                                    <label for="molecule-name">Name *</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
                                 </div>
                                 <div class="col-md-6 mb-4">
-                                    <label for="purity">Purity</label>
-                                    <input type="text" class="form-control" placeholder="Purity">
+                                    <label for="molecule-name">Email *</label>
+                                    <input type="text" name="email" class="form-control" placeholder="Enter your E-mail" required>
                                 </div>
                                 <div class="col-md-6 mb-4">
-                                    <label for="molecular-weight">Molecular weight</label>
-                                    <input type="text" class="form-control" placeholder="Molecular weight">
+                                    <label for="molecule-name">Molecule name *</label>
+                                    <input type="text" name="molecule_name" class="form-control" placeholder="Molecule name" required>
                                 </div>
                                 <div class="col-md-6 mb-4">
-                                    <label for="quantity">Quantity</label>
-                                    <select class="form-select">
-                                        <option>Quantity</option>
+                                    <label for="purity">Purity *</label>
+                                    <input type="text" name="purity" class="form-control" placeholder="e.g., >95%" required>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label for="molecular-weight">Molecular weight *</label>
+                                    <input type="text" name="molecular_weight" class="form-control" placeholder="e.g., 250.3 g/mol" required>
+                                </div>
+                                <div class="col-md-3 mb-4">
+                                    <label for="unit">Unit *</label>
+                                    <select name="unit" class="form-select" required>
+                                        <option value="">Select Unit</option>
+                                        <option value="mg">mg</option>
+                                        <option value="gm">g</option>
+                                        <option value="kg">kg</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 mb-4">
+                                    <label for="quantity">Quantity *</label>
+                                    <select name="quantity" class="form-select" required>
+                                        <option value="">Select Quantity</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="200">200</option>
+                                        <option value="250">250</option>
                                     </select>
                                 </div>
                                 <div class="mb-4">
                                     <label for="special-instructions">Special Instructions</label>
-                                    <textarea class="form-control" placeholder="Lead time, synthesis model and any other details" rows="3"></textarea>
+                                    <textarea name="special_instructions" class="form-control" placeholder="Lead time, synthesis model and any other details" rows="3"></textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label d-block">Structure Image Requirement?</label>
+                                    <label class="form-label d-block">Structure Image Requirement? *</label>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="structureRequired" id="structureYes" value="yes" checked>
+                                        <input class="form-check-input" type="radio" name="structure_required" id="structureYes" value="yes" checked>
                                         <label class="form-check-label" for="structureYes">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="structureRequired" id="structureNo" value="no">
+                                        <input class="form-check-input" type="radio" name="structure_required" id="structureNo" value="no">
                                         <label class="form-check-label" for="structureNo">No</label>
                                     </div>
                                 </div>
                                 <div id="structureFields">
                                     <div class="mb-3">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="uploadMethod" id="uploadImage" checked>
+                                            <input class="form-check-input" type="radio" name="upload_method" id="uploadImage" value="upload" checked>
                                             <label class="form-check-label" for="uploadImage">Upload an image</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="uploadMethod" id="drawStructure">
+                                            <input class="form-check-input" type="radio" name="upload_method" id="drawStructure" value="draw">
                                             <label class="form-check-label" for="drawStructure">Draw the structure</label>
                                         </div>
                                     </div>
-                                    <div class="mb-3 image-upload" onclick="document.getElementById('structureFile').click();">
-                                        <input type="file" id="structureFile" hidden>
-                                        <div>
-                                            <img src="https://img.icons8.com/ios/50/image.png" alt="upload icon" loading="lazy"/>
-                                            <p class="mb-0">Image upload</p>
+                                    <div class="mb-3 image-upload" id="imageUploadArea">
+                                        <input type="file" name="structure_file" id="structureFile" accept="image/*" hidden>
+                                        <div id="uploadPlaceholder">
+                                            <img src="{{ asset('images/icons/image-placeholder.png') }}" alt="upload icon" loading="lazy"/>
+                                            <small class="text-muted d-block mt-2">PNG, JPG, GIF up to 2MB</small>
+                                        </div>
+                                        <div id="imagePreview" style="display: none;">
+                                            <img id="previewImage" class="uploaded-image" alt="Structure Preview">
+                                            <button type="button" class="remove-image" id="removeImage">&times;</button>
                                         </div>
                                     </div>
-                                    <div class="canvas-container">
-                                        <canvas width="300" height="80" style="border:1px solid #E1E1E1;background: #E1E1E1;border-radius:20px" class="w-100"></canvas>
+                                    <div class="canvas-container" id="canvasContainer">
+                                        <canvas id="sketcher" style="border:1px solid #E1E1E1;" class="w-100"></canvas>
+                                        <input type="hidden" name="canvas_data" id="canvasData">
                                     </div>
                                 </div>
                                 <div class="mt-4 d-flex justify-content-end">
-                                    <button type="button" class="btn-yellow" onclick="nextStep()">Next</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Step 2 -->
-                        <div class="step step-2 d-none">
-                            <div class="row g-3 text-center mb-3">
-                                <h6 class="subtitle mb-0">Login or Register</h6>
-                                <h2 class="section-title">Enter credentials to request for order</h2>
-                                <p class="text-center">Please login with registered email if you already have an account with Swizchem. Do not have one, please register by selecting “No”. </p>
-                            </div>
-                            <div class="form-section">
-                                <label class="form-label d-block">Existing Customer</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="existingCustomer" id="existingCustomerYes" value="yes" checked>
-                                    <label class="form-check-label" for="existingCustomerYes">Yes</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="existingCustomer" id="existingCustomerNo" value="no">
-                                    <label class="form-check-label" for="existingCustomerNo">No</label>
-                                </div>
-                                <!-- Shown when "Yes" is selected -->
-                                <div id="existingCustomerFields" class="mb-4">
-                                    <div class="mb-4">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" placeholder="Email">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" placeholder="Password">
-                                    </div>
-                                </div>
-                                <!-- Shown when "No" is selected -->
-                                <div id="newCustomerFields" class="">
-                                    <div class="mb-4">
-                                        <label for="fullName">Name</label>
-                                        <input type="text" class="form-control" placeholder="Name">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="newEmail">Email</label>
-                                        <input type="email" class="form-control" placeholder="Email">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="phone">Phone Number</label>
-                                        <input type="tel" class="form-control" placeholder="Phone Number">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="newPassword">Create Password</label>
-                                        <input type="password" class="form-control" placeholder="Create Password">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="confirmPassword">Confirm Password</label>
-                                        <input type="password" class="form-control" placeholder="Confirm Password">
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4">
-                                            <label>City</label>
-                                            <input type="text" class="form-control" placeholder="City name">
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <label>Country</label>
-                                            <select class="form-select">
-                                                <option>USA</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4">
-                                            <label>Company/ Organization</label>
-                                            <input type="text" class="form-control" placeholder="Company/Organization name">
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <label>Purpose</label>
-                                            <select class="form-select">
-                                                <option>Purpose</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4">
-                                            <label>Province</label>
-                                            <select class="form-select">
-                                                <option>Alabama</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <label>Postal Code</label>
-                                            <input type="text" class="form-control" placeholder="Postal Code">
-                                        </div>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label>Special Instructions</label>
-                                        <textarea class="form-control" placeholder="Special Instructions" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between mt-4">
-                                    <button type="button" class="btn btn-primary" onclick="prevStep()">Back</button>
-                                    <button type="submit" class="btn btn-yellow">Submit Order</button>
+                                    <button type="submit" class="btn-yellow" id="submitBtn">
+                                        <span class="spinner-border spinner-border-sm me-2" style="display: none;" id="submitSpinner"></span>
+                                        Submit Request
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -302,4 +249,5 @@
         </div>
     </div>
 </section>
+
 @endsection

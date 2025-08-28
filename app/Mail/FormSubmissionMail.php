@@ -10,20 +10,41 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
-class ContactFormMail extends Mailable
+class FormSubmissionMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    /**
+     * The form data.
+     *
+     * @var array
+     */
     public $formData;
+
+    /**
+     * The view for the email content.
+     *
+     * @var string
+     */
+    public $view;
+
     /**
      * Create a new message instance.
+     *
+     * @param array $formData
+     * @param string $view
+     * @return void
      */
-    public function __construct($formData){
+    public function __construct(array $formData, string $view)
+    {
         $this->formData = $formData;
+        $this->view = $view;
     }
 
     /**
      * Get the message envelope.
+     *
+     * @return \Illuminate\Mail\Mailables\Envelope
      */
     public function envelope(): Envelope
     {
@@ -32,24 +53,20 @@ class ContactFormMail extends Mailable
             replyTo: [
                 new Address(replace_shortcodes('[email-form-submission]'), 'Swizchem'),
             ],
-            subject: 'New Contact Form Submission',
+            subject: $this->formData['subject'] ?? 'New Form Submission',
         );
     }
-
     /**
      * Get the message content definition.
+     *
+     * @return \Illuminate\Mail\Mailables\Content
      */
     public function content(): Content
     {
         return new Content(
-        view: 'mails.contact',
-        with: [
-            'name'    => $this->formData['name'],
-            'email'   => $this->formData['email'],
-            'phone'   => $this->formData['phone'] ?? '', 
-            'bodyMessage' => $this->formData['instructions'] ?? '',
-        ],
-    );
+            view: $this->view,
+            with: $this->formData,
+        );
     }
 
     /**

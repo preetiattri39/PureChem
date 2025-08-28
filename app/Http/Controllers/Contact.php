@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactFormMail;
+use App\Mail\FormSubmissionMail;
 use App\Models\ContactSubmission;
 
 class Contact extends Controller
@@ -41,7 +41,7 @@ class Contact extends Controller
         ]);
 
         try {
-            Mail::to(replace_shortcodes('[email-form-submission]'))->send(new ContactFormMail($validated));
+            Mail::to(replace_shortcodes('[email-form-submission]'))->send(new FormSubmissionMail($validated, 'mails.contact'));
             $submission->update(['is_sent' => true]);
             \Log::info('Contact Form Submitted and mail sent successfully', $validated);
         } catch (\Exception $e) {

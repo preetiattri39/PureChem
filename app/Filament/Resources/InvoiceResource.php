@@ -310,7 +310,7 @@ class InvoiceResource extends Resource
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-                // Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make(), 
                 
                 Action::make('download_pdf')
                     ->label('Download PDF')
@@ -320,30 +320,30 @@ class InvoiceResource extends Resource
                         return static::downloadInvoicePdf($record);
                     }),
 
-                // Action::make('create_order')
-                //     ->label('Create Order')
-                //     ->icon('heroicon-o-shopping-cart')
-                //     ->color('info')
-                //     ->visible(fn(Invoice $record) => !$record->order)
-                //     ->requiresConfirmation()
-                //     ->modalDescription('This will create a new order based on this invoice.')
-                //     ->action(function (Invoice $record) {
-                //         try {
-                //             $order = Order::createFromInvoice($record);
+                Action::make('create_order')
+                    ->label('Create Order')
+                    ->icon('heroicon-o-shopping-cart')
+                    ->color('info')
+                    // ->visible(fn(Invoice $record) => !$record->order)
+                    ->requiresConfirmation()
+                    ->modalDescription('This will create a new order based on this invoice.')
+                    ->action(function (Invoice $record) {
+                        try {
+                            $order = Order::createFromInvoice($record);
                             
-                //             Notification::make()
-                //                 ->title('Order Created Successfully')
-                //                 ->body("Order {$order->order_id} has been created from this invoice.")
-                //                 ->success()
-                //                 ->send();
-                //         } catch (\Exception $e) {
-                //             Notification::make()
-                //                 ->title('Error Creating Order')
-                //                 ->body('Failed to create order. Please try again.')
-                //                 ->danger()
-                //                 ->send();
-                //         }
-                //     }),
+                            Notification::make()
+                                ->title('Order Created Successfully')
+                                ->body("Order {$order->order_id} has been created from this invoice.")
+                                ->success()
+                                ->send();
+                        } catch (\Exception $e) {
+                            Notification::make()
+                                ->title('Error Creating Order')
+                                ->body('Failed to create order. Please try again.')
+                                ->danger()
+                                ->send();
+                        }
+                    }),
 
                 Tables\Actions\DeleteAction::make(),
             ])

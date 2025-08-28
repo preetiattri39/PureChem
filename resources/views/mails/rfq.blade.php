@@ -3,40 +3,61 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form Submission - Swizchem</title>
+    <title>New RFQ Submission - Swizchem</title>
     @include('mails.partials.styles')
 </head>
 <body>
     <div class="email-container">
         <div class="email-header">
             <img src="{{ asset('images/logo/mail-logo.jpg') }}" alt="Swizchem Logo" class="logo">
-            <h1 class="header-title">New Contact Form Submission</h1>
+            <h1 class="header-title">New RFQ Submission</h1>
         </div>
         
         <div class="email-body">
             <div class="content-section">
-                <h2 class="section-title">Contact Information</h2>
+                <h2 class="section-title">Customer Info</h2>
                 <div class="detail-row">
                     <span class="detail-label">Name:</span>
-                    <span class="detail-value">{{ $name }}</span>
+                    <span class="detail-value">{{ $info['name'] ?? 'N/A' }}</span>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-label">Email:</span>
-                    <span class="detail-value">{{ $email }}</span>
+                    <span class="detail-label">address:</span>
+                    <span class="detail-value">{{ $info['address'] ?? 'N/A' }}</span>
                 </div>
-                @if(!empty($phone))
+                <div class="detail-row">
+                    <span class="detail-label">City:</span>
+                    <span class="detail-value">${{ $info['city'] ?? 'N/A' }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">state:</span>
+                    <span class="detail-value">{{ $info['state'] ?? 'N/A' }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Country:</span>
+                    <span class="detail-value">{{ $info['country'] ?? 'N/A' }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Postal Code:</span>
+                    <span class="detail-value">{{ $info['postal_code'] ?? 'N/A' }}</span>
+                </div>
                 <div class="detail-row">
                     <span class="detail-label">Phone:</span>
-                    <span class="detail-value">{{ $phone }}</span>
+                    <span class="detail-value">{{ $info['phone'] ?? 'N/A' }}</span>
                 </div>
-                @endif
             </div>
-            
+
             <div class="content-section">
-                <h2 class="section-title">Message</h2>
-                <div class="message-content">
-                    {{ $instructions }}
-                </div>
+                <h2 class="section-title">RFQ Details</h2>
+                @php $counter = 1; @endphp
+                @foreach($orderDetail as $item)
+                    <div class="detail-row">
+                        <span class="detail-label">{{ $counter }}. </span>
+                        <span class="detail-value">{{ $item['product_name'] ?? 'N/A' }} </span>
+                        <span class="detail-value">{{ $item['cas_number'] ?? 'N/A' }} </span>
+                        <span class="detail-value">{{ $item['quantity'] ?? 'N/A' }} </span>
+                    </div>
+                @php $counter++; @endphp
+                @endforeach
             </div>
         </div>
         

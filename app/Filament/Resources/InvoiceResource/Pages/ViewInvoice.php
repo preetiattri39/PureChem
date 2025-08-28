@@ -20,7 +20,7 @@ class ViewInvoice extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            // Actions\EditAction::make(),
+            Actions\EditAction::make(),
             
             Actions\Action::make('download_pdf')
                 ->label('Download PDF')
@@ -30,22 +30,22 @@ class ViewInvoice extends ViewRecord
                         return InvoiceResource::downloadInvoicePdf($record);
                 }),
             
-            // Actions\Action::make('create_order')
-            //     ->label('Create Order')
-            //     ->icon('heroicon-o-shopping-cart')
-            //     ->color('info')
-            //     ->visible(fn() => !$this->record->order)
-            //     ->action(function () {
-            //         $order = Order::createFromInvoice($this->record);
+            Actions\Action::make('create_order')
+                ->label('Create Order')
+                ->icon('heroicon-o-shopping-cart')
+                ->color('info')
+                // ->visible(fn() => !$this->record->order)
+                ->action(function () {
+                    $order = Order::createFromInvoice($this->record);
                     
-            //         Notification::make()
-            //             ->title('Order Created Successfully')
-            //             ->body("Order {$order->order_id} has been created from this invoice.")
-            //             ->success()
-            //             ->send();
+                    Notification::make()
+                        ->title('Order Created Successfully')
+                        ->body("Order {$order->order_id} has been created from this invoice.")
+                        ->success()
+                        ->send();
                         
-            //         return redirect()->to(OrderResource::getUrl('view', ['record' => $order]));
-            //     }),
+                    return redirect()->to(OrderResource::getUrl('view', ['record' => $order]));
+                }),
         ];
     }
 }
