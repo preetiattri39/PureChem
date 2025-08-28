@@ -18,7 +18,7 @@
 
                     {{-- Validation Errors --}}
                     @if ($errors->any())
-                        <div class="alert alert-danger form-submission-status">
+                        <div class="alert alert-danger form-submission-status shadow-lg rounded-lg p-2">
                             <ul class="mb-0">
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -29,7 +29,7 @@
 
                     {{-- Flash Errors --}}
                     @if (session('error'))
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-danger shadow-lg rounded-lg p-2" role="alert">
                             {{ session('error') }}
                         </div>
                     @endif

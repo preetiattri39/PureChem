@@ -18,14 +18,14 @@
 
                     {{-- Session Status --}}
                     @if (session('success'))
-                        <div class="alert alert-success form-submission-status">
+                        <div class="alert alert-success form-submission-status shadow-lg rounded-lg p-2">
                             {!! session('success') !!}
                         </div>
                     @endif
 
                     {{-- Validation Errors --}}
                     @if ($errors->any())
-                        <div class="alert alert-danger form-submission-status">
+                        <div class="alert alert-danger form-submission-status shadow-lg rounded-lg p-2">
                             <ul class="mb-0">
                                  {{ $errors->first() }}
                             </ul>

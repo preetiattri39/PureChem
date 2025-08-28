@@ -76,7 +76,7 @@ class OrderResource extends Resource
 
                 Tables\Columns\TextColumn::make('grand_total')
                     ->label('Total Amount')
-                    ->money('INR')
+                    ->money('USD')
                     ->sortable(),
                 
                 Tables\Columns\TextColumn::make('order_date')

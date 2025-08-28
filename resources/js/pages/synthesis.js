@@ -86,31 +86,32 @@ $(function(){
 
     // Form submission
     const form = $('#custom-synthesis');
-    const submitBtn = $('#submitBtn');
-    const submitSpinner = $('#submitSpinner');
-    const alertMessage = $('#alert-message');
+    const alertMessageSuccess = $('#global-success-message');
+    const alertMessageError = $('#global-error-message');
 
     function showAlert(message, type) {
-        alertMessage.attr('class', `alert alert-${type}`);
-        alertMessage.text(message);
-        alertMessage.show();
-        $('html, body').animate({
-            scrollTop: alertMessage.offset().top - 20
-        }, 500);
-
         if (type === 'success') {
-            setTimeout(() => {
-                alertMessage.hide();
-            }, 5000);
+            alertMessageSuccess.text(message);
+            alertMessageSuccess.addClass('d-block');
+            alertMessageSuccess.removeClass('d-none');
+        }else{
+            alertMessageError.text(message);
+            alertMessageError.addClass('d-block');
+            alertMessageError.removeClass('d-none');
         }
+    }
+
+    function alertBlockHide(){
+        const alertMessage = $('.form-submission-status');
+        alertMessage.removeClass('d-block');
+        alertMessage.addClass('d-none');
     }
 
     form.on('submit', function(e) {
         e.preventDefault();
 
-        submitBtn.prop('disabled', true);
-        submitSpinner.show();
-        alertMessage.hide();
+        $('#sh-loader').removeClass('d-none');
+        alertBlockHide();
 
         const formData = new FormData(this);
 
@@ -125,17 +126,16 @@ $(function(){
         }
 
         $.ajax({
-                method: 'POST',
-                url: '/custom-synthesis/submit',
-                data: formData,
-                processData: false,
-                contentType: false,
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                dataType: 'json'
-            })
-            .done(function(data) {
+            method: 'POST',
+            url: '/custom-synthesis/submit',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType: 'json',
+            success : function(data) {
                 if (data.success) {
                     showAlert(data.message, 'success');
                     form[0].reset();
@@ -150,20 +150,23 @@ $(function(){
                     toggleStructureFields();
                     toggleUploadMethod();
                 } else {
-                    showAlert(data.message || 'An error occurred. Please try again.', 'danger');
+                    showAlert(data.message || 'An error occurred. Please try again.', 'error');
                     if (data.errors) {
                         console.error('Validation errors:', data.errors);
                     }
                 }
-            })
-            .fail(function(jqXHR, textStatus, errorThrown) {
-                console.error('Error:', textStatus, errorThrown);
-                showAlert('Network error. Please check your connection and try again.', 'danger');
-            })
-            .always(function() {
-                submitBtn.prop('disabled', false);
-                submitSpinner.hide();
-            });
+            },
+            error : function(err) {
+                const errorObj = err.responseJSON.errors;
+                console.log(err);
+                const firstKey = Object.keys(errorObj)[0];
+                const firstError = errorObj[firstKey];
+                showAlert(firstError, 'error');
+            },
+            complete : function() {
+                $('#sh-loader').addClass('d-none');
+            }
+        })
     });
 
     toggleStructureFields();

@@ -255,7 +255,7 @@ class InvoiceResource extends Resource
 
                 Tables\Columns\TextColumn::make('grand_total')
                     ->label('Amount')
-                    ->money('INR')
+                    ->money('USD')
                     ->sortable(),
 
                 // Tables\Columns\BadgeColumn::make('status')

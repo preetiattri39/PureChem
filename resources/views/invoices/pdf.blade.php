@@ -311,8 +311,8 @@
                             <td>{{ $item->purity ?? '-' }}</td>
                             <td>{{ number_format($item->quantity, 0) }}</td>
                             <td>{{ $item->units }}</td>
-                            <td>{{ number_format($item->price, 2) }}</td>
-                            <td>{{ number_format($item->total, 2) }}</td>
+                            <td>${{ number_format($item->price, 2) }}</td>
+                            <td>${{ number_format($item->total, 2) }}</td>
                         </tr>
                     @endforeach
                 @else
@@ -330,19 +330,19 @@
             <table class="totals-table">
                 <tr>
                     <td class="label-col">Subtotal</td>
-                    <td class="amount-col">{{ number_format($invoice->sub_total ?? 0, 2) }}</td>
+                    <td class="amount-col">${{ number_format($invoice->sub_total ?? 0, 2) }}</td>
                 </tr>
                 <tr>
                     <td class="label-col">VAT</td>
-                    <td class="amount-col">{{ number_format($invoice->vat ?? 0, 2) }}</td>
+                    <td class="amount-col">${{ number_format($invoice->vat ?? 0, 2) }}</td>
                 </tr>
                 <tr>
                     <td class="label-col">Shipping Charges</td>
-                    <td class="amount-col">{{ number_format($invoice->shipping_charges ?? 0, 2) }}</td>
+                    <td class="amount-col">${{ number_format($invoice->shipping_charges ?? 0, 2) }}</td>
                 </tr>
                 <tr class="grand-total">
                     <td class="label-col">Grand Total</td>
-                    <td class="amount-col">{{ number_format($invoice->grand_total ?? 0, 2) }}</td>
+                    <td class="amount-col">${{ number_format($invoice->grand_total ?? 0, 2) }}</td>
                 </tr>
             </table>
         </div>

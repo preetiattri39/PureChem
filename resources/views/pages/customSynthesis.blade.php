@@ -139,8 +139,6 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <div class="form-wrap">
-                    <!-- Alert Messages -->
-                    <div id="alert-message" style="display: none;"></div>
                     
                     <form id="custom-synthesis" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -157,7 +155,7 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <label for="molecule-name">Email *</label>
-                                    <input type="text" name="email" class="form-control" placeholder="Enter your E-mail" required>
+                                    <input type="email" name="email" class="form-control" placeholder="Enter your E-mail" required>
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <label for="molecule-name">Molecule name *</label>
@@ -237,13 +235,14 @@
                                 </div>
                                 <div class="mt-4 d-flex justify-content-end">
                                     <button type="submit" class="btn-yellow" id="submitBtn">
-                                        <span class="spinner-border spinner-border-sm me-2" style="display: none;" id="submitSpinner"></span>
                                         Submit Request
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </form>
+                    <x-alert-success class="shadow-lg rounded-lg p-2" />
+                    <x-alert-error class="shadow-lg rounded-lg p-2" />
                 </div>
             </div>    
         </div>

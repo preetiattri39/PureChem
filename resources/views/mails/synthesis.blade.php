@@ -26,7 +26,7 @@
                 </div>
                 <div class="detail-row">
                     <span class="detail-label">Molecular Weight:</span>
-                    <span class="detail-value">${{ $molecular_weight ?? 'N/A' }}</span>
+                    <span class="detail-value">{{ $molecular_weight ?? 'N/A' }}</span>
                 </div>
                 <div class="detail-row">
                     <span class="detail-label">Quantity:</span>
