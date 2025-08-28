@@ -41,7 +41,7 @@ class Contact extends Controller
         ]);
 
         try {
-            Mail::to(replace_shortcodes('[email-form-submission]'))->send(new FormSubmissionMail($validated, 'mails.contact'));
+            Mail::to(replace_shortcodes('[email-form-submission-test]'))->send(new FormSubmissionMail($validated, 'mails.contact'));
             $submission->update(['is_sent' => true]);
             \Log::info('Contact Form Submitted and mail sent successfully', $validated);
         } catch (\Exception $e) {

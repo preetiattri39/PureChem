@@ -30,7 +30,7 @@
     <div class="container text-center">
         <h1 class="display-6 fw-bold">{{ $hero['title'] }}</h1>
         <p class="w-5 mt-3 col-md-6 offset-md-3 text-center">{{ $hero['description'] }}</p>
-        <button class="btn-yellow mt-4">{{ $hero['buttonText'] }}</button>
+        <a class="btn-yellow mt-4" href="#custom-synthesis">{{ $hero['buttonText'] }}</a>
     </div>
 </section>
 
@@ -225,7 +225,7 @@
                                         </div>
                                         <div id="imagePreview" style="display: none;">
                                             <img id="previewImage" class="uploaded-image" alt="Structure Preview">
-                                            <button type="button" class="remove-image" id="removeImage">&times;</button>
+                                            <button type="button" class="remove-image" id="removeImage"><i class="fa fa-close"></i></button>
                                         </div>
                                     </div>
                                     <div class="canvas-container" id="canvasContainer">

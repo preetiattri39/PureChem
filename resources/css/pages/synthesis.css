@@ -50,6 +50,11 @@
     cursor: pointer;
     font-size: var(--font-size-sm);
 }
+
+.remove-image:hover {
+    box-shadow: 0 0 6px 3px var(--color-secondary);
+    transition: all 0.2s linear;
+}
 .canvas-container {
     display: none;
     margin-top: var(--spacing-md);
