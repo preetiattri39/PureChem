@@ -13,7 +13,7 @@
             <h1 class="header-title">New RFQ Submission</h1>
         </div>
         
-        <div class="email-body">
+        <div class="email-body"> 
             <div class="content-section">
                 <h2 class="section-title">Custom Synthesis Details</h2>
                 <div class="detail-row">

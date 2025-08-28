@@ -14,7 +14,7 @@
         </div>
         
         <div class="email-body">
-            <div class="content-section">
+            <div class="content-section"> 
                 <h2 class="section-title">Customer Info</h2>
                 <div class="detail-row">
                     <span class="detail-label">Name:</span>
