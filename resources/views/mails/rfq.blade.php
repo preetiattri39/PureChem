@@ -65,24 +65,24 @@
             <div class="follow-us">Follow Us</div>
             
             <div class="social-icons">
-                <a href="#" class="social-icon"><img src="{{ asset('images/logo/instagram.png') }}" /></a>
-                <a href="#" class="social-icon"><img src="{{ asset('images/logo/linkedin.png') }}" /></a>
-                <a href="#" class="social-icon"><img src="{{ asset('images/logo/facebook.png') }}" /></a>
+                <a href="#" class="social-icon"><img src="{{ asset('images/icons/instagram.png') }}" /></a>
+                <a href="#" class="social-icon"><img src="{{ asset('images/icons/linkedin.png') }}" /></a>
+                <a href="#" class="social-icon"><img src="{{ asset('images/icons/facebook.png') }}" /></a>
             </div>
             
             <div class="divider"></div>
             
             <div class="contact-info">
                 <div class="contact-item">
-                    <span class="contact-icon"><img src="{{ asset('images/logo/mail-phone.png') }}" /></span>
+                    <span class="contact-icon"><img src="{{ asset('images/icons/mail-phone.png') }}" /></span>
                     +358 46 5534360
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon"><img src="{{ asset('images/logo/mail-email.png') }}" /></span>
+                    <span class="contact-icon"><img src="{{ asset('images/icons/mail-email.png') }}" /></span>
                     manvatt@swizchem.com
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon"><img src="{{ asset('images/logo/mail-globe.png') }}" /></span>
+                    <span class="contact-icon"><img src="{{ asset('images/icons/mail-globe.png') }}" /></span>
                     www.swizchem.com
                 </div>
             </div>
