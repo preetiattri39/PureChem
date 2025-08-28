@@ -59,22 +59,3 @@
     background-color: var(--color-light);
     border-radius: var(--radius-md);
 }
-
-.sidebar ul li:hover{
-    background: var(--color-light);
-    border-left: 4px solid var(--color-secondary);
-    padding-left: 5px;
-    transition: all 0.2s linear;
-
-}
-
-.sidebar ul li a{
-    display: block;
-}
-
-.sidebar-active-category{
-    background: var(--color-light);
-    border-left: 4px solid var(--color-secondary);
-    padding-left: 5px;
-
-}

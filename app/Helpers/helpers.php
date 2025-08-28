@@ -8,7 +8,7 @@ if (!function_exists('replace_shortcodes')) {
         $shortcodes = [
             '[admin-ph-1]'                               => '+358 46 5534360',
             '[admin-email-1]'                            => 'sales@swizchem.com',
-            '[email-form-submission-test]'               => 'tahirzoptal@gmail.com',
+            '[email-form-submission-test]'               => 'withzoptal@gmail.com',
             '[email-form-submission]'                    => 'sales@swizchem.com',
             '[admin-address-1]'                          => 'A326, A.I. Virtasen Aukio 1, 00560 Helsinki, Finland.',
 
