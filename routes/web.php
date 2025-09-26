@@ -5,16 +5,15 @@ use App\Http\Controllers\Home;
 use App\Http\Controllers\Products;
 use App\Http\Controllers\Company;
 use App\Http\Controllers\Contact;
-use App\Http\Controllers\Chat;
 use App\Http\Controllers\Privacy;
 use App\Http\Controllers\Strategy;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Synthesis;
+use App\Http\Controllers\PublicEmailVerificationController;
+use App\Http\Controllers\CustomVerifyEmailController;
 
 Route::get('/', [Home::class, 'index'])->name('home'); 
-
-//fixed later group routing of products
 Route::get('/products', [Products::class, 'index'])->name('products.main');
 Route::get('/products/category/{id}', [Products::class, 'index'])->name('products.category');
 Route::get('/products/load-more', [Products::class, 'loadMore']);
@@ -30,15 +29,21 @@ Route::prefix('cart')->name('cart.')->group(function () {
     Route::delete('/delete/{cart_item_id}', [CartController::class, 'deleteFromCart'])->name('delete');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/checkout', [Checkout::class, 'index'])->name('checkout');
-    Route::post('/checkout', [Checkout::class, 'checkout'])->name('checkout.submit');
-});
-
-Route::get('/chat', [Chat::class, 'index'])->name('chat');
 Route::get('/privacy', [Privacy::class, 'index'])->name('privacy');
 Route::get('/business-strategy', [Strategy::class, 'index'])->name('business.strategy');
 Route::get('/custom-synthesis', [Synthesis::class, 'index'])->name('custom-synthesis');
 Route::post('/custom-synthesis/submit', [Synthesis::class, 'submitForm'])->name('synthesis.submit');
 
-Route::post('/webhook/update-order-status', [OrderController::class, 'updateOrderStatusFromWebhook']);
+Route::middleware(['auth','verified'])->group(function () {
+    Route::get('/checkout', [Checkout::class, 'index'])->name('checkout'); 
+});
+
+Route::get('/email/verify', [PublicEmailVerificationController::class, 'show'])
+    ->name('verification.notice.public');
+
+Route::post('/email/verify/resend', [PublicEmailVerificationController::class, 'resend'])
+    ->name('verification.resend.public');
+
+Route::get('/email/verify/{id}/{hash}', [CustomVerifyEmailController::class, '__invoke'])
+    ->middleware(['signed', 'throttle:6,1'])
+    ->name('verification.verify');

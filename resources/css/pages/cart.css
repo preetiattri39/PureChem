@@ -48,3 +48,7 @@
     overflow: hidden;
     margin: 0;
 }
+
+.cart-head-info{
+    font-size: var(--font-size-sm);
+}

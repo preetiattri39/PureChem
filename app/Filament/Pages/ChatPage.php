@@ -27,12 +27,13 @@ class ChatPage extends Page
 
     protected static string $view = 'filament.pages.chat-page';
     protected static ?string $title = 'Threads';
-
+ 
     public $messages = [];
     public $messageText = '';
     public $attachment = null;
     public $rfqId;
     public $rfqStatus = 'open';
+    public $rfqData = [];
     public $conversationId;
     public $rfq_items = [];
     public $shipping_addr = [];
@@ -56,7 +57,9 @@ class ChatPage extends Page
             abort(404, 'Something went wrong!');
         }
 
-        $this->rfqStatus = Rfq::where('id', $this->rfqId)->value('status');
+        $this->rfqData = Rfq::where('id', $this->rfqId)->first();
+        $this->rfqStatus = $this->rfqData ? $this->rfqData->status : null;
+
         $this->findOrCreateConversation();
         $this->loadMessages();
         $this->loadRfqItems();
@@ -205,9 +208,16 @@ class ChatPage extends Page
     
     public function loadRfqItems()
     {
-        $this->rfq_items = \App\Models\RfqItem::with('product')
-            ->where('rfq_id', $this->rfqId)
-            ->get();
+        if ($this->rfqData && $this->rfqData->type === 'custom') {
+            $this->rfq_items = CustomSynthesisSubmission::with('customProduct')
+                ->where('rfq_id', $this->rfqId)
+                ->first();
+        } else {
+            $this->rfq_items = RfqItem::with('product')
+                ->where('rfq_id', $this->rfqId)
+                ->get();
+        }
+        
     }
     
     public function loadShippingAddress()

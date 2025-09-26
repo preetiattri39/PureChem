@@ -1,5 +1,5 @@
-$(function(){
-     try {
+$(function () {
+    try {
         ChemDoodle.ELEMENT['H'].jmolColor = 'black';
         ChemDoodle.ELEMENT['S'].jmolColor = '#B9A130';
         let sketcher = new ChemDoodle.SketcherCanvas('sketcher', 500, 300, {
@@ -14,6 +14,21 @@ $(function(){
     } catch (e) {
         $('#sketcher').html('<p style="color: red;">Sketcher not available - check ChemDoodle library</p>');
     }
+
+    // Usage dropdown change handler
+    const $usageSelect = $('#usage');
+    const $usageOtherField = $('#usage-other-field');
+    const $usageOtherInput = $('#usage_other');
+
+    $usageSelect.on('change', function () {
+        if ($(this).val() === 'other') {
+            $usageOtherField.show();
+            $usageOtherInput.attr('required', 'required');
+        } else {
+            $usageOtherField.hide();
+            $usageOtherInput.removeAttr('required').val('');
+        }
+    });
 
     // Handle structure requirement toggle
     const structureFields = $('#structureFields');
@@ -52,7 +67,7 @@ $(function(){
     const previewImage = $('#previewImage');
     const removeImageBtn = $('#removeImage');
 
-    imageUploadDiv.on('click', function(e) {
+    imageUploadDiv.on('click', function (e) {
         if (e.target === structureFile[0]) {
             return;
         }
@@ -62,11 +77,11 @@ $(function(){
         }
     });
 
-    structureFile.on('change', function(e) {
+    structureFile.on('change', function (e) {
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 previewImage.attr('src', e.target.result);
                 uploadPlaceholder.hide();
                 imagePreview.show();
@@ -76,7 +91,7 @@ $(function(){
         }
     });
 
-    removeImageBtn.on('click', function(e) {
+    removeImageBtn.on('click', function (e) {
         e.stopPropagation();
         structureFile.val('');
         uploadPlaceholder.show();
@@ -94,20 +109,20 @@ $(function(){
             alertMessageSuccess.text(message);
             alertMessageSuccess.addClass('d-block');
             alertMessageSuccess.removeClass('d-none');
-        }else{
+        } else {
             alertMessageError.text(message);
             alertMessageError.addClass('d-block');
             alertMessageError.removeClass('d-none');
         }
     }
 
-    function alertBlockHide(){
+    function alertBlockHide() {
         const alertMessage = $('.form-submission-status');
         alertMessage.removeClass('d-block');
         alertMessage.addClass('d-none');
     }
 
-    form.on('submit', function(e) {
+    form.on('submit', function (e) {
         e.preventDefault();
 
         $('#sh-loader').removeClass('d-none');
@@ -135,7 +150,7 @@ $(function(){
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             dataType: 'json',
-            success : function(data) {
+            success: function (data) {
                 if (data.success) {
                     showAlert(data.message, 'success');
                     form[0].reset();
@@ -149,6 +164,10 @@ $(function(){
                     $('#uploadImage').prop('checked', true);
                     toggleStructureFields();
                     toggleUploadMethod();
+                    setTimeout(function () {
+                        window.location.href = data.route;
+                    }, 5000);
+                    return;
                 } else {
                     showAlert(data.message || 'An error occurred. Please try again.', 'error');
                     if (data.errors) {
@@ -156,14 +175,37 @@ $(function(){
                     }
                 }
             },
-            error : function(err) {
-                const errorObj = err.responseJSON.errors;
+            error: function (err) {
                 console.log(err);
+
+                if (err.status === 401 && err.responseJSON && err.responseJSON.status === 'unauthenticated') {
+                    showAlert(err.responseJSON.message, 'error');
+
+                    var seconds = 5;
+
+                    let timer = setInterval(() => {
+                        seconds--;
+
+                        showAlert(
+                            `Please login before submitting the custom synthesis form. If not registered yet, go to the register page and signup. You will be redirected in ${seconds} seconds...`,
+                            'error'
+                        );
+
+                        if (seconds === 0) {
+                            clearInterval(timer); 
+                             window.location.href = err.responseJSON.login_url;
+                        }
+                    }, 1000);
+
+                    return;
+                }
+
+                const errorObj = err.responseJSON.errors;
                 const firstKey = Object.keys(errorObj)[0];
                 const firstError = errorObj[firstKey];
                 showAlert(firstError, 'error');
             },
-            complete : function() {
+            complete: function () {
                 $('#sh-loader').addClass('d-none');
             }
         })

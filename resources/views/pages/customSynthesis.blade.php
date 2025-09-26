@@ -150,12 +150,24 @@
                             </div>
                             <div class="row form-section">
                                 <div class="col-md-6 mb-4">
-                                    <label for="molecule-name">Name *</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+                                    <label for="molecule-name">Company</label>
+                                    <input type="text" name="company" class="form-control" placeholder="Enter your Company's name">
                                 </div>
                                 <div class="col-md-6 mb-4">
-                                    <label for="molecule-name">Email *</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Enter your E-mail" required>
+                                    <label for="usage" class="form-label">Usage *</label>
+                                    <select name="usage" id="usage" class="form-select" required>
+                                        <option value="">Select Usage</option>
+                                        <option value="university_lab_research">University / Lab Research</option>
+                                        <option value="testing_standards">Testing & Standards</option>
+                                        <option value="product_development">Product Development</option>
+                                        <option value="regulatory_use">Regulatory Use</option>
+                                        <option value="resale_distribution">Resale / Distribution</option>
+                                        <option value="other">Other (please specify)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 mb-4" id="usage-other-field" style="display: none;">
+                                    <label for="usage_other" class="form-label">Please specify other usage *</label>
+                                    <input type="text" name="usage_other" id="usage_other" class="form-control" placeholder="Please specify your usage">
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <label for="molecule-name">Molecule name *</label>
@@ -166,8 +178,8 @@
                                     <input type="text" name="purity" class="form-control" placeholder="e.g., >95%" required>
                                 </div>
                                 <div class="col-md-6 mb-4">
-                                    <label for="molecular-weight">Molecular weight *</label>
-                                    <input type="text" name="molecular_weight" class="form-control" placeholder="e.g., 250.3 g/mol" required>
+                                    <label for="molecular_formula">Molecular formula *</label>
+                                    <input type="text" name="molecular_formula" class="form-control" placeholder="e.g., 250.3 g/mol" required>
                                 </div>
                                 <div class="col-md-3 mb-4">
                                     <label for="unit">Unit *</label>
@@ -180,16 +192,11 @@
                                 </div>
                                 <div class="col-md-3 mb-4">
                                     <label for="quantity">Quantity *</label>
-                                    <select name="quantity" class="form-select" required>
-                                        <option value="">Select Quantity</option>
-                                        <option value="5">5</option>
-                                        <option value="10">10</option>
-                                        <option value="20">20</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                        <option value="200">200</option>
-                                        <option value="250">250</option>
-                                    </select>
+                                     <input type="number" name="quantity" class="form-control" placeholder="Enter the quantity" required>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label for="address">Address</label>
+                                     <input type="text" name="address" class="form-control" placeholder="Enter your address" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="special-instructions">Special Instructions</label>
@@ -233,6 +240,15 @@
                                         <input type="hidden" name="canvas_data" id="canvasData">
                                     </div>
                                 </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="terms_accepted" id="termsAccepted" required>
+                                        <label class="form-check-label" for="termsAccepted">
+                                            I confirm these products are for research and/or internal use only and agree to the 
+                                            <a href="#" id="termsLink" data-bs-toggle="modal" data-bs-target="#termsModal">Terms & Conditions</a>.
+                                        </label>
+                                    </div>
+                                </div>
                                 <div class="mt-4 d-flex justify-content-end">
                                     <button type="submit" class="btn-yellow" id="submitBtn">
                                         Submit Request
@@ -241,6 +257,37 @@
                             </div>
                         </div>
                     </form>
+
+                    <!-- Terms & Conditions Modal -->
+                    <div class="modal fade" id="termsModal" tabindex="-1">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Terms & Conditions</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="terms-content">
+                                        <p><strong>By proceeding, you acknowledge that all products supplied by Swizchem are intended solely for research and internal purposes.</strong></p>
+                                        
+                                        <p>Your organization accepts full responsibility for:</p>
+                                        <ul>
+                                            <li>Safe handling of the products</li>
+                                            <li>Proper storage of the products</li>
+                                            <li>Safe transport of the products</li>
+                                            <li>Proper disposal of the products</li>
+                                        </ul>
+                                        
+                                        <p>All activities must be in compliance with all applicable safety and regulatory requirements.</p>
+                                        
+                                        <p><strong>Swizchem disclaims any liability for misuse or unauthorized application of its products.</strong></p>
+                                        
+                                        <p>By accepting these terms, you confirm that you understand and agree to these conditions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <x-alert-success class="shadow-lg rounded-lg p-2" />
                     <x-alert-error class="shadow-lg rounded-lg p-2" />
                 </div>

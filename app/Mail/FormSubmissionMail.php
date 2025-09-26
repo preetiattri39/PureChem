@@ -35,10 +35,11 @@ class FormSubmissionMail extends Mailable
      * @param string $view
      * @return void
      */
-    public function __construct(array $formData, string $view)
+    public function __construct(array $formData, string $view, string $subject)
     {
         $this->formData = $formData;
         $this->view = $view;
+        $this->subject = $subject;
     }
 
     /**
@@ -53,7 +54,7 @@ class FormSubmissionMail extends Mailable
             replyTo: [
                 new Address(replace_shortcodes('[email-form-submission]'), 'Swizchem'),
             ],
-            subject: $this->formData['subject'] ?? 'New Form Submission',
+            subject:  $this->subject ?? 'New Form Submission',
         );
     }
     /**

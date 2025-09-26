@@ -27,7 +27,7 @@ class CartController extends Controller
         } else {
             $cartItems = session('cart', []);
         }
-        $allCategories = Category::all();
+        $allCategories = Category::all()->where('status',1);
 
         return view('pages.cart', compact('cartItems','allCategories'));
     }

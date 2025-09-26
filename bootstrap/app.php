@@ -17,11 +17,12 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->append(SecurityHeaders::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        $exceptions->render(function (AuthenticationException $e, Request $request) {
 
-        if ($request->is('checkout') || $request->is('checkout/*')) {
-            return redirect()->guest(route('login'))->withError('Please login before checkout. And if you don\'t have an account, please Sign up!');
-        }
-        return redirect()->guest(route('login'));
-    });
+        $exceptions->render(function (AuthenticationException $e, Request $request) {
+            if ($request->is('checkout') || $request->is('checkout/*')) {
+                return redirect()->guest(route('login'))->withError('Please login before checkout. And if you don\'t have an account, please Sign up!');
+            }
+            return redirect()->guest(route('login'));
+        });
+        
     })->create();

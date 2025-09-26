@@ -36,8 +36,9 @@
             <!-- Product List -->
             <div class="cart-product-listing col-md-9">
                 @if(!empty($cartItems))
-                <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="mb-3">
                     <h3 class="fw-bold sh-custom-text-accent">RFQ Items</h3>
+                    <div class="cart-head-info">Looking for a different purity, quantity, or specification of a product already in your cart? You can request a tailored option through our <a href="{{ route('custom-synthesis') }}" target="_self" >Custom Synthesis</a> page.</div>
                 </div>
                 <div class="row g-3">
                     <div class="table-wrap">
@@ -64,10 +65,17 @@
                     </div>
                     <x-alert-success class="shadow-lg rounded-lg p-2" />
                     <x-alert-error class="shadow-lg rounded-lg p-2" />
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul class="mb-0">
+                                {{ $errors->first() }}
+                            </ul>
+                        </div>
+                    @endif
                     <!-- Show More -->
                     <div class="d-flex flex-row gap-3 sh-custom-mt-xxl">
                         <a href="{{ route('products.main') }}" class="btn btn-outline-yellow">Add More Products</a>
-                        <a href="{{ route('checkout') }}" class="btn-yellow">Next</a>
+                        <a href="{{ route('checkout') }}" class="btn-yellow">Submit</a>
                     </div>
                 </div>
                 @else

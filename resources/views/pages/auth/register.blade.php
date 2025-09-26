@@ -56,8 +56,13 @@
                             </div>
 
                             <div class="col-md-6 mb-4">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone Number" value="{{ old('phone') }}">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" class="form-control" placeholder="Enter your Company's name" value="{{ old('company') }}">
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address" class="form-control" placeholder="Enter your Address" value="{{ old('address') }}">
                             </div>
                         </div>
 
@@ -100,4 +105,42 @@
         </div>
     </div>
 </section>
+
+<!-- Email Verification Modal -->
+<div class="modal fade" id="emailVerificationModal" tabindex="-1" aria-labelledby="emailVerificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-0 text-center">
+                <div class="w-100">
+                    <h5 class="modal-title" id="emailVerificationModalLabel">Verify Your Email Address</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p class="mb-3">Thanks for signing up! We've sent a verification link to your email address.</p>
+                <p class="mb-4"><strong>You must verify your email before you can login to your account.</strong></p>
+                
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Please check your email (including spam folder) and click the verification link.
+                </div>
+            </div>
+            <div class="modal-footer border-0 justify-content-center">
+                <a href="{{ route('verification.notice.public') }}" class="btn btn-primary me-2">
+                    <i class="fas fa-check-circle me-1"></i>
+                    Go to Verification Page
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    @if(session('registered'))
+        document.addEventListener('DOMContentLoaded', function() {
+            var emailModal = new bootstrap.Modal(document.getElementById('emailVerificationModal'));
+            emailModal.show();
+        });
+    @endif
+</script>
 @endsection

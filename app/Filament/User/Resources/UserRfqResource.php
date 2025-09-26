@@ -65,9 +65,20 @@ class UserRfqResource extends Resource
                 TextColumn::make('product_details')
                     ->label('Product Details')
                     ->wrap()
-                    ->html(),
+                    ->html()
+                    ->getStateUsing(function ($record) {
+                        return $record->type === 'custom'
+                            ? $record->custom_product_details
+                            : $record->product_details;
+                    }),
+
                 TextColumn::make('product_count')
-                    ->label('Total Products'),
+                    ->label('Total Products')
+                    ->getStateUsing(function ($record) {
+                        return $record->type === 'custom'
+                            ? $record->custom_product_count
+                            : $record->product_count;
+                    }),
                 TextColumn::make('created_at')->dateTime('d M Y'),
                 
             ])

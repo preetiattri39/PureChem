@@ -6,7 +6,7 @@
 
     <!-- Styles / Scripts -->
     @vite([
-        'resources/sass/app.sass',
+        'resources/scss/app.scss',
         'resources/js/app.js',
         ])
 

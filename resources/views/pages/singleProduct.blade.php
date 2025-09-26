@@ -30,8 +30,7 @@
                 <div class="featured-image">
                     <img 
                         src="{{ $product['structure'] ? asset('storage/' . $product['structure']) : asset('images/placeholder-image.webp') }}" 
-                        alt="Compound molecular structure" 
-                        loading="lazy" />
+                        alt="Compound molecular structure" />
                 </div>
             </div>
             <div class="col-md-6 product-info sh-break-all">

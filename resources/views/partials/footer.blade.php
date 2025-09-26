@@ -44,7 +44,7 @@
             <div class="col d-flex justify-content-center justify-content-lg-end">
                 <div class="fs-2 fw-normal">
                     @foreach ($globalFooterData['social'] as $social)
-                        <a href="{{ route($social['url']) }}" class="text-light me-3" title="{!! ucfirst($social['title']) !!}">
+                        <a href="{{ $social['url'] }}" target="_blank" class="text-light me-3" title="{!! ucfirst($social['title']) !!}">
                             <i class="{{ $social['icon'] }}"></i>
                         </a>
                     @endforeach

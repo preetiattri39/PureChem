@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 
 class Products extends Controller
@@ -29,7 +30,7 @@ class Products extends Controller
 
                 $categoryExist = Category::where('id', $categoryId)->where('status', 1)->exists();
                 if (!is_numeric($categoryId) || !$categoryExist) {
-                    return abort(404, 'Invalid category ID.');
+                    abort(404, 'Invalid category ID.');
                 }
                 $products = Product::where('category_id', $categoryId)->latest()->take(10)->get();
             } else {
@@ -45,6 +46,11 @@ class Products extends Controller
 
             return view('pages.products', compact('products', 'allCategories', 'hasMore'));
         } catch (\Throwable $e) {
+
+            if($e instanceof HttpException){
+                throw $e;
+            }
+
             Log::error('Error fetching products: ' . $e->getMessage(), [
                 'file' => $e->getFile(),
                 'line' => $e->getLine()

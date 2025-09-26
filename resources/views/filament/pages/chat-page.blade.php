@@ -128,32 +128,19 @@
                 <div class="card added-products border-0">
                     <div class="card-header">Added Products</div>
                     <ul class="list-group list-group-flush">
-                        @forelse ($rfq_items as $item)
-                            <li class="list-group-item">
-                                {{ $item->product ? $item->product->name . ' : ' . $item->quantity : 'N/A' }}
-                            </li>
-                        @empty
-                            <li class="list-group-item text-muted">No products added yet</li>
-                        @endforelse
-                    </ul>
-                </div>
-                
-                <div class="card added-products shipping-address border-0">
-                    <div class="card-header">Shipping Address</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            @if($shipping_addr)
-                                {{ 
-                                    ($shipping_addr['address'] ?? 'N/A') . ', ' .
-                                    ($shipping_addr['city'] ?? 'N/A') . ', ' .
-                                    ($shipping_addr['state'] ?? 'N/A') . ', ' .
-                                    ($shipping_addr['country'] ?? 'N/A') . ', ' .
-                                    ($shipping_addr['postal_code'] ?? 'N/A') 
-                                }}
-                            @else
-                                <span class="text-muted">No shipping address provided</span>
-                            @endif
-                        </li>
+                        @if($rfqData->type === 'normal')
+                            @forelse ($rfq_items as $item)
+                                <li class="list-group-item">
+                                    {{ $item->product ? $item->product->name . ' : ' . $item->quantity : 'N/A' }}
+                                </li>
+                            @empty
+                                <li class="list-group-item text-muted">No products added yet</li>
+                            @endforelse
+                        @else
+                                <li class="list-group-item">
+                                    {{ $rfq_items->customProduct ? $rfq_items->customProduct->molecule_name . ' : ' . $rfq_items->customProduct->quantity . $rfq_items->customProduct->unit : 'N/A' }}
+                                </li>
+                        @endif
                     </ul>
                 </div>
             </div>

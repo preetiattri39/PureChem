@@ -34,6 +34,13 @@
                         </div>
                     @endif
 
+                    {{-- Flash Errors --}}
+                    @if (session('success'))
+                        <div class="alert alert-success shadow-lg rounded-lg p-2" role="alert">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

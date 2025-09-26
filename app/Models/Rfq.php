@@ -12,6 +12,7 @@ class Rfq extends Model
     protected $fillable = [
         'user_id',
         'status',
+        'type'
     ];
 
     public function getProductDetailsAttribute()
@@ -27,6 +28,27 @@ class Rfq extends Model
         return $structure;
     }
 
+    public function getCustomProductDetailsAttribute()
+    {
+        $product = $this->customSynthesisSubmission?->customProduct;
+
+        if (!$product) {
+            return 'N/A';
+        }
+
+        $productName = $product->molecule_name ?? 'N/A';
+        $variantName = $product->quantity 
+            ? $product->quantity . ' ' . $product->unit 
+            : 'N/A';
+
+        $structure  = '<ul>';
+        $structure .= "<li>{$productName} : <strong>{$variantName}</strong></li>";
+        $structure .= '</ul>';
+
+        return $structure;
+    }
+
+
     public function getRfqUserNameAttribute()
     {
         return $this->user->name;
@@ -35,11 +57,16 @@ class Rfq extends Model
     public function getRfqUserEmailAttribute()
     {
         return $this->user->email;
-    }
+    } 
 
     public function getProductCountAttribute()
     {
         return $this->items->count();
+    }
+
+    public function getCustomProductCountAttribute()
+    {
+        return $this->CustomSynthesisSubmission->CustomProduct ? 1 : 0;
     }
 
     public function user(): BelongsTo
@@ -60,6 +87,11 @@ class Rfq extends Model
     public function shippingAddress(): HasOne
     {
         return $this->hasOne(ShippingAddress::class);
+    }
+
+     public function CustomSynthesisSubmission(): HasOne
+    {
+        return $this->hasOne(CustomSynthesisSubmission::class);
     }
 
     public function product()

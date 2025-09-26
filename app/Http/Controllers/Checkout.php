@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\User;
 use App\Models\CartItem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,50 +17,44 @@ use App\Models\ProductVariant;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\FormSubmissionMail;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Checkout extends Controller
 {
-   public function index()
-    {
-        if (Auth::check()) {
-            $cart = Cart::with('items')->where('user_id', Auth::id())->first();
-            $cartItems = $cart ? $cart->items->toArray() : [];
-        } else {
-            $cartItems = session('cart', []);
-        } 
 
-        if (empty($cartItems)) {
-            return redirect()->route('home');
-        }
-
-        $allCategories = Category::all();
-
-        return view('pages.checkout',compact('cartItems', 'allCategories'));
-    }
-
-    public function checkout(Request $request)
+    public function index(Request $request)
     {
         $userId = Auth::id();
 
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:20',
-            'address' => 'required|string|max:500',
-            'country' => 'required|string|max:100',
-            'city' => 'required|string|max:100',
-            'province' => 'required|string|max:100',
-            'postal_code' => 'required|string|max:20',
-        ]);
+        $user = User::find($userId);
+
+        if (!$user) {
+            Auth::logout();
+            return redirect()->route('login')->withErrors(['error' => 'User not found! Please login again.']);
+        }
+
+        if($user->role === 'admin'){
+            abort(400,'Admins are not allowed to submit RFQ');
+        }
+
+        $validated = [
+            'name'        => $user->name ?? '',
+            'email'       => $user->email ?? '',
+            'phone'       => $user->phone ?? '',
+            'address'     => $user->address ?? '',
+            'country'     => $user->country ?? '',
+            'city'        => $user->city ?? '',
+            'province'    => $user->province ?? '',
+            'postal_code' => $user->postal_code ?? '',
+        ];
 
         DB::beginTransaction();
 
         try {
-
             $cart = Cart::where('user_id', $userId)->with('items')->first();
 
             if (!$cart) {
-                throw new Exception('Something went wrong! Please try again later.');
+                throw new HttpException(500,'Something went wrong! Please try again later.');
             }
             
             $cartItems = $cart->items;
@@ -100,15 +95,11 @@ class Checkout extends Controller
                 'orderDetail' => $rfqItems->toArray(),
             ];
 
+            RfqItem::insert($rfqItemsForDb);
             $cart->items()->delete();
             $cart->delete();
 
-            $mailData = [
-                'info' => $validated,
-                'orderDetail' => $rfqItems
-            ];
-
-            Mail::to(replace_shortcodes('[email-form-submission]'))->send(new FormSubmissionMail($mailData, 'mails.rfq'));
+            Mail::to(replace_shortcodes('[email-form-submission-test]'))->send(new FormSubmissionMail($mailData, 'mails.rfq', 'RFQ from Catalogue'));
 
             DB::commit();
 
@@ -119,7 +110,7 @@ class Checkout extends Controller
             Log::error('Checkout Error : '.$e->getMessage(), [
                 'trace' => $e->getTraceAsString()
             ]);
-            return redirect()->back()->withInput()->withErrors(['error' => $e->getMessage()]); 
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]); 
         }
     }
 

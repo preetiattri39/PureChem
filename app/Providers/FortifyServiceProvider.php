@@ -32,7 +32,7 @@ class FortifyServiceProvider extends ServiceProvider
             public function toResponse($request)
             {
                 Auth::logout();
-                session()->flash('success', 'Registration successful. Welcome to Swizchem! <a href="' . route('login') . '" target="_self">Click here to Login!</a>');
+                session()->flash('registered', true);
                 return redirect('/register');
             }
         });
@@ -40,7 +40,14 @@ class FortifyServiceProvider extends ServiceProvider
         $this->app->instance(LoginResponse::class, new class implements LoginResponse {
             public function toResponse($request)
             {
-                return redirect('/');
+                if (!Auth::user()->hasVerifiedEmail()) {
+                    Auth::logout();
+                    return redirect()->route('verification.notice.public')->withErrors([
+                        'email' => 'You must verify your email address before you can log in. Please check your email or request a new link . '
+                    ]);
+                }
+
+                return redirect()->intended(config('fortify.home'));
             }
         });
     }
@@ -62,7 +69,7 @@ class FortifyServiceProvider extends ServiceProvider
         //         }
         //     }
         //     return null;
-        // });
+        // }); 
 
         Fortify::registerView(function () {
             return view('pages.auth.register');
@@ -74,6 +81,10 @@ class FortifyServiceProvider extends ServiceProvider
 
         Fortify::resetPasswordView(function () {
             return view('pages.auth.resetPassword');
+        });
+
+        Fortify::verifyEmailView(function () {
+            return view('pages.auth.verifyEmail');
         });
 
         Fortify::createUsersUsing(CreateNewUser::class);

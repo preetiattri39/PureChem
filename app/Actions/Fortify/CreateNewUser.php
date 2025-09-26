@@ -26,23 +26,27 @@ class CreateNewUser implements CreatesNewUsers
             'city' => ['nullable', 'string', 'max:100'],
             'country' => ['nullable', 'string', 'max:100'],
             'company' => ['nullable', 'string', 'max:255'],
+            'address' => ['nullable', 'string', 'max:255'],
             'purpose' => ['nullable', 'string', 'max:255'],
             'province' => ['nullable', 'string', 'max:100'],
             'postal_code' => ['nullable', 'string', 'max:20'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => $this->passwordRules(),
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'phone' => $input['phone'] ?? null,
             'city' => $input['city'] ?? null,
             'country' => $input['country'] ?? null,
             'company' => $input['company'] ?? null,
+            'address' => $input['address'] ?? null,
             'purpose' => $input['purpose'] ?? null,
             'province' => $input['province'] ?? null,
             'postal_code' => $input['postal_code'] ?? null,
             'password' => Hash::make($input['password']),
         ]);
+
+        return $user;
     }
 }
