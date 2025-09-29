@@ -29,6 +29,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.jpg') }}">
     <link rel="manifest" href="{{ asset('images/favicon/site.webmanifest') }}">
     <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.key') }}&libraries=places&loading=async" async defer ></script>
-
+    {!! NoCaptcha::renderJs() !!}
     @yield('head')
 </head>

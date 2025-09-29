@@ -68,6 +68,14 @@
 
                             <input type="text" name="website" style="display:none">
 
+                             {{-- <div class="mb-3">
+                                {!! no_captcha()->display() !!}
+                                @error('g-recaptcha-response')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div> --}}
+                            {{-- {!! NoCaptcha::display() !!} --}}
+
                             <div class="mt-4 d-flex flex-row gap-3 sh-custom-mt-xxl">
                                 <button type="submit" class="btn-yellow" onclick="$('#sh-loader').removeClass('d-none')">Submit</button>
                             </div>

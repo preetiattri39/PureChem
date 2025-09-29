@@ -2,16 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\InvoiceResource\Pages;
-use App\Models\Invoice;
-use App\Models\InvoiceItem; 
-use App\Models\Order;
-use App\Models\Product;
+use App\Filament\Resources\QuotationResource\Pages;
+use App\Filament\Resources\QuotationResource\RelationManagers;
+use App\Models\Quotation;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Models\QuotationItem;
+use App\Models\Order;
+use App\Models\Product;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -19,16 +22,15 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\DatePicker;
 use Filament\Tables\Actions\Action;
 use Filament\Notifications\Notification;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Response;
 use Barryvdh\DomPDF\Facade\Pdf;
 
-class InvoiceResource extends Resource
+class QuotationResource extends Resource
 {
-    protected static ?string $model = Invoice::class;
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $model = Quotation::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
     protected static ?string $navigationGroup = 'Sales';
-    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -36,17 +38,17 @@ class InvoiceResource extends Resource
             ->schema([
                 Forms\Components\Group::make()
                     ->schema([
-                        Forms\Components\Section::make('Invoice Information')
+                        Forms\Components\Section::make('Quotation Information')
                             ->schema([
                                 Forms\Components\Grid::make(2)
                                     ->schema([
-                                        TextInput::make('invoice_number')
-                                            ->label('Invoice Number')
+                                        TextInput::make('quotation_number')
+                                            ->label('Quotation Number')
                                             ->dehydrated()
-                                            ->default(fn() => Invoice::generateInvoiceNumber()),
+                                            ->default(fn() => Quotation::generateQuotationNumber()),
 
-                                        DatePicker::make('invoice_date')
-                                            ->label('Invoice Date')
+                                        DatePicker::make('quotation_date')
+                                            ->label('Quotation Date')
                                             ->default(now())
                                             ->required(),
 
@@ -57,6 +59,9 @@ class InvoiceResource extends Resource
                                         TextInput::make('shipping_methods')
                                             ->label('Shipping Methods')
                                             ->placeholder('e.g., Air, Courier'),
+                                        TextInput::make('currency')
+                                            ->label('Currency')
+                                            ->placeholder('e.g., &dollar;, &euro;, &pound;,'),
                                     ]),
                             ]),
 
@@ -79,7 +84,7 @@ class InvoiceResource extends Resource
                                             if ($user) {
                                                 $set('name', $user->name);
                                                 $set('email', $user->email);
-                                                $set('phone', $user->phone ?? '');
+                                                $set('company', $user->company ?? '');
                                             }
                                         }
                                     }),
@@ -94,17 +99,19 @@ class InvoiceResource extends Resource
                                             ->label('Name')
                                             ->required(),
 
-                                        TextInput::make('phone')
-                                            ->label('Phone')
-                                            ->tel(),
+                                        TextInput::make('company')
+                                            ->label('Company')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->placeholder('Enter company name'),
 
                                         TextInput::make('email')
                                             ->label('Email')
                                             ->required()
                                             ->email(),
                                     ]),
-                                TextInput::make('gstin')
-                                    ->label('GSTIN')
+                                TextInput::make('vat_number')
+                                    ->label('VAT Number')
                                     ->placeholder('e.g., 27ABCDE1234F1Z5'),
                             ]),
                     ])
@@ -112,19 +119,17 @@ class InvoiceResource extends Resource
 
                 Forms\Components\Group::make()
                     ->schema([
-                        Forms\Components\Section::make('Invoice Summary')
+                        Forms\Components\Section::make('Quotation Summary')
                             ->schema([
                                 TextInput::make('sub_total')
                                     ->label('Subtotal')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->disabled()
                                     ->dehydrated(),
 
                                 TextInput::make('vat')
                                     ->label('VAT')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->default(0)
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(function ($state, $set, $get) {
@@ -134,7 +139,6 @@ class InvoiceResource extends Resource
                                 TextInput::make('shipping_charges')
                                     ->label('Shipping Charges')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->default(0)
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(function ($state, $set, $get) {
@@ -144,27 +148,15 @@ class InvoiceResource extends Resource
                                 TextInput::make('grand_total')
                                     ->label('Grand Total')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->disabled()
                                     ->dehydrated(),
-
-                                // Select::make('status')
-                                //     ->label('Status')
-                                //     ->options([
-                                //         'draft' => 'Draft',
-                                //         'sent' => 'Sent',
-                                //         'paid' => 'Paid',
-                                //         'cancelled' => 'Cancelled',
-                                //     ])
-                                //     ->default('draft')
-                                //     ->required(),
                             ]),
                     ])
                     ->columnSpan(['lg' => 1]),
 
                 Forms\Components\Section::make('Products')
                     ->schema([
-                        Repeater::make('invoiceItems')
+                        Repeater::make('quotationItems')
                             ->relationship()
                             ->schema([
                                 Select::make('product_id')
@@ -197,7 +189,6 @@ class InvoiceResource extends Resource
                                         TextInput::make('price')
                                             ->label('Price')
                                             ->numeric()
-                                            ->prefix('$')
                                             ->required()
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(function ($state, $set, $get) {
@@ -208,7 +199,6 @@ class InvoiceResource extends Resource
                                 TextInput::make('total')
                                     ->label('Total')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->disabled()
                                     ->dehydrated(),
                             ])
@@ -228,6 +218,10 @@ class InvoiceResource extends Resource
                         Textarea::make('description')
                             ->label('Description')
                             ->rows(3),
+                        
+                        Textarea::make('payment_terms')
+                            ->label('Payment Terms')
+                            ->rows(2),
                     ])
                     ->columnSpanFull(),
             ])
@@ -238,13 +232,13 @@ class InvoiceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('invoice_number')
-                    ->label('Invoice Number')
+                Tables\Columns\TextColumn::make('quotation_number')
+                    ->label('Quotation Number')
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('invoice_date')
-                    ->label('Invoice Date')
+                Tables\Columns\TextColumn::make('quotation_date')
+                    ->label('Quotation Date')
                     ->date()
                     ->sortable(),
 
@@ -255,33 +249,17 @@ class InvoiceResource extends Resource
 
                 Tables\Columns\TextColumn::make('grand_total')
                     ->label('Amount')
-                    ->money('USD')
+                    ->formatStateUsing(fn ($state, $record) => $record->currency . ' ' . number_format($state, 2))
                     ->sortable(),
-
-                // Tables\Columns\BadgeColumn::make('status')
-                //     ->label('Status')
-                //     ->colors([
-                //         'secondary' => 'draft',
-                //         'warning' => 'sent',
-                //         'success' => 'paid',
-                //         'danger' => 'cancelled',
-                //     ]),
             ])
             ->paginated([5, 10, 20])
             ->emptyStateHeading('No records found')
-            ->emptyStateDescription('You have to generate/add invoice!')
+            ->emptyStateDescription('You have to generate/add Quotation!')
             ->emptyStateIcon('heroicon-o-document-text')
             ->defaultPaginationPageOption(5)
             ->filters([
-                // Tables\Filters\SelectFilter::make('status')
-                //     ->options([
-                //         'draft' => 'Draft',
-                //         'sent' => 'Sent',
-                //         'paid' => 'Paid',
-                //         'cancelled' => 'Cancelled',
-                //     ]),
                 
-                Tables\Filters\Filter::make('invoice_date')
+                Tables\Filters\Filter::make('quotation_date')
                     ->form([
                         DatePicker::make('from')->label('From Date'),
                         DatePicker::make('until')->label('Until Date'),
@@ -290,11 +268,11 @@ class InvoiceResource extends Resource
                         return $query
                             ->when(
                                 $data['from'],
-                                fn (Builder $query, $date): Builder => $query->whereDate('invoice_date', '>=', $date),
+                                fn (Builder $query, $date): Builder => $query->whereDate('quotation_date', '>=', $date),
                             )
                             ->when(
                                 $data['until'],
-                                fn (Builder $query, $date): Builder => $query->whereDate('invoice_date', '<=', $date),
+                                fn (Builder $query, $date): Builder => $query->whereDate('quotation_date', '<=', $date),
                             );
                     })
                     ->indicateUsing(function (array $data): array {
@@ -316,33 +294,8 @@ class InvoiceResource extends Resource
                     ->label('Download PDF')
                     ->icon('heroicon-o-document-arrow-down')
                     ->color('success')
-                    ->action(function (Invoice $record) {
-                        return static::downloadInvoicePdf($record);
-                    }),
-
-                Action::make('create_order')
-                    ->label('Create Order')
-                    ->icon('heroicon-o-shopping-cart')
-                    ->color('info')
-                    // ->visible(fn(Invoice $record) => !$record->order)
-                    ->requiresConfirmation()
-                    ->modalDescription('This will create a new order based on this invoice.')
-                    ->action(function (Invoice $record) {
-                        try {
-                            $order = Order::createFromInvoice($record);
-                            
-                            Notification::make()
-                                ->title('Order Created Successfully')
-                                ->body("Order {$order->order_id} has been created from this invoice.")
-                                ->success()
-                                ->send();
-                        } catch (\Exception $e) {
-                            Notification::make()
-                                ->title('Error Creating Order')
-                                ->body('Failed to create order. Please try again.')
-                                ->danger()
-                                ->send();
-                        }
+                    ->action(function (Quotation $record) {
+                        return static::downloadQuotationPdf($record);
                     }),
 
                 Tables\Actions\DeleteAction::make(),
@@ -399,21 +352,21 @@ class InvoiceResource extends Resource
     }
 
 
-    public static function downloadInvoicePdf(Invoice $invoice)
+    public static function downloadQuotationPdf(Quotation $quotation)
     {
         try {
 
-            $pdf = Pdf::loadView('invoices.pdf', ['invoice' => $invoice]);
+            $pdf = Pdf::loadView('quotations.pdf', ['quotation' => $quotation]);
             
-            $safeFilename = str_replace(['/', '\\', ':', '*', '?', '"', '<', '>', '|'], '-', $invoice->invoice_number);
+            $safeFilename = str_replace(['/', '\\', ':', '*', '?', '"', '<', '>', '|'], '-', $quotation->quotation_number);
             
             return Response::streamDownload(
                 fn() => print($pdf->output()),
-                "invoice-{$safeFilename}.pdf"
+                "quotation-{$safeFilename}.pdf"
             );
         } catch (\Exception $e) {
             Notification::make()
-                ->title('PDF Generation Failed')
+                ->title($e->getMessage())
                 ->body('Could not generate PDF. Please try again.')
                 ->danger()
                 ->send();
@@ -432,10 +385,10 @@ class InvoiceResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListInvoices::route('/'),
-            'create' => Pages\CreateInvoice::route('/create'),
-            'view' => Pages\ViewInvoice::route('/{record}'),
-            'edit' => Pages\EditInvoice::route('/{record}/edit'),
+            'index' => Pages\ListQuotations::route('/'),
+            'create' => Pages\CreateQuotation::route('/create'),
+            'view' => Pages\ViewQuotation::route('/{record}'),
+            'edit' => Pages\EditQuotation::route('/{record}/edit'),
         ];
     }
 }

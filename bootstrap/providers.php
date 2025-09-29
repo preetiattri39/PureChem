@@ -5,5 +5,4 @@ return [
     App\Providers\FortifyServiceProvider::class,
     App\Providers\Filament\AdminPanelProvider::class,
     App\Providers\Filament\UserPanelProvider::class,
-
 ];

@@ -47,7 +47,7 @@ class FortifyServiceProvider extends ServiceProvider
                     ]);
                 }
 
-                return redirect()->intended(config('fortify.home'));
+                return redirect(config('fortify.home'));
             }
         });
     }

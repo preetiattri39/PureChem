@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class InvoiceItem extends Model
+class QuotationItem extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'invoice_id',
+        'quotation_id',
         'product_id',
         'purity',
         'quantity',
         'units',
-        'price',
-        'total'
+        'price', 
+        'total',
     ];
 
     protected static function boot()
@@ -29,17 +29,17 @@ class InvoiceItem extends Model
         });
 
         static::saved(function ($item) {
-            $item->invoice->calculateTotals();
+            $item->quotation->calculateTotals();
         });
 
         static::deleted(function ($item) {
-            $item->invoice->calculateTotals();
+            $item->quotation->calculateTotals();
         });
     }
 
-    public function invoice()
+    public function quotation()
     {
-        return $this->belongsTo(Invoice::class);
+        return $this->belongsTo(Quotation::class);
     }
 
     public function product()
