@@ -29,7 +29,7 @@ class Contact extends Controller
             'email'   => 'required|email',
             'phone'   => 'nullable|string|max:20',
             'instructions' => 'nullable|string',
-            // 'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|captcha'
         ]);
 
         $submission = ContactSubmission::create([

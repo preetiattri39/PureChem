@@ -23,6 +23,8 @@ export default defineConfig({
                 'resources/js/pages/products.js',
                 'resources/js/pages/single-product.js',
                 'resources/js/pages/cart.js',
+                'resources/js/pages/contact.js',
+                'resources/js/pages/auth/register.js'
             ],
             refresh: true,
         }),

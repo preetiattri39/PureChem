@@ -30,6 +30,7 @@ class CreateNewUser implements CreatesNewUsers
             'purpose' => ['nullable', 'string', 'max:255'],
             'province' => ['nullable', 'string', 'max:100'],
             'postal_code' => ['nullable', 'string', 'max:20'],
+            'g-recaptcha-response' => 'required|captcha',
             'password' => $this->passwordRules(),
         ])->validate();
 

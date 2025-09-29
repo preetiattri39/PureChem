@@ -50,6 +50,7 @@ class Synthesis extends Controller
                 'usage' => 'required|in:university_lab_research,testing_standards,product_development,regulatory_use,resale_distribution,other',
                 'usage_other' => 'nullable|string|required_if:usage,other',
                 'terms_accepted' => 'required|accepted',
+                'g-recaptcha-response' => 'required|captcha'
             ]);
 
             if ($validator->fails()) {

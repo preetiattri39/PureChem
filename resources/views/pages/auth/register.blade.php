@@ -4,7 +4,7 @@
 @section('robots', 'noindex, nofollow')
 
 @section('vite')
-    @vite([])
+    @vite(['resources/js/pages/auth/register.js'])
 @endsection
 
 @section('content')
@@ -94,7 +94,15 @@
                                 <input type="text" id="postal_code" name="postal_code" class="form-control" placeholder="Postal Code" value="{{ old('postal_code') }}">
                             </div>
                         </div>
-                        <button type="submit" class="btn-yellow my-0 mx-auto d-block" onclick="$('#sh-loader').removeClass('d-none')">Register</button>
+                        <div class="d-flex flex-wrap gap-3 justify-content-md-between justify-content-center align-items-center">
+                            <div>
+                                {!! NoCaptcha::display(['data-callback' => 'enableAuthRegisterSubmit']) !!}
+                                @error('g-recaptcha-response')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <button disabled id="auth_register_btn_submit" type="submit" class="btn-yellow" onclick="$('#sh-loader').removeClass('d-none')">Register</button>
+                        </div>
                         <div class="d-flex flex-column align-items-center mt-4">
                             <p>Forgot <a href="{{ route('password.request') }}" target="_self">Password?</a></p>
                             <p>Already have an account? <a href="{{ route('login') }}" target="_self">Login</a> </p>

@@ -12,6 +12,7 @@ use App\Models\ShippingAddress;
 use App\Models\Conversation;
 use App\Models\User;
 use App\Models\MessageAttachment;
+use App\Models\CustomSynthesisSubmission;
 use Livewire\WithFileUploads;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Concerns\InteractsWithForms;

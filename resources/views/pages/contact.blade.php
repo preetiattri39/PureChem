@@ -13,7 +13,7 @@
 @section('twitter_description', View::getSection('meta_description'))
 
 @section('vite')
-    @vite(['resources/css/pages/contact.css'])
+    @vite(['resources/css/pages/contact.css','resources/js/pages/contact.js'])
 @endsection
 
 @section('content')
@@ -68,16 +68,14 @@
 
                             <input type="text" name="website" style="display:none">
 
-                             {{-- <div class="mb-3">
-                                {!! no_captcha()->display() !!}
+                             <div class="mb-3">
+                                {!! NoCaptcha::display(['data-callback' => 'enableSubmit']) !!}
                                 @error('g-recaptcha-response')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                            </div> --}}
-                            {{-- {!! NoCaptcha::display() !!} --}}
-
+                            </div>
                             <div class="mt-4 d-flex flex-row gap-3 sh-custom-mt-xxl">
-                                <button type="submit" class="btn-yellow" onclick="$('#sh-loader').removeClass('d-none')">Submit</button>
+                                <button disabled id="contact_form_submission_btn" type="submit" class="btn-yellow" onclick="$('#sh-loader').removeClass('d-none')">Submit</button>
                             </div>
                         </form>
                     </div>

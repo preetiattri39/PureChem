@@ -1,4 +1,8 @@
 $(function () {
+    window.enableCustomSynthesisSubmit = function () {
+        $("#enable_custom_synthesis_submit_btn").prop("disabled", false);
+    };
+
     try {
         ChemDoodle.ELEMENT['H'].jmolColor = 'black';
         ChemDoodle.ELEMENT['S'].jmolColor = '#B9A130';

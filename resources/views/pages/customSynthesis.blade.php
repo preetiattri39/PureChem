@@ -249,8 +249,14 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="mt-4 d-flex justify-content-end">
-                                    <button type="submit" class="btn-yellow" id="submitBtn">
+                                <div class="mt-4 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        {!! NoCaptcha::display(['data-callback' => 'enableCustomSynthesisSubmit']) !!}
+                                        @error('g-recaptcha-response')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <button type="submit" class="btn-yellow" id="enable_custom_synthesis_submit_btn" disabled>
                                         Submit Request
                                     </button>
                                 </div>
