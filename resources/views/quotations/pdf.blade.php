@@ -225,7 +225,7 @@
                         <div class="quotation-title">Proforma Quotation</div>
                     </td>
                     <td class="logo-cell">
-                        <img src="{{ public_path('images/logo/quotation-logo.png') }}" alt="Company Logo" style="max-width: 140px; max-height: 80px;">
+                        <img src="{{ public_path('images/logo/pdf-logo.png') }}" alt="Company Logo" style="max-width: 140px; max-height: 80px;">
                     </td>
                 </tr>
             </table>
@@ -311,7 +311,7 @@
                     @foreach($quotation->quotationItems as $index => $item)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $item->product->name ?? 'N/A' }}</td>
+                            <td>{{ $item->product->name ?? $item->customProduct->molecule_name }}</td>
                             <td>{{ number_format($item->quantity, 0) }}</td>
                             <td>{{ $item->units }}</td>
                             <td>{{ $quotation->currency }}{{ number_format($item->price, 2) }}</td>

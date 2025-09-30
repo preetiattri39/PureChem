@@ -225,7 +225,7 @@
                         <div class="invoice-title">Proforma Invoice</div>
                     </td>
                     <td class="logo-cell">
-                        <img src="{{ public_path('images/logo/invoice-logo.png') }}" alt="Company Logo" style="max-width: 140px; max-height: 80px;">
+                        <img src="{{ public_path('images/logo/pdf-logo.png') }}" alt="Company Logo" style="max-width: 140px; max-height: 80px;">
                     </td>
                 </tr>
             </table>

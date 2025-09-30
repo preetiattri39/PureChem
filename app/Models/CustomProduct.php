@@ -26,4 +26,9 @@ class CustomProduct extends Model
     {
         return $this->hasOne(CustomSynthesisSubmission::class, 'custom_product_id');
     }
+
+    public function quotationItems()
+    {
+        return $this->hasMany(QuotationItem::class);
+    }
 }

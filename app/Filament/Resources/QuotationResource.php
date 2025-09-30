@@ -15,11 +15,13 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Models\QuotationItem;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\CustomProduct;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Checkbox;
 use Filament\Tables\Actions\Action;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Response;
@@ -61,7 +63,8 @@ class QuotationResource extends Resource
                                             ->placeholder('e.g., Air, Courier'),
                                         TextInput::make('currency')
                                             ->label('Currency')
-                                            ->placeholder('e.g., &dollar;, &euro;, &pound;,'),
+                                            ->placeholder('e.g., &dollar;, &euro;, &pound;,')
+                                            ->required(),
                                     ]),
                             ]),
 
@@ -159,12 +162,44 @@ class QuotationResource extends Resource
                         Repeater::make('quotationItems')
                             ->relationship()
                             ->schema([
+                                Checkbox::make('is_custom_product')
+                                    ->label('Is it a custom product?')
+                                    ->live()
+                                    ->default(false)
+                                    ->afterStateUpdated(function ($state, $set) {
+                                        $set('product_id', null);
+                                        $set('custom_product_id', null);
+                                    }),
+
                                 Select::make('product_id')
                                     ->label('Product')
                                     ->options(Product::pluck('name', 'id'))
-                                    ->required()
+                                    ->required(fn ($get) => !$get('is_custom_product'))
                                     ->searchable()
-                                    ->preload(),
+                                    ->preload()
+                                    ->visible(fn ($get) => !$get('is_custom_product')),
+
+                                Select::make('custom_product_id')
+                                    ->label('Custom Product')
+                                    ->options(CustomProduct::pluck('molecule_name', 'id'))
+                                    ->required(fn ($get) => $get('is_custom_product'))
+                                    ->searchable()
+                                    ->preload()
+                                    ->visible(fn ($get) => $get('is_custom_product'))
+                                    ->live()
+                                    ->afterStateUpdated(function ($state, $set) {
+                                        if ($state) {
+                                            $customProduct = CustomProduct::find($state);
+                                            if ($customProduct) {
+                                                $set('purity', $customProduct->purity);
+                                                $set('units', $customProduct->unit);
+                                                $set('quantity', $customProduct->quantity);
+                                                if ($customProduct->price) {
+                                                    $set('price', $customProduct->price);
+                                                }
+                                            }
+                                        }
+                                    }),
 
                                 Forms\Components\Grid::make(4)
                                     ->schema([

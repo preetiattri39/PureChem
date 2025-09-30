@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->text('to_address')->nullable();
             $table->string('company')->nullable();
+            $table->string('currency')->default('$');
             $table->string('email')->nullable();
             $table->string('vat_number')->nullable();
             $table->date('quotation_date');

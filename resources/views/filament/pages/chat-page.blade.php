@@ -16,19 +16,19 @@
                                         @endif
                                         
                                         @if(isset($message['attachments']) && count($message['attachments']) > 0)
-                                            @foreach($message['attachments'] as $attachment)
+                                            @foreach($message['attachments'] as $attach)
                                                 <div class="mt-2">
-                                                    @if(str_starts_with($attachment['file_type'], 'image/'))
-                                                        <img src="{{ $attachment['file_url'] }}" 
-                                                             alt="{{ $attachment['file_name'] }}" 
+                                                    @if(str_starts_with($attach['file_type'], 'image/'))
+                                                        <img src="{{ $attach['file_url'] }}" 
+                                                             alt="{{ $attach['file_name'] }}" 
                                                              class="max-w-full h-auto rounded"
                                                              style="max-width: 100px;">
                                                     @else
-                                                        <a href="{{ $attachment['file_url'] }}" 
-                                                           download="{{ $attachment['file_name'] }}" 
+                                                        <a href="{{ $attach['file_url'] }}" 
+                                                           download="{{ $attach['file_name'] }}" 
                                                            class="text-blue-600 hover:text-blue-800 flex items-center space-x-1">
                                                             <img src="{{ asset('images/icons/attachment.svg') }}" class="w-4 h-4">
-                                                            <span>{{ $attachment['file_name'] }}</span>
+                                                            <span>{{ $attach['file_name'] }}</span>
                                                         </a>
                                                     @endif
                                                 </div>
@@ -42,19 +42,19 @@
                                         @endif
                                         
                                         @if(isset($message['attachments']) && count($message['attachments']) > 0)
-                                            @foreach($message['attachments'] as $attachment)
+                                            @foreach($message['attachments'] as $attach)
                                                 <div class="mt-2">
-                                                    @if(str_starts_with($attachment['file_type'], 'image/'))
-                                                        <img src="{{ $attachment['file_url'] }}" 
-                                                             alt="{{ $attachment['file_name'] }}" 
+                                                    @if(str_starts_with($attach['file_type'], 'image/'))
+                                                        <img src="{{ $attach['file_url'] }}" 
+                                                             alt="{{ $attach['file_name'] }}" 
                                                              class="max-w-full h-auto rounded"
                                                              style="max-width: 100px;">
                                                     @else
-                                                        <a href="{{ $attachment['file_url'] }}" 
-                                                           download="{{ $attachment['file_name'] }}" 
+                                                        <a href="{{ $attach['file_url'] }}" 
+                                                           download="{{ $attach['file_name'] }}" 
                                                            class="text-white hover:text-gray-200 flex items-center space-x-1">
                                                             <img src="{{ asset('images/icons/attachment.svg') }}" class="w-4 h-4">
-                                                            <span>{{ $attachment['file_name'] }}</span>
+                                                            <span>{{ $attach['file_name'] }}</span>
                                                         </a>
                                                     @endif
                                                 </div>
@@ -66,6 +66,46 @@
                         @endif
                     </div>
                     
+                    @if($attachment)
+                        <div class="mb-3" style="display: inline-block;">
+                            <div style="position: relative; display: inline-block;">
+                                 @if(is_object($attachment) && method_exists($attachment, 'temporaryUrl'))
+                                    @php
+                                        $mimeType = $attachment->getMimeType();
+                                    @endphp
+                                    @if(str_starts_with($mimeType, 'image/'))
+                                        <img src="{{ $attachment->temporaryUrl() }}" 
+                                             alt="Preview" 
+                                             class="rounded"
+                                             style="max-width: 200px; max-height: 200px; object-fit: cover; border: 2px solid #dee2e6; display: block;">
+                                    @else
+                                        <div class="d-flex align-items-center gap-2 p-3 bg-light rounded" style="border: 2px solid #dee2e6;">
+                                            <img src="{{ asset('images/icons/attachment.svg') }}" style="width: 20px; height: 20px;">
+                                            <span class="text-muted">{{ $attachment->getClientOriginalName() }}</span>
+                                        </div>
+                                    @endif
+                                @endif
+                                
+                                <button type="button" 
+                                        wire:click="removeAttachment" 
+                                        class="btn btn-sm position-absolute bg-white shadow-sm"
+                                        style="position: absolute; top: -8px; right: -8px; padding: 2px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid #d1a744; display: flex; align-items: center; justify-content: center;"
+                                        title="Remove file">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d1a744" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    @endif
+                    
+                    <!-- Loading State for File Upload -->
+                    <div wire:loading wire:target="attachment" class="mb-3">
+                        <div class="p-2 bg-light rounded text-center">
+                            <small class="text-info">Uploading file...</small>
+                        </div>
+                    </div>
 
                     <div class="chat-input">
                         @if($rfqStatus === 'open')
@@ -98,25 +138,6 @@
                                     </span>
                                 </div>
                             </form>
-                            
-                            <!-- File Upload Preview -->
-                            @if($attachment)
-                                {{-- <div class="mt-2 p-2 bg-light rounded">
-                                    <small class="text-success">
-                                        <strong>File selected:</strong> {{ $attachment['file_name'] }}
-                                        <button type="button" 
-                                                wire:click="removeAttachment" 
-                                                class="btn btn-sm btn-outline-danger ms-2">
-                                            Remove
-                                        </button>
-                                    </small>
-                                </div> --}}
-                            @endif
-                            
-                            <!-- Loading State for File Upload -->
-                            <div wire:loading wire:target="attachment" class="mt-2">
-                                <small class="text-info">Uploading file...</small>
-                            </div>
                         @else
                             <div>You closed the status and hence chat is closed!</div>
                         @endif

@@ -25,7 +25,7 @@ class CreateNewUser implements CreatesNewUsers
             'phone' => ['nullable', 'regex:/^\d{1,12}$/'],
             'city' => ['nullable', 'string', 'max:100'],
             'country' => ['nullable', 'string', 'max:100'],
-            'company' => ['nullable', 'string', 'max:255'],
+            'company' => ['required', 'string', 'max:255'],
             'address' => ['nullable', 'string', 'max:255'],
             'purpose' => ['nullable', 'string', 'max:255'],
             'province' => ['nullable', 'string', 'max:100'],

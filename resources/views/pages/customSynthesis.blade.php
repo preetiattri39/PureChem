@@ -203,7 +203,7 @@
                                     <textarea name="special_instructions" class="form-control" placeholder="Lead time, synthesis model and any other details" rows="3"></textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label d-block">Structure Image Requirement? *</label>
+                                    <label class="form-label d-block">Do you want to provide a structure image? *</label>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="structure_required" id="structureYes" value="yes" checked>
                                         <label class="form-check-label" for="structureYes">Yes</label>

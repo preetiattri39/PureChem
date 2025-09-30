@@ -36,7 +36,7 @@
             <div class="col-md-6 product-info sh-break-all">
                 <h2 class="section-title">{{ $product['name'] }}</h2>
                 <p><strong>Product Code :</strong> {{ $product['product_code'] ?? 'N/A' }}</p>
-                <p><strong>Cas :</strong> {{ $product['cas_number'] ?? 'N/A' }}</p>
+                <p><strong>CAS :</strong> {{ $product['cas_number'] ?? 'N/A' }}</p>
                 <p><strong>Purity :</strong> {{ $product['purity'] ?? 'N/A' }}</p>
                 <p><strong>Molecular Formula :</strong> {{ $product['molecular_formula'] ?? 'N/A' }}</p>
                 <p><strong>Molecular Weight :</strong> {{ $product['molecular_weight'] ?? 'N/A' }}</p>

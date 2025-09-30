@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->integer('quantity');
             $table->boolean('structure_uploaded')->default(false);
             $table->string('structure_file', 255)->nullable();
+            $table->string('price', 255)->nullable();
             $table->enum('upload_method', ['upload', 'draw'])->nullable();
             $table->timestamps();
         });

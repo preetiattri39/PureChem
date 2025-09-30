@@ -12,6 +12,8 @@ class QuotationItem extends Model
     protected $fillable = [
         'quotation_id',
         'product_id',
+        'custom_product_id',
+        'is_custom_product',
         'purity',
         'quantity',
         'units',
@@ -45,5 +47,10 @@ class QuotationItem extends Model
     public function product()
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public function customProduct()
+    {
+        return $this->belongsTo(CustomProduct::class);
     }
 }

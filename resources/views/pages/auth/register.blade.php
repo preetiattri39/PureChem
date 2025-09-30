@@ -56,8 +56,8 @@
                             </div>
 
                             <div class="col-md-6 mb-4">
-                                <label for="company">Company</label>
-                                <input type="text" id="company" name="company" class="form-control" placeholder="Enter your Company's name" value="{{ old('company') }}">
+                                <label for="company">Company / Individual Name</label>
+                                <input type="text" id="company" name="company" class="form-control" placeholder="Enter your Company's / Individual name" value="{{ old('company') }}">
                             </div>
 
                             <div class="col-md-6 mb-4">
