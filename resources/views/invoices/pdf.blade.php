@@ -360,10 +360,6 @@
             <div class="description-content">defined by swizchem depending on the client and the request.entered here by swizchem while creating
 the proforma invoice</div>
         </div> --}}
-
-        <div style="padding: 20px; text-align: right; border-top: 1px solid #eee; font-size: 20px; color: #000; font-weight:900">
-            Authorized Signatory (Swizchem)
-        </div>
     </div>
 </body>
 </html>

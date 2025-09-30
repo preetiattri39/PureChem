@@ -362,10 +362,6 @@
             <div class="description-title">Disclaimer:</div>
             <div class="description-content">By proceeding, you acknowledge that all products supplied by Swizchem are intended solely for research and internal purposes. Your organization accepts full responsibility for safe handling, storage, transport, and disposal of the products in compliance with all applicable safety and regulatory requirements. Swizchem disclaims any liability for misuse or unauthorized application of its products.</div>
         </div>
-
-        <div style="padding: 20px; text-align: right; border-top: 1px solid #eee; font-size: 20px; color: #000; font-weight:900">
-            Authorized Signatory (Swizchem)
-        </div>
     </div>
 </body>
 </html>
