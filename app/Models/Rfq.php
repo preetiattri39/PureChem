@@ -59,6 +59,11 @@ class Rfq extends Model
         return $this->user->email;
     } 
 
+    public function getRfqUserCompanyAttribute()
+    {
+        return $this->user->company;
+    }
+
     public function getProductCountAttribute()
     {
         return $this->items->count();

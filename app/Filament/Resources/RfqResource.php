@@ -63,6 +63,8 @@ class RfqResource extends Resource
                 TextColumn::make('S no.')->rowIndex(),
                 TextColumn::make('rfq_user_name')
                     ->label('Name'),
+                TextColumn::make('rfq_user_company')
+                    ->label('Company'),
                 TextColumn::make('rfq_user_email')
                     ->label('Email'),
                 TextColumn::make('status')
