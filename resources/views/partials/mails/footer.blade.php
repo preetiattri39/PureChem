@@ -27,8 +27,9 @@
     <div class="divider"></div>
     
     <div class="company-info">
-        <strong>Address:</strong> A326, A.I. Virtasen Aukio 1, 00560 Helsinki, Finland<br>
+        <strong>Address:</strong> {{ replace_shortcodes('[admin-address-1]') }}<br>
         <strong>Hours:</strong> Monday to Thursday 9:00 AM - 3:30 PM<br><br>
+        <strong>Hours:</strong>{{ replace_shortcodes('[working-days-open]') }} to {{ replace_shortcodes('[working-days-close]') }} {{ replace_shortcodes('[working-hours-open]') }} - {{ replace_shortcodes('[working-hours-close]') }}<br><br>
         <em>© 2025 Swizchem. All rights reserved.</em>
     </div>
 </div>

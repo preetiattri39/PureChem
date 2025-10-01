@@ -8,7 +8,6 @@ use Filament\Support\Assets\Css;
 use App\Models\Rfq;
 use App\Models\RfqItem;
 use App\Models\Message;
-use App\Models\ShippingAddress;
 use App\Models\Conversation;
 use App\Models\User;
 use App\Models\MessageAttachment;
@@ -37,7 +36,6 @@ class ChatPage extends Page
     public $rfqData = [];
     public $conversationId;
     public $rfq_items = [];
-    public $shipping_addr = [];
     public $adminUserId = null;
     public $currentUserId = null;
     public $lastMessageId = 0; 
@@ -64,7 +62,6 @@ class ChatPage extends Page
         $this->findOrCreateConversation();
         $this->loadMessages();
         $this->loadRfqItems();
-        $this->loadShippingAddress();
     }
 
     public function getBreadcrumbs(): array
@@ -219,12 +216,6 @@ class ChatPage extends Page
                 ->get();
         }
         
-    }
-    
-    public function loadShippingAddress()
-    {
-        $this->shipping_addr = \App\Models\ShippingAddress::where('rfq_id', $this->rfqId)
-            ->first()?->toArray() ?? [];
     }
     
     public function sendMessage()

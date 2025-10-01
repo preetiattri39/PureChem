@@ -9,7 +9,6 @@ use App\Models\Rfq;
 use App\Models\RfqItem;
 use \App\Models\CustomSynthesisSubmission;
 use App\Models\Message;
-use App\Models\ShippingAddress; 
 use App\Models\Conversation;
 use App\Models\User;
 use App\Models\MessageAttachment;

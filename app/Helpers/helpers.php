@@ -6,13 +6,13 @@ if (!function_exists('replace_shortcodes')) {
     function replace_shortcodes($content) 
     {
         $shortcodes = [
-            '[admin-ph-1]'                               => '+358 46 5534360',
+            '[admin-ph-1]'                               => '+358 44 763 1234',
             '[admin-email-1]'                            => 'sales@swizchem.com',
             '[email-form-submission-test]'               => 'withzoptal@gmail.com',
             '[email-form-submission]'                    => 'sales@swizchem.com',
-            '[admin-address-1]'                          => 'A326, A.I. Virtasen Aukio 1, 00560 Helsinki, Finland.',
+            '[admin-address-1]'                          => 'Vetehisenkuja 4A 63, 00530 Helsinki, Finland',
 
-            '[admin-ph-1-html]'                          => '<a href="tel:+358 46 5534360">+358 46 5534360</a>',
+            '[admin-ph-1-html]'                          => '<a href="tel:+358 44 763 1234">+358 44 763 1234</a>',
             '[admin-email-1-html]'                       => '<a href="mailto:sales@swizchem.com">sales@swizchem.com</a>',
 
             '[working-days-open]'                        => 'Monday',

@@ -158,6 +158,13 @@
                                 <li class="list-group-item text-muted">No products added yet</li>
                             @endforelse
                         @else
+                                @if($rfq_items->customProduct && $rfq_items->customProduct->structure_file)
+                                    <li class="list-group-item">
+                                        <img src="{{ asset('storage/' . $rfq_items->customProduct->structure_file) }}" 
+                                            alt="Structure" 
+                                            style="max-width: 300px;">
+                                    </li>
+                                @endif
                                 <li class="list-group-item">
                                     {{ $rfq_items->customProduct ? $rfq_items->customProduct->molecule_name . ' : ' . $rfq_items->customProduct->quantity . $rfq_items->customProduct->unit : 'N/A' }}
                                 </li>

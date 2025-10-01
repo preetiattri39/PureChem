@@ -99,7 +99,7 @@ class Checkout extends Controller
             $cart->items()->delete();
             $cart->delete();
 
-            Mail::to(replace_shortcodes('[email-form-submission-test]'))->send(new FormSubmissionMail($mailData, 'mails.rfq', 'RFQ from Catalogue'));
+            Mail::to(replace_shortcodes('[email-form-submission]'))->send(new FormSubmissionMail($mailData, 'mails.rfq', 'RFQ from Catalogue'));
 
             DB::commit();
 
