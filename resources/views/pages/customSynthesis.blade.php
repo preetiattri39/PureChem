@@ -28,84 +28,104 @@
 <!-- Hero Section -->
 <section class="inner-hero sh-custom-bg-light align-items-center">
     <div class="container text-center">
-        <h1 class="display-6 fw-bold">{{ $hero['title'] }}</h1>
-        <p class="w-5 mt-3 col-md-6 offset-md-3 text-center">{{ $hero['description'] }}</p>
-        <a class="btn-yellow mt-4" href="#custom-synthesis">{{ $hero['buttonText'] }}</a>
+        <h1 class="display-6 fw-bold">Custom Chemistry, Precisely Delivered</h1>
+        <p class="w-5 mt-3 col-md-6 offset-md-3 text-center">Tailored synthesis of small molecules, from milligram to gram scale — designed to meet your research, development, and quality needs.</p>
+        <a class="btn-yellow mt-4" href="#custom-synthesis">Request A Quote</a>
     </div>
 </section>
 
-<!-- Content Sections -->
-@foreach ($sections as $index => $section)
+<!-- What We Offer Section -->
 <section class="py-5">
     <div class="container">
         <div class="row align-items-center g-5">
-            @if ($index % 2 === 0)
-                <!-- Image Left, Text Right -->
-                <div class="col-md-6">
-                    <picture>
-                        <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
-                        <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
-                        <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded" loading="lazy">
-                    </picture>
-                </div>
-                <div class="col-md-6">
-                    <h6 class="subtitle">{{ $section['subtitle'] }}</h6>
-                    <h2 class="section-title">{!! $section['title'] !!}</h2>
-                    <p>{{ $section['paragraph'] }}</p>
-                    @if (!empty($section['sublistTitle']))
-                        <h6 class="subtitle">{{ $section['sublistTitle'] }}</h6>
-                    @endif
-                    <ul>
-                        @foreach ($section['list'] as $item)
-                            <li>{{ $item }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @else
-                <!-- Text Left, Image Right -->
-                <div class="col-md-6">
-                    <h6 class="subtitle">{{ $section['subtitle'] }}</h6>
-                    <h2 class="section-title">{!! $section['title'] !!}</h2>
-                    <p>{{ $section['paragraph'] }}</p>
-                    @if (!empty($section['sublistTitle']))
-                        <h6 class="subtitle">{{ $section['sublistTitle'] }}</h6>
-                    @endif
-                    <ul>
-                        @foreach ($section['list'] as $item)
-                            <li>{{ $item }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <picture>
-                        <source srcset="{{ asset($section['image']['3x']) }}" media="(min-width: 992px)">
-                        <source srcset="{{ asset($section['image']['2x']) }}" media="(min-width: 768px)">
-                        <img src="{{ asset($section['image']['1x']) }}" alt="{!! $section['title'] !!}" class="img-fluid rounded" loading="lazy">
-                    </picture>
-                </div>
-            @endif
+            <!-- Image Left, Text Right -->
+            <div class="col-md-6">
+                <picture>
+                    <source srcset="{{ asset('images/web/what-we-offer-3x.webp') }}" media="(min-width: 992px)">
+                    <source srcset="{{ asset('images/web/what-we-offer-2x.webp') }}" media="(min-width: 768px)">
+                    <img src="{{ asset('images/web/what-we-offer-2x.webp') }}" alt="Custom Molecules. Designed for Discovery." class="img-fluid rounded" loading="lazy">
+                </picture>
+            </div>
+            <div class="col-md-6">
+                <h6 class="subtitle">What We Offer</h6>
+                <h2 class="section-title">Custom Molecules.<br> Designed for Discovery.</h2>
+                <p>Swizchem offers high-quality custom synthesis services for small molecules across pharmaceutical, academic, and industrial sectors. Whether you need reference compounds, intermediates, or complex structures we deliver with</p>
+                <ul>
+                    <li>Milligram to gram scale synthesis</li>
+                    <li>Confidential, made-to-order projects</li>
+                    <li>Support for proprietary and non-commercial structures</li>
+                    <li>Analytical data (NMR, HPLC, MS, COA) included</li>
+                    <li>Timely delivery and full documentation</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
-@endforeach
+
+<!-- Who We Work With Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- Text Left, Image Right -->
+            <div class="col-md-6">
+                <h6 class="subtitle">Who We Work With</h6>
+                <h2 class="section-title">Serving Scientists, Researchers, and Innovators</h2>
+                <p>Whether you're advancing drug discovery, scaling a lead compound, or exploring a novel scaffold — we’re your synthesis partner.</p>
+                <h6 class="subtitle">Our clients include</h6>
+                <ul>
+                    <li>Academic institutions & postdoctoral researchers</li>
+                    <li>Biotech and pharmaceutical R&D labs</li>
+                    <li>CROs and startups</li>
+                    <li>Chemical sourcing managers</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <picture>
+                    <source srcset="{{ asset('images/web/who-we-work-3x.webp') }}" media="(min-width: 992px)">
+                    <source srcset="{{ asset('images/web/who-we-work-2x.webp') }}" media="(min-width: 768px)">
+                    <img src="{{ asset('images/web/who-we-work-2x.webp') }}" alt="Serving Scientists, Researchers, and Innovators" class="img-fluid rounded" loading="lazy">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Our Process Section -->
 <section class="py-5 sh-custom-bg-light">
     <div class="container">
         <div class="row g-3 text-center">
-            <h6 class="subtitle mb-0">{{ $our_process['subtitle'] }}</h6>
-            <h2 class="section-title mb-5">{{ $our_process['title'] }}</h2>
+            <h6 class="subtitle mb-0">Our Process</h6>
+            <h2 class="section-title mb-5">How It Works</h2>
         </div>
         <div class="row g-3">
-            @foreach ($our_process['steps'] as $step)
-                <div class="col-6 col-md-3">
-                    <div class="icon-box">
-                        <img src="{{ asset($step['icon']) }}" class="mb-2" alt="{{ $step['title'] }}" loading="lazy">
-                        <p class="fw-bold mb-1">{{ $step['title'] }}</p>
-                        <small class="mb-3 d-block">{{ $step['desc'] }}</small>
-                    </div>
+            <div class="col-6 col-md-3">
+                <div class="icon-box">
+                    <img src="{{ asset('images/icons/submit-request.svg') }}" class="mb-2" alt="Submit your request" loading="lazy">
+                    <p class="fw-bold mb-1">Submit your request</p>
+                    <small class="mb-3 d-block">CAS number(if any), upload the structure, share the specs or project details</small>
                 </div>
-            @endforeach
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="icon-box">
+                    <img src="{{ asset('images/icons/feasibility-check.svg') }}" class="mb-2" alt="Feasibility check" loading="lazy">
+                    <p class="fw-bold mb-1">Feasibility check</p>
+                    <small class="mb-3 d-block">We'll evaluate and provide a quote</small>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="icon-box">
+                    <img src="{{ asset('images/icons/synthesis.svg') }}" class="mb-2" alt="Synthesis & QC" loading="lazy">
+                    <p class="fw-bold mb-1">Synthesis & QC</p>
+                    <small class="mb-3 d-block">Handled by our expert chemists</small>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="icon-box">
+                    <img src="{{ asset('images/icons/delivery.svg') }}" class="mb-2" alt="Delivery" loading="lazy">
+                    <p class="fw-bold mb-1">Delivery</p>
+                    <small class="mb-3 d-block">Product shipped with full analytical data</small>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -115,19 +135,19 @@
         <div class="row align-items-center g-5">
             <div class="col-md-6">
                 <picture>
-                    <source srcset="{{ asset($quality['image']['3x']) }}" media="(min-width: 992px)">
-                    <source srcset="{{ asset($quality['image']['2x']) }}" media="(min-width: 768px)">
-                    <img src="{{ asset($quality['image']['1x']) }}" alt="{!! $quality['title'] !!}" class="img-fluid rounded" loading="lazy">
+                    <source srcset="{{ asset('images/web/precision-3x.webp') }}" media="(min-width: 992px)">
+                    <source srcset="{{ asset('images/web/precision-2x.webp') }}" media="(min-width: 768px)">
+                    <img src="{{ asset('images/web/precision-2x.webp') }}" alt="Precision You Can Trust" class="img-fluid rounded" loading="lazy">
                 </picture>
             </div>
             <div class="col-md-6">
-                <h6 class="subtitle mb-0">{{ $quality['subtitle'] }}</h6>
-                <h2 class="section-title">{!! $quality['title'] !!}</h2>
-                <p>{{ $quality['paragraph'] }}</p>
+                <h6 class="subtitle mb-0">Quality Assurance</h6>
+                <h2 class="section-title">Precision You Can Trust</h2>
+                <p>Every custom synthesis project is carried out under strict quality controls, with:</p>
                 <ul>
-                    @foreach ($quality['list'] as $item)
-                        <li>{{ $item }}</li>
-                    @endforeach
+                    <li>Full analytical characterization</li>
+                    <li>COA and data transparency</li>
+                    <li>Batch tracking and documentation</li>
                 </ul>
             </div>
         </div>

@@ -14,14 +14,11 @@ use App\Models\CustomSynthesisSubmission;
 use App\Models\Rfq;
 use Illuminate\Support\Facades\Auth;
 
-class Synthesis extends Controller
+class SynthesisController extends Controller
 {
     public function index()
     {
-        $synthesisContentFilePath = storage_path('app/private/content/synthesis.php');
-        $content = file_exists($synthesisContentFilePath) ? include $synthesisContentFilePath : [];
-
-        return view('pages.customSynthesis', $content);
+        return view('pages.customSynthesis');
     }
 
     public function submitForm(Request $request)

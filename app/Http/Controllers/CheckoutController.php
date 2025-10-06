@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\FormSubmissionMail;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class Checkout extends Controller
+class CheckoutController extends Controller
 {
 
     public function index(Request $request)

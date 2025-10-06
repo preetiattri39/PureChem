@@ -11,7 +11,7 @@ use App\Models\Category;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 
-class Products extends Controller
+class ProductsController extends Controller
 {
     public function index(Request $request, $categoryId = null)
     {

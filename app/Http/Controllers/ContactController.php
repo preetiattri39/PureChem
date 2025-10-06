@@ -8,14 +8,11 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\FormSubmissionMail;
 use App\Models\ContactSubmission;
 
-class Contact extends Controller
+class ContactController extends Controller
 {
      public function index()
     {
-        $contactContentFilePath = storage_path('app/private/content/contact.php');
-        $content = file_exists($contactContentFilePath) ? include $contactContentFilePath : [];
-
-        return view('pages.contact', compact('content'));
+        return view('pages.contact');
     }
 
     public function submitForm(Request $request)
