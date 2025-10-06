@@ -40,12 +40,14 @@ class ChatPage extends Page
     public $currentUserId = null;
     public $lastMessageId = 0; 
     public $isPolling = true;
+    public $userTimezone = null;
 
     public function mount(): void
     {
         $this->rfqId = request()->query('rfqId');
         $this->adminUserId = User::where('role', 'admin')->value('id');
         $this->currentUserId = Auth::id();
+        $this->userTimezone = Auth::user()->timezone ?? 'Europe/Helsinki';
 
         if (!$this->adminUserId || !$this->currentUserId) {
             abort(404, 'Something went wrong!');
@@ -130,7 +132,9 @@ class ChatPage extends Page
             return [
                 'id' => $message->id,
                 'message' => $message->message,
-                'created_at' => $message->created_at,
+                'created_at' => $message->created_at
+                ? $message->created_at->setTimezone($this->userTimezone)->format('Y-m-d H:i:s')
+                : null,
                 'rfq_id' => $message->rfq_id,
                 'conversation_id' => $message->conversation_id,
                 'has_attachment' => $message->has_attachment,
@@ -168,7 +172,9 @@ class ChatPage extends Page
                 return [
                     'id' => $message->id,
                     'message' => $message->message,
-                    'created_at' => $message->created_at,
+                    'created_at' => $message->created_at
+                    ? $message->created_at->setTimezone($this->userTimezone)->format('Y-m-d H:i:s')
+                    : null,
                     'rfq_id' => $message->rfq_id,
                     'conversation_id' => $message->conversation_id,
                     'has_attachment' => $message->has_attachment,

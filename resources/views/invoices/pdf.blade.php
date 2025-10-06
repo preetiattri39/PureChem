@@ -238,10 +238,9 @@
                     <td>
                         <div class="section-title">From :</div>
                         <div class="company-info">Swizchem</div>
-                        <div class="company-info">Plot 56, Pharma Zone, Ahmedabad, India</div>
-                        <div class="company-info">Phone: +91-9123456780</div>
-                        <div class="company-info">Email: procurement@swizchem.in</div>
-                        <div class="company-info">GSTIN: 24SWZCH4567K9Z3</div>
+                        <div class="company-info">Vetehisenkuja 4A 63, 00530 Helsinki, Finland</div>
+                        <div class="company-info">Phone: +358 44 763 1234</div>
+                        <div class="company-info">Email: sales@swizchem.com</div>
                     </td>
                     <td>
                         <div class="section-title">To :</div>

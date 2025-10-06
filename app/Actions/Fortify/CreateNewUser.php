@@ -30,6 +30,8 @@ class CreateNewUser implements CreatesNewUsers
             'purpose' => ['nullable', 'string', 'max:255'],
             'province' => ['nullable', 'string', 'max:100'],
             'postal_code' => ['nullable', 'string', 'max:20'],
+            'timezone' => ['nullable', 'string', 'max:100'],
+            'ip_address' => ['nullable', 'string', 'max:100'],
             'g-recaptcha-response' => 'required|captcha',
             'password' => $this->passwordRules(),
         ])->validate();
@@ -45,6 +47,8 @@ class CreateNewUser implements CreatesNewUsers
             'purpose' => $input['purpose'] ?? null,
             'province' => $input['province'] ?? null,
             'postal_code' => $input['postal_code'] ?? null,
+            'timezone' => $input['timezone'] ?? 'UTC',
+            'ip_address' => $input['ip_address'] ?? request()->ip(),
             'password' => Hash::make($input['password']),
         ]);
 

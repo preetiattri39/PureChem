@@ -6,6 +6,7 @@ use App\Http\Controllers\Products;
 use App\Http\Controllers\Company;
 use App\Http\Controllers\Contact;
 use App\Http\Controllers\Privacy;
+use App\Http\Controllers\Confidentiality;
 use App\Http\Controllers\Strategy;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Checkout;
@@ -29,8 +30,10 @@ Route::prefix('cart')->name('cart.')->group(function () {
     Route::delete('/delete/{cart_item_id}', [CartController::class, 'deleteFromCart'])->name('delete');
 });
 
+Route::get('/confidentiality', [Confidentiality::class, 'index'])->name('confidentiality');
 Route::get('/privacy', [Privacy::class, 'index'])->name('privacy');
 Route::get('/business-strategy', [Strategy::class, 'index'])->name('business.strategy');
+
 Route::get('/custom-synthesis', [Synthesis::class, 'index'])->name('custom-synthesis');
 Route::post('/custom-synthesis/submit', [Synthesis::class, 'submitForm'])->name('synthesis.submit');
 

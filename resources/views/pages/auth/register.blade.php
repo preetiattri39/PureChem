@@ -93,6 +93,9 @@
                                 <label for="postal_code">Postal Code</label>
                                 <input type="text" id="postal_code" name="postal_code" class="form-control" placeholder="Postal Code" value="{{ old('postal_code') }}">
                             </div>
+
+                            <input type="hidden" name="timezone" id="timezone">
+                            <input type="hidden" name="ip_address" id="ip_address">
                         </div>
                         <div class="d-flex flex-wrap gap-3 justify-content-md-between justify-content-center align-items-center">
                             <div>
@@ -150,5 +153,15 @@
             emailModal.show();
         });
     @endif
+
+    document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ip_address').value = data.ip;
+                    document.getElementById('timezone').value = data.timezone;
+                })
+                .catch(err => console.error('Location detection failed:', err));
+    });
 </script>
 @endsection

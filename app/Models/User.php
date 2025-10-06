@@ -33,6 +33,8 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
         'country',
         'province',
         'postal_code',
+        'timezone',
+        'ip_address',
         'role',
     ];
 

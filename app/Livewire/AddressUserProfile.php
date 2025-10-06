@@ -38,8 +38,8 @@ class AddressUserProfile extends Component implements HasForms
                     ->aside()
                     ->description('Update your address details.')
                     ->schema([
-                        TextInput::make('phone')
-                            ->label('Phone')
+                        TextInput::make('company')
+                            ->label('Company / Individual Name')
                             ->maxLength(20),
 
                         TextInput::make('city')
