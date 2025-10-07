@@ -6,18 +6,30 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="fw-bold" href="{{ route('home') }}">
-                    <img
-                        src="{{ asset($globalHeaderData['siteLogo']['3x']) }}"
-                        srcset="
-                            {{ asset($globalHeaderData['siteLogo']['1x']) }} 500w,
-                            {{ asset($globalHeaderData['siteLogo']['2x']) }} 800w,
-                            {{ asset($globalHeaderData['siteLogo']['3x']) }} 1200w
-                        "
-                        sizes="(max-width: 500px) 500px, (min-width: 446px) 800px, (min-width: 960px) 1200px"
-                        alt="Swizchem Logo"
-                        class="logo"
-                        style="height: 40px;"
-                    />
+                    <picture>
+                        
+                        <source 
+                            media="(max-width: 500px)" 
+                            srcset="{{ asset($globalHeaderData['siteLogo']['1x']) }}" 
+                        >
+                        
+                        <source 
+                            media="(max-width: 960px)" 
+                            srcset="{{ asset($globalHeaderData['siteLogo']['2x']) }}" 
+                        >
+
+                        <source 
+                            media="(min-width: 961px)" 
+                            srcset="{{ asset($globalHeaderData['siteLogo']['3x']) }}" 
+                        >
+                        
+                        <img 
+                            src="{{ asset($globalHeaderData['siteLogo']['3x']) }}" 
+                            alt="Swizchem Logo" 
+                            class="logo" 
+                            style="height: 40px;"
+                        >
+                    </picture>
                 </a>
             </div>
             <div class="collapse navbar-collapse order-3 order-lg-2" id="navMenu">

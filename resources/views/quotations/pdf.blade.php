@@ -202,6 +202,14 @@
             display: table;
             clear: both;
         }
+
+        .footer {
+            padding: 15px 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+            font-size: 10px;
+        }
         
         @media print {
             body {
@@ -222,7 +230,7 @@
             <table class="header-table">
                 <tr>
                     <td>
-                        <div class="quotation-title">Proforma Quotation</div>
+                        <div class="quotation-title">Quotation</div>
                     </td>
                     <td class="logo-cell">
                         <img src="{{ public_path('images/logo/pdf-logo.png') }}" alt="Company Logo" style="max-width: 140px; max-height: 80px;">
@@ -361,6 +369,11 @@
             <div class="description-title">Disclaimer:</div>
             <div class="description-content">By proceeding, you acknowledge that all products supplied by Swizchem are intended solely for research and internal purposes. Your organization accepts full responsibility for safe handling, storage, transport, and disposal of the products in compliance with all applicable safety and regulatory requirements. Swizchem disclaims any liability for misuse or unauthorized application of its products.</div>
         </div>
+        
+        <div class="footer">
+            <strong>{{ parse_url(config('app.url'), PHP_URL_HOST) }}</strong>
+        </div>
     </div>
+    
 </body>
 </html>

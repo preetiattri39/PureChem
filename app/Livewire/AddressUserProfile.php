@@ -40,7 +40,7 @@ class AddressUserProfile extends Component implements HasForms
                     ->schema([
                         TextInput::make('company')
                             ->label('Company / Individual Name')
-                            ->maxLength(20),
+                            ->maxLength(255),
 
                         TextInput::make('city')
                             ->label('City')

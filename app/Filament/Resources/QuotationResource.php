@@ -64,6 +64,7 @@ class QuotationResource extends Resource
                                         TextInput::make('currency')
                                             ->label('Currency')
                                             ->placeholder('e.g., &dollar;, &euro;, &pound;,')
+                                            ->default('$')
                                             ->required(),
                                     ]),
                             ]),

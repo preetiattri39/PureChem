@@ -610,7 +610,7 @@ textarea.form-control {
 .section-title {
     font-weight: bold;
     font-size: var(--font-size-heading);
-    word-break: break-all;
+    text-align: left;
 }
 
 .btn-yellow {
@@ -692,7 +692,7 @@ section picture img {
 @media (max-width:464px) {
     .search-form-button {
         right: unset;
-        top: 4rem;
+        top: 5rem;
     }
 
     .search-form input::placeholder {

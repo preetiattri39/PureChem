@@ -95,31 +95,31 @@
     <div class="container">
         <div class="row g-3 text-center">
             <h6 class="subtitle mb-0">Our Process</h6>
-            <h2 class="section-title mb-5">How It Works</h2>
+            <h2 class="section-title text-center mb-5">How It Works</h2>
         </div>
         <div class="row g-3">
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-sm-6 col-md-3">
                 <div class="icon-box">
                     <img src="{{ asset('images/icons/submit-request.svg') }}" class="mb-2" alt="Submit your request" loading="lazy">
                     <p class="fw-bold mb-1">Submit your request</p>
                     <small class="mb-3 d-block">CAS number(if any), upload the structure, share the specs or project details</small>
                 </div>
             </div>
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-sm-6 col-md-3">
                 <div class="icon-box">
                     <img src="{{ asset('images/icons/feasibility-check.svg') }}" class="mb-2" alt="Feasibility check" loading="lazy">
                     <p class="fw-bold mb-1">Feasibility check</p>
                     <small class="mb-3 d-block">We'll evaluate and provide a quote</small>
                 </div>
             </div>
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-sm-6 col-md-3">
                 <div class="icon-box">
                     <img src="{{ asset('images/icons/synthesis.svg') }}" class="mb-2" alt="Synthesis & QC" loading="lazy">
                     <p class="fw-bold mb-1">Synthesis & QC</p>
                     <small class="mb-3 d-block">Handled by our expert chemists</small>
                 </div>
             </div>
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-sm-6 col-md-3">
                 <div class="icon-box">
                     <img src="{{ asset('images/icons/delivery.svg') }}" class="mb-2" alt="Delivery" loading="lazy">
                     <p class="fw-bold mb-1">Delivery</p>
@@ -165,7 +165,7 @@
                         <div class="step step-1">
                             <div class="row g-3 text-center mb-3">
                                 <h6 class="subtitle mb-0">Get In Touch</h6>
-                                <h2 class="section-title">Ready to Synthesize Your Next Compound?</h2>
+                                <h2 class="section-title text-center">Ready to Synthesize Your Next Compound?</h2>
                                 <p class="text-center">Form with below details - Upload your structure, share your specs, and our chemists will follow up with a quote and lead time.</p>
                             </div>
                             <div class="row form-section">
@@ -216,7 +216,7 @@
                                 </div>
                                 <div class="col-md-12 mb-4">
                                     <label for="address">Address</label>
-                                     <input type="text" name="address" class="form-control" placeholder="Enter your address" required>
+                                     <input type="text" name="address" class="form-control" placeholder="Enter delivery address if different from your registered address" required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="special-instructions">Special Instructions</label>
@@ -269,7 +269,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="mt-4 d-flex justify-content-between align-items-center">
+                                <div class="mt-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
                                     <div>
                                         {!! NoCaptcha::display(['data-callback' => 'enableCustomSynthesisSubmit']) !!}
                                         @error('g-recaptcha-response')

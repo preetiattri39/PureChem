@@ -31,4 +31,9 @@ class CustomProduct extends Model
     {
         return $this->hasMany(QuotationItem::class);
     }
+
+    public function invoiceItems()
+    {
+        return $this->hasMany(InvoiceItem::class);
+    }
 }

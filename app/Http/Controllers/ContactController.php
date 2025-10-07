@@ -27,6 +27,9 @@ class ContactController extends Controller
             'phone'   => 'nullable|string|max:20',
             'instructions' => 'nullable|string',
             'g-recaptcha-response' => 'required|captcha'
+        ], [
+            'g-recaptcha-response.required' => 'Please confirm you are not a robot.',
+            'g-recaptcha-response.captcha' => 'Captcha verification failed. Please try again.'
         ]);
 
         $submission = ContactSubmission::create([

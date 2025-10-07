@@ -16,7 +16,9 @@ class InvoiceItem extends Model
         'quantity',
         'units',
         'price',
-        'total'
+        'total',
+        'is_custom_product',
+        'custom_product_id',
     ];
 
     protected static function boot()
@@ -45,5 +47,10 @@ class InvoiceItem extends Model
     public function product()
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public function customProduct()
+    {
+        return $this->belongsTo(CustomProduct::class);
     }
 }

@@ -53,6 +53,8 @@ class UserRfqResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('S no.')->rowIndex(),
+                TextColumn::make('rfq_user_company')
+                    ->label('Company'),
                 TextColumn::make('status')
                 ->icon(fn (string $state): string => match ($state) {
                     'open' => 'heroicon-o-lock-open',

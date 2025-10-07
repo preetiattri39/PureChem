@@ -20,7 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $exceptions->render(function (AuthenticationException $e, Request $request) {
             if ($request->is('checkout') || $request->is('checkout/*')) {
-                return redirect()->guest(route('login'))->withError('Please login before checkout. And if you don\'t have an account, please Sign up!');
+                return redirect()->guest(route('login'))->withError('Please login before checkout. After login please go to the cart for checkout. And if you don\'t have an account, please Sign up!');
             }
             return redirect()->guest(route('login'));
         });

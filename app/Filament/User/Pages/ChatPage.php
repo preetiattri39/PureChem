@@ -149,7 +149,18 @@ class ChatPage extends Page
             ];
         })->toArray();
 
-        if (!empty($this->messages)) {
+        if (empty($this->messages)) {
+            $this->messages[] = [
+                'id' => 0,
+                'message' => "👋 Hi there! Welcome to Swizchem! Our team is here to assist you. We’ll get back to you shortly.",
+                'created_at' => now()->setTimezone($this->userTimezone)->format('Y-m-d H:i:s'),
+                'rfq_id' => $this->rfqId,
+                'conversation_id' => $this->conversationId,
+                'has_attachment' => false,
+                'is_admin' => true,
+                'attachments' => []
+            ];
+        } else {
             $this->lastMessageId = collect($this->messages)->max('id');
         }
     }

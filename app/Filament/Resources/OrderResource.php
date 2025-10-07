@@ -56,30 +56,15 @@ class OrderResource extends Resource
                     ->sortable()
                     ->copyable(),
 
-                // Tables\Columns\TextColumn::make('invoice.invoice_number')
-                //     ->label('Invoice Number')
-                //     ->searchable()
-                //     ->sortable()
-                //     ->url(fn($record) => $record->invoice ? 
-                //         InvoiceResource::getUrl('view', ['record' => $record->invoice]) : null)
-                //     ->color('primary'),
-
-                Tables\Columns\TextColumn::make('name')
-                    ->label('Client Name')
+                Tables\Columns\TextColumn::make('invoice.invoice_number')
+                    ->label('Invoice Number')
                     ->searchable()
-                    ->limit(30),
-
-                Tables\Columns\TextColumn::make('email')
-                    ->label('Client Email')
-                    ->searchable()
-                    ->limit(30),
-
-                Tables\Columns\TextColumn::make('grand_total')
-                    ->label('Total Amount')
-                    ->money('USD')
-                    ->sortable(),
+                    ->sortable()
+                    ->url(fn($record) => $record->invoice ? 
+                        InvoiceResource::getUrl('view', ['record' => $record->invoice]) : null)
+                    ->color('primary'),
                 
-                Tables\Columns\TextColumn::make('order_date')
+                Tables\Columns\TextColumn::make('created_at')
                     ->label('Order Date')
                     ->date()
                     ->sortable(),

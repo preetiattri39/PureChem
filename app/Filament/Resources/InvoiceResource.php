@@ -7,6 +7,7 @@ use App\Models\Invoice;
 use App\Models\InvoiceItem; 
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\CustomProduct;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -17,6 +18,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Checkbox;
 use Filament\Tables\Actions\Action;
 use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Builder;
@@ -50,13 +52,27 @@ class InvoiceResource extends Resource
                                             ->default(now())
                                             ->required(),
 
-                                        TextInput::make('lead_time')
-                                            ->label('Lead Time')
-                                            ->placeholder('e.g., 2 weeks'),
+                                        TextInput::make('customer_po')
+                                            ->label('Customer PO')
+                                            ->placeholder('Enter customer PO number'),
+
+                                        TextInput::make('country_of_departure')
+                                            ->label('Country of Departure')
+                                            ->placeholder('e.g., Finland'),
+
+                                        TextInput::make('country_of_destination')
+                                            ->label('Country of Destination')
+                                            ->placeholder('e.g., Canada'),
 
                                         TextInput::make('shipping_methods')
                                             ->label('Shipping Methods')
                                             ->placeholder('e.g., Air, Courier'),
+
+                                        TextInput::make('currency')
+                                            ->label('Currency')
+                                            ->placeholder('e.g., &dollar;, &euro;, &pound;,')
+                                            ->default('$')
+                                            ->required(),
                                     ]),
                             ]),
 
@@ -77,35 +93,80 @@ class InvoiceResource extends Resource
                                         if ($state) {
                                             $user = \App\Models\User::find($state);
                                             if ($user) {
-                                                $set('name', $user->name);
-                                                $set('email', $user->email);
-                                                $set('phone', $user->phone ?? '');
+                                                $set('ship_to_company', $user->company ?? $user->name);
+                                                $set('ship_to_email', $user->email);
+                                                $set('ship_to_phone', $user->phone ?? '');
+                                                
+                                                $set('bill_to_company', $user->company ?? $user->name);
+                                                $set('bill_to_email', $user->email);
+                                                $set('bill_to_phone', $user->phone ?? '');
                                             }
                                         }
                                     }),
-                                Textarea::make('to_address')
-                                    ->label('To (Address)')
-                                    ->rows(3)
-                                    ->required(),
+                            ]),
 
-                                Forms\Components\Grid::make(3)
+                        Forms\Components\Section::make('Ship To Address')
+                            ->schema([
+                                Forms\Components\Grid::make(2)
                                     ->schema([
-                                        TextInput::make('name')
-                                            ->label('Name')
+                                        TextInput::make('ship_to_company')
+                                            ->label('Company Name')
                                             ->required(),
 
-                                        TextInput::make('phone')
-                                            ->label('Phone')
-                                            ->tel(),
-
-                                        TextInput::make('email')
+                                        TextInput::make('ship_to_email')
                                             ->label('Email')
                                             ->required()
                                             ->email(),
+
+                                        Textarea::make('ship_to_address')
+                                            ->label('Address')
+                                            ->rows(3)
+                                            ->required()
+                                            ->columnSpanFull(),
+
+                                        TextInput::make('ship_to_phone')
+                                            ->label('Phone')
+                                            ->tel(),
+
+                                        TextInput::make('ship_to_tax_id')
+                                            ->label('Tax ID / GSTIN')
+                                            ->placeholder('e.g., 27ABCDE1234F1Z5'),
                                     ]),
-                                TextInput::make('gstin')
-                                    ->label('GSTIN')
-                                    ->placeholder('e.g., 27ABCDE1234F1Z5'),
+                            ]),
+
+                        Forms\Components\Section::make('Bill To Address (if different from Ship To)')
+                            ->schema([
+                                Checkbox::make('bill_to_different')
+                                    ->label('Bill to a different address')
+                                    ->live()
+                                    ->default(false),
+
+                                Forms\Components\Grid::make(2)
+                                    ->schema([
+                                        TextInput::make('bill_to_company')
+                                            ->label('Company Name')
+                                            ->required(fn ($get) => $get('bill_to_different')),
+
+                                        TextInput::make('bill_to_email')
+                                            ->label('Email')
+                                            ->email()
+                                            ->required(fn ($get) => $get('bill_to_different')),
+
+                                        Textarea::make('bill_to_address')
+                                            ->label('Address')
+                                            ->rows(3)
+                                            ->required(fn ($get) => $get('bill_to_different'))
+                                            ->columnSpanFull(),
+
+                                        TextInput::make('bill_to_phone')
+                                            ->label('Phone')
+                                            ->tel(),
+
+                                        TextInput::make('bill_to_tax_id')
+                                            ->label('Tax ID / GSTIN')
+                                            ->placeholder('e.g., 27ABCDE1234F1Z5'),
+                                    ])
+                                    ->visible(fn ($get) => $get('bill_to_different')),
                             ]),
                     ])
                     ->columnSpan(['lg' => 2]),
@@ -117,14 +178,12 @@ class InvoiceResource extends Resource
                                 TextInput::make('sub_total')
                                     ->label('Subtotal')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->disabled()
                                     ->dehydrated(),
 
                                 TextInput::make('vat')
                                     ->label('VAT')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->default(0)
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(function ($state, $set, $get) {
@@ -134,7 +193,6 @@ class InvoiceResource extends Resource
                                 TextInput::make('shipping_charges')
                                     ->label('Shipping Charges')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->default(0)
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(function ($state, $set, $get) {
@@ -144,20 +202,8 @@ class InvoiceResource extends Resource
                                 TextInput::make('grand_total')
                                     ->label('Grand Total')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->disabled()
                                     ->dehydrated(),
-
-                                // Select::make('status')
-                                //     ->label('Status')
-                                //     ->options([
-                                //         'draft' => 'Draft',
-                                //         'sent' => 'Sent',
-                                //         'paid' => 'Paid',
-                                //         'cancelled' => 'Cancelled',
-                                //     ])
-                                //     ->default('draft')
-                                //     ->required(),
                             ]),
                     ])
                     ->columnSpan(['lg' => 1]),
@@ -167,12 +213,44 @@ class InvoiceResource extends Resource
                         Repeater::make('invoiceItems')
                             ->relationship()
                             ->schema([
+                                Checkbox::make('is_custom_product')
+                                    ->label('Is it a custom product?')
+                                    ->live()
+                                    ->default(false)
+                                    ->afterStateUpdated(function ($state, $set) {
+                                        $set('product_id', null);
+                                        $set('custom_product_id', null);
+                                    }),
+
                                 Select::make('product_id')
                                     ->label('Product')
                                     ->options(Product::pluck('name', 'id'))
-                                    ->required()
+                                    ->required(fn ($get) => !$get('is_custom_product'))
                                     ->searchable()
-                                    ->preload(),
+                                    ->preload()
+                                    ->visible(fn ($get) => !$get('is_custom_product')),
+
+                                Select::make('custom_product_id')
+                                    ->label('Custom Product')
+                                    ->options(CustomProduct::pluck('molecule_name', 'id'))
+                                    ->required(fn ($get) => $get('is_custom_product'))
+                                    ->searchable()
+                                    ->preload()
+                                    ->visible(fn ($get) => $get('is_custom_product'))
+                                    ->live()
+                                    ->afterStateUpdated(function ($state, $set) {
+                                        if ($state) {
+                                            $customProduct = CustomProduct::find($state);
+                                            if ($customProduct) {
+                                                $set('purity', $customProduct->purity);
+                                                $set('units', $customProduct->unit);
+                                                $set('quantity', $customProduct->quantity);
+                                                if ($customProduct->price) {
+                                                    $set('price', $customProduct->price);
+                                                }
+                                            }
+                                        }
+                                    }),
 
                                 Forms\Components\Grid::make(4)
                                     ->schema([
@@ -197,7 +275,6 @@ class InvoiceResource extends Resource
                                         TextInput::make('price')
                                             ->label('Price')
                                             ->numeric()
-                                            ->prefix('$')
                                             ->required()
                                             ->live(onBlur: true)
                                             ->afterStateUpdated(function ($state, $set, $get) {
@@ -208,7 +285,6 @@ class InvoiceResource extends Resource
                                 TextInput::make('total')
                                     ->label('Total')
                                     ->numeric()
-                                    ->prefix('$')
                                     ->disabled()
                                     ->dehydrated(),
                             ])
@@ -220,6 +296,38 @@ class InvoiceResource extends Resource
                             })
                             ->addActionLabel('Add Product')
                             ->reorderable(false),
+                    ])
+                    ->columnSpanFull(),
+
+                Forms\Components\Section::make('Payment Information')
+                    ->schema([
+                        Forms\Components\Grid::make(2)
+                            ->schema([
+                                Textarea::make('payment_terms')
+                                    ->label('Payment Terms')
+                                    ->rows(2)
+                                    ->placeholder('e.g., Payment upon delivery'),
+
+                                TextInput::make('payment_method')
+                                    ->label('Payment Method')
+                                    ->placeholder('e.g., Bank Transfer'),
+
+                                TextInput::make('bank_name')
+                                    ->label('Bank Name')
+                                    ->default('Nordea Finland'),
+
+                                TextInput::make('swift_bic')
+                                    ->label('SWIFT/BIC')
+                                    ->default('NDEAFIHH'),
+
+                                TextInput::make('iban')
+                                    ->label('IBAN')
+                                    ->default('FI39 1544 3000 0826 31'),
+
+                                TextInput::make('reference_number')
+                                    ->label('Reference Number')
+                                    ->placeholder('Enter reference number'),
+                            ]),
                     ])
                     ->columnSpanFull(),
 
@@ -248,24 +356,15 @@ class InvoiceResource extends Resource
                     ->date()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('email')
+                Tables\Columns\TextColumn::make('ship_to_email')
                     ->label('Client Email')
                     ->searchable()
                     ->limit(30),
 
                 Tables\Columns\TextColumn::make('grand_total')
                     ->label('Amount')
-                    ->money('USD')
+                    ->formatStateUsing(fn ($state, $record) => ($record->currency ?? 'USD') . ' ' . number_format($state, 2))
                     ->sortable(),
-
-                // Tables\Columns\BadgeColumn::make('status')
-                //     ->label('Status')
-                //     ->colors([
-                //         'secondary' => 'draft',
-                //         'warning' => 'sent',
-                //         'success' => 'paid',
-                //         'danger' => 'cancelled',
-                //     ]),
             ])
             ->paginated([5, 10, 20])
             ->emptyStateHeading('No records found')
@@ -273,14 +372,6 @@ class InvoiceResource extends Resource
             ->emptyStateIcon('heroicon-o-document-text')
             ->defaultPaginationPageOption(5)
             ->filters([
-                // Tables\Filters\SelectFilter::make('status')
-                //     ->options([
-                //         'draft' => 'Draft',
-                //         'sent' => 'Sent',
-                //         'paid' => 'Paid',
-                //         'cancelled' => 'Cancelled',
-                //     ]),
-                
                 Tables\Filters\Filter::make('invoice_date')
                     ->form([
                         DatePicker::make('from')->label('From Date'),
@@ -324,7 +415,6 @@ class InvoiceResource extends Resource
                     ->label('Create Order')
                     ->icon('heroicon-o-shopping-cart')
                     ->color('info')
-                    // ->visible(fn(Invoice $record) => !$record->order)
                     ->requiresConfirmation()
                     ->modalDescription('This will create a new order based on this invoice.')
                     ->action(function (Invoice $record) {
@@ -345,7 +435,9 @@ class InvoiceResource extends Resource
                         }
                     }),
 
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                ->visible(fn (Invoice $record): bool => !Order::where('invoice_id', $record->id)->exists()),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -354,9 +446,6 @@ class InvoiceResource extends Resource
             ]);
     }
 
-    /**
-     * Calculate item total when quantity or price changes
-     */
     protected static function calculateItemTotal($state, $set, $get, $field): void
     {
         $quantity = floatval($get('quantity') ?? 0);
@@ -367,9 +456,6 @@ class InvoiceResource extends Resource
         }
     }
 
-    /**
-     * Update subtotal and grand total when repeater items change
-     */
     protected static function updateSubtotalAndGrandTotal($state, $set, $get): void
     {
         if (!$state) return;
@@ -380,15 +466,11 @@ class InvoiceResource extends Resource
         
         $set('sub_total', round($subtotal, 2));
         
-        // Recalculate grand total
         $vat = floatval($get('vat') ?? 0);
         $shipping = floatval($get('shipping_charges') ?? 0);
         $set('grand_total', round($subtotal + $vat + $shipping, 2));
     }
 
-    /**
-     * Update grand total when VAT or shipping changes
-     */
     protected static function updateGrandTotal($state, $set, $get, $field): void
     {
         $subtotal = floatval($get('sub_total') ?? 0);
@@ -398,11 +480,9 @@ class InvoiceResource extends Resource
         $set('grand_total', round($subtotal + $vat + $shipping, 2));
     }
 
-
     public static function downloadInvoicePdf(Invoice $invoice)
     {
         try {
-
             $pdf = Pdf::loadView('invoices.pdf', ['invoice' => $invoice]);
             
             $safeFilename = str_replace(['/', '\\', ':', '*', '?', '"', '<', '>', '|'], '-', $invoice->invoice_number);
@@ -424,9 +504,7 @@ class InvoiceResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

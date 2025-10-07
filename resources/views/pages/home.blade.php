@@ -42,35 +42,35 @@
     <div class="container">
         <div class="row g-3">
 
-            <div class="service-card col-6 custom-col-20">
+            <div class="service-card col-12 col-sm-6 custom-col-20">
                 <div class="icon-box sh-custom-bg-light">
                     <img src="{{ asset('images/icons/amino-acids.svg') }}" class="mb-2">
                     <p class="fw-bold mb-1">Amino Acids for Peptide Synthesis</p>
                 </div>
             </div>
 
-            <div class="service-card col-6 custom-col-20">
+            <div class="service-card col-12 col-sm-6 custom-col-20">
                 <div class="icon-box sh-custom-bg-light">
                     <img src="{{ asset('images/icons/oligopeptides.svg') }}" class="mb-2">
                     <p class="fw-bold mb-1">Oligopeptides</p>
                 </div>
             </div>
 
-            <div class="service-card col-6 custom-col-20">
+            <div class="service-card col-12 col-sm-6 custom-col-20">
                 <div class="icon-box sh-custom-bg-light">
                     <img src="{{ asset('images/icons/advanced.svg') }}" class="mb-2">
                     <p class="fw-bold mb-1">Advanced Intermediates</p>
                 </div>
             </div>
 
-            <div class="service-card col-6 custom-col-20">
+            <div class="service-card col-12 col-sm-6 custom-col-20">
                 <div class="icon-box sh-custom-bg-light">
                     <img src="{{ asset('images/icons/metabolites.svg') }}" class="mb-2">
                     <p class="fw-bold mb-1">Metabolites And Impurities</p>
                 </div>
             </div>
 
-            <div class="service-card col-6 custom-col-20">
+            <div class="service-card col-12 col-sm-6 custom-col-20">
                 <div class="icon-box sh-custom-bg-light">
                     <img src="{{ asset('images/icons/reagents.svg') }}" class="mb-2">
                     <p class="fw-bold mb-1">Reagents And Ligands</p>

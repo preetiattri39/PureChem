@@ -48,6 +48,9 @@ class SynthesisController extends Controller
                 'usage_other' => 'nullable|string|required_if:usage,other',
                 'terms_accepted' => 'required|accepted',
                 'g-recaptcha-response' => 'required|captcha'
+            ],[
+                'g-recaptcha-response.required' => 'Please confirm you are not a robot.',
+                'g-recaptcha-response.captcha' => 'Captcha verification failed. Please try again.',
             ]);
 
             if ($validator->fails()) {

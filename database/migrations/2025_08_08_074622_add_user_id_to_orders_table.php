@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::table('orders', function (Blueprint $table) {
             $table->dropTimestamps();
-            $table->foreignId('user_id')->after('id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->after('invoice_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('name')->nullable();
-             $table->timestamps();
+            $table->timestamps();
         });
     }
 
