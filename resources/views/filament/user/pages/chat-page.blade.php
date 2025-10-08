@@ -139,7 +139,7 @@
                                 </div>
                             </form>
                         @else
-                            <div>You closed the status and hence chat is closed!</div>
+                            <div>You are not allowed to send message through this chat thread!</div>
                         @endif
                     </div>
                 </div>
