@@ -42,11 +42,20 @@
             <!-- Sidebar -->
             <div class="col-md-3">
                 <div class="sidebar">
-                    <h5>Category</h5>
-                    <ul class="d-flex flex-column gap-3 list-unstyled">
-                        <li class="{{ !Request::route('id') ? 'sidebar-active-category' : '' }}"><a href="{{ route('products.main') }}">All Products</a></li>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="m-0">Category</h5>
+                        <button class="btn btn-link d-md-none p-0 text-decoration-none" type="button" id="categoryToggle">
+                            <span id="toggleIcon">+</span>
+                        </button>
+                    </div>
+                    <ul class="d-none d-md-flex flex-column gap-3 list-unstyled" id="categoryList">
+                        <li class="text-start {{ !Request::route('id') ? 'sidebar-active-category' : '' }}">
+                            <a href="{{ route('products.main') }}">All Products</a>
+                        </li>
                         @foreach($allCategories as $category)
-                        <li class="{{ Request::route('id') == $category['id'] ? 'sidebar-active-category' : '' }}"><a href="{{ route('products.category',['id' => $category['id']]) }}">{{ $category['name'] ?? 'N\A' }}</a></li>
+                        <li class="text-start {{ Request::route('id') == $category['id'] ? 'sidebar-active-category' : '' }}">
+                            <a href="{{ route('products.category',['id' => $category['id']]) }}">{{ $category['name'] ?? 'N\A' }}</a>
+                        </li>
                         @endforeach
                     </ul>
                 </div>

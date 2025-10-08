@@ -38,7 +38,7 @@
                     <div class="form-section">
                         <div class="section-title">Enter the below details</div>
 
-                        <form method="POST" action="{{ route('contact.form.submission') }}">
+                        <form class="p-0 py-3 px-md-4 py-md-4 " method="POST" action="{{ route('contact.form.submission') }}">
                             @csrf
 
                             @if(session('success'))

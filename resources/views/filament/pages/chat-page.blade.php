@@ -7,7 +7,7 @@
                         @if(count($messages) > 0)
                             @foreach($messages as $message)
                                 <div class="chat-time text-center">
-                                    {{ \Carbon\Carbon::parse($message['created_at'])->format('h:i A') }}
+                                    {{ \Carbon\Carbon::parse($message['created_at'])->format('d M Y, h:i A') }}
                                 </div>
                                 @if(!$message['is_admin'])
                                     <div class="chat-bubble-left">
@@ -152,7 +152,11 @@
                         @if($rfqData->type === 'normal')
                             @forelse ($rfq_items as $item)
                                 <li class="list-group-item">
-                                    {{ $item->product ? $item->product->name . ' : ' . $item->quantity : 'N/A' }}
+                                    {!! $item->product ?
+                                        '<strong>Product Name  : </strong>'.$item->product->name. '<br />'.
+                                        '<strong>Category Name : </strong>'.$item->product->category->name. '<br />'.
+                                        '<strong>Quantity      : </strong>'.$item->quantity. '<br />'
+                                        : 'N/A' !!} 
                                 </li>
                             @empty
                                 <li class="list-group-item text-muted">No products added yet</li>

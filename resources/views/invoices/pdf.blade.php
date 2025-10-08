@@ -356,20 +356,12 @@
                     </td>
                     <td>
                         <div class="section-title">Bill To:</div>
-                        @if($invoice->bill_to_different && $invoice->bill_to_address)
-                            <div class="company-info">{{ $invoice->bill_to_company ?? 'N/A' }}</div>
-                            <div class="company-info">{{ $invoice->bill_to_address }}</div>
-                            @if($invoice->bill_to_phone)
-                                <div class="company-info">Phone: {{ $invoice->bill_to_phone }}</div>
-                            @endif
-                            @if($invoice->bill_to_email)
-                                <div class="company-info">Email: {{ $invoice->bill_to_email }}</div>
-                            @endif
-                            @if($invoice->bill_to_tax_id)
-                                <div class="company-info">Tax ID: {{ $invoice->bill_to_tax_id }}</div>
-                            @endif
-                        @else
-                            <div class="company-info" style="font-style: italic;">Same as Ship To</div>
+                        @if($invoice->bill_to_different || $invoice->ship_to_address || $invoice->bill_to_address)
+                            <div class="company-info">{{ $invoice->bill_to_company ?? $invoice->ship_to_company }}</div>
+                            <div class="company-info">{{ $invoice->bill_to_address ?? $invoice->ship_to_address }}</div>
+                            <div class="company-info">Phone: {{ $invoice->bill_to_phone ?? $invoice->ship_to_phone}}</div>
+                            <div class="company-info">Email: {{ $invoice->bill_to_email ?? $invoice->ship_to_email}}</div>
+                            <div class="company-info">Tax ID: {{ $invoice->bill_to_tax_id ?? $invoice->ship_to_tax_id}}</div>
                         @endif
                     </td>
                 </tr>

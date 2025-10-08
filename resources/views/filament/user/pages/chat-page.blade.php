@@ -7,7 +7,7 @@
                         @if(count($messages) > 0)
                             @foreach($messages as $message)
                                 <div class="chat-time text-center">
-                                    {{ \Carbon\Carbon::parse($message['created_at'])->format('h:i A') }}
+                                    {{ \Carbon\Carbon::parse($message['created_at'])->format('d M Y, h:i A') }}
                                 </div>
                                 @if($message['is_admin'])
                                     <div class="chat-bubble-left">

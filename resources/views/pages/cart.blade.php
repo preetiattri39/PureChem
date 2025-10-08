@@ -22,13 +22,13 @@
     <div class="container pb-5">
         <div class="row g-5"> 
             <!-- Sidebar -->
-            <div class="col-md-3">
+            <div class="col-md-3 d-none d-md-block">
                 <div class="sidebar">
                     <h5>Category</h5>
                     <ul class="d-flex flex-column gap-3 list-unstyled">
-                        <li><a href="{{ route('products.main') }}">All Products</a></li>
+                        <li class="text-start"><a href="{{ route('products.main') }}">All Products</a></li>
                         @foreach($allCategories as $category)
-                        <li><a href="{{ route('products.category',['id' => $category['id']]) }}">{{ $category['name'] ?? 'N\A' }}</a></li>
+                        <li class="text-start"><a href="{{ route('products.category',['id' => $category['id']]) }}">{{ $category['name'] ?? 'N\A' }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="cart-head-info">Looking for a different purity, quantity, or specification of a product already in your cart? You can request a tailored option through our <a href="{{ route('custom-synthesis') }}" target="_self" >Custom Synthesis</a> page.</div>
                 </div>
                 <div class="row g-3">
-                    <div class="table-wrap">
+                    <div class="table-wrap overflow-auto overflow-md-visible">
                         <table class="table rfq-table">
                             <thead>
                                 <tr>

@@ -49,11 +49,6 @@ class OrderResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('order_date')
-                    ->date()
-                    ->searchable()
-                    ->sortable(),
-
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
                     ->sortable()
@@ -67,9 +62,10 @@ class OrderResource extends Resource
                         default => 'secondary',
                     }),
 
-                Tables\Columns\TextColumn::make('grand_total')
-                    ->label('Total')
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Date')
                     ->money('USD', true)
+                    ->date('d M Y')
                     ->sortable()
                     ->searchable(),
             ])
@@ -82,6 +78,7 @@ class OrderResource extends Resource
             ])
             ->actions([
                 // Tables\Actions\EditAction::make(),
+                 Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -102,6 +99,7 @@ class OrderResource extends Resource
         return [
             'index' => Pages\ListOrders::route('/'),
             'create' => Pages\CreateOrder::route('/create'),
+            'view' => Pages\ViewOrder::route('/{record}'),
             // 'edit' => Pages\EditOrder::route('/{record}/edit'),
         ];
     }

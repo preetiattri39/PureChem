@@ -54,4 +54,16 @@ $(function () {
         $container.attr('data-sort', sort);
         fetchProducts({ ...getContext(), page: 1, sort: sort }, false);
     });
+
+    const $toggleBtn = $('#categoryToggle');
+    const $categoryList = $('#categoryList');
+    const $toggleIcon = $('#toggleIcon');
+
+    if ($toggleBtn.length) {
+        $toggleBtn.on('click', function() {
+            $categoryList.toggleClass('d-none d-flex');
+            $toggleIcon.text($toggleIcon.text() === '+' ? '−' : '+');
+        });
+    }
+
 });

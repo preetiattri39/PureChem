@@ -18,7 +18,7 @@ class Order extends Model
     ];
 
     protected $casts = [
-        'order_date' => 'date',
+        
     ];
 
     public function user()

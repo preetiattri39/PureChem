@@ -21,8 +21,8 @@ class DashboardOverview extends BaseWidget
                 $monthKey = $date->format('M Y');
 
                 $count = Order::where('user_id', $userId)
-                    ->whereYear('order_date', $date->year)
-                    ->whereMonth('order_date', $date->month)
+                    ->whereYear('created_at', $date->year)
+                    ->whereMonth('created_at', $date->month)
                     ->count();
 
                 return [$monthKey => $count];
