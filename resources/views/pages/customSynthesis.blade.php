@@ -168,6 +168,7 @@
                                 <h2 class="section-title text-center">Ready to Synthesize Your Next Compound?</h2>
                                 <p class="text-center">Form with below details - Upload your structure, share your specs, and our chemists will follow up with a quote and lead time.</p>
                             </div>
+                            <p class="col-12 mb-4 text-center fw-bold"><span class="text-danger">*</span>Do not forget to sign-up or Log-in before filling in the details for Custom proposal.</p>
                             <div class="row form-section">
                                 <div class="col-md-6 mb-4">
                                     <label for="molecule-name">Company</label>
