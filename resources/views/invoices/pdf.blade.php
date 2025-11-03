@@ -387,9 +387,9 @@
                             <td>{{ $index + 1 }}</td>
                             <td>
                                 @if($item->is_custom_product && $item->customProduct)
-                                    {{ $item->customProduct->molecule_name ?? 'N/A' }}
+                                    {!! $item->customProduct->molecule_name . ': <b>' . $item->purity . '</b>'?? 'N/A' !!}
                                 @else
-                                    {{ $item->product->name ?? 'N/A' }}
+                                    {!! $item->product->name . ': <b>' . $item->purity . '</b>' ?? 'N/A' !!}
                                 @endif
                             </td>
                             <td>{{ number_format($item->quantity, 0) }}</td>

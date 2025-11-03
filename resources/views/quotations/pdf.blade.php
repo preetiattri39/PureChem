@@ -318,7 +318,14 @@
                     @foreach($quotation->quotationItems as $index => $item)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $item->product->name ?? $item->customProduct->molecule_name }}</td>
+                            <td>
+                                @if($item->product)
+                                    {!! $item->product->name . ': <b>' . $item->purity . '</b>' !!}
+                                @elseif($item->customProduct)
+                                    {!! $item->customProduct->molecule_name . ': <b>' . $quotation->purity . '</b>' !!}
+                                @endif
+                            </td>
+
                             <td>{{ number_format($item->quantity, 0) }}</td>
                             <td>{{ $item->units }}</td>
                             <td>{{ $quotation->currency }}{{ number_format($item->price, 2) }}</td>
