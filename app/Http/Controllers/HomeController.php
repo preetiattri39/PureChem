@@ -3,13 +3,34 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
-     public function index()
+    public function index()
     {
-        return view('pages.home');
+        $activeProducts = Product::query()
+            ->whereHas('category', fn ($query) => $query->where('status', 1));
+
+        $featuredProducts = (clone $activeProducts)
+            ->latest()
+            ->take(6)
+            ->get();
+
+        $topCategories = Category::query()
+            ->where('status', 1)
+            ->withCount('products')
+            ->orderByDesc('products_count')
+            ->take(4)
+            ->get();
+
+        $catalogStats = [
+            'products' => (clone $activeProducts)->count(),
+            'categories' => Category::where('status', 1)->count(),
+            'cas_records' => (clone $activeProducts)->whereNotNull('cas_number')->count(),
+        ];
+
+        return view('pages.home', compact('featuredProducts', 'topCategories', 'catalogStats'));
     }
 }

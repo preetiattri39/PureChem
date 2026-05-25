@@ -1,0 +1,1455 @@
+Oct 09 14:29:36 26736.15522 sshd[1209627]: Invalid user username from 128.1.131.163 port 48004
+Oct 09 14:29:36 26736.15522 sshd[1209627]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:29:36 26736.15522 sshd[1209627]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:29:37 26736.15522 unix_chkpwd[1209631]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:29:37 26736.15522 sshd[1209629]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.253.27.119  user=root[0m
+Oct 09 14:29:38 26736.15522 sshd[1209627]: Failed password for invalid user username from 128.1.131.163 port 48004 ssh2
+Oct 09 14:29:39 26736.15522 sshd[1209629]: Failed password for root from 103.253.27.119 port 56038 ssh2
+Oct 09 14:29:39 26736.15522 sshd[1209627]: Received disconnect from 128.1.131.163 port 48004:11: Bye Bye [preauth]
+Oct 09 14:29:39 26736.15522 sshd[1209627]: Disconnected from invalid user username 128.1.131.163 port 48004 [preauth]
+Oct 09 14:29:40 26736.15522 sshd[1209629]: Connection closed by authenticating user root 103.253.27.119 port 56038 [preauth]
+Oct 09 14:29:43 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:29:43 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12510
+Oct 09 14:29:43 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12510
+Oct 09 14:29:43 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:29:43 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209632
+Oct 09 14:29:57 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:29:57 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12511
+Oct 09 14:29:57 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12511
+Oct 09 14:29:57 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:29:57 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209634
+Oct 09 14:30:11 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:30:11 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12512
+Oct 09 14:30:11 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12512
+Oct 09 14:30:11 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:30:11 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209636
+Oct 09 14:30:17 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:30:17 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12513
+Oct 09 14:30:17 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12513
+Oct 09 14:30:19 26736.15522 sshd[1209638]: Invalid user vncuser from 5.198.176.28 port 35532
+Oct 09 14:30:19 26736.15522 sshd[1209638]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:30:19 26736.15522 sshd[1209638]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:30:21 26736.15522 sshd[1209638]: Failed password for invalid user vncuser from 5.198.176.28 port 35532 ssh2
+Oct 09 14:30:22 26736.15522 sshd[1209638]: Received disconnect from 5.198.176.28 port 35532:11: Bye Bye [preauth]
+Oct 09 14:30:22 26736.15522 sshd[1209638]: Disconnected from invalid user vncuser 5.198.176.28 port 35532 [preauth]
+Oct 09 14:30:25 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:30:25 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12514
+Oct 09 14:30:25 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12514
+Oct 09 14:30:25 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:30:25 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209640
+Oct 09 14:30:29 26736.15522 sshd[1209642]: Invalid user ahmed from 185.255.90.146 port 41888
+Oct 09 14:30:29 26736.15522 sshd[1209642]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:30:29 26736.15522 sshd[1209642]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:30:32 26736.15522 sshd[1209642]: Failed password for invalid user ahmed from 185.255.90.146 port 41888 ssh2
+Oct 09 14:30:33 26736.15522 sshd[1209642]: Received disconnect from 185.255.90.146 port 41888:11: Bye Bye [preauth]
+Oct 09 14:30:33 26736.15522 sshd[1209642]: Disconnected from invalid user ahmed 185.255.90.146 port 41888 [preauth]
+Oct 09 14:30:39 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:30:39 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12515
+Oct 09 14:30:39 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12515
+Oct 09 14:30:39 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:30:39 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209644
+Oct 09 14:30:41 26736.15522 sshd[1209646]: Invalid user rustserver from 173.249.59.114 port 48912
+Oct 09 14:30:41 26736.15522 sshd[1209646]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:30:41 26736.15522 sshd[1209646]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:30:43 26736.15522 sshd[1209646]: Failed password for invalid user rustserver from 173.249.59.114 port 48912 ssh2
+Oct 09 14:30:43 26736.15522 sshd[1209646]: Received disconnect from 173.249.59.114 port 48912:11: Bye Bye [preauth]
+Oct 09 14:30:43 26736.15522 sshd[1209646]: Disconnected from invalid user rustserver 173.249.59.114 port 48912 [preauth]
+Oct 09 14:30:53 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:30:53 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12516
+Oct 09 14:30:53 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12516
+Oct 09 14:30:53 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:30:53 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209648
+Oct 09 14:30:54 26736.15522 unix_chkpwd[1209652]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:30:54 26736.15522 sshd[1209650]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.176  user=root[0m
+Oct 09 14:30:56 26736.15522 sshd[1209650]: Failed password for root from 80.94.93.176 port 35190 ssh2
+Oct 09 14:30:56 26736.15522 unix_chkpwd[1209653]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:30:58 26736.15522 sshd[1209650]: Failed password for root from 80.94.93.176 port 35190 ssh2
+Oct 09 14:30:59 26736.15522 unix_chkpwd[1209654]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:31:01 26736.15522 sshd[1209650]: Failed password for root from 80.94.93.176 port 35190 ssh2
+Oct 09 14:31:02 26736.15522 sshd[1209650]: Received disconnect from 80.94.93.176 port 35190:11:  [preauth]
+Oct 09 14:31:02 26736.15522 sshd[1209650]: Disconnected from authenticating user root 80.94.93.176 port 35190 [preauth]
+Oct 09 14:31:02 26736.15522 sshd[1209650]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.176  user=root[0m
+Oct 09 14:31:02 26736.15522 unix_chkpwd[1209657]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:31:02 26736.15522 sshd[1209655]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.176  user=root[0m
+Oct 09 14:31:03 26736.15522 sshd[1209655]: Failed password for root from 80.94.93.176 port 46728 ssh2
+Oct 09 14:31:04 26736.15522 unix_chkpwd[1209658]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:31:06 26736.15522 sshd[1209655]: Failed password for root from 80.94.93.176 port 46728 ssh2
+Oct 09 14:31:06 26736.15522 unix_chkpwd[1209659]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:31:07 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:31:07 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12517
+Oct 09 14:31:07 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12517
+Oct 09 14:31:07 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:31:07 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209660
+Oct 09 14:31:09 26736.15522 sshd[1209655]: Failed password for root from 80.94.93.176 port 46728 ssh2
+Oct 09 14:31:09 26736.15522 sshd[1209655]: Received disconnect from 80.94.93.176 port 46728:11:  [preauth]
+Oct 09 14:31:09 26736.15522 sshd[1209655]: Disconnected from authenticating user root 80.94.93.176 port 46728 [preauth]
+Oct 09 14:31:09 26736.15522 sshd[1209655]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.176  user=root[0m
+Oct 09 14:31:09 26736.15522 unix_chkpwd[1209664]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:31:09 26736.15522 sshd[1209662]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.176  user=root[0m
+Oct 09 14:31:11 26736.15522 sshd[1209662]: Failed password for root from 80.94.93.176 port 42442 ssh2
+Oct 09 14:31:12 26736.15522 unix_chkpwd[1209665]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:31:14 26736.15522 sshd[1209662]: Failed password for root from 80.94.93.176 port 42442 ssh2
+Oct 09 14:31:15 26736.15522 unix_chkpwd[1209666]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:31:17 26736.15522 sshd[1209662]: Failed password for root from 80.94.93.176 port 42442 ssh2
+Oct 09 14:31:18 26736.15522 sshd[1209662]: Received disconnect from 80.94.93.176 port 42442:11:  [preauth]
+Oct 09 14:31:18 26736.15522 sshd[1209662]: Disconnected from authenticating user root 80.94.93.176 port 42442 [preauth]
+Oct 09 14:31:18 26736.15522 sshd[1209662]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.176  user=root[0m
+Oct 09 14:31:19 26736.15522 sshd[1209667]: Invalid user vncuser from 128.1.131.163 port 54196
+Oct 09 14:31:19 26736.15522 sshd[1209667]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:31:19 26736.15522 sshd[1209667]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:31:21 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:31:21 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12518
+Oct 09 14:31:21 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12518
+Oct 09 14:31:21 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:31:21 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209669
+Oct 09 14:31:21 26736.15522 sshd[1209667]: Failed password for invalid user vncuser from 128.1.131.163 port 54196 ssh2
+Oct 09 14:31:22 26736.15522 sshd[1209667]: Received disconnect from 128.1.131.163 port 54196:11: Bye Bye [preauth]
+Oct 09 14:31:22 26736.15522 sshd[1209667]: Disconnected from invalid user vncuser 128.1.131.163 port 54196 [preauth]
+Oct 09 14:31:35 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:31:35 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12519
+Oct 09 14:31:35 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12519
+Oct 09 14:31:35 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:31:35 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209671
+Oct 09 14:31:47 26736.15522 sshd[1209673]: Invalid user ts3server from 5.198.176.28 port 35624
+Oct 09 14:31:47 26736.15522 sshd[1209673]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:31:47 26736.15522 sshd[1209673]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:31:49 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:31:49 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12520
+Oct 09 14:31:49 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12520
+Oct 09 14:31:49 26736.15522 sshd[1209673]: Failed password for invalid user ts3server from 5.198.176.28 port 35624 ssh2
+Oct 09 14:31:49 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:31:49 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209675
+Oct 09 14:31:49 26736.15522 sshd[1209673]: Received disconnect from 5.198.176.28 port 35624:11: Bye Bye [preauth]
+Oct 09 14:31:49 26736.15522 sshd[1209673]: Disconnected from invalid user ts3server 5.198.176.28 port 35624 [preauth]
+Oct 09 14:32:03 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:32:03 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12521
+Oct 09 14:32:03 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12521
+Oct 09 14:32:03 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:32:03 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209677
+Oct 09 14:32:07 26736.15522 sshd[1209679]: Invalid user server from 173.249.59.114 port 55642
+Oct 09 14:32:07 26736.15522 sshd[1209679]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:32:07 26736.15522 sshd[1209679]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:32:09 26736.15522 sshd[1209679]: Failed password for invalid user server from 173.249.59.114 port 55642 ssh2
+Oct 09 14:32:10 26736.15522 sshd[1209679]: Received disconnect from 173.249.59.114 port 55642:11: Bye Bye [preauth]
+Oct 09 14:32:10 26736.15522 sshd[1209679]: Disconnected from invalid user server 173.249.59.114 port 55642 [preauth]
+Oct 09 14:32:16 26736.15522 sshd[1209681]: Invalid user stack from 185.255.90.146 port 46932
+Oct 09 14:32:16 26736.15522 sshd[1209681]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:32:16 26736.15522 sshd[1209681]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:32:17 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:32:17 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12522
+Oct 09 14:32:17 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12522
+Oct 09 14:32:17 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:32:17 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209683
+Oct 09 14:32:18 26736.15522 sshd[1209681]: Failed password for invalid user stack from 185.255.90.146 port 46932 ssh2
+Oct 09 14:32:18 26736.15522 sshd[1209681]: Received disconnect from 185.255.90.146 port 46932:11: Bye Bye [preauth]
+Oct 09 14:32:18 26736.15522 sshd[1209681]: Disconnected from invalid user stack 185.255.90.146 port 46932 [preauth]
+Oct 09 14:32:27 26736.15522 sshd[1209685]: Accepted password for root from 103.123.38.28 port 55209 ssh2
+Oct 09 14:32:27 26736.15522 systemd-logind[545]: New session 22 of user root.
+[0;38;5;245m░░ [0m[0;32mSubject: A new session 22 has been created for user root[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32mDocumentation: sd-login(3)[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA new session with the ID 22 has been created for the user root.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe leading process of the session is 1209685.[0m
+Oct 09 14:32:27 26736.15522 systemd[1]: Started Session 22 of User root.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit session-22.scope has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit session-22.scope has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88091.[0m
+Oct 09 14:32:27 26736.15522 sshd[1209685]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:32:31 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:32:31 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12523
+Oct 09 14:32:31 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12523
+Oct 09 14:32:31 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:32:31 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209709
+Oct 09 14:32:45 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:32:45 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12524
+Oct 09 14:32:45 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12524
+Oct 09 14:32:45 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:32:45 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209711
+Oct 09 14:32:58 26736.15522 sshd[1209713]: Invalid user stack from 128.1.131.163 port 55618
+Oct 09 14:32:58 26736.15522 sshd[1209713]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:32:58 26736.15522 sshd[1209713]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:32:59 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:32:59 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12525
+Oct 09 14:32:59 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12525
+Oct 09 14:32:59 26736.15522 qemu-ga[1196952]: info: guest-exec called: "df -m /"
+Oct 09 14:32:59 26736.15522 qemu-ga[1196952]: info: guest-exec-status called, pid: 1209715
+Oct 09 14:33:00 26736.15522 sshd[1209713]: Failed password for invalid user stack from 128.1.131.163 port 55618 ssh2
+Oct 09 14:33:01 26736.15522 sshd[1209713]: Received disconnect from 128.1.131.163 port 55618:11: Bye Bye [preauth]
+Oct 09 14:33:01 26736.15522 sshd[1209713]: Disconnected from invalid user stack 128.1.131.163 port 55618 [preauth]
+Oct 09 14:33:20 26736.15522 sshd[1209717]: Invalid user teamspeak from 5.198.176.28 port 35718
+Oct 09 14:33:20 26736.15522 sshd[1209717]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:33:20 26736.15522 sshd[1209717]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:33:23 26736.15522 sshd[1209717]: Failed password for invalid user teamspeak from 5.198.176.28 port 35718 ssh2
+Oct 09 14:33:23 26736.15522 sshd[1209717]: Received disconnect from 5.198.176.28 port 35718:11: Bye Bye [preauth]
+Oct 09 14:33:23 26736.15522 sshd[1209717]: Disconnected from invalid user teamspeak 5.198.176.28 port 35718 [preauth]
+Oct 09 14:33:35 26736.15522 sshd[1209719]: Invalid user server from 173.249.59.114 port 34144
+Oct 09 14:33:35 26736.15522 sshd[1209719]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:33:35 26736.15522 sshd[1209719]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:33:37 26736.15522 sshd[1209719]: Failed password for invalid user server from 173.249.59.114 port 34144 ssh2
+Oct 09 14:33:39 26736.15522 sshd[1209719]: Received disconnect from 173.249.59.114 port 34144:11: Bye Bye [preauth]
+Oct 09 14:33:39 26736.15522 sshd[1209719]: Disconnected from invalid user server 173.249.59.114 port 34144 [preauth]
+Oct 09 14:33:40 26736.15522 sshd[1209721]: Connection closed by 59.94.176.55 port 47353 [preauth]
+Oct 09 14:34:02 26736.15522 sshd[1209723]: Invalid user ts3server from 185.255.90.146 port 35132
+Oct 09 14:34:02 26736.15522 sshd[1209723]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:34:02 26736.15522 sshd[1209723]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:34:05 26736.15522 sshd[1209723]: Failed password for invalid user ts3server from 185.255.90.146 port 35132 ssh2
+Oct 09 14:34:06 26736.15522 sshd[1209723]: Received disconnect from 185.255.90.146 port 35132:11: Bye Bye [preauth]
+Oct 09 14:34:06 26736.15522 sshd[1209723]: Disconnected from invalid user ts3server 185.255.90.146 port 35132 [preauth]
+Oct 09 14:34:12 26736.15522 unix_chkpwd[1209727]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:34:12 26736.15522 sshd[1209725]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.253.27.119  user=root[0m
+Oct 09 14:34:14 26736.15522 sshd[1209725]: Failed password for root from 103.253.27.119 port 40730 ssh2
+Oct 09 14:34:15 26736.15522 sshd[1209725]: Connection closed by authenticating user root 103.253.27.119 port 40730 [preauth]
+Oct 09 14:34:39 26736.15522 sshd[1209728]: Invalid user bot from 128.1.131.163 port 56244
+Oct 09 14:34:39 26736.15522 sshd[1209728]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:34:39 26736.15522 sshd[1209728]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:34:41 26736.15522 sshd[1209728]: Failed password for invalid user bot from 128.1.131.163 port 56244 ssh2
+Oct 09 14:34:42 26736.15522 sshd[1209728]: Received disconnect from 128.1.131.163 port 56244:11: Bye Bye [preauth]
+Oct 09 14:34:42 26736.15522 sshd[1209728]: Disconnected from invalid user bot 128.1.131.163 port 56244 [preauth]
+Oct 09 14:34:52 26736.15522 sshd[1209730]: Invalid user temp from 5.198.176.28 port 35808
+Oct 09 14:34:52 26736.15522 sshd[1209730]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:34:52 26736.15522 sshd[1209730]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:34:54 26736.15522 sshd[1209730]: Failed password for invalid user temp from 5.198.176.28 port 35808 ssh2
+Oct 09 14:34:54 26736.15522 sshd[1209730]: Received disconnect from 5.198.176.28 port 35808:11: Bye Bye [preauth]
+Oct 09 14:34:54 26736.15522 sshd[1209730]: Disconnected from invalid user temp 5.198.176.28 port 35808 [preauth]
+Oct 09 14:35:03 26736.15522 sshd[1209732]: Invalid user scanner from 173.249.59.114 port 40876
+Oct 09 14:35:03 26736.15522 sshd[1209732]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:35:03 26736.15522 sshd[1209732]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:35:05 26736.15522 sshd[1209732]: Failed password for invalid user scanner from 173.249.59.114 port 40876 ssh2
+Oct 09 14:35:06 26736.15522 sshd[1209732]: Received disconnect from 173.249.59.114 port 40876:11: Bye Bye [preauth]
+Oct 09 14:35:06 26736.15522 sshd[1209732]: Disconnected from invalid user scanner 173.249.59.114 port 40876 [preauth]
+Oct 09 14:35:47 26736.15522 unix_chkpwd[1209736]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:35:47 26736.15522 sshd[1209734]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2  user=root[0m
+Oct 09 14:35:48 26736.15522 sshd[1209737]: Invalid user kafka from 185.255.90.146 port 36324
+Oct 09 14:35:48 26736.15522 sshd[1209737]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:35:48 26736.15522 sshd[1209737]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:35:50 26736.15522 sshd[1209734]: Failed password for root from 39.114.14.2 port 32852 ssh2
+Oct 09 14:35:50 26736.15522 unix_chkpwd[1209739]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:35:51 26736.15522 sshd[1209737]: Failed password for invalid user kafka from 185.255.90.146 port 36324 ssh2
+Oct 09 14:35:52 26736.15522 sshd[1209737]: Received disconnect from 185.255.90.146 port 36324:11: Bye Bye [preauth]
+Oct 09 14:35:52 26736.15522 sshd[1209737]: Disconnected from invalid user kafka 185.255.90.146 port 36324 [preauth]
+Oct 09 14:35:53 26736.15522 sshd[1209734]: Failed password for root from 39.114.14.2 port 32852 ssh2
+Oct 09 14:35:53 26736.15522 unix_chkpwd[1209740]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:35:55 26736.15522 sshd[1209734]: Failed password for root from 39.114.14.2 port 32852 ssh2
+Oct 09 14:35:56 26736.15522 unix_chkpwd[1209741]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:35:58 26736.15522 sshd[1209734]: Failed password for root from 39.114.14.2 port 32852 ssh2
+Oct 09 14:35:59 26736.15522 unix_chkpwd[1209742]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:02 26736.15522 sshd[1209734]: Failed password for root from 39.114.14.2 port 32852 ssh2
+Oct 09 14:36:02 26736.15522 unix_chkpwd[1209743]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:04 26736.15522 sshd[1209734]: Failed password for root from 39.114.14.2 port 32852 ssh2
+Oct 09 14:36:05 26736.15522 sshd[1209734]: [0;1;31m[0;1;39m[0;1;31merror: maximum authentication attempts exceeded for root from 39.114.14.2 port 32852 ssh2 [preauth][0m
+Oct 09 14:36:05 26736.15522 sshd[1209734]: Disconnecting authenticating user root 39.114.14.2 port 32852: Too many authentication failures [preauth]
+Oct 09 14:36:05 26736.15522 sshd[1209734]: [0;1;39m[0;1;31m[0;1;39mPAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2  user=root[0m
+Oct 09 14:36:05 26736.15522 sshd[1209734]: [0;1;39m[0;1;31m[0;1;39mPAM service(sshd) ignoring max retries; 6 > 3[0m
+Oct 09 14:36:08 26736.15522 unix_chkpwd[1209746]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:08 26736.15522 sshd[1209744]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2  user=root[0m
+Oct 09 14:36:11 26736.15522 sshd[1209744]: Failed password for root from 39.114.14.2 port 36874 ssh2
+Oct 09 14:36:14 26736.15522 unix_chkpwd[1209747]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:16 26736.15522 sshd[1209744]: Failed password for root from 39.114.14.2 port 36874 ssh2
+Oct 09 14:36:17 26736.15522 unix_chkpwd[1209748]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:19 26736.15522 sshd[1209744]: Failed password for root from 39.114.14.2 port 36874 ssh2
+Oct 09 14:36:20 26736.15522 unix_chkpwd[1209749]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:21 26736.15522 sshd[1209750]: Invalid user ahmed from 128.1.131.163 port 59840
+Oct 09 14:36:21 26736.15522 sshd[1209750]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:36:21 26736.15522 sshd[1209750]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:36:22 26736.15522 sshd[1209744]: Failed password for root from 39.114.14.2 port 36874 ssh2
+Oct 09 14:36:23 26736.15522 unix_chkpwd[1209752]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:23 26736.15522 sshd[1209750]: Failed password for invalid user ahmed from 128.1.131.163 port 59840 ssh2
+Oct 09 14:36:24 26736.15522 sshd[1209753]: Invalid user vncuser from 5.198.176.28 port 35902
+Oct 09 14:36:24 26736.15522 sshd[1209753]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:36:24 26736.15522 sshd[1209753]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:36:25 26736.15522 sshd[1209744]: Failed password for root from 39.114.14.2 port 36874 ssh2
+Oct 09 14:36:25 26736.15522 sshd[1209750]: Received disconnect from 128.1.131.163 port 59840:11: Bye Bye [preauth]
+Oct 09 14:36:25 26736.15522 sshd[1209750]: Disconnected from invalid user ahmed 128.1.131.163 port 59840 [preauth]
+Oct 09 14:36:26 26736.15522 unix_chkpwd[1209755]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:26 26736.15522 sshd[1209753]: Failed password for invalid user vncuser from 5.198.176.28 port 35902 ssh2
+Oct 09 14:36:27 26736.15522 sshd[1209753]: Received disconnect from 5.198.176.28 port 35902:11: Bye Bye [preauth]
+Oct 09 14:36:27 26736.15522 sshd[1209753]: Disconnected from invalid user vncuser 5.198.176.28 port 35902 [preauth]
+Oct 09 14:36:28 26736.15522 sshd[1209744]: Failed password for root from 39.114.14.2 port 36874 ssh2
+Oct 09 14:36:28 26736.15522 sshd[1209744]: [0;1;31m[0;1;39m[0;1;31merror: maximum authentication attempts exceeded for root from 39.114.14.2 port 36874 ssh2 [preauth][0m
+Oct 09 14:36:28 26736.15522 sshd[1209744]: Disconnecting authenticating user root 39.114.14.2 port 36874: Too many authentication failures [preauth]
+Oct 09 14:36:28 26736.15522 sshd[1209744]: [0;1;39m[0;1;31m[0;1;39mPAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2  user=root[0m
+Oct 09 14:36:28 26736.15522 sshd[1209744]: [0;1;39m[0;1;31m[0;1;39mPAM service(sshd) ignoring max retries; 6 > 3[0m
+Oct 09 14:36:31 26736.15522 sshd[1209758]: Invalid user fivem from 173.249.59.114 port 47608
+Oct 09 14:36:31 26736.15522 sshd[1209758]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:36:31 26736.15522 sshd[1209758]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:36:32 26736.15522 unix_chkpwd[1209760]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:32 26736.15522 sshd[1209756]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2  user=root[0m
+Oct 09 14:36:33 26736.15522 sshd[1209758]: Failed password for invalid user fivem from 173.249.59.114 port 47608 ssh2
+Oct 09 14:36:34 26736.15522 sshd[1209758]: Received disconnect from 173.249.59.114 port 47608:11: Bye Bye [preauth]
+Oct 09 14:36:34 26736.15522 sshd[1209758]: Disconnected from invalid user fivem 173.249.59.114 port 47608 [preauth]
+Oct 09 14:36:34 26736.15522 sshd[1209756]: Failed password for root from 39.114.14.2 port 41472 ssh2
+Oct 09 14:36:35 26736.15522 unix_chkpwd[1209761]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:37 26736.15522 sshd[1209756]: Failed password for root from 39.114.14.2 port 41472 ssh2
+Oct 09 14:36:38 26736.15522 unix_chkpwd[1209762]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:40 26736.15522 sshd[1209756]: Failed password for root from 39.114.14.2 port 41472 ssh2
+Oct 09 14:36:41 26736.15522 unix_chkpwd[1209763]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:43 26736.15522 sshd[1209756]: Failed password for root from 39.114.14.2 port 41472 ssh2
+Oct 09 14:36:44 26736.15522 unix_chkpwd[1209764]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:46 26736.15522 sshd[1209756]: Failed password for root from 39.114.14.2 port 41472 ssh2
+Oct 09 14:36:47 26736.15522 unix_chkpwd[1209765]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:49 26736.15522 sshd[1209756]: Failed password for root from 39.114.14.2 port 41472 ssh2
+Oct 09 14:36:50 26736.15522 sshd[1209756]: [0;1;31m[0;1;39m[0;1;31merror: maximum authentication attempts exceeded for root from 39.114.14.2 port 41472 ssh2 [preauth][0m
+Oct 09 14:36:50 26736.15522 sshd[1209756]: Disconnecting authenticating user root 39.114.14.2 port 41472: Too many authentication failures [preauth]
+Oct 09 14:36:50 26736.15522 sshd[1209756]: [0;1;39m[0;1;31m[0;1;39mPAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2  user=root[0m
+Oct 09 14:36:50 26736.15522 sshd[1209756]: [0;1;39m[0;1;31m[0;1;39mPAM service(sshd) ignoring max retries; 6 > 3[0m
+Oct 09 14:36:52 26736.15522 unix_chkpwd[1209768]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:36:52 26736.15522 sshd[1209766]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2  user=root[0m
+Oct 09 14:36:54 26736.15522 sshd[1209766]: Failed password for root from 39.114.14.2 port 45464 ssh2
+Oct 09 14:36:55 26736.15522 sshd[1209766]: Received disconnect from 39.114.14.2 port 45464:11: disconnected by user [preauth]
+Oct 09 14:36:55 26736.15522 sshd[1209766]: Disconnected from authenticating user root 39.114.14.2 port 45464 [preauth]
+Oct 09 14:36:57 26736.15522 sshd[1209769]: Invalid user admin from 39.114.14.2 port 46408
+Oct 09 14:36:57 26736.15522 sshd[1209769]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:36:57 26736.15522 sshd[1209769]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2[0m
+Oct 09 14:36:59 26736.15522 sshd[1209769]: Failed password for invalid user admin from 39.114.14.2 port 46408 ssh2
+Oct 09 14:36:59 26736.15522 sshd[1209769]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:01 26736.15522 sshd[1209769]: Failed password for invalid user admin from 39.114.14.2 port 46408 ssh2
+Oct 09 14:37:01 26736.15522 sshd[1209769]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:03 26736.15522 sshd[1209769]: Failed password for invalid user admin from 39.114.14.2 port 46408 ssh2
+Oct 09 14:37:06 26736.15522 sshd[1209769]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:07 26736.15522 sshd[1209769]: Failed password for invalid user admin from 39.114.14.2 port 46408 ssh2
+Oct 09 14:37:08 26736.15522 sshd[1209769]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:10 26736.15522 sshd[1209769]: Failed password for invalid user admin from 39.114.14.2 port 46408 ssh2
+Oct 09 14:37:12 26736.15522 sshd[1209769]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:14 26736.15522 sshd[1209769]: Failed password for invalid user admin from 39.114.14.2 port 46408 ssh2
+Oct 09 14:37:16 26736.15522 sshd[1209769]: [0;1;31m[0;1;39m[0;1;31merror: maximum authentication attempts exceeded for invalid user admin from 39.114.14.2 port 46408 ssh2 [preauth][0m
+Oct 09 14:37:16 26736.15522 sshd[1209769]: Disconnecting invalid user admin 39.114.14.2 port 46408: Too many authentication failures [preauth]
+Oct 09 14:37:16 26736.15522 sshd[1209769]: [0;1;39m[0;1;31m[0;1;39mPAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2[0m
+Oct 09 14:37:16 26736.15522 sshd[1209769]: [0;1;39m[0;1;31m[0;1;39mPAM service(sshd) ignoring max retries; 6 > 3[0m
+Oct 09 14:37:19 26736.15522 sshd[1209771]: Invalid user admin from 39.114.14.2 port 50808
+Oct 09 14:37:19 26736.15522 sshd[1209771]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:19 26736.15522 sshd[1209771]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2[0m
+Oct 09 14:37:21 26736.15522 sshd[1209771]: Failed password for invalid user admin from 39.114.14.2 port 50808 ssh2
+Oct 09 14:37:22 26736.15522 sshd[1209771]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:23 26736.15522 sshd[1209771]: Failed password for invalid user admin from 39.114.14.2 port 50808 ssh2
+Oct 09 14:37:24 26736.15522 sshd[1209771]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:26 26736.15522 sshd[1209771]: Failed password for invalid user admin from 39.114.14.2 port 50808 ssh2
+Oct 09 14:37:26 26736.15522 sshd[1209771]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:28 26736.15522 sshd[1209771]: Failed password for invalid user admin from 39.114.14.2 port 50808 ssh2
+Oct 09 14:37:28 26736.15522 sshd[1209771]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:30 26736.15522 sshd[1209771]: Failed password for invalid user admin from 39.114.14.2 port 50808 ssh2
+Oct 09 14:37:31 26736.15522 sshd[1209771]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:32 26736.15522 sshd[1209773]: Invalid user vncuser from 185.255.90.146 port 55006
+Oct 09 14:37:32 26736.15522 sshd[1209773]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:32 26736.15522 sshd[1209773]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:37:32 26736.15522 sshd[1209771]: Failed password for invalid user admin from 39.114.14.2 port 50808 ssh2
+Oct 09 14:37:33 26736.15522 sshd[1209771]: [0;1;31m[0;1;39m[0;1;31merror: maximum authentication attempts exceeded for invalid user admin from 39.114.14.2 port 50808 ssh2 [preauth][0m
+Oct 09 14:37:33 26736.15522 sshd[1209771]: Disconnecting invalid user admin 39.114.14.2 port 50808: Too many authentication failures [preauth]
+Oct 09 14:37:33 26736.15522 sshd[1209771]: [0;1;39m[0;1;31m[0;1;39mPAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=39.114.14.2[0m
+Oct 09 14:37:33 26736.15522 sshd[1209771]: [0;1;39m[0;1;31m[0;1;39mPAM service(sshd) ignoring max retries; 6 > 3[0m
+Oct 09 14:37:34 26736.15522 sshd[1209773]: Failed password for invalid user vncuser from 185.255.90.146 port 55006 ssh2
+Oct 09 14:37:34 26736.15522 sshd[1209773]: Received disconnect from 185.255.90.146 port 55006:11: Bye Bye [preauth]
+Oct 09 14:37:34 26736.15522 sshd[1209773]: Disconnected from invalid user vncuser 185.255.90.146 port 55006 [preauth]
+Oct 09 14:37:50 26736.15522 sshd[1209775]: Invalid user ahmed from 5.198.176.28 port 35994
+Oct 09 14:37:50 26736.15522 sshd[1209775]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:50 26736.15522 sshd[1209775]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:37:52 26736.15522 sshd[1209775]: Failed password for invalid user ahmed from 5.198.176.28 port 35994 ssh2
+Oct 09 14:37:52 26736.15522 sshd[1209775]: Received disconnect from 5.198.176.28 port 35994:11: Bye Bye [preauth]
+Oct 09 14:37:52 26736.15522 sshd[1209775]: Disconnected from invalid user ahmed 5.198.176.28 port 35994 [preauth]
+Oct 09 14:37:52 26736.15522 sshd[1209777]: Invalid user mc from 173.249.59.114 port 54338
+Oct 09 14:37:52 26736.15522 sshd[1209777]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:37:52 26736.15522 sshd[1209777]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:37:54 26736.15522 sshd[1209777]: Failed password for invalid user mc from 173.249.59.114 port 54338 ssh2
+Oct 09 14:37:55 26736.15522 sshd[1209777]: Received disconnect from 173.249.59.114 port 54338:11: Bye Bye [preauth]
+Oct 09 14:37:55 26736.15522 sshd[1209777]: Disconnected from invalid user mc 173.249.59.114 port 54338 [preauth]
+Oct 09 14:38:07 26736.15522 sshd[1209779]: Invalid user test1 from 128.1.131.163 port 54830
+Oct 09 14:38:07 26736.15522 sshd[1209779]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:38:07 26736.15522 sshd[1209779]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:38:10 26736.15522 sshd[1209779]: Failed password for invalid user test1 from 128.1.131.163 port 54830 ssh2
+Oct 09 14:38:10 26736.15522 sshd[1209779]: Received disconnect from 128.1.131.163 port 54830:11: Bye Bye [preauth]
+Oct 09 14:38:10 26736.15522 sshd[1209779]: Disconnected from invalid user test1 128.1.131.163 port 54830 [preauth]
+Oct 09 14:38:16 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:38:16 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12526
+Oct 09 14:38:16 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12526
+Oct 09 14:38:46 26736.15522 unix_chkpwd[1209784]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:38:46 26736.15522 sshd[1209782]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.253.27.119  user=root[0m
+Oct 09 14:38:48 26736.15522 sshd[1209782]: Failed password for root from 103.253.27.119 port 53670 ssh2
+Oct 09 14:38:49 26736.15522 sshd[1209782]: Connection closed by authenticating user root 103.253.27.119 port 53670 [preauth]
+Oct 09 14:39:15 26736.15522 sshd[1209785]: Invalid user deploy from 185.255.90.146 port 50918
+Oct 09 14:39:15 26736.15522 sshd[1209785]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:39:15 26736.15522 sshd[1209785]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:39:16 26736.15522 sshd[1209785]: Failed password for invalid user deploy from 185.255.90.146 port 50918 ssh2
+Oct 09 14:39:17 26736.15522 sshd[1209787]: Invalid user es from 173.249.59.114 port 32836
+Oct 09 14:39:17 26736.15522 sshd[1209787]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:39:17 26736.15522 sshd[1209787]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:39:17 26736.15522 sshd[1209785]: Received disconnect from 185.255.90.146 port 50918:11: Bye Bye [preauth]
+Oct 09 14:39:17 26736.15522 sshd[1209785]: Disconnected from invalid user deploy 185.255.90.146 port 50918 [preauth]
+Oct 09 14:39:18 26736.15522 sshd[1209789]: Invalid user username from 5.198.176.28 port 36090
+Oct 09 14:39:18 26736.15522 sshd[1209789]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:39:18 26736.15522 sshd[1209789]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:39:18 26736.15522 sshd[1209787]: Failed password for invalid user es from 173.249.59.114 port 32836 ssh2
+Oct 09 14:39:19 26736.15522 sshd[1209787]: Received disconnect from 173.249.59.114 port 32836:11: Bye Bye [preauth]
+Oct 09 14:39:19 26736.15522 sshd[1209787]: Disconnected from invalid user es 173.249.59.114 port 32836 [preauth]
+Oct 09 14:39:20 26736.15522 sshd[1209789]: Failed password for invalid user username from 5.198.176.28 port 36090 ssh2
+Oct 09 14:39:20 26736.15522 sshd[1209789]: Received disconnect from 5.198.176.28 port 36090:11: Bye Bye [preauth]
+Oct 09 14:39:20 26736.15522 sshd[1209789]: Disconnected from invalid user username 5.198.176.28 port 36090 [preauth]
+Oct 09 14:40:04 26736.15522 sshd[1209792]: Invalid user deploy from 128.1.131.163 port 57072
+Oct 09 14:40:04 26736.15522 sshd[1209792]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:40:04 26736.15522 sshd[1209792]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:40:04 26736.15522 sudo[1209796]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/etc/httpd ; USER=root ; COMMAND=/bin/nano /etc/httpd/conf.d/swizchem.conf[0m
+Oct 09 14:40:04 26736.15522 sudo[1209796]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:40:04 26736.15522 unix_chkpwd[1209799]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:40:04 26736.15522 sshd[1209794]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:40:06 26736.15522 sshd[1209792]: Failed password for invalid user deploy from 128.1.131.163 port 57072 ssh2
+Oct 09 14:40:06 26736.15522 sshd[1209794]: Failed password for root from 193.46.255.103 port 46258 ssh2
+Oct 09 14:40:07 26736.15522 sshd[1209792]: Received disconnect from 128.1.131.163 port 57072:11: Bye Bye [preauth]
+Oct 09 14:40:07 26736.15522 sshd[1209792]: Disconnected from invalid user deploy 128.1.131.163 port 57072 [preauth]
+Oct 09 14:40:07 26736.15522 unix_chkpwd[1209800]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:40:09 26736.15522 sshd[1209794]: Failed password for root from 193.46.255.103 port 46258 ssh2
+Oct 09 14:40:10 26736.15522 unix_chkpwd[1209801]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:40:12 26736.15522 sshd[1209794]: Failed password for root from 193.46.255.103 port 46258 ssh2
+Oct 09 14:40:13 26736.15522 sshd[1209794]: Received disconnect from 193.46.255.103 port 46258:11:  [preauth]
+Oct 09 14:40:13 26736.15522 sshd[1209794]: Disconnected from authenticating user root 193.46.255.103 port 46258 [preauth]
+Oct 09 14:40:13 26736.15522 sshd[1209794]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:40:13 26736.15522 unix_chkpwd[1209804]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:40:13 26736.15522 sshd[1209802]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:40:15 26736.15522 sshd[1209802]: Failed password for root from 193.46.255.103 port 32772 ssh2
+Oct 09 14:40:16 26736.15522 unix_chkpwd[1209805]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:40:17 26736.15522 sshd[1209802]: Failed password for root from 193.46.255.103 port 32772 ssh2
+Oct 09 14:40:18 26736.15522 unix_chkpwd[1209806]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:40:20 26736.15522 sshd[1209802]: Failed password for root from 193.46.255.103 port 32772 ssh2
+Oct 09 14:40:21 26736.15522 sshd[1209802]: Received disconnect from 193.46.255.103 port 32772:11:  [preauth]
+Oct 09 14:40:21 26736.15522 sshd[1209802]: Disconnected from authenticating user root 193.46.255.103 port 32772 [preauth]
+Oct 09 14:40:21 26736.15522 sshd[1209802]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:40:21 26736.15522 unix_chkpwd[1209809]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:40:21 26736.15522 sshd[1209807]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:40:23 26736.15522 sshd[1209807]: Failed password for root from 193.46.255.103 port 32786 ssh2
+Oct 09 14:40:24 26736.15522 unix_chkpwd[1209810]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:40:26 26736.15522 sshd[1209807]: Failed password for root from 193.46.255.103 port 32786 ssh2
+Oct 09 14:40:27 26736.15522 unix_chkpwd[1209811]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:40:29 26736.15522 sshd[1209807]: Failed password for root from 193.46.255.103 port 32786 ssh2
+Oct 09 14:40:30 26736.15522 sshd[1209807]: Received disconnect from 193.46.255.103 port 32786:11:  [preauth]
+Oct 09 14:40:30 26736.15522 sshd[1209807]: Disconnected from authenticating user root 193.46.255.103 port 32786 [preauth]
+Oct 09 14:40:30 26736.15522 sshd[1209807]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:40:38 26736.15522 sudo[1209796]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:40:44 26736.15522 sshd[1209813]: Invalid user test from 173.249.59.114 port 39566
+Oct 09 14:40:44 26736.15522 sshd[1209813]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:40:44 26736.15522 sshd[1209813]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:40:47 26736.15522 sshd[1209813]: Failed password for invalid user test from 173.249.59.114 port 39566 ssh2
+Oct 09 14:40:48 26736.15522 sshd[1209813]: Received disconnect from 173.249.59.114 port 39566:11: Bye Bye [preauth]
+Oct 09 14:40:48 26736.15522 sshd[1209813]: Disconnected from invalid user test 173.249.59.114 port 39566 [preauth]
+Oct 09 14:40:49 26736.15522 sshd[1209815]: Invalid user deploy from 5.198.176.28 port 36182
+Oct 09 14:40:49 26736.15522 sshd[1209815]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:40:49 26736.15522 sshd[1209815]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:40:51 26736.15522 sshd[1209815]: Failed password for invalid user deploy from 5.198.176.28 port 36182 ssh2
+Oct 09 14:40:51 26736.15522 sshd[1209815]: Received disconnect from 5.198.176.28 port 36182:11: Bye Bye [preauth]
+Oct 09 14:40:51 26736.15522 sshd[1209815]: Disconnected from invalid user deploy 5.198.176.28 port 36182 [preauth]
+Oct 09 14:41:01 26736.15522 sshd[1209818]: Invalid user guest from 185.255.90.146 port 51036
+Oct 09 14:41:01 26736.15522 sshd[1209818]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:41:01 26736.15522 sshd[1209818]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:41:04 26736.15522 sshd[1209818]: Failed password for invalid user guest from 185.255.90.146 port 51036 ssh2
+Oct 09 14:41:05 26736.15522 sshd[1209818]: Received disconnect from 185.255.90.146 port 51036:11: Bye Bye [preauth]
+Oct 09 14:41:05 26736.15522 sshd[1209818]: Disconnected from invalid user guest 185.255.90.146 port 51036 [preauth]
+Oct 09 14:41:14 26736.15522 sudo[1209820]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/etc/httpd/conf.d ; USER=root ; COMMAND=/bin/nano /etc/httpd/conf.d/000-default.conf[0m
+Oct 09 14:41:14 26736.15522 sudo[1209820]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:41:33 26736.15522 sudo[1209820]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:41:40 26736.15522 sudo[1209823]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/etc/httpd/conf.d ; USER=root ; COMMAND=/bin/mkdir -p /var/www/empty[0m
+Oct 09 14:41:40 26736.15522 sudo[1209823]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:41:40 26736.15522 sudo[1209823]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:42:01 26736.15522 sudo[1209829]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/var/www ; USER=root ; COMMAND=/bin/systemctl restart httpd[0m
+Oct 09 14:42:01 26736.15522 sudo[1209829]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:42:01 26736.15522 systemd[1]: Stopping The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88172.[0m
+Oct 09 14:42:02 26736.15522 systemd[1]: httpd.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service has successfully entered the 'dead' state.[0m
+Oct 09 14:42:02 26736.15522 systemd[1]: Stopped The Apache HTTP Server.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88172 and the job result is done.[0m
+Oct 09 14:42:02 26736.15522 systemd[1]: httpd.service: Consumed 11.870s CPU time.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service completed and consumed the indicated resources.[0m
+Oct 09 14:42:02 26736.15522 systemd[1]: Starting The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88172.[0m
+Oct 09 14:42:02 26736.15522 sshd[1209827]: Invalid user guest from 128.1.131.163 port 53288
+Oct 09 14:42:02 26736.15522 sshd[1209827]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:42:02 26736.15522 sshd[1209827]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:42:02 26736.15522 httpd[1209835]: Server configured, listening on: port 80
+Oct 09 14:42:02 26736.15522 systemd[1]: Started The Apache HTTP Server.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88172.[0m
+Oct 09 14:42:02 26736.15522 sudo[1209829]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:42:04 26736.15522 sshd[1209827]: Failed password for invalid user guest from 128.1.131.163 port 53288 ssh2
+Oct 09 14:42:06 26736.15522 sshd[1209827]: Received disconnect from 128.1.131.163 port 53288:11: Bye Bye [preauth]
+Oct 09 14:42:06 26736.15522 sshd[1209827]: Disconnected from invalid user guest 128.1.131.163 port 53288 [preauth]
+Oct 09 14:42:15 26736.15522 sshd[1210017]: Invalid user administrator from 173.249.59.114 port 46300
+Oct 09 14:42:15 26736.15522 sshd[1210017]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:42:15 26736.15522 sshd[1210017]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:42:17 26736.15522 sshd[1210017]: Failed password for invalid user administrator from 173.249.59.114 port 46300 ssh2
+Oct 09 14:42:18 26736.15522 sshd[1210017]: Received disconnect from 173.249.59.114 port 46300:11: Bye Bye [preauth]
+Oct 09 14:42:18 26736.15522 sshd[1210017]: Disconnected from invalid user administrator 173.249.59.114 port 46300 [preauth]
+Oct 09 14:42:24 26736.15522 sshd[1210019]: Invalid user support from 5.198.176.28 port 36276
+Oct 09 14:42:24 26736.15522 sshd[1210019]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:42:24 26736.15522 sshd[1210019]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:42:26 26736.15522 sshd[1210019]: Failed password for invalid user support from 5.198.176.28 port 36276 ssh2
+Oct 09 14:42:29 26736.15522 sshd[1210019]: Received disconnect from 5.198.176.28 port 36276:11: Bye Bye [preauth]
+Oct 09 14:42:29 26736.15522 sshd[1210019]: Disconnected from invalid user support 5.198.176.28 port 36276 [preauth]
+Oct 09 14:42:49 26736.15522 sshd[1210075]: Invalid user teamspeak from 185.255.90.146 port 59406
+Oct 09 14:42:49 26736.15522 sshd[1210075]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:42:49 26736.15522 sshd[1210075]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:42:51 26736.15522 sshd[1210075]: Failed password for invalid user teamspeak from 185.255.90.146 port 59406 ssh2
+Oct 09 14:42:52 26736.15522 sshd[1210075]: Received disconnect from 185.255.90.146 port 59406:11: Bye Bye [preauth]
+Oct 09 14:42:52 26736.15522 sshd[1210075]: Disconnected from invalid user teamspeak 185.255.90.146 port 59406 [preauth]
+Oct 09 14:43:25 26736.15522 unix_chkpwd[1210079]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:43:25 26736.15522 sshd[1210077]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.253.27.119  user=root[0m
+Oct 09 14:43:27 26736.15522 sshd[1210077]: Failed password for root from 103.253.27.119 port 49696 ssh2
+Oct 09 14:43:28 26736.15522 sshd[1210077]: Connection closed by authenticating user root 103.253.27.119 port 49696 [preauth]
+Oct 09 14:43:44 26736.15522 unix_chkpwd[1210082]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (mysql)[0m
+Oct 09 14:43:44 26736.15522 sshd[1210080]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114  user=mysql[0m
+Oct 09 14:43:46 26736.15522 sshd[1210080]: Failed password for mysql from 173.249.59.114 port 53034 ssh2
+Oct 09 14:43:46 26736.15522 sshd[1210080]: Received disconnect from 173.249.59.114 port 53034:11: Bye Bye [preauth]
+Oct 09 14:43:46 26736.15522 sshd[1210080]: Disconnected from authenticating user mysql 173.249.59.114 port 53034 [preauth]
+Oct 09 14:43:53 26736.15522 sshd[1210083]: Invalid user tempuser from 5.198.176.28 port 36368
+Oct 09 14:43:53 26736.15522 sshd[1210083]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:43:53 26736.15522 sshd[1210083]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:43:55 26736.15522 sshd[1210083]: Failed password for invalid user tempuser from 5.198.176.28 port 36368 ssh2
+Oct 09 14:43:55 26736.15522 sshd[1210083]: Received disconnect from 5.198.176.28 port 36368:11: Bye Bye [preauth]
+Oct 09 14:43:55 26736.15522 sshd[1210083]: Disconnected from invalid user tempuser 5.198.176.28 port 36368 [preauth]
+Oct 09 14:43:57 26736.15522 sshd[1210085]: Invalid user fivem from 128.1.131.163 port 58992
+Oct 09 14:43:57 26736.15522 sshd[1210085]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:43:57 26736.15522 sshd[1210085]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:43:58 26736.15522 sshd[1210085]: Failed password for invalid user fivem from 128.1.131.163 port 58992 ssh2
+Oct 09 14:43:59 26736.15522 sshd[1210085]: Received disconnect from 128.1.131.163 port 58992:11: Bye Bye [preauth]
+Oct 09 14:43:59 26736.15522 sshd[1210085]: Disconnected from invalid user fivem 128.1.131.163 port 58992 [preauth]
+Oct 09 14:44:29 26736.15522 sshd[1210087]: Accepted password for root from 106.212.27.63 port 52705 ssh2
+Oct 09 14:44:29 26736.15522 systemd-logind[545]: New session 23 of user root.
+[0;38;5;245m░░ [0m[0;32mSubject: A new session 23 has been created for user root[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32mDocumentation: sd-login(3)[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA new session with the ID 23 has been created for the user root.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe leading process of the session is 1210087.[0m
+Oct 09 14:44:29 26736.15522 systemd[1]: Started Session 23 of User root.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit session-23.scope has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit session-23.scope has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88250.[0m
+Oct 09 14:44:29 26736.15522 sshd[1210087]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:44:30 26736.15522 systemd[1]: Starting Hostname Service...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit systemd-hostnamed.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit systemd-hostnamed.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88331.[0m
+Oct 09 14:44:30 26736.15522 systemd[1]: Started Hostname Service.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit systemd-hostnamed.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit systemd-hostnamed.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88331.[0m
+Oct 09 14:44:33 26736.15522 sshd[1210119]: Invalid user postgres from 185.255.90.146 port 52108
+Oct 09 14:44:33 26736.15522 sshd[1210119]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:44:33 26736.15522 sshd[1210119]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:44:35 26736.15522 sshd[1210119]: Failed password for invalid user postgres from 185.255.90.146 port 52108 ssh2
+Oct 09 14:44:35 26736.15522 sshd[1210119]: Received disconnect from 185.255.90.146 port 52108:11: Bye Bye [preauth]
+Oct 09 14:44:35 26736.15522 sshd[1210119]: Disconnected from invalid user postgres 185.255.90.146 port 52108 [preauth]
+Oct 09 14:44:40 26736.15522 sudo[1210122]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/nano /etc/httpd/conf.d/000-default.conf[0m
+Oct 09 14:44:40 26736.15522 sudo[1210122]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:44:47 26736.15522 sshd[1210125]: Connection closed by 59.94.176.55 port 58519 [preauth]
+Oct 09 14:45:00 26736.15522 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit systemd-hostnamed.service has successfully entered the 'dead' state.[0m
+Oct 09 14:45:05 26736.15522 sudo[1210122]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:45:08 26736.15522 sshd[1210133]: Accepted password for root from 37.46.123.6 port 63735 ssh2
+Oct 09 14:45:08 26736.15522 systemd-logind[545]: New session 24 of user root.
+[0;38;5;245m░░ [0m[0;32mSubject: A new session 24 has been created for user root[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32mDocumentation: sd-login(3)[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA new session with the ID 24 has been created for the user root.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe leading process of the session is 1210133.[0m
+Oct 09 14:45:08 26736.15522 systemd[1]: Started Session 24 of User root.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit session-24.scope has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit session-24.scope has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88409.[0m
+Oct 09 14:45:08 26736.15522 sshd[1210133]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:45:09 26736.15522 systemd[1]: Starting Hostname Service...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit systemd-hostnamed.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit systemd-hostnamed.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88490.[0m
+Oct 09 14:45:09 26736.15522 systemd[1]: Started Hostname Service.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit systemd-hostnamed.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit systemd-hostnamed.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88490.[0m
+Oct 09 14:45:09 26736.15522 sshd[1210163]: Invalid user sftpuser from 173.249.59.114 port 59762
+Oct 09 14:45:09 26736.15522 sshd[1210163]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:45:09 26736.15522 sshd[1210163]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:45:11 26736.15522 sshd[1210163]: Failed password for invalid user sftpuser from 173.249.59.114 port 59762 ssh2
+Oct 09 14:45:13 26736.15522 sshd[1210163]: Received disconnect from 173.249.59.114 port 59762:11: Bye Bye [preauth]
+Oct 09 14:45:13 26736.15522 sshd[1210163]: Disconnected from invalid user sftpuser 173.249.59.114 port 59762 [preauth]
+Oct 09 14:45:17 26736.15522 sudo[1210166]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/nano /etc/httpd/conf.d/swizchem.conf[0m
+Oct 09 14:45:17 26736.15522 sudo[1210166]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:45:26 26736.15522 sshd[1210170]: Invalid user odoo from 5.198.176.28 port 36466
+Oct 09 14:45:26 26736.15522 sshd[1210170]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:45:26 26736.15522 sshd[1210170]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:45:28 26736.15522 sshd[1210170]: Failed password for invalid user odoo from 5.198.176.28 port 36466 ssh2
+Oct 09 14:45:28 26736.15522 sshd[1210170]: Received disconnect from 5.198.176.28 port 36466:11: Bye Bye [preauth]
+Oct 09 14:45:28 26736.15522 sshd[1210170]: Disconnected from invalid user odoo 5.198.176.28 port 36466 [preauth]
+Oct 09 14:45:39 26736.15522 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit systemd-hostnamed.service has successfully entered the 'dead' state.[0m
+Oct 09 14:45:54 26736.15522 sshd[1210177]: Invalid user devops from 128.1.131.163 port 36362
+Oct 09 14:45:54 26736.15522 sshd[1210177]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:45:54 26736.15522 sshd[1210177]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:45:57 26736.15522 sshd[1210177]: Failed password for invalid user devops from 128.1.131.163 port 36362 ssh2
+Oct 09 14:45:57 26736.15522 sshd[1210177]: Received disconnect from 128.1.131.163 port 36362:11: Bye Bye [preauth]
+Oct 09 14:45:57 26736.15522 sshd[1210177]: Disconnected from invalid user devops 128.1.131.163 port 36362 [preauth]
+Oct 09 14:46:13 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:46:13 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12527
+Oct 09 14:46:13 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12527
+Oct 09 14:46:23 26736.15522 sshd[1210181]: Invalid user bot from 185.255.90.146 port 59488
+Oct 09 14:46:23 26736.15522 sshd[1210181]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:46:23 26736.15522 sshd[1210181]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:46:25 26736.15522 sshd[1210181]: Failed password for invalid user bot from 185.255.90.146 port 59488 ssh2
+Oct 09 14:46:27 26736.15522 sshd[1210181]: Received disconnect from 185.255.90.146 port 59488:11: Bye Bye [preauth]
+Oct 09 14:46:27 26736.15522 sshd[1210181]: Disconnected from invalid user bot 185.255.90.146 port 59488 [preauth]
+Oct 09 14:46:36 26736.15522 sshd[1210185]: Invalid user teamspeak3 from 173.249.59.114 port 38262
+Oct 09 14:46:36 26736.15522 sshd[1210185]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:46:36 26736.15522 sshd[1210185]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:46:38 26736.15522 sshd[1210185]: Failed password for invalid user teamspeak3 from 173.249.59.114 port 38262 ssh2
+Oct 09 14:46:40 26736.15522 sshd[1210185]: Received disconnect from 173.249.59.114 port 38262:11: Bye Bye [preauth]
+Oct 09 14:46:40 26736.15522 sshd[1210185]: Disconnected from invalid user teamspeak3 173.249.59.114 port 38262 [preauth]
+Oct 09 14:46:59 26736.15522 sshd[1210190]: Invalid user ansible from 5.198.176.28 port 36560
+Oct 09 14:46:59 26736.15522 sshd[1210190]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:46:59 26736.15522 sshd[1210190]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:47:01 26736.15522 sshd[1210190]: Failed password for invalid user ansible from 5.198.176.28 port 36560 ssh2
+Oct 09 14:47:01 26736.15522 sshd[1210190]: Received disconnect from 5.198.176.28 port 36560:11: Bye Bye [preauth]
+Oct 09 14:47:01 26736.15522 sshd[1210190]: Disconnected from invalid user ansible 5.198.176.28 port 36560 [preauth]
+Oct 09 14:47:03 26736.15522 sudo[1210166]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:47:21 26736.15522 sudo[1210193]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/systemctl restart httpd[0m
+Oct 09 14:47:21 26736.15522 sudo[1210193]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:47:21 26736.15522 systemd[1]: Stopping The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88568.[0m
+Oct 09 14:47:22 26736.15522 systemd[1]: httpd.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service has successfully entered the 'dead' state.[0m
+Oct 09 14:47:22 26736.15522 systemd[1]: Stopped The Apache HTTP Server.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88568 and the job result is done.[0m
+Oct 09 14:47:22 26736.15522 systemd[1]: Starting The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88568.[0m
+Oct 09 14:47:22 26736.15522 httpd[1210199]: AH00112: Warning: DocumentRoot [/var/www/html/swizchem/public] does not exist
+Oct 09 14:47:22 26736.15522 httpd[1210199]: Server configured, listening on: port 80
+Oct 09 14:47:22 26736.15522 systemd[1]: Started The Apache HTTP Server.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88568.[0m
+Oct 09 14:47:22 26736.15522 sudo[1210193]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:47:56 26736.15522 sshd[1210381]: Invalid user odoo from 128.1.131.163 port 45760
+Oct 09 14:47:56 26736.15522 sshd[1210381]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:47:56 26736.15522 sshd[1210381]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:47:58 26736.15522 sshd[1210381]: Failed password for invalid user odoo from 128.1.131.163 port 45760 ssh2
+Oct 09 14:48:00 26736.15522 sshd[1210381]: Received disconnect from 128.1.131.163 port 45760:11: Bye Bye [preauth]
+Oct 09 14:48:00 26736.15522 sshd[1210381]: Disconnected from invalid user odoo 128.1.131.163 port 45760 [preauth]
+Oct 09 14:48:03 26736.15522 unix_chkpwd[1210439]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:48:03 26736.15522 sshd[1210437]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.253.27.119  user=root[0m
+Oct 09 14:48:05 26736.15522 sshd[1210437]: Failed password for root from 103.253.27.119 port 45624 ssh2
+Oct 09 14:48:05 26736.15522 sshd[1210440]: Invalid user newuser from 173.249.59.114 port 44996
+Oct 09 14:48:05 26736.15522 sshd[1210440]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:48:05 26736.15522 sshd[1210440]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:48:06 26736.15522 sshd[1210437]: Connection closed by authenticating user root 103.253.27.119 port 45624 [preauth]
+Oct 09 14:48:07 26736.15522 sshd[1210440]: Failed password for invalid user newuser from 173.249.59.114 port 44996 ssh2
+Oct 09 14:48:09 26736.15522 sshd[1210440]: Received disconnect from 173.249.59.114 port 44996:11: Bye Bye [preauth]
+Oct 09 14:48:09 26736.15522 sshd[1210440]: Disconnected from invalid user newuser 173.249.59.114 port 44996 [preauth]
+Oct 09 14:48:10 26736.15522 sshd[1210442]: Invalid user support from 185.255.90.146 port 35810
+Oct 09 14:48:10 26736.15522 sshd[1210442]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:48:10 26736.15522 sshd[1210442]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:48:12 26736.15522 sshd[1210442]: Failed password for invalid user support from 185.255.90.146 port 35810 ssh2
+Oct 09 14:48:12 26736.15522 sshd[1210442]: Received disconnect from 185.255.90.146 port 35810:11: Bye Bye [preauth]
+Oct 09 14:48:12 26736.15522 sshd[1210442]: Disconnected from invalid user support 185.255.90.146 port 35810 [preauth]
+Oct 09 14:48:15 26736.15522 sudo[1210444]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/nano /etc/httpd/conf.d/swizchem.conf[0m
+Oct 09 14:48:15 26736.15522 sudo[1210444]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:48:31 26736.15522 sshd[1210449]: Invalid user devops from 5.198.176.28 port 36654
+Oct 09 14:48:31 26736.15522 sshd[1210449]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:48:31 26736.15522 sshd[1210449]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:48:33 26736.15522 sshd[1210449]: Failed password for invalid user devops from 5.198.176.28 port 36654 ssh2
+Oct 09 14:48:33 26736.15522 sshd[1210449]: Received disconnect from 5.198.176.28 port 36654:11: Bye Bye [preauth]
+Oct 09 14:48:33 26736.15522 sshd[1210449]: Disconnected from invalid user devops 5.198.176.28 port 36654 [preauth]
+Oct 09 14:48:38 26736.15522 sudo[1210444]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:48:41 26736.15522 sudo[1210452]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/systemctl restart httpd[0m
+Oct 09 14:48:41 26736.15522 sudo[1210452]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:48:41 26736.15522 systemd[1]: Stopping The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88646.[0m
+Oct 09 14:48:42 26736.15522 systemd[1]: httpd.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service has successfully entered the 'dead' state.[0m
+Oct 09 14:48:42 26736.15522 systemd[1]: Stopped The Apache HTTP Server.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88646 and the job result is done.[0m
+Oct 09 14:48:42 26736.15522 systemd[1]: Starting The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88646.[0m
+Oct 09 14:48:42 26736.15522 httpd[1210458]: Server configured, listening on: port 80
+Oct 09 14:48:42 26736.15522 systemd[1]: Started The Apache HTTP Server.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88646.[0m
+Oct 09 14:48:42 26736.15522 sudo[1210452]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:49:28 26736.15522 unix_chkpwd[1210696]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:49:28 26736.15522 sshd[1210694]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:49:29 26736.15522 sshd[1210697]: Invalid user super from 173.249.59.114 port 51728
+Oct 09 14:49:29 26736.15522 sshd[1210697]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:49:29 26736.15522 sshd[1210697]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:49:30 26736.15522 sshd[1210694]: Failed password for root from 193.46.255.103 port 60674 ssh2
+Oct 09 14:49:31 26736.15522 unix_chkpwd[1210699]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:49:31 26736.15522 sshd[1210697]: Failed password for invalid user super from 173.249.59.114 port 51728 ssh2
+Oct 09 14:49:31 26736.15522 sshd[1210697]: Received disconnect from 173.249.59.114 port 51728:11: Bye Bye [preauth]
+Oct 09 14:49:31 26736.15522 sshd[1210697]: Disconnected from invalid user super 173.249.59.114 port 51728 [preauth]
+Oct 09 14:49:32 26736.15522 sshd[1210694]: Failed password for root from 193.46.255.103 port 60674 ssh2
+Oct 09 14:49:33 26736.15522 unix_chkpwd[1210700]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:49:35 26736.15522 sshd[1210694]: Failed password for root from 193.46.255.103 port 60674 ssh2
+Oct 09 14:49:36 26736.15522 sshd[1210694]: Received disconnect from 193.46.255.103 port 60674:11:  [preauth]
+Oct 09 14:49:36 26736.15522 sshd[1210694]: Disconnected from authenticating user root 193.46.255.103 port 60674 [preauth]
+Oct 09 14:49:36 26736.15522 sshd[1210694]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:49:36 26736.15522 unix_chkpwd[1210703]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:49:36 26736.15522 sshd[1210701]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:49:39 26736.15522 sshd[1210704]: Connection reset by 37.46.123.6 port 61692 [preauth]
+Oct 09 14:49:39 26736.15522 sshd[1210701]: Failed password for root from 193.46.255.103 port 46022 ssh2
+Oct 09 14:49:39 26736.15522 unix_chkpwd[1210706]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:49:41 26736.15522 sshd[1210701]: Failed password for root from 193.46.255.103 port 46022 ssh2
+Oct 09 14:49:42 26736.15522 unix_chkpwd[1210707]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:49:44 26736.15522 sshd[1210701]: Failed password for root from 193.46.255.103 port 46022 ssh2
+Oct 09 14:49:45 26736.15522 sshd[1210701]: Received disconnect from 193.46.255.103 port 46022:11:  [preauth]
+Oct 09 14:49:45 26736.15522 sshd[1210701]: Disconnected from authenticating user root 193.46.255.103 port 46022 [preauth]
+Oct 09 14:49:45 26736.15522 sshd[1210701]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:49:45 26736.15522 unix_chkpwd[1210712]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:49:45 26736.15522 sshd[1210708]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:49:46 26736.15522 sshd[1210710]: Invalid user vncuser from 128.1.131.163 port 59748
+Oct 09 14:49:46 26736.15522 sshd[1210710]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:49:46 26736.15522 sshd[1210710]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:49:47 26736.15522 sshd[1210708]: Failed password for root from 193.46.255.103 port 39646 ssh2
+Oct 09 14:49:48 26736.15522 unix_chkpwd[1210713]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:49:48 26736.15522 sshd[1210710]: Failed password for invalid user vncuser from 128.1.131.163 port 59748 ssh2
+Oct 09 14:49:49 26736.15522 sshd[1210710]: Received disconnect from 128.1.131.163 port 59748:11: Bye Bye [preauth]
+Oct 09 14:49:49 26736.15522 sshd[1210710]: Disconnected from invalid user vncuser 128.1.131.163 port 59748 [preauth]
+Oct 09 14:49:50 26736.15522 sshd[1210708]: Failed password for root from 193.46.255.103 port 39646 ssh2
+Oct 09 14:49:51 26736.15522 unix_chkpwd[1210714]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:49:52 26736.15522 sshd[1210715]: Invalid user odoo from 185.255.90.146 port 53148
+Oct 09 14:49:52 26736.15522 sshd[1210715]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:49:52 26736.15522 sshd[1210715]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:49:52 26736.15522 sshd[1210708]: Failed password for root from 193.46.255.103 port 39646 ssh2
+Oct 09 14:49:53 26736.15522 sshd[1210708]: Received disconnect from 193.46.255.103 port 39646:11:  [preauth]
+Oct 09 14:49:53 26736.15522 sshd[1210708]: Disconnected from authenticating user root 193.46.255.103 port 39646 [preauth]
+Oct 09 14:49:53 26736.15522 sshd[1210708]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.46.255.103  user=root[0m
+Oct 09 14:49:54 26736.15522 sshd[1210715]: Failed password for invalid user odoo from 185.255.90.146 port 53148 ssh2
+Oct 09 14:49:56 26736.15522 sshd[1210715]: Received disconnect from 185.255.90.146 port 53148:11: Bye Bye [preauth]
+Oct 09 14:49:56 26736.15522 sshd[1210715]: Disconnected from invalid user odoo 185.255.90.146 port 53148 [preauth]
+Oct 09 14:49:59 26736.15522 sshd[1210717]: Invalid user kafka from 5.198.176.28 port 36750
+Oct 09 14:49:59 26736.15522 sshd[1210717]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:49:59 26736.15522 sshd[1210717]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:50:01 26736.15522 sshd[1210717]: Failed password for invalid user kafka from 5.198.176.28 port 36750 ssh2
+Oct 09 14:50:03 26736.15522 sshd[1210717]: Received disconnect from 5.198.176.28 port 36750:11: Bye Bye [preauth]
+Oct 09 14:50:03 26736.15522 sshd[1210717]: Disconnected from invalid user kafka 5.198.176.28 port 36750 [preauth]
+Oct 09 14:50:14 26736.15522 sshd[1210719]: Accepted password for root from 37.46.123.6 port 61712 ssh2
+Oct 09 14:50:14 26736.15522 systemd-logind[545]: New session 25 of user root.
+[0;38;5;245m░░ [0m[0;32mSubject: A new session 25 has been created for user root[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32mDocumentation: sd-login(3)[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA new session with the ID 25 has been created for the user root.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe leading process of the session is 1210719.[0m
+Oct 09 14:50:14 26736.15522 systemd[1]: Started Session 25 of User root.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit session-25.scope has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit session-25.scope has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88724.[0m
+Oct 09 14:50:14 26736.15522 sshd[1210719]: pam_unix(sshd:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:50:14 26736.15522 systemd[1]: Starting Hostname Service...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit systemd-hostnamed.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit systemd-hostnamed.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88805.[0m
+Oct 09 14:50:15 26736.15522 systemd[1]: Started Hostname Service.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit systemd-hostnamed.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit systemd-hostnamed.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88805.[0m
+Oct 09 14:50:22 26736.15522 sshd[1210749]: Connection closed by 59.94.176.55 port 35852 [preauth]
+Oct 09 14:50:29 26736.15522 sudo[1210751]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/2 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/nano /etc/httpd/conf.d/000-default.conf[0m
+Oct 09 14:50:29 26736.15522 sudo[1210751]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 14:50:45 26736.15522 systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit systemd-hostnamed.service has successfully entered the 'dead' state.[0m
+Oct 09 14:50:46 26736.15522 systemd[1]: proc-sys-fs-binfmt_misc.automount: Got automount request for /proc/sys/fs/binfmt_misc, triggered by 1210758 (find)
+Oct 09 14:50:46 26736.15522 systemd[1]: Mounting Arbitrary Executable File Formats File System...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit proc-sys-fs-binfmt_misc.mount has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit proc-sys-fs-binfmt_misc.mount has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88883.[0m
+Oct 09 14:50:46 26736.15522 systemd[1]: Mounted Arbitrary Executable File Formats File System.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit proc-sys-fs-binfmt_misc.mount has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit proc-sys-fs-binfmt_misc.mount has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88883.[0m
+Oct 09 14:50:52 26736.15522 sshd[1210762]: Invalid user sammy from 173.249.59.114 port 58458
+Oct 09 14:50:52 26736.15522 sshd[1210762]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:50:52 26736.15522 sshd[1210762]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:50:53 26736.15522 sshd[1210762]: Failed password for invalid user sammy from 173.249.59.114 port 58458 ssh2
+Oct 09 14:50:54 26736.15522 sshd[1210762]: Received disconnect from 173.249.59.114 port 58458:11: Bye Bye [preauth]
+Oct 09 14:50:54 26736.15522 sshd[1210762]: Disconnected from invalid user sammy 173.249.59.114 port 58458 [preauth]
+Oct 09 14:51:27 26736.15522 sshd[1210767]: Invalid user admin1 from 5.198.176.28 port 36842
+Oct 09 14:51:27 26736.15522 sshd[1210767]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:51:27 26736.15522 sshd[1210767]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:51:29 26736.15522 sshd[1210767]: Failed password for invalid user admin1 from 5.198.176.28 port 36842 ssh2
+Oct 09 14:51:29 26736.15522 sshd[1210767]: Received disconnect from 5.198.176.28 port 36842:11: Bye Bye [preauth]
+Oct 09 14:51:29 26736.15522 sshd[1210767]: Disconnected from invalid user admin1 5.198.176.28 port 36842 [preauth]
+Oct 09 14:51:35 26736.15522 sshd[1210769]: Invalid user admin1 from 185.255.90.146 port 43664
+Oct 09 14:51:35 26736.15522 sshd[1210769]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:51:35 26736.15522 sshd[1210769]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:51:37 26736.15522 sshd[1210769]: Failed password for invalid user admin1 from 185.255.90.146 port 43664 ssh2
+Oct 09 14:51:38 26736.15522 sshd[1210771]: Invalid user vncuser from 128.1.131.163 port 37840
+Oct 09 14:51:38 26736.15522 sshd[1210771]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:51:38 26736.15522 sshd[1210771]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:51:38 26736.15522 sshd[1210769]: Received disconnect from 185.255.90.146 port 43664:11: Bye Bye [preauth]
+Oct 09 14:51:38 26736.15522 sshd[1210769]: Disconnected from invalid user admin1 185.255.90.146 port 43664 [preauth]
+Oct 09 14:51:39 26736.15522 sshd[1210771]: Failed password for invalid user vncuser from 128.1.131.163 port 37840 ssh2
+Oct 09 14:51:41 26736.15522 sshd[1210771]: Received disconnect from 128.1.131.163 port 37840:11: Bye Bye [preauth]
+Oct 09 14:51:41 26736.15522 sshd[1210771]: Disconnected from invalid user vncuser 128.1.131.163 port 37840 [preauth]
+Oct 09 14:51:59 26736.15522 sudo[1210751]: pam_unix(sudo:session): session closed for user root
+Oct 09 14:52:14 26736.15522 sshd[1210773]: Invalid user server from 212.112.19.21 port 38833
+Oct 09 14:52:14 26736.15522 sshd[1210773]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:52:14 26736.15522 sshd[1210773]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=212.112.19.21[0m
+Oct 09 14:52:15 26736.15522 sshd[1210773]: Failed password for invalid user server from 212.112.19.21 port 38833 ssh2
+Oct 09 14:52:17 26736.15522 sshd[1210775]: Invalid user teamspeak from 173.249.59.114 port 36958
+Oct 09 14:52:17 26736.15522 sshd[1210775]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:52:17 26736.15522 sshd[1210775]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:52:17 26736.15522 sshd[1210773]: Received disconnect from 212.112.19.21 port 38833:11: Client disconnecting normally [preauth]
+Oct 09 14:52:17 26736.15522 sshd[1210773]: Disconnected from invalid user server 212.112.19.21 port 38833 [preauth]
+Oct 09 14:52:19 26736.15522 sshd[1210775]: Failed password for invalid user teamspeak from 173.249.59.114 port 36958 ssh2
+Oct 09 14:52:20 26736.15522 sshd[1210775]: Received disconnect from 173.249.59.114 port 36958:11: Bye Bye [preauth]
+Oct 09 14:52:20 26736.15522 sshd[1210775]: Disconnected from invalid user teamspeak 173.249.59.114 port 36958 [preauth]
+Oct 09 14:52:36 26736.15522 unix_chkpwd[1210782]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:52:36 26736.15522 sshd[1210780]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.253.27.119  user=root[0m
+Oct 09 14:52:38 26736.15522 sshd[1210780]: Failed password for root from 103.253.27.119 port 57860 ssh2
+Oct 09 14:52:39 26736.15522 sshd[1210780]: Connection closed by authenticating user root 103.253.27.119 port 57860 [preauth]
+Oct 09 14:52:58 26736.15522 sshd[1210784]: Invalid user test1 from 5.198.176.28 port 36938
+Oct 09 14:52:58 26736.15522 sshd[1210784]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:52:58 26736.15522 sshd[1210784]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:53:01 26736.15522 sshd[1210784]: Failed password for invalid user test1 from 5.198.176.28 port 36938 ssh2
+Oct 09 14:53:03 26736.15522 sshd[1210784]: Received disconnect from 5.198.176.28 port 36938:11: Bye Bye [preauth]
+Oct 09 14:53:03 26736.15522 sshd[1210784]: Disconnected from invalid user test1 5.198.176.28 port 36938 [preauth]
+Oct 09 14:53:21 26736.15522 sshd[1210786]: Invalid user reza from 185.255.90.146 port 56832
+Oct 09 14:53:21 26736.15522 sshd[1210786]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:53:21 26736.15522 sshd[1210786]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:53:24 26736.15522 sshd[1210786]: Failed password for invalid user reza from 185.255.90.146 port 56832 ssh2
+Oct 09 14:53:26 26736.15522 sshd[1210786]: Received disconnect from 185.255.90.146 port 56832:11: Bye Bye [preauth]
+Oct 09 14:53:26 26736.15522 sshd[1210786]: Disconnected from invalid user reza 185.255.90.146 port 56832 [preauth]
+Oct 09 14:53:35 26736.15522 sshd[1210790]: Invalid user newuser from 128.1.131.163 port 41284
+Oct 09 14:53:35 26736.15522 sshd[1210790]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:53:35 26736.15522 sshd[1210790]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:53:37 26736.15522 sshd[1210790]: Failed password for invalid user newuser from 128.1.131.163 port 41284 ssh2
+Oct 09 14:53:37 26736.15522 systemd[1]: Stopping The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88886.[0m
+Oct 09 14:53:38 26736.15522 sshd[1210790]: Received disconnect from 128.1.131.163 port 41284:11: Bye Bye [preauth]
+Oct 09 14:53:38 26736.15522 sshd[1210790]: Disconnected from invalid user newuser 128.1.131.163 port 41284 [preauth]
+Oct 09 14:53:38 26736.15522 systemd[1]: httpd.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service has successfully entered the 'dead' state.[0m
+Oct 09 14:53:38 26736.15522 systemd[1]: Stopped The Apache HTTP Server.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88886 and the job result is done.[0m
+Oct 09 14:53:39 26736.15522 systemd[1]: Starting The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88886.[0m
+Oct 09 14:53:39 26736.15522 httpd[1210797]: Server configured, listening on: port 80
+Oct 09 14:53:39 26736.15522 systemd[1]: Started The Apache HTTP Server.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88886.[0m
+Oct 09 14:53:44 26736.15522 sshd[1210978]: Invalid user teamspeak from 173.249.59.114 port 43688
+Oct 09 14:53:44 26736.15522 sshd[1210978]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:53:44 26736.15522 sshd[1210978]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:53:46 26736.15522 sshd[1210978]: Failed password for invalid user teamspeak from 173.249.59.114 port 43688 ssh2
+Oct 09 14:53:47 26736.15522 sshd[1210978]: Received disconnect from 173.249.59.114 port 43688:11: Bye Bye [preauth]
+Oct 09 14:53:47 26736.15522 sshd[1210978]: Disconnected from invalid user teamspeak 173.249.59.114 port 43688 [preauth]
+Oct 09 14:54:11 26736.15522 qemu-ga[1196952]: info: guest-file-open called, filepath: /proc/meminfo, mode: r
+Oct 09 14:54:11 26736.15522 qemu-ga[1196952]: info: guest-file-open, handle: 12528
+Oct 09 14:54:11 26736.15522 qemu-ga[1196952]: info: guest-file-close called, handle: 12528
+Oct 09 14:54:31 26736.15522 sshd[1211035]: Invalid user it from 5.198.176.28 port 37036
+Oct 09 14:54:31 26736.15522 sshd[1211035]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:54:31 26736.15522 sshd[1211035]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:54:33 26736.15522 sshd[1211035]: Failed password for invalid user it from 5.198.176.28 port 37036 ssh2
+Oct 09 14:54:35 26736.15522 sshd[1211035]: Received disconnect from 5.198.176.28 port 37036:11: Bye Bye [preauth]
+Oct 09 14:54:35 26736.15522 sshd[1211035]: Disconnected from invalid user it 5.198.176.28 port 37036 [preauth]
+Oct 09 14:55:08 26736.15522 sshd[1211261]: Invalid user username from 185.255.90.146 port 43160
+Oct 09 14:55:08 26736.15522 sshd[1211261]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:55:08 26736.15522 sshd[1211261]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:55:10 26736.15522 sshd[1211261]: Failed password for invalid user username from 185.255.90.146 port 43160 ssh2
+Oct 09 14:55:11 26736.15522 sshd[1211261]: Received disconnect from 185.255.90.146 port 43160:11: Bye Bye [preauth]
+Oct 09 14:55:11 26736.15522 sshd[1211261]: Disconnected from invalid user username 185.255.90.146 port 43160 [preauth]
+Oct 09 14:55:13 26736.15522 sshd[1211263]: Invalid user user from 173.249.59.114 port 50418
+Oct 09 14:55:13 26736.15522 sshd[1211263]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:55:13 26736.15522 sshd[1211263]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=173.249.59.114[0m
+Oct 09 14:55:15 26736.15522 sshd[1211263]: Failed password for invalid user user from 173.249.59.114 port 50418 ssh2
+Oct 09 14:55:16 26736.15522 sshd[1211263]: Received disconnect from 173.249.59.114 port 50418:11: Bye Bye [preauth]
+Oct 09 14:55:16 26736.15522 sshd[1211263]: Disconnected from invalid user user 173.249.59.114 port 50418 [preauth]
+Oct 09 14:55:29 26736.15522 sshd[1211266]: Invalid user ts3server from 128.1.131.163 port 44342
+Oct 09 14:55:29 26736.15522 sshd[1211266]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:55:29 26736.15522 sshd[1211266]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:55:31 26736.15522 sshd[1211266]: Failed password for invalid user ts3server from 128.1.131.163 port 44342 ssh2
+Oct 09 14:55:32 26736.15522 sshd[1211266]: Received disconnect from 128.1.131.163 port 44342:11: Bye Bye [preauth]
+Oct 09 14:55:32 26736.15522 sshd[1211266]: Disconnected from invalid user ts3server 128.1.131.163 port 44342 [preauth]
+Oct 09 14:55:54 26736.15522 systemd[1]: Stopping The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88964.[0m
+Oct 09 14:55:55 26736.15522 systemd[1]: httpd.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service has successfully entered the 'dead' state.[0m
+Oct 09 14:55:55 26736.15522 systemd[1]: Stopped The Apache HTTP Server.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit httpd.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit httpd.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88964 and the job result is done.[0m
+Oct 09 14:55:55 26736.15522 systemd[1]: Starting The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88964.[0m
+Oct 09 14:55:55 26736.15522 httpd[1211272]: AH00526: Syntax error on line 32 of /etc/httpd/conf.d/swizchem.conf:
+Oct 09 14:55:55 26736.15522 httpd[1211272]: Invalid command 'SSLEngine', perhaps misspelled or defined by a module not included in the server configuration
+Oct 09 14:55:55 26736.15522 systemd[1]: [0;1;39m[0;1;31m[0;1;39mhttpd.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit httpd.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Oct 09 14:55:55 26736.15522 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mhttpd.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service has entered the 'failed' state with result 'exit-code'.[0m
+Oct 09 14:55:55 26736.15522 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start The Apache HTTP Server.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 88964 and the job result is failed.[0m
+Oct 09 14:55:58 26736.15522 sshd[1211288]: Connection closed by 59.94.176.55 port 13205 [preauth]
+Oct 09 14:56:01 26736.15522 sshd[1211290]: Invalid user proxyuser from 5.198.176.28 port 37130
+Oct 09 14:56:01 26736.15522 sshd[1211290]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:56:01 26736.15522 sshd[1211290]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:56:02 26736.15522 sshd[1211290]: Failed password for invalid user proxyuser from 5.198.176.28 port 37130 ssh2
+Oct 09 14:56:02 26736.15522 sshd[1211290]: Received disconnect from 5.198.176.28 port 37130:11: Bye Bye [preauth]
+Oct 09 14:56:02 26736.15522 sshd[1211290]: Disconnected from invalid user proxyuser 5.198.176.28 port 37130 [preauth]
+Oct 09 14:56:53 26736.15522 unix_chkpwd[1211296]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:56:53 26736.15522 sshd[1211294]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=171.231.186.134  user=root[0m
+Oct 09 14:56:55 26736.15522 sshd[1211294]: Failed password for root from 171.231.186.134 port 49140 ssh2
+Oct 09 14:56:55 26736.15522 sshd[1211298]: Invalid user mc from 185.255.90.146 port 49778
+Oct 09 14:56:55 26736.15522 sshd[1211298]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:56:55 26736.15522 sshd[1211298]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:56:56 26736.15522 sshd[1211294]: Connection closed by authenticating user root 171.231.186.134 port 49140 [preauth]
+Oct 09 14:56:56 26736.15522 sshd[1211298]: Failed password for invalid user mc from 185.255.90.146 port 49778 ssh2
+Oct 09 14:56:56 26736.15522 sshd[1211298]: Received disconnect from 185.255.90.146 port 49778:11: Bye Bye [preauth]
+Oct 09 14:56:56 26736.15522 sshd[1211298]: Disconnected from invalid user mc 185.255.90.146 port 49778 [preauth]
+Oct 09 14:57:13 26736.15522 unix_chkpwd[1211340]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:57:13 26736.15522 sshd[1211338]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.253.27.119  user=root[0m
+Oct 09 14:57:15 26736.15522 sshd[1211338]: Failed password for root from 103.253.27.119 port 40916 ssh2
+Oct 09 14:57:16 26736.15522 sshd[1211338]: Connection closed by authenticating user root 103.253.27.119 port 40916 [preauth]
+Oct 09 14:57:18 26736.15522 sshd[1211341]: Invalid user user from 116.110.157.113 port 48636
+Oct 09 14:57:18 26736.15522 sshd[1211341]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:57:18 26736.15522 sshd[1211341]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=116.110.157.113[0m
+Oct 09 14:57:20 26736.15522 sshd[1211341]: Failed password for invalid user user from 116.110.157.113 port 48636 ssh2
+Oct 09 14:57:21 26736.15522 sshd[1211345]: Invalid user teamspeak from 128.1.131.163 port 33756
+Oct 09 14:57:21 26736.15522 sshd[1211345]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:57:21 26736.15522 sshd[1211345]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:57:23 26736.15522 sshd[1211341]: Connection closed by invalid user user 116.110.157.113 port 48636 [preauth]
+Oct 09 14:57:23 26736.15522 sshd[1211345]: Failed password for invalid user teamspeak from 128.1.131.163 port 33756 ssh2
+Oct 09 14:57:24 26736.15522 sshd[1211345]: Received disconnect from 128.1.131.163 port 33756:11: Bye Bye [preauth]
+Oct 09 14:57:24 26736.15522 sshd[1211345]: Disconnected from invalid user teamspeak 128.1.131.163 port 33756 [preauth]
+Oct 09 14:57:33 26736.15522 sshd[1211348]: Invalid user guest from 5.198.176.28 port 37228
+Oct 09 14:57:33 26736.15522 sshd[1211348]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:57:33 26736.15522 sshd[1211348]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:57:33 26736.15522 sshd[1211343]: Invalid user config from 171.231.186.134 port 48882
+Oct 09 14:57:34 26736.15522 sshd[1211348]: Failed password for invalid user guest from 5.198.176.28 port 37228 ssh2
+Oct 09 14:57:35 26736.15522 sshd[1211348]: Received disconnect from 5.198.176.28 port 37228:11: Bye Bye [preauth]
+Oct 09 14:57:35 26736.15522 sshd[1211348]: Disconnected from invalid user guest 5.198.176.28 port 37228 [preauth]
+Oct 09 14:57:47 26736.15522 sshd[1211343]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:57:47 26736.15522 sshd[1211343]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=171.231.186.134[0m
+Oct 09 14:57:49 26736.15522 sshd[1211343]: Failed password for invalid user config from 171.231.186.134 port 48882 ssh2
+Oct 09 14:57:49 26736.15522 sshd[1211350]: Invalid user admin from 171.231.186.134 port 47288
+Oct 09 14:57:50 26736.15522 sshd[1211350]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:57:50 26736.15522 sshd[1211350]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=171.231.186.134[0m
+Oct 09 14:57:51 26736.15522 sshd[1211343]: Connection closed by invalid user config 171.231.186.134 port 48882 [preauth]
+Oct 09 14:57:52 26736.15522 sshd[1211350]: Failed password for invalid user admin from 171.231.186.134 port 47288 ssh2
+Oct 09 14:58:05 26736.15522 sshd[1211350]: Connection closed by invalid user admin 171.231.186.134 port 47288 [preauth]
+Oct 09 14:58:14 26736.15522 sshd[1211354]: Invalid user admin from 2.57.121.25 port 11782
+Oct 09 14:58:14 26736.15522 sshd[1211354]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:58:14 26736.15522 sshd[1211354]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=2.57.121.25[0m
+Oct 09 14:58:16 26736.15522 sshd[1211354]: Failed password for invalid user admin from 2.57.121.25 port 11782 ssh2
+Oct 09 14:58:16 26736.15522 sshd[1211354]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:58:19 26736.15522 sshd[1211354]: Failed password for invalid user admin from 2.57.121.25 port 11782 ssh2
+Oct 09 14:58:20 26736.15522 sshd[1211354]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:58:22 26736.15522 sshd[1211354]: Failed password for invalid user admin from 2.57.121.25 port 11782 ssh2
+Oct 09 14:58:22 26736.15522 sshd[1211354]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:58:24 26736.15522 sshd[1211354]: Failed password for invalid user admin from 2.57.121.25 port 11782 ssh2
+Oct 09 14:58:25 26736.15522 sshd[1211354]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:58:27 26736.15522 sshd[1211354]: Failed password for invalid user admin from 2.57.121.25 port 11782 ssh2
+Oct 09 14:58:29 26736.15522 sshd[1211354]: Received disconnect from 2.57.121.25 port 11782:11: Bye [preauth]
+Oct 09 14:58:29 26736.15522 sshd[1211354]: Disconnected from invalid user admin 2.57.121.25 port 11782 [preauth]
+Oct 09 14:58:29 26736.15522 sshd[1211354]: [0;1;39m[0;1;31m[0;1;39mPAM 4 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=2.57.121.25[0m
+Oct 09 14:58:29 26736.15522 sshd[1211354]: [0;1;39m[0;1;31m[0;1;39mPAM service(sshd) ignoring max retries; 5 > 3[0m
+Oct 09 14:58:41 26736.15522 sshd[1211357]: Invalid user installer from 116.110.157.113 port 48526
+Oct 09 14:58:42 26736.15522 sshd[1211357]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:58:42 26736.15522 sshd[1211357]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=116.110.157.113[0m
+Oct 09 14:58:43 26736.15522 sshd[1211359]: Invalid user ansible from 185.255.90.146 port 33316
+Oct 09 14:58:43 26736.15522 sshd[1211359]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:58:43 26736.15522 sshd[1211359]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 14:58:44 26736.15522 sshd[1211357]: Failed password for invalid user installer from 116.110.157.113 port 48526 ssh2
+Oct 09 14:58:45 26736.15522 sshd[1211359]: Failed password for invalid user ansible from 185.255.90.146 port 33316 ssh2
+Oct 09 14:58:45 26736.15522 sshd[1211359]: Received disconnect from 185.255.90.146 port 33316:11: Bye Bye [preauth]
+Oct 09 14:58:45 26736.15522 sshd[1211359]: Disconnected from invalid user ansible 185.255.90.146 port 33316 [preauth]
+Oct 09 14:58:47 26736.15522 sshd[1211357]: Connection closed by invalid user installer 116.110.157.113 port 48526 [preauth]
+Oct 09 14:58:51 26736.15522 unix_chkpwd[1211363]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:58:51 26736.15522 sshd[1211361]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.119  user=root[0m
+Oct 09 14:58:53 26736.15522 sshd[1211361]: Failed password for root from 80.94.93.119 port 22794 ssh2
+Oct 09 14:58:54 26736.15522 unix_chkpwd[1211364]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:58:56 26736.15522 sshd[1211361]: Failed password for root from 80.94.93.119 port 22794 ssh2
+Oct 09 14:58:56 26736.15522 unix_chkpwd[1211365]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:58:58 26736.15522 sshd[1211361]: Failed password for root from 80.94.93.119 port 22794 ssh2
+Oct 09 14:58:59 26736.15522 sshd[1211361]: Received disconnect from 80.94.93.119 port 22794:11:  [preauth]
+Oct 09 14:58:59 26736.15522 sshd[1211361]: Disconnected from authenticating user root 80.94.93.119 port 22794 [preauth]
+Oct 09 14:58:59 26736.15522 sshd[1211361]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.119  user=root[0m
+Oct 09 14:58:59 26736.15522 unix_chkpwd[1211368]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:58:59 26736.15522 sshd[1211366]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.119  user=root[0m
+Oct 09 14:59:02 26736.15522 sshd[1211366]: Failed password for root from 80.94.93.119 port 40668 ssh2
+Oct 09 14:59:02 26736.15522 unix_chkpwd[1211369]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:59:04 26736.15522 sshd[1211366]: Failed password for root from 80.94.93.119 port 40668 ssh2
+Oct 09 14:59:05 26736.15522 unix_chkpwd[1211370]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:59:07 26736.15522 sshd[1211366]: Failed password for root from 80.94.93.119 port 40668 ssh2
+Oct 09 14:59:08 26736.15522 sshd[1211366]: Received disconnect from 80.94.93.119 port 40668:11:  [preauth]
+Oct 09 14:59:08 26736.15522 sshd[1211366]: Disconnected from authenticating user root 80.94.93.119 port 40668 [preauth]
+Oct 09 14:59:08 26736.15522 sshd[1211366]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.119  user=root[0m
+Oct 09 14:59:08 26736.15522 unix_chkpwd[1211374]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:59:08 26736.15522 sshd[1211372]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.119  user=root[0m
+Oct 09 14:59:09 26736.15522 sshd[1211375]: Invalid user rocky from 5.198.176.28 port 37318
+Oct 09 14:59:09 26736.15522 sshd[1211375]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:59:09 26736.15522 sshd[1211375]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=5.198.176.28[0m
+Oct 09 14:59:10 26736.15522 sshd[1211372]: Failed password for root from 80.94.93.119 port 12708 ssh2
+Oct 09 14:59:11 26736.15522 unix_chkpwd[1211377]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:59:11 26736.15522 sshd[1211375]: Failed password for invalid user rocky from 5.198.176.28 port 37318 ssh2
+Oct 09 14:59:12 26736.15522 sshd[1211375]: Received disconnect from 5.198.176.28 port 37318:11: Bye Bye [preauth]
+Oct 09 14:59:12 26736.15522 sshd[1211375]: Disconnected from invalid user rocky 5.198.176.28 port 37318 [preauth]
+Oct 09 14:59:13 26736.15522 sshd[1211372]: Failed password for root from 80.94.93.119 port 12708 ssh2
+Oct 09 14:59:14 26736.15522 unix_chkpwd[1211379]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 14:59:15 26736.15522 sshd[1211372]: Failed password for root from 80.94.93.119 port 12708 ssh2
+Oct 09 14:59:16 26736.15522 sshd[1211372]: Received disconnect from 80.94.93.119 port 12708:11:  [preauth]
+Oct 09 14:59:16 26736.15522 sshd[1211372]: Disconnected from authenticating user root 80.94.93.119 port 12708 [preauth]
+Oct 09 14:59:16 26736.15522 sshd[1211372]: [0;1;39m[0;1;31m[0;1;39mPAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=80.94.93.119  user=root[0m
+Oct 09 14:59:22 26736.15522 sshd[1211381]: Invalid user tempuser from 128.1.131.163 port 48356
+Oct 09 14:59:22 26736.15522 sshd[1211381]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:59:22 26736.15522 sshd[1211381]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 14:59:23 26736.15522 sshd[1211371]: Invalid user squid from 116.110.157.113 port 50458
+Oct 09 14:59:25 26736.15522 sshd[1211381]: Failed password for invalid user tempuser from 128.1.131.163 port 48356 ssh2
+Oct 09 14:59:26 26736.15522 sshd[1211381]: Received disconnect from 128.1.131.163 port 48356:11: Bye Bye [preauth]
+Oct 09 14:59:26 26736.15522 sshd[1211381]: Disconnected from invalid user tempuser 128.1.131.163 port 48356 [preauth]
+Oct 09 14:59:28 26736.15522 sshd[1211371]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:59:28 26736.15522 sshd[1211371]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=116.110.157.113[0m
+Oct 09 14:59:30 26736.15522 sshd[1211383]: Invalid user ubnt from 171.231.186.134 port 45912
+Oct 09 14:59:30 26736.15522 sshd[1211371]: Failed password for invalid user squid from 116.110.157.113 port 50458 ssh2
+Oct 09 14:59:30 26736.15522 sshd[1211383]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:59:30 26736.15522 sshd[1211383]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=171.231.186.134[0m
+Oct 09 14:59:31 26736.15522 sshd[1211371]: Connection closed by invalid user squid 116.110.157.113 port 50458 [preauth]
+Oct 09 14:59:33 26736.15522 sshd[1211383]: Failed password for invalid user ubnt from 171.231.186.134 port 45912 ssh2
+Oct 09 14:59:33 26736.15522 sshd[1211383]: Connection closed by invalid user ubnt 171.231.186.134 port 45912 [preauth]
+Oct 09 14:59:56 26736.15522 sshd[1211387]: Invalid user support from 171.231.186.134 port 41802
+Oct 09 14:59:56 26736.15522 sshd[1211387]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 14:59:56 26736.15522 sshd[1211387]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=171.231.186.134[0m
+Oct 09 14:59:58 26736.15522 sshd[1211387]: Failed password for invalid user support from 171.231.186.134 port 41802 ssh2
+Oct 09 14:59:59 26736.15522 sshd[1211387]: Connection closed by invalid user support 171.231.186.134 port 41802 [preauth]
+Oct 09 15:00:07 26736.15522 sudo[1211389]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/etc/pki/tls/private ; USER=root ; COMMAND=/bin/yum install certbot python3-certbot-apache[0m
+Oct 09 15:00:07 26736.15522 sudo[1211389]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 15:00:15 26736.15522 systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit run-r450803720a9842acad970867ed2848c5.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit run-r450803720a9842acad970867ed2848c5.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89042.[0m
+Oct 09 15:00:15 26736.15522 systemd[1]: Starting man-db-cache-update.service...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit man-db-cache-update.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit man-db-cache-update.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89119.[0m
+Oct 09 15:00:15 26736.15522 systemd[1]: Reloading.
+Oct 09 15:00:15 26736.15522 systemd-rc-local-generator[1211513]: /etc/rc.d/rc.local is not marked executable, skipping.
+Oct 09 15:00:15 26736.15522 systemd[1]: ]8;;file://26736.15522/etc/systemd/system/rc-local.service/etc/systemd/system/rc-local.service]8;;:11: Support for option SysVStartPriority= has been removed and it is ignored
+Oct 09 15:00:15 26736.15522 systemd[1]: man-db-cache-update.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit man-db-cache-update.service has successfully entered the 'dead' state.[0m
+Oct 09 15:00:15 26736.15522 systemd[1]: Finished man-db-cache-update.service.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit man-db-cache-update.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit man-db-cache-update.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89119.[0m
+Oct 09 15:00:15 26736.15522 systemd[1]: run-r450803720a9842acad970867ed2848c5.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit run-r450803720a9842acad970867ed2848c5.service has successfully entered the 'dead' state.[0m
+Oct 09 15:00:15 26736.15522 systemd[1]: Queuing reload/restart jobs for marked units…
+Oct 09 15:00:16 26736.15522 sudo[1211389]: pam_unix(sudo:session): session closed for user root
+Oct 09 15:00:16 26736.15522 unix_chkpwd[1211982]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 15:00:16 26736.15522 sshd[1211392]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=171.231.186.134  user=root[0m
+Oct 09 15:00:18 26736.15522 sshd[1211392]: Failed password for root from 171.231.186.134 port 35140 ssh2
+Oct 09 15:00:20 26736.15522 sshd[1211392]: Connection closed by authenticating user root 171.231.186.134 port 35140 [preauth]
+Oct 09 15:00:25 26736.15522 sudo[1211983]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/etc/pki/tls/private ; USER=root ; COMMAND=/bin/certbot --apache -d swizchem.com -d www.swizchem.com[0m
+Oct 09 15:00:25 26736.15522 sudo[1211983]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 15:00:26 26736.15522 systemd[1]: Starting One-time temporary TLS key generation for httpd.service...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd-init.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd-init.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89276.[0m
+Oct 09 15:00:27 26736.15522 systemd[1]: httpd-init.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd-init.service has successfully entered the 'dead' state.[0m
+Oct 09 15:00:27 26736.15522 systemd[1]: Finished One-time temporary TLS key generation for httpd.service.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd-init.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd-init.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89276.[0m
+Oct 09 15:00:27 26736.15522 systemd[1]: Starting The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89198.[0m
+Oct 09 15:00:27 26736.15522 httpd[1212000]: AH00526: Syntax error on line 33 of /etc/httpd/conf.d/swizchem.conf:
+Oct 09 15:00:27 26736.15522 httpd[1212000]: SSLCertificateFile: file '/etc/pki/tls/certs/swizchem.crt' does not exist or is empty
+Oct 09 15:00:27 26736.15522 systemd[1]: [0;1;39m[0;1;31m[0;1;39mhttpd.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit httpd.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Oct 09 15:00:27 26736.15522 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mhttpd.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service has entered the 'failed' state with result 'exit-code'.[0m
+Oct 09 15:00:27 26736.15522 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start The Apache HTTP Server.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89198 and the job result is failed.[0m
+Oct 09 15:00:27 26736.15522 sudo[1211983]: pam_unix(sudo:session): session closed for user root
+Oct 09 15:00:33 26736.15522 sshd[1212003]: Invalid user tempuser from 185.255.90.146 port 33754
+Oct 09 15:00:33 26736.15522 sshd[1212003]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 15:00:33 26736.15522 sshd[1212003]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.255.90.146[0m
+Oct 09 15:00:35 26736.15522 sshd[1212003]: Failed password for invalid user tempuser from 185.255.90.146 port 33754 ssh2
+Oct 09 15:00:37 26736.15522 sshd[1212003]: Received disconnect from 185.255.90.146 port 33754:11: Bye Bye [preauth]
+Oct 09 15:00:37 26736.15522 sshd[1212003]: Disconnected from invalid user tempuser 185.255.90.146 port 33754 [preauth]
+Oct 09 15:00:49 26736.15522 sshd[1212007]: Invalid user system from 171.231.186.134 port 43384
+Oct 09 15:00:51 26736.15522 unix_chkpwd[1212011]: [0;1;39m[0;1;31m[0;1;39mpassword check failed for user (root)[0m
+Oct 09 15:00:51 26736.15522 sshd[1212005]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=171.231.186.134  user=root[0m
+Oct 09 15:00:53 26736.15522 sshd[1212005]: Failed password for root from 171.231.186.134 port 43378 ssh2
+Oct 09 15:00:54 26736.15522 sshd[1212005]: Connection closed by authenticating user root 171.231.186.134 port 43378 [preauth]
+Oct 09 15:01:01 26736.15522 CROND[1212017]: (root) CMD (run-parts /etc/cron.hourly)
+Oct 09 15:01:01 26736.15522 run-parts[1212020]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.hourly) starting 0anacron[0m
+Oct 09 15:01:01 26736.15522 run-parts[1212026]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.hourly) finished 0anacron[0m
+Oct 09 15:01:01 26736.15522 CROND[1212016]: (root) CMDEND (run-parts /etc/cron.hourly)
+Oct 09 15:01:01 26736.15522 sshd[1212007]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 15:01:01 26736.15522 sshd[1212007]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=171.231.186.134[0m
+Oct 09 15:01:04 26736.15522 sshd[1212007]: Failed password for invalid user system from 171.231.186.134 port 43384 ssh2
+Oct 09 15:01:04 26736.15522 sshd[1212014]: Invalid user test from 116.110.157.113 port 57596
+Oct 09 15:01:05 26736.15522 sshd[1212014]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 15:01:05 26736.15522 sshd[1212014]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=116.110.157.113[0m
+Oct 09 15:01:07 26736.15522 sshd[1212014]: Failed password for invalid user test from 116.110.157.113 port 57596 ssh2
+Oct 09 15:01:07 26736.15522 sshd[1212007]: Connection closed by invalid user system 171.231.186.134 port 43384 [preauth]
+Oct 09 15:01:09 26736.15522 systemd[1]: One-time temporary TLS key generation for httpd.service was skipped because no trigger condition checks were met.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd-init.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd-init.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89355.[0m
+Oct 09 15:01:09 26736.15522 systemd[1]: Starting The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89277.[0m
+Oct 09 15:01:09 26736.15522 httpd[1212029]: AH00526: Syntax error on line 33 of /etc/httpd/conf.d/swizchem.conf:
+Oct 09 15:01:09 26736.15522 httpd[1212029]: SSLCertificateFile: file '/etc/pki/tls/certs/swizchem.crt' does not exist or is empty
+Oct 09 15:01:09 26736.15522 systemd[1]: [0;1;39m[0;1;31m[0;1;39mhttpd.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit httpd.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Oct 09 15:01:09 26736.15522 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mhttpd.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service has entered the 'failed' state with result 'exit-code'.[0m
+Oct 09 15:01:09 26736.15522 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start The Apache HTTP Server.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89277 and the job result is failed.[0m
+Oct 09 15:01:09 26736.15522 sshd[1212014]: Connection closed by invalid user test 116.110.157.113 port 57596 [preauth]
+Oct 09 15:01:13 26736.15522 sudo[1212033]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/etc/pki/tls/private ; USER=root ; COMMAND=/bin/nano /etc/httpd/conf.d/ssl.conf[0m
+Oct 09 15:01:13 26736.15522 sudo[1212033]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 15:01:22 26736.15522 sshd[1212037]: Invalid user reza from 128.1.131.163 port 59596
+Oct 09 15:01:22 26736.15522 sshd[1212037]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 15:01:22 26736.15522 sshd[1212037]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=128.1.131.163[0m
+Oct 09 15:01:24 26736.15522 sshd[1212037]: Failed password for invalid user reza from 128.1.131.163 port 59596 ssh2
+Oct 09 15:01:27 26736.15522 sshd[1212037]: Received disconnect from 128.1.131.163 port 59596:11: Bye Bye [preauth]
+Oct 09 15:01:27 26736.15522 sshd[1212037]: Disconnected from invalid user reza 128.1.131.163 port 59596 [preauth]
+Oct 09 15:01:28 26736.15522 sudo[1212033]: pam_unix(sudo:session): session closed for user root
+Oct 09 15:01:31 26736.15522 sudo[1212039]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/etc/pki/tls/private ; USER=root ; COMMAND=/bin/certbot --apache -d swizchem.com -d www.swizchem.com[0m
+Oct 09 15:01:31 26736.15522 sudo[1212039]: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+Oct 09 15:01:31 26736.15522 systemd[1]: One-time temporary TLS key generation for httpd.service was skipped because no trigger condition checks were met.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd-init.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd-init.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89434.[0m
+Oct 09 15:01:31 26736.15522 systemd[1]: Starting The Apache HTTP Server...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89356.[0m
+Oct 09 15:01:31 26736.15522 httpd[1212049]: AH00526: Syntax error on line 33 of /etc/httpd/conf.d/swizchem.conf:
+Oct 09 15:01:31 26736.15522 httpd[1212049]: SSLCertificateFile: file '/etc/pki/tls/certs/swizchem.crt' does not exist or is empty
+Oct 09 15:01:31 26736.15522 systemd[1]: [0;1;39m[0;1;31m[0;1;39mhttpd.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit httpd.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Oct 09 15:01:31 26736.15522 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mhttpd.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit httpd.service has entered the 'failed' state with result 'exit-code'.[0m
+Oct 09 15:01:31 26736.15522 systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start The Apache HTTP Server.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit httpd.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit httpd.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 89356 and the job result is failed.[0m
+Oct 09 15:01:32 26736.15522 sudo[1212039]: pam_unix(sudo:session): session closed for user root
+Oct 09 15:01:44 26736.15522 sshd[1212052]: Invalid user admin from 171.231.186.134 port 36150
+Oct 09 15:01:45 26736.15522 sshd[1212052]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): check pass; user unknown[0m
+Oct 09 15:01:45 26736.15522 sshd[1212052]: [0;1;39m[0;1;31m[0;1;39mpam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=171.231.186.134[0m
+Oct 09 15:01:47 26736.15522 sshd[1212052]: Failed password for invalid user admin from 171.231.186.134 port 36150 ssh2
+Oct 09 15:01:47 26736.15522 sshd[1212052]: Connection closed by invalid user admin 171.231.186.134 port 36150 [preauth]
